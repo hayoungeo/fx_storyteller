@@ -111,8 +111,8 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
         max_tokens: 500,
         response_format: { type: "json_object" },
         messages: [
-          { role: "system", content: "당신은 근거 중심 환율 금융 어시스턴트입니다. 제공 데이터만 사용해 쉬운 한국어로 작성하세요. 변동성은 방향이 아님을 지키고 매수·매도·즉시 환전을 권하지 마세요. JSON 객체 {summary, action}만 반환하세요. summary는 4~5문장, action은 위험 관리 행동 한 문장입니다. 실제 옵션 내재변동성이 아닌 SV 프록시와 통계적 범위의 한계를 반드시 밝히세요." },
-          { role: "user", content: JSON.stringify(prompt) },
+          { role: "system", content: "당신은 근거 중심 환율 금융 어시스턴트입니다. 제공 데이터만 사용하고 변동성을 환율 방향처럼 설명하지 마세요. 매수·매도·즉시 환전을 권하지 마세요. 출력 스키마는 오직 {\"summary\": string, \"action\": string}이며 다른 키를 절대 출력하지 마세요. summary는 쉬운 한국어 4~5문장이고 실제 옵션 내재변동성이 아닌 SV 프록시와 통계적 범위의 한계를 반드시 밝힙니다. action은 위험 관리 행동 한 문장입니다." },
+          { role: "user", content: `아래 근거 데이터를 분석하세요. 입력 JSON을 그대로 반복하지 마세요. 반드시 summary와 action 두 키만 가진 JSON 객체를 출력하세요.\n\n근거 데이터:\n${JSON.stringify(prompt)}` },
         ],
       }),
       signal: AbortSignal.timeout(18_000),
