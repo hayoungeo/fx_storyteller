@@ -172,7 +172,9 @@ action 작성 규칙:
     const parsed = JSON.parse(raw);
     if (typeof parsed.summary !== "string" || typeof parsed.action !== "string") return { ...fallback, mode: "data-fallback" as const };
     if (!parsed.summary.startsWith(requiredOpening)) return { ...fallback, mode: "data-fallback" as const };
-    return { summary: parsed.summary.slice(0, 1200), action: parsed.action.replace(/^행동 제안:\s*/, "").slice(0, 300), mode: "ai" as const };
+    const generatedAction = parsed.action.replace(/^행동 제안:\s*/, "").slice(0, 300);
+    const action = /나누|2\s*[~～-]\s*3/.test(generatedAction) ? generatedAction : fallback.action;
+    return { summary: parsed.summary.slice(0, 1200), action, mode: "ai" as const };
   } catch {
     return { ...fallback, mode: "data-fallback" as const };
   }
