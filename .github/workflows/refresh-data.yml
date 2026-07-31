@@ -1,0 +1,56 @@
+name: Refresh analysis data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 21 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+      EXIM_API_KEY: ${{ secrets.EXIM_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: r-lib/actions/setup-r@v2
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::stochvol
+            any::jsonlite
+      - run: pip install -r requirements.txt
+      - name: Collect and classify news
+        run: |
+          python collect_news_newsapi.py
+          python extract_events_groq_hybrid.py
+      - name: Refresh volatility and weights
+        run: |
+          python download_fx_prices.py
+          Rscript estimate_sv_volatility.R
+          python compute_impact_weights_sv.py
+          python prepare_vrp_data.py
+          python analyze_vrp.py
+      - name: Refresh macro data
+        run: |
+          python collect_macro_data.py
+          python compute_macro_indicators.py
+      - name: Export safe web dataset
+        run: python web/scripts/export_web_data.py
+      - name: Commit verified web data
+        run: |
+          git config user.name "exchange-signal-bot"
+          git config user.email "exchange-signal-bot@users.noreply.github.com"
+          git add web/data/generated/analysis-data.json
+          git diff --cached --quiet || git commit -m "data: refresh web analysis dataset"
+          git push

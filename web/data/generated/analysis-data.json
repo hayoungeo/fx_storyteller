@@ -1,0 +1,2509 @@
+{
+  "metadata": {
+    "generatedAt": "2026-07-31T18:21:35.004840+00:00",
+    "dataAsOf": "2026-07-30",
+    "supportedPairs": [
+      "USD/KRW",
+      "JPY/KRW",
+      "EUR/KRW"
+    ],
+    "method": "stochvol SV 기반 프록시"
+  },
+  "volatility": {
+    "USD/KRW": {
+      "currency_pair": "USD/KRW",
+      "reference_date": "2026-07-30",
+      "annualized_volatility_pct": 10.9,
+      "monthly_volatility_pct": 3.15,
+      "five_day_change_pct_point": 0.9,
+      "historical_percentile": 72.2,
+      "regime": "보통",
+      "percentile_explanation": "과거 관측일 100일을 놓고 보면 약 72일보다 변동성이 큰 수준으로, 과거 중간 수준보다 움직임이 다소 큰 편입니다.",
+      "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
+      "spot_rate": 1441.1,
+      "estimated_monthly_move_rate": 45.35,
+      "data_age_days": 2,
+      "is_stale": false,
+      "is_proxy": true,
+      "source": "stochvol SV 기반 프록시",
+      "historical_mean_gap_pct_point": -0.462,
+      "latest_completed_gap_pct_point": 2.199,
+      "latest_completed_gap_date": "2026-07-01",
+      "action_guidance": "예정된 환전·송금·결제일 전후로 환율을 확인하고, 통계적 변동 폭만큼 원화 예산에 여유를 두는 방식이 적절합니다."
+    },
+    "JPY/KRW": {
+      "currency_pair": "JPY/KRW",
+      "reference_date": "2026-07-30",
+      "annualized_volatility_pct": 9.38,
+      "monthly_volatility_pct": 2.71,
+      "five_day_change_pct_point": 0.07,
+      "historical_percentile": 48.6,
+      "regime": "보통",
+      "percentile_explanation": "과거 관측일 100일을 놓고 보면 약 49일보다 변동성이 큰 수준으로, 과거 중간 수준보다 움직임이 다소 작은 편입니다.",
+      "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
+      "spot_rate": 9.0213,
+      "estimated_monthly_move_rate": 0.24,
+      "data_age_days": 2,
+      "is_stale": false,
+      "is_proxy": true,
+      "source": "stochvol SV 기반 프록시",
+      "action_guidance": "예정된 환전·송금·결제일 전후로 환율을 확인하고, 통계적 변동 폭만큼 원화 예산에 여유를 두는 방식이 적절합니다."
+    },
+    "EUR/KRW": {
+      "currency_pair": "EUR/KRW",
+      "reference_date": "2026-07-30",
+      "annualized_volatility_pct": 8.39,
+      "monthly_volatility_pct": 2.42,
+      "five_day_change_pct_point": -0.04,
+      "historical_percentile": 24.3,
+      "regime": "보통",
+      "percentile_explanation": "과거 관측일 100일을 놓고 보면 약 24일보다 변동성이 큰 수준으로, 과거 중간 수준보다 움직임이 다소 작은 편입니다.",
+      "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
+      "spot_rate": 1661.16,
+      "estimated_monthly_move_rate": 40.25,
+      "data_age_days": 2,
+      "is_stale": false,
+      "is_proxy": true,
+      "source": "stochvol SV 기반 프록시",
+      "action_guidance": "예정된 환전·송금·결제일 전후로 환율을 확인하고, 통계적 변동 폭만큼 원화 예산에 여유를 두는 방식이 적절합니다."
+    }
+  },
+  "macro": {
+    "computed_at": "2026-08-01T02:22:12.179060",
+    "rate_diffs": {
+      "USD/KRW": {
+        "latest_diff_pp": null,
+        "note": "데이터 부족"
+      },
+      "JPY/KRW": {
+        "latest_diff_pp": null,
+        "note": "데이터 부족"
+      },
+      "EUR/KRW": {
+        "latest_diff_pp": null,
+        "note": "데이터 부족"
+      }
+    },
+    "fx_technical": {
+      "USD/KRW": {
+        "note": "데이터 부족"
+      },
+      "JPY/KRW": {
+        "note": "데이터 부족"
+      },
+      "EUR/KRW": {
+        "note": "데이터 부족"
+      }
+    },
+    "other_indicators": {
+      "미국_국채10년물": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "미국_CPI": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "미국_GDP성장률": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "일본_CPI": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "일본_GDP성장률": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "유럽_CPI": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "유럽_GDP성장률": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "한국_CPI": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "한국_무역수지": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "한국_GDP성장률": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "VIX": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "미국국채10년물_야후": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "유가_WTI": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "외국인_코스피_순매수": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      },
+      "구글트렌드_환율관심도": {
+        "latest": null,
+        "prev": null,
+        "change": null,
+        "trend": "데이터없음"
+      }
+    }
+  },
+  "news": [
+    {
+      "id": "6da93491d87ab3ab",
+      "title": "포스코홀딩스 \"하반기 더 좋다\"…철강·리튬 동반 회복 기대",
+      "summary": "[지디넷코리아]포스코홀딩스가 철강과 리튬의 동반 회복을 앞세워 하반기 실적 반등을 자신했다. 원가 상승과 글로벌 관세, 리튬 가격 변동성 등 대외 불확실성은 고부가 제품 확대와 미래 소재 투자로 돌파한다는 전략이다.포스코홀딩스는 30일 올해 2분기 실적발표 컨퍼런스콜을 통해 연결 기준 매출 19조 2590억원, 영업이익 8190억원, 순이익 7610억원을 기록했다고 밝혔다. 전년 동기 대비 매출은 9.7%, 영업이익은 34.9% 증가했다. 순이익은 808% 늘…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260730162332",
+      "publishedAt": "2026-07-30T07:39:31Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "6da93491d87ab3ab",
+      "title": "포스코홀딩스 \"하반기 더 좋다\"…철강·리튬 동반 회복 기대",
+      "summary": "[지디넷코리아]포스코홀딩스가 철강과 리튬의 동반 회복을 앞세워 하반기 실적 반등을 자신했다. 원가 상승과 글로벌 관세, 리튬 가격 변동성 등 대외 불확실성은 고부가 제품 확대와 미래 소재 투자로 돌파한다는 전략이다.포스코홀딩스는 30일 올해 2분기 실적발표 컨퍼런스콜을 통해 연결 기준 매출 19조 2590억원, 영업이익 8190억원, 순이익 7610억원을 기록했다고 밝혔다. 전년 동기 대비 매출은 9.7%, 영업이익은 34.9% 증가했다. 순이익은 808% 늘…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260730162332",
+      "publishedAt": "2026-07-30T07:39:31Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "b5c4443121c3cc4d",
+      "title": "U.S. Federal Reserve’s ‘hawkish hold’ leaves investors lacking clarity",
+      "summary": "The Fed kept interest rates unchanged in a target range of 3.50% to 3.75%, but the vote drew three dissents from the 12-member panel.",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/032e829f32618288",
+      "publishedAt": "2026-07-30T07:34:31Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY"
+      ],
+      "confidence": 0.9,
+      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
+    },
+    {
+      "id": "b5c4443121c3cc4d",
+      "title": "U.S. Federal Reserve’s ‘hawkish hold’ leaves investors lacking clarity",
+      "summary": "The Fed kept interest rates unchanged in a target range of 3.50% to 3.75%, but the vote drew three dissents from the 12-member panel.",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/032e829f32618288",
+      "publishedAt": "2026-07-30T07:34:31Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "708ef22140262920",
+      "title": "Fed Holds Rates Steady As 3 FOMC Members Dissent",
+      "summary": "By James Knightley, Chief International Economist, US, and Chris Turner, Global Head of Markets and Regional Head of Research for UK & CEE\nFed holds policy rate at 3-1/2 to 3-3/4 percent\nThe Federal Reserve\nBy James Knightley, Chief International Economist, U…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/bd5c1a31bb5e67e2",
+      "publishedAt": "2026-07-30T07:34:27Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD",
+        "USD/JPY"
+      ],
+      "confidence": 0.9,
+      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
+    },
+    {
+      "id": "708ef22140262920",
+      "title": "Fed Holds Rates Steady As 3 FOMC Members Dissent",
+      "summary": "By James Knightley, Chief International Economist, US, and Chris Turner, Global Head of Markets and Regional Head of Research for UK & CEE\nFed holds policy rate at 3-1/2 to 3-3/4 percent\nThe Federal Reserve\nBy James Knightley, Chief International Economist, U…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/bd5c1a31bb5e67e2",
+      "publishedAt": "2026-07-30T07:34:27Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "94d836aaf6cac973",
+      "title": "Global Market: Bank of England expected to hold rates steady as inflation risks stay in focus",
+      "summary": "The Bank of England is expected to hold its benchmark interest rate at 3.75% as policymakers assess inflation risks from geopolitical tensions, energy prices and a slowing labour market. Investors will track the central bank’s guidance on future rate moves.",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-bank-of-england-expected-to-hold-rates-steady-as-inflation-risks-stay-in-focus/articleshow/132731866.cms",
+      "publishedAt": "2026-07-30T07:27:52Z",
+      "country": "유럽",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "GBP/USD",
+        "GBP/EUR"
+      ],
+      "confidence": 0.9,
+      "reason": "영국 중앙은행의 금리 결정이 곧 발표될 예정"
+    },
+    {
+      "id": "94d836aaf6cac973",
+      "title": "Global Market: Bank of England expected to hold rates steady as inflation risks stay in focus",
+      "summary": "The Bank of England is expected to hold its benchmark interest rate at 3.75% as policymakers assess inflation risks from geopolitical tensions, energy prices and a slowing labour market. Investors will track the central bank’s guidance on future rate moves.",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-bank-of-england-expected-to-hold-rates-steady-as-inflation-risks-stay-in-focus/articleshow/132731866.cms",
+      "publishedAt": "2026-07-30T07:27:52Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "f870b848bdd709bd",
+      "title": "Bond Yields at 19-Year High Send Warsh Credibility Warning",
+      "summary": "The message from the bond market was clear: For all of Federal Reserve Chairman Kevin Warsh’s tough talk about taming inflation, he’s not rushing fast enough to deliver.",
+      "source": "Financial Post",
+      "url": "https://financialpost.com/pmn/business-pmn/bond-yields-at-19-year-high-send-warsh-credibility-warning",
+      "publishedAt": "2026-07-30T07:26:45Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미 연방준행이 인플레이션 완화에 대해 충분히 대응하지 못하고 있음을 시사"
+    },
+    {
+      "id": "f870b848bdd709bd",
+      "title": "Bond Yields at 19-Year High Send Warsh Credibility Warning",
+      "summary": "The message from the bond market was clear: For all of Federal Reserve Chairman Kevin Warsh’s tough talk about taming inflation, he’s not rushing fast enough to deliver.",
+      "source": "Financial Post",
+      "url": "https://financialpost.com/pmn/business-pmn/bond-yields-at-19-year-high-send-warsh-credibility-warning",
+      "publishedAt": "2026-07-30T07:26:45Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "85b687c68c41bc46",
+      "title": "Ukraine Seeks to Merge Its Own Conflict with Iran War - Expert",
+      "summary": "The ultimate aim of Zelensky since 2022 is to make the US a belligerent, provoking a much more direct involvement into the Ukrainian case, Vice President of the Quincy Institute for Responsible Statecraft Trita Parsi wrote on X.",
+      "source": "Sputnikglobe.com",
+      "url": "https://sputnikglobe.com/20260730/ukraine-seeks-to-merge-its-own-conflict-with-iran-war---expert-1124517337.html",
+      "publishedAt": "2026-07-30T07:22:53Z",
+      "country": "기타",
+      "category": "지정학",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "85b687c68c41bc46",
+      "title": "Ukraine Seeks to Merge Its Own Conflict with Iran War - Expert",
+      "summary": "The ultimate aim of Zelensky since 2022 is to make the US a belligerent, provoking a much more direct involvement into the Ukrainian case, Vice President of the Quincy Institute for Responsible Statecraft Trita Parsi wrote on X.",
+      "source": "Sputnikglobe.com",
+      "url": "https://sputnikglobe.com/20260730/ukraine-seeks-to-merge-its-own-conflict-with-iran-war---expert-1124517337.html",
+      "publishedAt": "2026-07-30T07:22:53Z",
+      "country": "기타",
+      "category": "지정학",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "750adb41f350b3d9",
+      "title": "Trump touted his tariffs in Michigan despite rising costs. Even some of his supporters are worried",
+      "summary": "President Donald Trump says car companies are thriving due to tariffs and other key policies he's instituted as president",
+      "source": "Abcnews.com",
+      "url": "https://abcnews.com/Business/wireStory/trump-touted-tariffs-michigan-despite-rising-costs-supporters-135215072",
+      "publishedAt": "2026-07-30T07:19:20Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프의 관세 정책이 자동차 회사에 미치는 영향"
+    },
+    {
+      "id": "750adb41f350b3d9",
+      "title": "Trump touted his tariffs in Michigan despite rising costs. Even some of his supporters are worried",
+      "summary": "President Donald Trump says car companies are thriving due to tariffs and other key policies he's instituted as president",
+      "source": "Abcnews.com",
+      "url": "https://abcnews.com/Business/wireStory/trump-touted-tariffs-michigan-despite-rising-costs-supporters-135215072",
+      "publishedAt": "2026-07-30T07:19:20Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "d40a4391f55a5a7c",
+      "title": "전기차 빈자리 AI가 채웠다…삼성SDI, 하반기도 ESS 실적 견인",
+      "summary": "[지디넷코리아]삼성SDI가 에너지저장장치(ESS)와 고출력 배터리 판매 확대에 힘입어 예상보다 빠르게 흑자전환에 성공했다. 하반기에는 미국 현지 각형 리튬인산철(LFP) 배터리 양산과 무정전전원장치(UPS) 생산능력 확대를 통해 실적 개선 흐름을 이어간다는 방침이다.삼성SDI는 30일 올해 2분기 실적발표 컨퍼런스콜에서 \"당초 하반기 중 흑자전환을 예상했지만, ESS와 고출력 배터리 판매 증가에 우호적인 환율과 미국 관세 환급 효과가 더해지면서 전환 시기가 앞…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260730145103",
+      "publishedAt": "2026-07-30T07:09:20Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "d40a4391f55a5a7c",
+      "title": "전기차 빈자리 AI가 채웠다…삼성SDI, 하반기도 ESS 실적 견인",
+      "summary": "[지디넷코리아]삼성SDI가 에너지저장장치(ESS)와 고출력 배터리 판매 확대에 힘입어 예상보다 빠르게 흑자전환에 성공했다. 하반기에는 미국 현지 각형 리튬인산철(LFP) 배터리 양산과 무정전전원장치(UPS) 생산능력 확대를 통해 실적 개선 흐름을 이어간다는 방침이다.삼성SDI는 30일 올해 2분기 실적발표 컨퍼런스콜에서 \"당초 하반기 중 흑자전환을 예상했지만, ESS와 고출력 배터리 판매 증가에 우호적인 환율과 미국 관세 환급 효과가 더해지면서 전환 시기가 앞…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260730145103",
+      "publishedAt": "2026-07-30T07:09:20Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "475cf5a4035a56ad",
+      "title": "창신메모리 급등, AI 산업을 바라보는 상반된 시선",
+      "summary": "7월 30일 새벽 미 연준은 금리를 3.50~3.75%로 동결했습니다. 연내 다섯 번째 동결이었습니다. 그런데 투표는 9대 3이었습니다. 클리블랜드·미니애폴리스·댈러스 연은 총재가 25bp 인상을 주장하며 반대표를 던졌습니다. 2016년 이후 단일 회의에서 같은 방향의 반대표가 세 장 나온 것은 처음이었습니다.\n\n월가는 이를 '매파적 동결'이라 규정했습니다. 연준 의장 케빈 워시는 금리 유예가 정책 과정의 시작이지 종점이 아니라고 못박았습니다. 인플레이션 목표…",
+      "source": "Ohmynews.com",
+      "url": "https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0003255369",
+      "publishedAt": "2026-07-30T07:07:32Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "미 연준의 금리 동결 결정"
+    },
+    {
+      "id": "475cf5a4035a56ad",
+      "title": "창신메모리 급등, AI 산업을 바라보는 상반된 시선",
+      "summary": "7월 30일 새벽 미 연준은 금리를 3.50~3.75%로 동결했습니다. 연내 다섯 번째 동결이었습니다. 그런데 투표는 9대 3이었습니다. 클리블랜드·미니애폴리스·댈러스 연은 총재가 25bp 인상을 주장하며 반대표를 던졌습니다. 2016년 이후 단일 회의에서 같은 방향의 반대표가 세 장 나온 것은 처음이었습니다.\n\n월가는 이를 '매파적 동결'이라 규정했습니다. 연준 의장 케빈 워시는 금리 유예가 정책 과정의 시작이지 종점이 아니라고 못박았습니다. 인플레이션 목표…",
+      "source": "Ohmynews.com",
+      "url": "https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0003255369",
+      "publishedAt": "2026-07-30T07:07:32Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "1d350a953a2ec4fc",
+      "title": "Treasury sell-off continues after divided Fed holds interest rates steady",
+      "summary": "U.S. Treasury yields continued their upward climb on Thursday as investors weighed the Federal Reserve's decision to hold interest rates steady and sought insight on future monetary policy decisions.\nAt 3:20 a.m. ET, the 30-year Treasury bond had risen more t…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/3ac6247fbc34c1f3",
+      "publishedAt": "2026-07-30T07:04:30Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD"
+      ],
+      "confidence": 0.9,
+      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
+    },
+    {
+      "id": "1d350a953a2ec4fc",
+      "title": "Treasury sell-off continues after divided Fed holds interest rates steady",
+      "summary": "U.S. Treasury yields continued their upward climb on Thursday as investors weighed the Federal Reserve's decision to hold interest rates steady and sought insight on future monetary policy decisions.\nAt 3:20 a.m. ET, the 30-year Treasury bond had risen more t…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/3ac6247fbc34c1f3",
+      "publishedAt": "2026-07-30T07:04:30Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "ef2fe1cfd123b3f6",
+      "title": "FTSE 100 to fall from record high after Fed holds interest rates and Iran attacks; Rolls-Royce expects higher profits – business live",
+      "summary": "Live, rolling coverage of business, economics and financial markets as global stock markets drop after US central bank keeps interest rates steady\nGood morning, and welcome to our live coverage of business, economics and financial markets.\nLondon’s FTSE 100 i…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/931b6f7796fdfc23",
+      "publishedAt": "2026-07-30T07:04:20Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD",
+        "GBP/USD"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 중앙은행의 금리 유지로 글로벌 주식시장이 하락"
+    },
+    {
+      "id": "ef2fe1cfd123b3f6",
+      "title": "FTSE 100 to fall from record high after Fed holds interest rates and Iran attacks; Rolls-Royce expects higher profits – business live",
+      "summary": "Live, rolling coverage of business, economics and financial markets as global stock markets drop after US central bank keeps interest rates steady\nGood morning, and welcome to our live coverage of business, economics and financial markets.\nLondon’s FTSE 100 i…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/931b6f7796fdfc23",
+      "publishedAt": "2026-07-30T07:04:20Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "a8ff18d1baaca02e",
+      "title": "Bitcoin, ether whipsaw wipes out $280 million even as prices remain flat over 24 hours",
+      "summary": "Price volatility around the Federal Reserve's rate decision cleared positions for roughly 90,000 traders, with unusually equal losses for bulls and bears.",
+      "source": "CoinDesk",
+      "url": "https://www.coindesk.com/markets/2026/07/30/bitcoin-ether-whipsaw-wipes-out-usd280-million-even-as-prices-remain-flat-over-24-hours",
+      "publishedAt": "2026-07-30T06:59:10Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "0c3e01db2af0f5c6",
+      "title": "Fed chooses not to change rates",
+      "summary": "WASHINGTON -- The Federal Reserve left its key interest rate unchanged Wednesday, although three officials dissented in favor of higher rates as the central bank wrestles with how to deal with persistently high inflation.",
+      "source": "Arkansas Online",
+      "url": "https://www.arkansasonline.com/news/2026/jul/30/fed-chooses-not-to-change-rates/",
+      "publishedAt": "2026-07-30T06:56:50Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD"
+      ],
+      "confidence": 0.9,
+      "reason": "미 연준이 금리 인상을 하지 않기로 결정"
+    },
+    {
+      "id": "0c3e01db2af0f5c6",
+      "title": "Fed chooses not to change rates",
+      "summary": "WASHINGTON -- The Federal Reserve left its key interest rate unchanged Wednesday, although three officials dissented in favor of higher rates as the central bank wrestles with how to deal with persistently high inflation.",
+      "source": "Arkansas Online",
+      "url": "https://www.arkansasonline.com/news/2026/jul/30/fed-chooses-not-to-change-rates/",
+      "publishedAt": "2026-07-30T06:56:50Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD"
+      ],
+      "confidence": 0.9,
+      "reason": "미 연준이 금리 인상을 하지 않기로 결정"
+    },
+    {
+      "id": "e7fadde5af583621",
+      "title": "Treasury sell-off continues after divided Fed holds interest rates steady",
+      "summary": "U.S. Treasury yields continued their upward climb on Thursday as investors weighed the Federal Reserve's decision to hold interest rates steady.",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/07/30/us-treasury-yields-divided-fed-interest-rates-hold-steady-.html",
+      "publishedAt": "2026-07-30T06:56:06Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
+    },
+    {
+      "id": "e7fadde5af583621",
+      "title": "Treasury sell-off continues after divided Fed holds interest rates steady",
+      "summary": "U.S. Treasury yields continued their upward climb on Thursday as investors weighed the Federal Reserve's decision to hold interest rates steady.",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/07/30/us-treasury-yields-divided-fed-interest-rates-hold-steady-.html",
+      "publishedAt": "2026-07-30T06:56:06Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "54d9d5be443506a4",
+      "title": "Gold tariff hike boosts grey market, hurts organised trade, says WGC",
+      "summary": "India's gold imports have increased through unofficial channels following a tariff hike.  This rise widens margins for grey market operators and impacts organized businesses.  Enforcement agencies seized nearly double the gold after the duty increase.  Net go…",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/gold-tariff-hike-boosts-grey-market-hurts-organised-trade-says-wgc/articleshow/132729473.cms",
+      "publishedAt": "2026-07-30T06:30:02Z",
+      "country": "인도",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.8,
+      "reason": "인도 금 수입 관세 인상으로 인한 비공식 수입 증가"
+    },
+    {
+      "id": "54d9d5be443506a4",
+      "title": "Gold tariff hike boosts grey market, hurts organised trade, says WGC",
+      "summary": "India's gold imports have increased through unofficial channels following a tariff hike.  This rise widens margins for grey market operators and impacts organized businesses.  Enforcement agencies seized nearly double the gold after the duty increase.  Net go…",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/gold-tariff-hike-boosts-grey-market-hurts-organised-trade-says-wgc/articleshow/132729473.cms",
+      "publishedAt": "2026-07-30T06:30:02Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "67f92082a80cc73f",
+      "title": "Nigeria’s export under threat over US 12.5% tariff, SEREC warns",
+      "summary": "The Sea Empowerment & Research Center, SEREC, has warned that the United States’ decision to impose a 12.5 per cent tariff on Nigerian exports could undermine the country’s non-oil export drive, weaken foreign exchange earnings and further expose the fragilit…",
+      "source": "Vanguard",
+      "url": "https://www.vanguardngr.com/2026/07/nigerias-export-under-threat-over-us-12-5-tariff-serec-warns/",
+      "publishedAt": "2026-07-30T06:09:52Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/NGN"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 나이지리아 수출품에 12.5% 관세를 부과"
+    },
+    {
+      "id": "67f92082a80cc73f",
+      "title": "Nigeria’s export under threat over US 12.5% tariff, SEREC warns",
+      "summary": "The Sea Empowerment & Research Center, SEREC, has warned that the United States’ decision to impose a 12.5 per cent tariff on Nigerian exports could undermine the country’s non-oil export drive, weaken foreign exchange earnings and further expose the fragilit…",
+      "source": "Vanguard",
+      "url": "https://www.vanguardngr.com/2026/07/nigerias-export-under-threat-over-us-12-5-tariff-serec-warns/",
+      "publishedAt": "2026-07-30T06:09:52Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "f8b2bd26664ec45a",
+      "title": "Taiwan delays car tax cuts over supply chain concerns",
+      "summary": "Taiwan will not move ahead for now with proposed passenger car tariff cuts, as the government weighs the risk of disrupting the domestic vehicle supply chain and related jobs. Finance Minister Chuang Tsui-yun said the policy cannot currently be implemented be…",
+      "source": "Digitimes",
+      "url": "https://www.digitimes.com/news/a20260730PD205/taiwan-supply-chain-government-vehicle-moea.html",
+      "publishedAt": "2026-07-30T04:05:40Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "f8b2bd26664ec45a",
+      "title": "Taiwan delays car tax cuts over supply chain concerns",
+      "summary": "Taiwan will not move ahead for now with proposed passenger car tariff cuts, as the government weighs the risk of disrupting the domestic vehicle supply chain and related jobs. Finance Minister Chuang Tsui-yun said the policy cannot currently be implemented be…",
+      "source": "Digitimes",
+      "url": "https://www.digitimes.com/news/a20260730PD205/taiwan-supply-chain-government-vehicle-moea.html",
+      "publishedAt": "2026-07-30T04:05:40Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "2fa8388f2518ddd6",
+      "title": "예상된 美 금리 동결에 비트코인 횡보세…6만 3000달러 선 유지",
+      "summary": "[지디넷코리아]미국 연방준비제도(연준)가 기준금리를 3.50~3.75%로 동결한 가운데 비트코인이 횡보세를 이어가고 있다.30일 코인마켓캡에 따르면 비트코인은 전일 대비 0.07% 오른 6만 3972달러에 거래되고 있다.비트코인은 연준의 기준금리 발표를 앞두고 0.41% 상승했으나 발표 이후에는 6만 3000달러 선에서 제한적인 등락을 거듭하는 모습이다.앞서 연준은 28~29일(현지시간) 열린 연방공개시장위원회(FOMC) 회의에서 기준금리 목표 범위를 3.50…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260730091956",
+      "publishedAt": "2026-07-30T00:57:58Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 연방준비제도(연준)가 기준금리를 동결"
+    },
+    {
+      "id": "2fa8388f2518ddd6",
+      "title": "예상된 美 금리 동결에 비트코인 횡보세…6만 3000달러 선 유지",
+      "summary": "[지디넷코리아]미국 연방준비제도(연준)가 기준금리를 3.50~3.75%로 동결한 가운데 비트코인이 횡보세를 이어가고 있다.30일 코인마켓캡에 따르면 비트코인은 전일 대비 0.07% 오른 6만 3972달러에 거래되고 있다.비트코인은 연준의 기준금리 발표를 앞두고 0.41% 상승했으나 발표 이후에는 6만 3000달러 선에서 제한적인 등락을 거듭하는 모습이다.앞서 연준은 28~29일(현지시간) 열린 연방공개시장위원회(FOMC) 회의에서 기준금리 목표 범위를 3.50…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260730091956",
+      "publishedAt": "2026-07-30T00:57:58Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "642f79db56faf39a",
+      "title": "미 금리 3.50∼3.75% 5연속 동결···FOMC서 “금리 인상” 의견도",
+      "summary": "케빈 워시 미국 연방준비제도(Fed) 의장이 29일(현지시간) 워싱턴에서 열린 기자회견에서 발언하고 있다. AP연합뉴스미국 중앙은행인 연방준비제도(Fed·연준)는 29일(현지시간) 기준금리를 3.50∼3.75%로 동결했다.연준은 이날 종료된 연방공개시장위원회(FOMC) 정례회의 후 기준금리를 이같이 유지하기로 결정했다고 밝혔다.기준금리 동결은 올···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607300736001",
+      "publishedAt": "2026-07-29T22:36:00Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국 연방준비제도(Fed) 기준금리 동결"
+    },
+    {
+      "id": "642f79db56faf39a",
+      "title": "미 금리 3.50∼3.75% 5연속 동결···FOMC서 “금리 인상” 의견도",
+      "summary": "케빈 워시 미국 연방준비제도(Fed) 의장이 29일(현지시간) 워싱턴에서 열린 기자회견에서 발언하고 있다. AP연합뉴스미국 중앙은행인 연방준비제도(Fed·연준)는 29일(현지시간) 기준금리를 3.50∼3.75%로 동결했다.연준은 이날 종료된 연방공개시장위원회(FOMC) 정례회의 후 기준금리를 이같이 유지하기로 결정했다고 밝혔다.기준금리 동결은 올···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607300736001",
+      "publishedAt": "2026-07-29T22:36:00Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "724ea6450d98691f",
+      "title": "워시 “완화된 인플레이션 목표 없어···오직 2% 목표만 존재”",
+      "summary": "29일(현지시간) 케빈 워시 미국 연방준비제도(Fed) 의장이 기자회견 중 발언하고 있다. AP연합뉴스케빈 워시 미국 연방준비제도(Fed·연준) 의장은 29일(현지시간) “완화된(soft) 인플레이션 목표는 없다”며 연준의 물가상승률 목표치 2%를 강조했다.워시 의장은 이날 연방공개시장위원회(FOMC) 후 연 기자회견에서 “일부 가계, 기업, 시장 전문가들···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607300727001",
+      "publishedAt": "2026-07-29T22:27:00Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 연방준비제도(Fed) 의장이 인플레이션 목표를 강조"
+    },
+    {
+      "id": "724ea6450d98691f",
+      "title": "워시 “완화된 인플레이션 목표 없어···오직 2% 목표만 존재”",
+      "summary": "29일(현지시간) 케빈 워시 미국 연방준비제도(Fed) 의장이 기자회견 중 발언하고 있다. AP연합뉴스케빈 워시 미국 연방준비제도(Fed·연준) 의장은 29일(현지시간) “완화된(soft) 인플레이션 목표는 없다”며 연준의 물가상승률 목표치 2%를 강조했다.워시 의장은 이날 연방공개시장위원회(FOMC) 후 연 기자회견에서 “일부 가계, 기업, 시장 전문가들···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607300727001",
+      "publishedAt": "2026-07-29T22:27:00Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "482b7d1bc6e76683",
+      "title": "[산업이(異)면]‘매출 80조’ 찍었는데…현대차·기아, ‘실속’은 얇아진다, 왜?",
+      "summary": "하이브리드 호조로 2분기 사상 최대 매출 찍었지만실제 손에 쥔 영업이익은 되려 감소상반기 미국에 낸 관세 부담만 3.3조원딜러 지원금 등 인센티브 증가로 수익성 비상지난달 2일 브라이언 켐프 미국 조지아주 주지사 부부가 탑승한 첫 번째 HMGMA 생산 기아 스포티지 하이브리드가 주차 로봇에 실려 무대에 등장하고 있다. 현대자동차 제공현대자동차와 기아가 올해···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607300600001",
+      "publishedAt": "2026-07-29T21:00:00Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "482b7d1bc6e76683",
+      "title": "[산업이(異)면]‘매출 80조’ 찍었는데…현대차·기아, ‘실속’은 얇아진다, 왜?",
+      "summary": "하이브리드 호조로 2분기 사상 최대 매출 찍었지만실제 손에 쥔 영업이익은 되려 감소상반기 미국에 낸 관세 부담만 3.3조원딜러 지원금 등 인센티브 증가로 수익성 비상지난달 2일 브라이언 켐프 미국 조지아주 주지사 부부가 탑승한 첫 번째 HMGMA 생산 기아 스포티지 하이브리드가 주차 로봇에 실려 무대에 등장하고 있다. 현대자동차 제공현대자동차와 기아가 올해···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607300600001",
+      "publishedAt": "2026-07-29T21:00:00Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "d142846bc15e5573",
+      "title": "미국 연준 5연속 금리 동결…10년 만에 FOMC위원 3명 소수 의견",
+      "summary": "[지디넷코리아]미국 연방준비제도(연준)이 금리를 5회 연속 동결했다. 28~29일(현지시간) 연준은 공개시장위원회(FOMC)를 열고 연방기금금리 범위를 3.50~3.75%로 유지한다고 밝혔다. 2025년 12월 FOMC서 금리를 한 차례 인하했던 연준은 1월부터 5회 연속 금리를 동결했다.연준은 물가상승률이 여전히 높은 수준이며 에너지 가격 상승 때문이라고 설명했다. 중동 분쟁으로 인한 불확실성에도 불구하고 미국 경제 활동은 견고한 속도로 확장 중이라고 부연했…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260730050821",
+      "publishedAt": "2026-07-29T20:53:20Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국 연방준비제도(연준)가 금리를 5회 연속 동결했다."
+    },
+    {
+      "id": "d142846bc15e5573",
+      "title": "미국 연준 5연속 금리 동결…10년 만에 FOMC위원 3명 소수 의견",
+      "summary": "[지디넷코리아]미국 연방준비제도(연준)이 금리를 5회 연속 동결했다. 28~29일(현지시간) 연준은 공개시장위원회(FOMC)를 열고 연방기금금리 범위를 3.50~3.75%로 유지한다고 밝혔다. 2025년 12월 FOMC서 금리를 한 차례 인하했던 연준은 1월부터 5회 연속 금리를 동결했다.연준은 물가상승률이 여전히 높은 수준이며 에너지 가격 상승 때문이라고 설명했다. 중동 분쟁으로 인한 불확실성에도 불구하고 미국 경제 활동은 견고한 속도로 확장 중이라고 부연했…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260730050821",
+      "publishedAt": "2026-07-29T20:53:20Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "732fb134a681dd4c",
+      "title": "한은 “반도체 호조가 주가 하방 압력 제한할 것”",
+      "summary": "금리 인상 기조 지속 의지…정부 부동산 대책에 리스크 완화 언급도한국은행이 29일 “반도체 기업의 대규모 영업이익 전망 등 양호한 펀더멘털(기초체력)은 국내 주가의 하방 압력을 제한할 수 있을 것으로 기대된다”고 밝혔다.한은은 이날 국회 재정경제기획위원회에 제출한 업무보고 자료에서 “최근 코스피는 인공지능(AI) 투자 둔화 우려와 대규모 외국인 순매도 등으···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607292214005",
+      "publishedAt": "2026-07-29T13:14:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한국은행이 금리 인상 기조를 지속할 의지를 밝혔다."
+    },
+    {
+      "id": "732fb134a681dd4c",
+      "title": "한은 “반도체 호조가 주가 하방 압력 제한할 것”",
+      "summary": "금리 인상 기조 지속 의지…정부 부동산 대책에 리스크 완화 언급도한국은행이 29일 “반도체 기업의 대규모 영업이익 전망 등 양호한 펀더멘털(기초체력)은 국내 주가의 하방 압력을 제한할 수 있을 것으로 기대된다”고 밝혔다.한은은 이날 국회 재정경제기획위원회에 제출한 업무보고 자료에서 “최근 코스피는 인공지능(AI) 투자 둔화 우려와 대규모 외국인 순매도 등으···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607292214005",
+      "publishedAt": "2026-07-29T13:14:00Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "8a508f0379af1e5c",
+      "title": "미 압박·중 추격에 마냥 못 웃는 K반도체…“초격차 유지를”",
+      "summary": "미, 무역 불균형 빌미로 가격·물량 통제 우려…관세 카드 꺼낼 수도중, CXMT 굴기 가속…전문가 “대체불가 수준 기술 개발이 관건”SK하이닉스가 또다시 사상 최고 실적을 기록하면서 한국 메모리 반도체의 초호황 국면이 이어지고 있다. 하지만 메모리 가격 폭등과 품귀현상이 계속되면 미국이 1980년대 미·일 반도체협정과 같은 압박을 가할 수도 있다는 우려까지···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607292127015",
+      "publishedAt": "2026-07-29T12:27:01Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "8a508f0379af1e5c",
+      "title": "미 압박·중 추격에 마냥 못 웃는 K반도체…“초격차 유지를”",
+      "summary": "미, 무역 불균형 빌미로 가격·물량 통제 우려…관세 카드 꺼낼 수도중, CXMT 굴기 가속…전문가 “대체불가 수준 기술 개발이 관건”SK하이닉스가 또다시 사상 최고 실적을 기록하면서 한국 메모리 반도체의 초호황 국면이 이어지고 있다. 하지만 메모리 가격 폭등과 품귀현상이 계속되면 미국이 1980년대 미·일 반도체협정과 같은 압박을 가할 수도 있다는 우려까지···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607292127015",
+      "publishedAt": "2026-07-29T12:27:01Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "230576531ab82c8a",
+      "title": "원·달러 환율, 5개월 만에 1450원 아래로···중동 전쟁 이후 최저",
+      "summary": "29일 오후 서울 중구 하나은행 딜링룸에 이날 환율 지수가 표시되고 있다. 연합뉴스원·달러 환율이 29일 미국·이란 전쟁 이후 5개월 만에 1450원 아래로 떨어졌다.이날 서울외환시장에서 원·달러 환율은 전 거래일보다 15.8원 내린 1446.70원으로 주간 거래(오후 3시30분 기준)를 마쳤다. 이는 주간 거래 종가 기준으로 중동 전쟁 발발 직전인 올해 ···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607291712001",
+      "publishedAt": "2026-07-29T08:12:00Z",
+      "country": "한국",
+      "category": "환율",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "원·달러 환율이 5개월 만에 1450원 아래로 떨어졌다."
+    },
+    {
+      "id": "230576531ab82c8a",
+      "title": "원·달러 환율, 5개월 만에 1450원 아래로···중동 전쟁 이후 최저",
+      "summary": "29일 오후 서울 중구 하나은행 딜링룸에 이날 환율 지수가 표시되고 있다. 연합뉴스원·달러 환율이 29일 미국·이란 전쟁 이후 5개월 만에 1450원 아래로 떨어졌다.이날 서울외환시장에서 원·달러 환율은 전 거래일보다 15.8원 내린 1446.70원으로 주간 거래(오후 3시30분 기준)를 마쳤다. 이는 주간 거래 종가 기준으로 중동 전쟁 발발 직전인 올해 ···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607291712001",
+      "publishedAt": "2026-07-29T08:12:00Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "9674ba95bcd55ab7",
+      "title": "넥센타이어, 유럽 첫 분기 매출 4000억원 돌파…2Q 매출 8913억원",
+      "summary": "[지디넷코리아]넥센타이어가 유럽 시장 판매 확대와 전기차 신차용(OE) 타이어 공급 증가에 힘입어 올해 2분기 두 자릿수 매출 성장을 기록했다. 유럽에서는 처음으로 분기 매출 4000억원을 넘어섰지만 원재료 가격 상승과 미국 반덤핑 관세 영향으로 수익성은 다소 제약을 받았다.넥센타이어는 올해 2분기 매출 8913억원, 영업이익 343억원을 기록했다고 29일 밝혔다. 매출은 전년 동기 대비 10.8% 증가했지만 영업이익은 원재료 가격 상승과 해상운임 인상, 미국…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260729163045",
+      "publishedAt": "2026-07-29T07:30:45Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "9674ba95bcd55ab7",
+      "title": "넥센타이어, 유럽 첫 분기 매출 4000억원 돌파…2Q 매출 8913억원",
+      "summary": "[지디넷코리아]넥센타이어가 유럽 시장 판매 확대와 전기차 신차용(OE) 타이어 공급 증가에 힘입어 올해 2분기 두 자릿수 매출 성장을 기록했다. 유럽에서는 처음으로 분기 매출 4000억원을 넘어섰지만 원재료 가격 상승과 미국 반덤핑 관세 영향으로 수익성은 다소 제약을 받았다.넥센타이어는 올해 2분기 매출 8913억원, 영업이익 343억원을 기록했다고 29일 밝혔다. 매출은 전년 동기 대비 10.8% 증가했지만 영업이익은 원재료 가격 상승과 해상운임 인상, 미국…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260729163045",
+      "publishedAt": "2026-07-29T07:30:45Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "bbed8041bf1a922a",
+      "title": "\"중동 전쟁·관세에도 간다\"…HD건설기계, 하반기 성장 자신감",
+      "summary": "[지디넷코리아]HD건설기계가 중동 지역 지정학적 리스크와 미국 관세 불확실성에도 하반기 성장세를 이어갈 것이라는 자신감을 내비쳤다. 글로벌 건설기계 시장이 예상보다 빠르게 회복되고 있고, 북미 데이터센터 투자와 신흥국 인프라 사업, 광산 개발 수요가 이어지고 있어서다.HD건설기계는 전쟁 장기화에 따른 물류와 공급망 리스크에 대응하는 동시에 신흥시장 공략과 차세대 신모델 확대를 통해 성장세를 이어간다는 전략이다.HD건설기계는 29일 올해 2분기 연결 기준 매출 …",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260729151053",
+      "publishedAt": "2026-07-29T06:55:06Z",
+      "country": "기타",
+      "category": "지정학",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "bbed8041bf1a922a",
+      "title": "\"중동 전쟁·관세에도 간다\"…HD건설기계, 하반기 성장 자신감",
+      "summary": "[지디넷코리아]HD건설기계가 중동 지역 지정학적 리스크와 미국 관세 불확실성에도 하반기 성장세를 이어갈 것이라는 자신감을 내비쳤다. 글로벌 건설기계 시장이 예상보다 빠르게 회복되고 있고, 북미 데이터센터 투자와 신흥국 인프라 사업, 광산 개발 수요가 이어지고 있어서다.HD건설기계는 전쟁 장기화에 따른 물류와 공급망 리스크에 대응하는 동시에 신흥시장 공략과 차세대 신모델 확대를 통해 성장세를 이어간다는 전략이다.HD건설기계는 29일 올해 2분기 연결 기준 매출 …",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260729151053",
+      "publishedAt": "2026-07-29T06:55:06Z",
+      "country": "기타",
+      "category": "지정학",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "3df53a80c42d60c3",
+      "title": "신현송 \"앞으로도 금리 인상 지속 필요\"",
+      "summary": "[지디넷코리아]신현송 한국은행 총재가 앞으로도 금리 인상 기조를 이어나갈 필요가 있다고 진단했다.29일 서울 여의도 국회에서 열린 재정경제기획위원회 업무보고에 참석한 신현송 한은 총재는 \"성장이 반도체 경기 호조 등으로 개선세가 강화되고 있는 가운데 물가상승률이 상당 기간 목표 수준을 상회할 것으로 전망되고, 금융 안정 측면 리스크도 지속되고 있다\"며 \"앞으로도 금리 인상 기조를 지속할 필요가 있다고 판단하고 있다\"고 말했다.이어 그는 \"추가 인상 시기와 속도…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260729105416",
+      "publishedAt": "2026-07-29T04:54:36Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행 총재가 앞으로도 금리 인상 기조를 이어나갈 필요가 있다고 진단"
+    },
+    {
+      "id": "3df53a80c42d60c3",
+      "title": "신현송 \"앞으로도 금리 인상 지속 필요\"",
+      "summary": "[지디넷코리아]신현송 한국은행 총재가 앞으로도 금리 인상 기조를 이어나갈 필요가 있다고 진단했다.29일 서울 여의도 국회에서 열린 재정경제기획위원회 업무보고에 참석한 신현송 한은 총재는 \"성장이 반도체 경기 호조 등으로 개선세가 강화되고 있는 가운데 물가상승률이 상당 기간 목표 수준을 상회할 것으로 전망되고, 금융 안정 측면 리스크도 지속되고 있다\"며 \"앞으로도 금리 인상 기조를 지속할 필요가 있다고 판단하고 있다\"고 말했다.이어 그는 \"추가 인상 시기와 속도…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260729105416",
+      "publishedAt": "2026-07-29T04:54:36Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "89e7076cf7e50f49",
+      "title": "금리 인상기인데…6월 주담대, 변동형 금리 비중 60% 넘어 12년 만에 최대치",
+      "summary": "고정형 상품보다 1%P 낮은 수준당장은 더 싼 이자 선택 심리 영향기준금리 추가 인상 땐 부담 가중지난달 신규 주택담보대출(주담대) 중 변동형 금리의 비중이 60%대로 12년여 만에 최고치를 기록했다. 최근 한국은행의 기준금리 인상 기조로 고정금리 이율이 높아지면서 일단 더 싼 이자를 부담하려는 수요가 높아진 것으로 풀이된다.한은이 28일 발표한 ‘6월 금···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607282051025",
+      "publishedAt": "2026-07-28T11:51:02Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한국은행의 기준금리 인상으로 주택담보대출에서 변동형 금리의 비중이 증가"
+    },
+    {
+      "id": "89e7076cf7e50f49",
+      "title": "금리 인상기인데…6월 주담대, 변동형 금리 비중 60% 넘어 12년 만에 최대치",
+      "summary": "고정형 상품보다 1%P 낮은 수준당장은 더 싼 이자 선택 심리 영향기준금리 추가 인상 땐 부담 가중지난달 신규 주택담보대출(주담대) 중 변동형 금리의 비중이 60%대로 12년여 만에 최고치를 기록했다. 최근 한국은행의 기준금리 인상 기조로 고정금리 이율이 높아지면서 일단 더 싼 이자를 부담하려는 수요가 높아진 것으로 풀이된다.한은이 28일 발표한 ‘6월 금···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607282051025",
+      "publishedAt": "2026-07-28T11:51:02Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "b6efb67a98b9c00a",
+      "title": "금리 인상기에 늘어나는 변동금리···변동형 주담대 비중 62.3%, 12년 4개월만 최고",
+      "summary": "지난달 서울 시내 한 은행에 주택담보대출 관련 현수막이 붙어있다. 연합뉴스지난달 신규 주택담보대출(주담대) 중 변동형 금리의 비중이 60%대로 12년여 만에 최고치를 기록했다. 최근 한국은행의 기준금리 인상 기조로 고정금리 이율이 높아지면서 일단 더 싼 이자를 부담하려는 수요가 높아진 것으로 풀이된다.한은이 28일 발표한 ‘6월 금융기관 가중평균금리’를 보···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607281741001",
+      "publishedAt": "2026-07-28T08:41:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한국은행의 기준금리 인상 기조로 변동형 주담대 비중이 12년여 만에 최고치를 기록"
+    },
+    {
+      "id": "b6efb67a98b9c00a",
+      "title": "금리 인상기에 늘어나는 변동금리···변동형 주담대 비중 62.3%, 12년 4개월만 최고",
+      "summary": "지난달 서울 시내 한 은행에 주택담보대출 관련 현수막이 붙어있다. 연합뉴스지난달 신규 주택담보대출(주담대) 중 변동형 금리의 비중이 60%대로 12년여 만에 최고치를 기록했다. 최근 한국은행의 기준금리 인상 기조로 고정금리 이율이 높아지면서 일단 더 싼 이자를 부담하려는 수요가 높아진 것으로 풀이된다.한은이 28일 발표한 ‘6월 금융기관 가중평균금리’를 보···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607281741001",
+      "publishedAt": "2026-07-28T08:41:00Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "df7bfbd43e310bdd",
+      "title": "미 세관, 베트남 중국계 공장 현장점검···중국 우회수출 단속 강화",
+      "summary": "도널드 트럼프 미국 대통령과 제이미슨 그리어 미국 무역대표부 대표. AFP연합뉴스미국 세관당국이 베트남에 있는 중국계 공장들을 직접 점검한 것으로 알려졌다. 중국산 제품의 우회수출 여부를 확인하기 위한 것으로, 미국의 대중 관세 단속이 중국 본토를 넘어 제3국 생산기지까지 확대되고 있다는 분석이 나온다. 미국이 추가 관세를 예고한 가운데 중국·베트남에 대한···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607281438001",
+      "publishedAt": "2026-07-28T05:38:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CNY",
+        "USD/VND"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 베트남에 있는 중국계 공장들을 점검하여 중국산 제품의 우회수출 여부를 확인"
+    },
+    {
+      "id": "df7bfbd43e310bdd",
+      "title": "미 세관, 베트남 중국계 공장 현장점검···중국 우회수출 단속 강화",
+      "summary": "도널드 트럼프 미국 대통령과 제이미슨 그리어 미국 무역대표부 대표. AFP연합뉴스미국 세관당국이 베트남에 있는 중국계 공장들을 직접 점검한 것으로 알려졌다. 중국산 제품의 우회수출 여부를 확인하기 위한 것으로, 미국의 대중 관세 단속이 중국 본토를 넘어 제3국 생산기지까지 확대되고 있다는 분석이 나온다. 미국이 추가 관세를 예고한 가운데 중국·베트남에 대한···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607281438001",
+      "publishedAt": "2026-07-28T05:38:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CNY",
+        "USD/VND"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 베트남에 있는 중국계 공장들을 점검하여 중국산 제품의 우회수출 여부를 확인"
+    },
+    {
+      "id": "9614ccf951e0947e",
+      "title": "미 무역대표 “60개국 추가관세, 미국 경제 영향 없어”···추가 관세 시사",
+      "summary": "제이미슨 그리어 미국 무역대표부(USTR) 대표가 지난 22일(현지시간) 워싱턴 D C 국회의사당에서 열린 상원 재정위원회 청문회에서 트럼프 행정부의 2026년 무역 정책 의제에 대해 발언하고 있다. AP연합뉴스제이미슨 그리어 미국 무역대표부(USTR) 대표가 최근 60개 교역상대국을 대상으로 부과한 추가 관세가 미국 경제에는 큰 영향을 미치지 않을 것이라···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607280946001",
+      "publishedAt": "2026-07-28T00:46:00Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "9614ccf951e0947e",
+      "title": "미 무역대표 “60개국 추가관세, 미국 경제 영향 없어”···추가 관세 시사",
+      "summary": "제이미슨 그리어 미국 무역대표부(USTR) 대표가 지난 22일(현지시간) 워싱턴 D C 국회의사당에서 열린 상원 재정위원회 청문회에서 트럼프 행정부의 2026년 무역 정책 의제에 대해 발언하고 있다. AP연합뉴스제이미슨 그리어 미국 무역대표부(USTR) 대표가 최근 60개 교역상대국을 대상으로 부과한 추가 관세가 미국 경제에는 큰 영향을 미치지 않을 것이라···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607280946001",
+      "publishedAt": "2026-07-28T00:46:00Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "ceea9766ac6077df",
+      "title": "PI첨단소재, 2분기 영업익 42% 상승",
+      "summary": "[지디넷코리아]PI첨단소재가 2분기 매출 775억원, 영업이익 230억원, 순이익 175억원을 기록했다고 28일 밝혔다.2분기 매출은 전년 동기보다 6.9%, 영업이익은 42.1%, 순이익은 49.2% 상승했다. 전 분기보다 매출은 21.0%, 영업이익은 63.6%, 순이익은 65.5% 올랐다. 실적 개선 배경에 대해 PI첨단소재는 \"평균판매가격 상승과 환율효과\"라고 설명했다.PI첨단소재 주력품은 폴리이미드(PI) 필름이다. 2분기 용도별 매출은 ▲연성회로기판…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260728090800",
+      "publishedAt": "2026-07-28T00:23:03Z",
+      "country": "기타",
+      "category": "환율",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "ceea9766ac6077df",
+      "title": "PI첨단소재, 2분기 영업익 42% 상승",
+      "summary": "[지디넷코리아]PI첨단소재가 2분기 매출 775억원, 영업이익 230억원, 순이익 175억원을 기록했다고 28일 밝혔다.2분기 매출은 전년 동기보다 6.9%, 영업이익은 42.1%, 순이익은 49.2% 상승했다. 전 분기보다 매출은 21.0%, 영업이익은 63.6%, 순이익은 65.5% 올랐다. 실적 개선 배경에 대해 PI첨단소재는 \"평균판매가격 상승과 환율효과\"라고 설명했다.PI첨단소재 주력품은 폴리이미드(PI) 필름이다. 2분기 용도별 매출은 ▲연성회로기판…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260728090800",
+      "publishedAt": "2026-07-28T00:23:03Z",
+      "country": "기타",
+      "category": "환율",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "f85cacdfbe408a4f",
+      "title": "트럼프, 미시간서 “관세가 일자리 지켰다”…중간선거 표심 공략",
+      "summary": "도널드 트럼프 미국 대통령이 27일(현지시간) 미시간주 밀퍼드에 있는 제너럴모터스 시험장에서 열린 행사에 참석하고 있다. AP연합뉴스도널드 트럼프 미국 대통령이 27일(현지시간) 미국 자동차 산업의 중심지인 미시간주를 찾아 관세 정책과 규제 완화 성과를 앞세우며 제조업 부흥을 강조했다. 오는 11월 중간선거를 앞두고 핵심 경합주인 미시간 유권자들에게 경제 ···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607280854001",
+      "publishedAt": "2026-07-27T23:54:00Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "f85cacdfbe408a4f",
+      "title": "트럼프, 미시간서 “관세가 일자리 지켰다”…중간선거 표심 공략",
+      "summary": "도널드 트럼프 미국 대통령이 27일(현지시간) 미시간주 밀퍼드에 있는 제너럴모터스 시험장에서 열린 행사에 참석하고 있다. AP연합뉴스도널드 트럼프 미국 대통령이 27일(현지시간) 미국 자동차 산업의 중심지인 미시간주를 찾아 관세 정책과 규제 완화 성과를 앞세우며 제조업 부흥을 강조했다. 오는 11월 중간선거를 앞두고 핵심 경합주인 미시간 유권자들에게 경제 ···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607280854001",
+      "publishedAt": "2026-07-27T23:54:00Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "7eb59dd2ac64010f",
+      "title": "쉬인, 홍콩 상장 앞두고 적자 전환",
+      "summary": "[지디넷코리아]쉬인이 홍콩 증시 상장을 앞두고 올해 1분기 적자를 기록했다. 미국의 소액 소포 관세 면제 폐지와 유럽연합(EU)의 규제 강화 등 대외 환경이 악화하면서 실적에 부담이 커졌다는 분석이다.27일(현지시간) 파이낸셜타임스(FT)에 따르면 쉬인은 홍콩증권거래소에 제출한 기업공개(IPO) 전 서류에서 올해 1분기 9900만 달러(약 1453억원)의 순손실을 기록했다고 밝혔다. 홍콩 상장을 추진한 이후 회사 실적이 공개된 것은 이번이 처음이다.쉬인은 순손…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260728085126",
+      "publishedAt": "2026-07-27T23:52:40Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "7eb59dd2ac64010f",
+      "title": "쉬인, 홍콩 상장 앞두고 적자 전환",
+      "summary": "[지디넷코리아]쉬인이 홍콩 증시 상장을 앞두고 올해 1분기 적자를 기록했다. 미국의 소액 소포 관세 면제 폐지와 유럽연합(EU)의 규제 강화 등 대외 환경이 악화하면서 실적에 부담이 커졌다는 분석이다.27일(현지시간) 파이낸셜타임스(FT)에 따르면 쉬인은 홍콩증권거래소에 제출한 기업공개(IPO) 전 서류에서 올해 1분기 9900만 달러(약 1453억원)의 순손실을 기록했다고 밝혔다. 홍콩 상장을 추진한 이후 회사 실적이 공개된 것은 이번이 처음이다.쉬인은 순손…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260728085126",
+      "publishedAt": "2026-07-27T23:52:40Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "eea727e1139c863c",
+      "title": "중국, 미 AI 제재·강제노동 관세에 “전형적 일방주의···필요한 조치 취할 것”",
+      "summary": "도널드 트럼프 미국 대통령과 시진핑 중국 국가주석이 지난 5월 14일 베이징 인민대회당에서 정상회담에 앞서 악수하고 있다. 로이터연합뉴스중국 정부가 미국의 ‘강제노동’ 추가 관세 부과와 인공지능(AI) 기업에 대한 지식재산권(IP) 침해 조사 방침에 대해 “필요한 모든 조치를 취해 정당하고 합법적인 권익을 단호히 수호할 것”이라고 반발했다.중국 상무부는 2···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607272057001",
+      "publishedAt": "2026-07-27T11:57:00Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "eea727e1139c863c",
+      "title": "중국, 미 AI 제재·강제노동 관세에 “전형적 일방주의···필요한 조치 취할 것”",
+      "summary": "도널드 트럼프 미국 대통령과 시진핑 중국 국가주석이 지난 5월 14일 베이징 인민대회당에서 정상회담에 앞서 악수하고 있다. 로이터연합뉴스중국 정부가 미국의 ‘강제노동’ 추가 관세 부과와 인공지능(AI) 기업에 대한 지식재산권(IP) 침해 조사 방침에 대해 “필요한 모든 조치를 취해 정당하고 합법적인 권익을 단호히 수호할 것”이라고 반발했다.중국 상무부는 2···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607272057001",
+      "publishedAt": "2026-07-27T11:57:00Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "8459d8968620c45d",
+      "title": "강제노동 관세, 도덕의 탈을 쓴 트럼프식 제국주의",
+      "summary": "미국 도널드 트럼프 행정부의 관세전쟁이 도덕성의 외피를 쓰는 모양새로 전개되고 있다. 미국 시각 23일, 강제노동으로 생산된 제품에 대한 수입금지 조치를 제대로 하지 않은 한국을 포함한 60개 경제권(EU·홍콩 등 포함)에 10~12.5% 추가 관세를 부과한다는 발표가 있었다.\n\n강제노동이 청산돼야 할 악습인 것은 분명하고 이로 인해 가격경쟁력의 차이가 부당하게 발생하는 등의 문제점도 있기 때문에 이에 대해 제약을 가하는 것은 옳은 일이다. 그런데 미국은 60…",
+      "source": "Ohmynews.com",
+      "url": "https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0003254482",
+      "publishedAt": "2026-07-27T04:28:15Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "8459d8968620c45d",
+      "title": "강제노동 관세, 도덕의 탈을 쓴 트럼프식 제국주의",
+      "summary": "미국 도널드 트럼프 행정부의 관세전쟁이 도덕성의 외피를 쓰는 모양새로 전개되고 있다. 미국 시각 23일, 강제노동으로 생산된 제품에 대한 수입금지 조치를 제대로 하지 않은 한국을 포함한 60개 경제권(EU·홍콩 등 포함)에 10~12.5% 추가 관세를 부과한다는 발표가 있었다.\n\n강제노동이 청산돼야 할 악습인 것은 분명하고 이로 인해 가격경쟁력의 차이가 부당하게 발생하는 등의 문제점도 있기 때문에 이에 대해 제약을 가하는 것은 옳은 일이다. 그런데 미국은 60…",
+      "source": "Ohmynews.com",
+      "url": "https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0003254482",
+      "publishedAt": "2026-07-27T04:28:15Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "228b4bb0d3753e94",
+      "title": "[크립토하나] 비트코인 반등, 이번주 美 금리결정에 달려",
+      "summary": "[지디넷코리아]매주 월요일 오전, 이번 주 디지털자산 시장을 미리 읽어드립니다. 국내외 주요 거시경제 일정을 하나씩 짚고, 각 이벤트가 투자심리와 디지털자산 시장에 미칠 영향을 분석합니다. [편집자주]이번주 연방준비제도(연준)가 연방공개시장위원회(FOMC)를 열고 기준금리를 결정합니다. 비트코인이 약 두 달 간의 횡보세를 끝내고 반등할 수 있을지 중요한 분수령이 될 것으로 보입니다.연준은 28일(현지시간)~29일 FOMC 회의에서 기준금리 결정을 한 뒤 29일…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260727102905",
+      "publishedAt": "2026-07-27T01:42:10Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 연방준비제도(연준)가 기준금리 결정을 할 예정"
+    },
+    {
+      "id": "228b4bb0d3753e94",
+      "title": "[크립토하나] 비트코인 반등, 이번주 美 금리결정에 달려",
+      "summary": "[지디넷코리아]매주 월요일 오전, 이번 주 디지털자산 시장을 미리 읽어드립니다. 국내외 주요 거시경제 일정을 하나씩 짚고, 각 이벤트가 투자심리와 디지털자산 시장에 미칠 영향을 분석합니다. [편집자주]이번주 연방준비제도(연준)가 연방공개시장위원회(FOMC)를 열고 기준금리를 결정합니다. 비트코인이 약 두 달 간의 횡보세를 끝내고 반등할 수 있을지 중요한 분수령이 될 것으로 보입니다.연준은 28일(현지시간)~29일 FOMC 회의에서 기준금리 결정을 한 뒤 29일…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260727102905",
+      "publishedAt": "2026-07-27T01:42:10Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "0d871f2b2b7aa1c9",
+      "title": "\"전쟁은 안 된다\" 뉴욕 타임스스퀘어·서울 청계광장에 평화 메시지",
+      "summary": "미주한인평화재단(Korean American Peace Fund, KAPF)과 한반도평화행동(Korea Peace Action, KPA)이 뉴욕 타임스스퀘어와 서울 청계광장에 평화 캠페인을 25일부터 시작했다.\n\n올해 캠페인은 \"어디에도 전쟁은 안 된다(No War Everywhere)\"는 슬로건 아래, 한반도를 넘어 전 세계적인 평화 정착을 촉구하는 포괄적 메시지를 전면에 내세웠다.\n\n미주한인평화재단 문유성 대표는 21일 온라인 기자회견을 열고 제3회 뉴욕 …",
+      "source": "Ohmynews.com",
+      "url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003254382",
+      "publishedAt": "2026-07-27T00:14:12Z",
+      "country": "기타",
+      "category": "지정학",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "0d871f2b2b7aa1c9",
+      "title": "\"전쟁은 안 된다\" 뉴욕 타임스스퀘어·서울 청계광장에 평화 메시지",
+      "summary": "미주한인평화재단(Korean American Peace Fund, KAPF)과 한반도평화행동(Korea Peace Action, KPA)이 뉴욕 타임스스퀘어와 서울 청계광장에 평화 캠페인을 25일부터 시작했다.\n\n올해 캠페인은 \"어디에도 전쟁은 안 된다(No War Everywhere)\"는 슬로건 아래, 한반도를 넘어 전 세계적인 평화 정착을 촉구하는 포괄적 메시지를 전면에 내세웠다.\n\n미주한인평화재단 문유성 대표는 21일 온라인 기자회견을 열고 제3회 뉴욕 …",
+      "source": "Ohmynews.com",
+      "url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003254382",
+      "publishedAt": "2026-07-27T00:14:12Z",
+      "country": "기타",
+      "category": "지정학",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "9c3c8e24d3e502bb",
+      "title": "12.5% 관세 말고 “또 남았다”···줄줄이 기다리는 ‘트럼프식 관세법’에 한국 경기 ‘캄캄’",
+      "summary": "이재명 대통령이 지난 6월16일(현지시간) 프랑스 에비앙레뱅 주요 7개국(G7) 정상회의 행사장에서 열린 초청국 환영행사에서 기념촬영 후 도널드 트럼프 미국 대통령과 대화하고 있다. 연합뉴스미국이 지난 24일(현지시간) 무역법 301조에 근거한 추가 관세를 발효하면서 한국에 12.5%의 관세율을 적용했다. 이는 기존보다 2.5%포인트 높은 수준이다. 지난해···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607270600151",
+      "publishedAt": "2026-07-26T21:00:15Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "9c3c8e24d3e502bb",
+      "title": "12.5% 관세 말고 “또 남았다”···줄줄이 기다리는 ‘트럼프식 관세법’에 한국 경기 ‘캄캄’",
+      "summary": "이재명 대통령이 지난 6월16일(현지시간) 프랑스 에비앙레뱅 주요 7개국(G7) 정상회의 행사장에서 열린 초청국 환영행사에서 기념촬영 후 도널드 트럼프 미국 대통령과 대화하고 있다. 연합뉴스미국이 지난 24일(현지시간) 무역법 301조에 근거한 추가 관세를 발효하면서 한국에 12.5%의 관세율을 적용했다. 이는 기존보다 2.5%포인트 높은 수준이다. 지난해···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607270600151",
+      "publishedAt": "2026-07-26T21:00:15Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "3e573875082e0b3b",
+      "title": "[사설]사우디 농축 허용·관세 부과, 신경 거슬리게 하는 미국",
+      "summary": "도널드 트럼프 미국 대통령이 지난 24일(현지시간) 워싱턴의 한 호텔에서 열린 백악관출입기자협회(WHCA) 만찬에서 연설하고 있다. 워싱턴|AFP연합뉴스도널드 트럼프 미국 행정부가 지난 24일(현지시간) 한국에 ‘강제노동 관세’ 12.5%를 부과했다. 미국은 이와 별도로 ‘과잉생산 관세’ 부과를 예고한 상태다. 한·미는 지난해 11월 관세율을 25%에서 1···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607261908001",
+      "publishedAt": "2026-07-26T10:08:00Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "3e573875082e0b3b",
+      "title": "[사설]사우디 농축 허용·관세 부과, 신경 거슬리게 하는 미국",
+      "summary": "도널드 트럼프 미국 대통령이 지난 24일(현지시간) 워싱턴의 한 호텔에서 열린 백악관출입기자협회(WHCA) 만찬에서 연설하고 있다. 워싱턴|AFP연합뉴스도널드 트럼프 미국 행정부가 지난 24일(현지시간) 한국에 ‘강제노동 관세’ 12.5%를 부과했다. 미국은 이와 별도로 ‘과잉생산 관세’ 부과를 예고한 상태다. 한·미는 지난해 11월 관세율을 25%에서 1···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607261908001",
+      "publishedAt": "2026-07-26T10:08:00Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "e70189419b32d043",
+      "title": "코스피 7000선 회복할까? 다음주 빅테크·삼전닉스 실적에 쏠린 눈",
+      "summary": "코스피와 코스닥이 모두 급락한 지난 24일 서울 하나은행 본점에서 직원들이 증시와 환율을 모니터하고 있다. 연합뉴스지난주 6600선까지 내려앉은 코스피 지수가 7000선을 다시 회복할 수 있을 지 관심이 쏠린다. 다음주 증시는 미국 빅테크들의 2분기 실적 발표와 국내 반도체 대장주들의 성적표가 분수령이 될 전망이다.26일 한국거래소에 따르면 지난 24일 코···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607261532001",
+      "publishedAt": "2026-07-26T06:32:00Z",
+      "country": "기타",
+      "category": "환율",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "19446175a5351811",
+      "title": "중국이 AI 패권을 위해 사 모으는 것은?",
+      "summary": "2026년 7월, 글로벌 금융시장에서 금값이 1월 사상 최고치에서 약 27% 하락해 온스당 4100달러 안팎에서 등락을 거듭하고 있습니다. 그런데 주목할 점은 이러한 하락에도 불구하고 중국 인민은행이 20개월 연속 금을 사들이며 6월 말 기준 약 2346톤을 보유하게 되었다는 사실입니다. 미국의 금리 정책이 금값을 눌러 내리고 중국은 그 틈을 타 매입을 가속하는 자본시장의 구조적 조정이 작동하고 있는 것입니다.\n\n### 미국 금리 인상 기대가 금값을 눌러 내리…",
+      "source": "Ohmynews.com",
+      "url": "https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0003254173",
+      "publishedAt": "2026-07-25T06:47:31Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/CNY"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 금리 인상 기대가 금값을 눌러 내림"
+    },
+    {
+      "id": "19446175a5351811",
+      "title": "중국이 AI 패권을 위해 사 모으는 것은?",
+      "summary": "2026년 7월, 글로벌 금융시장에서 금값이 1월 사상 최고치에서 약 27% 하락해 온스당 4100달러 안팎에서 등락을 거듭하고 있습니다. 그런데 주목할 점은 이러한 하락에도 불구하고 중국 인민은행이 20개월 연속 금을 사들이며 6월 말 기준 약 2346톤을 보유하게 되었다는 사실입니다. 미국의 금리 정책이 금값을 눌러 내리고 중국은 그 틈을 타 매입을 가속하는 자본시장의 구조적 조정이 작동하고 있는 것입니다.\n\n### 미국 금리 인상 기대가 금값을 눌러 내리…",
+      "source": "Ohmynews.com",
+      "url": "https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0003254173",
+      "publishedAt": "2026-07-25T06:47:31Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [],
+      "confidence": 0.0,
+      "reason": "Groq 호출 실패 — 1차 필터 결과로 대체"
+    },
+    {
+      "id": "4bb69de82da5780f",
+      "title": "CNBC Daily Open: Generic problems, AI valuations and earnings on tap",
+      "summary": "Hello, this is Leonie Kidd coming to you from London.\nA busy day for investors with a fresh tariff threat from the White House, more moving and shaking in the AI space, tension in Iran and another massive set of earnings on Wall Street.\nRead on!\nPresident Don…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/92637bee6df05896",
+      "publishedAt": "2026-07-22T06:35:21Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/EUR"
+      ],
+      "confidence": 0.8,
+      "reason": "백악관의 새로운 관세 위협"
+    },
+    {
+      "id": "20802fb79d9ee30f",
+      "title": "Yen Falls To 40-Year Low, Trump Imposes Pharma Tariffs | The Asia Trade 7/22/2026",
+      "summary": "\"Bloomberg: The Asia Trade\" brings you everything you need to know to get ahead as the trading day begins in Asia. Bloomberg ...",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/fa19a23c96ea9098",
+      "publishedAt": "2026-07-22T06:33:13Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/JPY"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프가 제약품 관세를 부과"
+    },
+    {
+      "id": "d65dd62f8529e786",
+      "title": "U.S.-Iran Conflict Threatens Long-Term Energy Shock Across Asia",
+      "summary": "The impact of the war between the United States and Iran on oil-importing nations in Asia could last years or even decades because of these countries’ heavy dependence on those imports, energy analyst Vandana Hari of Vanda Insight has warned. “There is a grow…",
+      "source": "OilPrice.com",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/US-Iran-Conflict-Threatens-Long-Term-Energy-Shock-Across-Asia.html",
+      "publishedAt": "2026-07-22T06:30:00Z",
+      "country": "기타",
+      "category": "지정학",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/CNY"
+      ],
+      "confidence": 0.8,
+      "reason": "미국-이란 간의 전쟁이 아시아의 에너지 수입에 장기적인 충격을 줄 수 있어 환율에 악영향을 줄 수 있다."
+    },
+    {
+      "id": "8d50e2dfbca467f0",
+      "title": "Pharma stocks decline; Aurobindo Pharma down over 4%",
+      "summary": "Pharma stocks declined after US President Donald Trump announced steep tariffs on imported generic medicines from August 2028,",
+      "source": "BusinessLine",
+      "url": "https://www.thehindubusinessline.com/markets/pharma-stocks-decline-aurobindo-pharma-down-over-4/article71252323.ece",
+      "publishedAt": "2026-07-22T06:23:40Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 제네릭 의약품에 대한 관세를 부과"
+    },
+    {
+      "id": "6d7e72853f5321ab",
+      "title": "Anxiety as Australia issues new travel advice for Middle East countries",
+      "summary": "As conflict between the United States and Iran escalates once again, the Department of Foreign Affairs and Trade has issued a warning to \"reconsider\" travel to several more countries in the region.",
+      "source": "ABC News (AU)",
+      "url": "https://www.abc.net.au/news/2026-07-22/australians-travel-advice-middle-east-conflict-us-iran/106944564",
+      "publishedAt": "2026-07-22T06:23:16Z",
+      "country": "기타",
+      "category": "지정학",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/AUD",
+        "EUR/USD"
+      ],
+      "confidence": 0.7,
+      "reason": "미국과 이란의 갈등이 중동 여행에 영향을 줄 수 있어"
+    },
+    {
+      "id": "8d80539bdd4f411f",
+      "title": "CNBC Daily Open: Generic problems, AI valuations and earnings on tap",
+      "summary": "President Trump takes fresh aim at the pharmaceutical sector, with a plan to levy 100% tariffs on generic drugs as he targets key areas ahead of the midterms.",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/07/22/cnbc-daily-open-generic-problems-ai-valuations-and-earnings-on-tap.html",
+      "publishedAt": "2026-07-22T06:22:07Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프 대통령이 제네릭 의약품에 100% 관세를 부과할 계획"
+    },
+    {
+      "id": "00fa027e74ba7ea9",
+      "title": "Why the EU faces a Russian oil vs LNG sanctions stand-off",
+      "summary": "Also in this newsletter: more US-EU trade deal jitters",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/dfe01d068ec05e08",
+      "publishedAt": "2026-07-22T06:20:09Z",
+      "country": "유럽",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [
+        "EUR/USD"
+      ],
+      "confidence": 0.8,
+      "reason": "EU와 미국 간의 무역 협상 불안정"
+    },
+    {
+      "id": "ed2d94d781e0a5f8",
+      "title": "Tariffs on Brazil take effect as US readies fresh flurry",
+      "summary": "A new U.S. tariff targeting Brazil took effect on July 22, while Washington’s other trading partners brace for a fresh volley of duties as President Donald Trump’s temporary global levies expire this week.",
+      "source": "Hurriyet Daily News",
+      "url": "https://www.hurriyetdailynews.com/tariffs-on-brazil-take-effect-as-us-readies-fresh-flurry-224642",
+      "publishedAt": "2026-07-22T06:19:28Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/BRL",
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 브라질에 대한 새로운 관세를 시행"
+    },
+    {
+      "id": "242274cd0e49cf30",
+      "title": "Pharma Stocks Slide Up To 3% After Trump Announces 100% Tariff Plan On Generic Drugs",
+      "summary": "Indian pharmaceutical stocks declined sharply after US President Donald Trump announced a phased tariff plan on imported generic medicines. The Nifty Pharma index fell over 1.5%, with Sun Pharma, Cipla and Dr Reddy’s among the major losers. Investors worry th…",
+      "source": "Free Press Journal",
+      "url": "https://www.freepressjournal.in/business/pharma-stocks-slide-up-to-3-after-trump-announces-100-tariff-plan-on-generic-drugs",
+      "publishedAt": "2026-07-22T05:55:25Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.9,
+      "reason": "트럼프의 제네릭 의약품 관세 계획 발표"
+    },
+    {
+      "id": "e0f1ec84c3ec5dbb",
+      "title": "Trump Plans 100% Tariff on Generic Drugs From 2028",
+      "summary": "President Donald Trump said generic drug manufacturers will have two years to move production to the US or face a 100% import ...",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/0826beb27c90a14f",
+      "publishedAt": "2026-07-22T05:55:02Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/EUR"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프 대통령이 제네릭 의약품에 100% 관세를 부과할 계획"
+    },
+    {
+      "id": "7afa6af0e1742e15",
+      "title": "Trump announces 50% tariff on range of Canadian goods over auto, alcohol disputes - The Globe and Mail",
+      "summary": "White House estimates the new levies would affect about 5 per cent of exports to the U.S., with no exemptions for USMCA-compliant goods",
+      "source": "The Globe And Mail",
+      "url": "https://www.theglobeandmail.com/world/us-politics/article-trump-tariffs-canada-us-executive-order-section-338/",
+      "publishedAt": "2026-07-22T05:47:01Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다에 대한 관세를 50%로 인상"
+    },
+    {
+      "id": "13aa40c44c91362b",
+      "title": "Trump's Generic Drug Tariffs Explained: What it means for Indian pharma before the 200% storm",
+      "summary": "Trump's generic drug tariffs plan provides Indian drugmakers a two-year duty-free window.  This allows companies time to reassess manufacturing and supply chain strategies.  After this period, tariffs will escalate significantly, impacting export economics.  …",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/industry/healthcare/biotech/pharmaceuticals/why-trumps-generic-drug-tariffs-could-change-indian-pharma-us-medicine-exports-explained-aurobindo-pharma-dr-reddy-laboratories-lupin-cipla-zydus/articleshow/132551082.cms",
+      "publishedAt": "2026-07-22T05:46:20Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 인도 제네릭 의약품에 관세를 부과할 계획"
+    },
+    {
+      "id": "f8ec3f8b8b30e1b7",
+      "title": "Trump's Generic Drug Tariffs Explained: What it means for Indian pharma before the 200% storm",
+      "summary": "Trump's generic drug tariffs plan provides Indian drugmakers a two-year duty-free window.  This allows companies time to reassess manufacturing and supply chain strategies.  After this period, tariffs will escalate significantly, impacting export economics.  …",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/industry/healthcare/biotech/pharmaceuticals/why-trumps-generic-drug-tariffs-could-change-indian-pharma-us-medicine-exports-explained-aurobindo-pharma-dr-reddy-laboratories-lupin-cipla-zydus/articleshow/132551863.cms",
+      "publishedAt": "2026-07-22T05:46:20Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 인도 제네릭 의약품에 관세를 부과할 계획"
+    },
+    {
+      "id": "981c7b96000a0a3b",
+      "title": "$17.4 billion flows into FCNR(B) deposits: Which bank offers the best 3-year FCNR(B) FD rate—SBI, PNB, HDFC Bank, ICICI Bank or Canara Bank?",
+      "summary": "Foreign currency deposits have seen significant inflows after a new RBI scheme.  Canara Bank offers the highest 3-year FCNR(B) USD fixed deposit rate.  HDFC Bank, Axis Bank, and ICICI Bank offer a 6% interest rate.  These deposits are available in various for…",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/wealth/invest/sbi-hdfc-pnb-icici-canara-axis-bank-fcnrb-3-year-fd-interest-rate-up-to-6-5-check-rbi-deposit-data-and-key-details/articleshow/132551098.cms",
+      "publishedAt": "2026-07-22T05:09:02Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.8,
+      "reason": "인도 중앙은행의 외화 예금 관련 정책"
+    },
+    {
+      "id": "6a84363e3d3bee87",
+      "title": "India steps up energy shift as costs and tariff pressures mount — oil blending push sparks backlash",
+      "summary": "The world's third-largest crude consumer, India, is testing alternative fuels such as ethanol from corn and biogas from animal waste, as rising global oil prices and potential curbs on Russian supplies threaten the country's energy security.\nThe South Asian c…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/6c05f7b8ac755f57",
+      "publishedAt": "2026-07-22T05:04:36Z",
+      "country": "인도",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.7,
+      "reason": "인도에서 대체 연료 개발로 에너지 수입의존도 감소"
+    },
+    {
+      "id": "58b1d9e89754a9d2",
+      "title": "India steps up energy shift as costs and tariff pressures mount — oil blending push sparks backlash",
+      "summary": "India is banking on alternative fuels as it prioritizes energy security amid high oil prices and supply constraints.",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/07/22/india-oil-prices-tariff-ethanol-backlash-iran-war-russia-.html",
+      "publishedAt": "2026-07-22T04:56:39Z",
+      "country": "인도",
+      "category": "무역",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.7,
+      "reason": "인도는 고유가와 공급 제한으로 인해 대체 연료 개발을 추진하고 있어 무역에 영향을 줄 수 있다."
+    },
+    {
+      "id": "88def9caf8ae120d",
+      "title": "Trump announces 50% tariffs on Canada. What it means for consumers - USA Today",
+      "summary": "Trump announces 50% tariffs on Canada. What it means for consumersUSA Today Trump’s Canada tariff leaves Maine Republicans scrambling for distancePolitico Trump imposes 50% tariffs on Canadian goodsNPR Trump Escalates Canada Tariffs as Mark Carney Holds FirmT…",
+      "source": "Slashdot.org",
+      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=184575272",
+      "publishedAt": "2026-07-22T04:52:43Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "트럼프가 캐나다에 50% 관세를 부과"
+    },
+    {
+      "id": "5b48ba93942cea33",
+      "title": "US President Trump outlines tariff timeline for generic drugs shipped into the US",
+      "summary": "In a social media post, Tump said generic drugs would attract zero tariffs for a year, followed by a 100% tariff next year and 200% after that, with the aim to get companies to set up manufacturing facilities in the US",
+      "source": "BusinessLine",
+      "url": "https://www.thehindubusinessline.com/news/us-president-trump-outlines-tariff-timeline-for-generic-drugs-shipped-into-the-us/article71252086.ece",
+      "publishedAt": "2026-07-22T04:51:38Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/EUR"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 제네릭 의약품에 관세를 부과할 계획"
+    },
+    {
+      "id": "2a506f7565ae8ad6",
+      "title": "Sri Lanka Holds Rates as US-Iran War Clouds Economic Outlook",
+      "summary": "Sri Lanka’s central bank kept its benchmark interest rate unchanged, balancing the need to bring inflation back to target while supporting economic growth as renewed conflict between the US and Iran clouds the global outlook.",
+      "source": "Financial Post",
+      "url": "https://financialpost.com/pmn/business-pmn/sri-lanka-holds-rates-as-us-iran-war-clouds-economic-outlook",
+      "publishedAt": "2026-07-22T04:21:53Z",
+      "country": "기타",
+      "category": "지정학",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/LKR"
+      ],
+      "confidence": 0.8,
+      "reason": "미국-이란 충돌로 글로벌 경제 전망이 불확실해지자 스리랑카가 금리 유지"
+    },
+    {
+      "id": "1fe25c6850b403d4",
+      "title": "The Central Bank of Sri Lanka decides to keep the overnight policy interest rate unchanged",
+      "summary": "At the meeting held yesterday by the Monetary Policy Board of the Central Bank of Sri Lanka, steps have been taken to maintain the current policy interest rate at 8.75 percent without change. The Central Bank arrived at this decision after extensively analyzi…",
+      "source": "Gossiplankanews.com",
+      "url": "https://english.gossiplankanews.com/2026/07/the-central-bank-of-sri-lanka-decides.html",
+      "publishedAt": "2026-07-22T04:05:23Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/LKR"
+      ],
+      "confidence": 0.8,
+      "reason": "스리랑카 중앙은행이 금리 유지 결정"
+    },
+    {
+      "id": "577af81c085aeb8f",
+      "title": "관세 장벽까지 뛰어넘는 중국 자동차…해외 기지 다변화로 위협",
+      "summary": "수출 급증에 통상 규제 강화되자현지 공장 인수·투자 거점 구축전기차 기술, 휴머노이드 로봇과 70% 공유한국자동차연구원 “국내 산업 전략 수립 시급”BYD의 신차 씨라이언 6 DMi 차량이 지난달 열린 2026 부산모빌리티쇼에 전시돼 있다. 박홍두 기자중국 완성차 및 부품 기업들이 자국의 내수 시장 둔화와 글로벌 통상 규제 강화에 대응해 해외 생산거점 구축···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607221019001",
+      "publishedAt": "2026-07-22T01:19:00Z",
+      "country": "중국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CNY",
+        "CNY/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "중국 자동차 기업의 해외 기지 다변화로 한국 자동차 산업에 대한 경쟁이 증가할 수 있어"
+    },
+    {
+      "id": "31c7bd98e643b9af",
+      "title": "“AI 공산주의”, 중국산 오픈 웨이트 모델이 판을 흔들고 있다: 슬로우레터 7월22일.",
+      "summary": " ‘팟캐스트’로 슬로우레터 듣기. (17분) 슬로우레터를 읽어드립니다. 생성형 인공지능 구글 노트북LM을 이용해서 제작했습니다. “전당대회에 신천지가 개입하고 있다.” 필리버스터 강제 종료, 특검 연장 통과. 투표용지 사태, 특검으로 간다. 쟁점과 현안. “영업이익 배분 노동쟁의 대상 아니다.” 다시 시작한 관세 전쟁, 캐나다에 50% 때렸다. “AI 공산주의다.” 중국 AI에 돈이 몰리고 있다. 돈은 여전히 미국 AI가 번다. 마이클 버리의...\nTh…",
+      "source": "Slownews.kr",
+      "url": "https://slownews.kr/163556",
+      "publishedAt": "2026-07-21T22:57:18Z",
+      "country": "캐나다",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.8,
+      "reason": "캐나다에 대한 관세 전쟁"
+    },
+    {
+      "id": "760f8c9d466177f7",
+      "title": "트럼프, 대공황 시대의 관세법 338조 첫 발동…캐나다산 최대 50% ‘관세 폭탄’",
+      "summary": "미국에 차별적 무역행위 한 국가에 부과…1930년 제정 ‘사문화 조항’전례 없는 조치에 법적 분쟁 가능성도…캐나다 총리 “미와 논의할 것”도널드 트럼프 미국 대통령이 1930년 제정된 관세법 338조를 근거로 캐나다산 일부 제품에 50% 관세를 부과하겠다고 밝혔다. 미국이 거의 사문화된 한 세기 전 법률 조항을 발동한 것은 이번이 처음이다. 캐나다뿐 아니라···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607212052005",
+      "publishedAt": "2026-07-21T11:52:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다산 제품에 50% 관세를 부과"
+    },
+    {
+      "id": "ee35b458a4fd9aca",
+      "title": "FT “트럼프, 이번주 최대 60개국에 새 관세 예고”···한국도 포함 가능성",
+      "summary": "도널드 트럼프 미국 대통령. AFP연합뉴스도널드 트럼프 미국 대통령이 캐나다산 제품에 최대 50% 관세 부과 방침을 발표한 데 이어, 이르면 이번 주 최대 60개국을 대상으로 새로운 관세를 부과할 것이라는 전망이 나온다. 한국도 조사 대상에 포함돼 있어 관세 부과 대상이 될 가능성이 제기된다.21일(현지시간) 영국 파이낸셜타임스(FT)에 따르면 미국 정부는···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607212049001",
+      "publishedAt": "2026-07-21T11:49:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프 대통령이 최대 60개국에 새 관세를 부과할 계획"
+    },
+    {
+      "id": "e9c1b64f3a82d000",
+      "title": "시중은행 정기예금, 3주 새 14조 급증",
+      "summary": "한은 기준금리 인상에 발맞춰우리·신한, 예·적금 금리 올려시중은행 4%대 상품 등장 전망우리은행에 이어 신한은행도 기준금리 인상에 발맞춰 예·적금 상품 금리를 올렸다. 본격적인 금리 상승기로 접어들면서 은행권에서도 연 4%대 정기예금이 등장할 것이란 전망이 나온다.신한은행은 21일 만기 1년의 ‘쏠편한 정기예금’ 금리를 연 2.9%에서 3.2%로 0.3%포···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607212034025",
+      "publishedAt": "2026-07-21T11:34:02Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한은 기준금리 인상에 따라 시중은행 예금 금리 상승"
+    },
+    {
+      "id": "e518461445881dd7",
+      "title": "우리 이어 신한은행도 예금금리 올려···이달에만 주요 은행 정기예금 잔액 14조↑",
+      "summary": "서울 시내에 설치된 시중은행 현금지급기. 연합뉴스우리은행에 이어 신한은행도 기준금리 인상에 발맞춰 예·적금 상품의 금리를 올렸다. 본격적인 금리 상승기로 접어들면서 은행권에서도 연 4%대 정기예금이 등장할 것이란 전망이 나온다. 증시 변동성이 커지면서 증시에서 은행으로 자금이 돌아오며 이달 주요 시중은행 정기예금 잔액이 14조원 넘게 증가했다.신한은행은 2···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607211615001",
+      "publishedAt": "2026-07-21T07:15:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한국의 주요 은행이 기준금리 인상에 따라 예금금리를 올림"
+    },
+    {
+      "id": "cc44563f402a10d9",
+      "title": "트럼프, 우방국 캐나다에도 50% '관세 폭탄' 터뜨렸다",
+      "summary": "도널드 트럼프 미국 대통령이 전통적인 우방국인 캐나다에도 관세율 50%의 '관세 폭탄'을 투하했다.\n\n20일(현지시간) 트럼프 대통령은 캐나다가 주요 산업에서 차별적 대우를 하고 있다며 광범위한 캐나다산 제품에 50%의 고율 관세를 부과하는 행정명령에 서명했다.\n\n백악관은 이번 조치에 대해 \"캐나다는 미국산 자동차에 불공정한 관세 제도를 도입했다. 그 결과, 캐나다의 미국산 자동차 수입이 약 22% 감소했으며, 이는 미국 산업에 수십억 달러의 막대한 손실을 초…",
+      "source": "Ohmynews.com",
+      "url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003253029",
+      "publishedAt": "2026-07-21T05:54:58Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다에 50% 관세를 부과"
+    },
+    {
+      "id": "2966d88c383fa6e7",
+      "title": "Trump imposes 50% US tariffs on some Canadian goods, citing discrimination - Al Jazeera",
+      "summary": "Trump imposes 50% US tariffs on some Canadian goods, citing discriminationAl Jazeera Trump to Impose 50% Tariff on Many Canadian GoodsThe New York Times Trump’s new 50% tariffs on Canada risk igniting a fresh trade warCNN Trump says Canada ‘poisoned’ US air w…",
+      "source": "Slashdot.org",
+      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=184539678",
+      "publishedAt": "2026-07-21T03:52:46Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다에 대한 50% 관세를 부과"
+    },
+    {
+      "id": "b6ec2565fac329fa",
+      "title": "Canada issues air quality warnings over US wildfire smoke after Trump tariff threat - The Guardian",
+      "summary": "Canada issues air quality warnings over US wildfire smoke after Trump tariff threatThe Guardian Trump to Impose 50% Tariff on Many Canadian GoodsThe New York Times Opinion: New U.S. tariffs hit a Canada tied in knots with contradictory trade policiesThe Globe…",
+      "source": "Slashdot.org",
+      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=184538032",
+      "publishedAt": "2026-07-21T02:12:17Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프의 캐나다에 대한 관세威脅"
+    },
+    {
+      "id": "762a141ef1cb3a36",
+      "title": "U.S. to slap 50% tariffs on Canadian goods",
+      "summary": "The Trump administration said Monday that it will impose an additional 50% tariff on certain Canadian goods — including hockey sticks, wine and cement — accusing Canada of discriminating against U.S. exports.\nWhy it matters: The move ratchets up tensions in a…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/f8fbaf329699c531",
+      "publishedAt": "2026-07-21T02:09:44Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다에 대한 50% 관세 부과"
+    },
+    {
+      "id": "2ff22c4dad81d492",
+      "title": "Trump imposes 50% tariffs on Canadian goods, citing disputes over autos, alcohol and cheese",
+      "summary": "The move could unleash a new wave of economic chaos, with risks of higher inflation and further fraying of relations between two nations that had been closely woven together before Trump's return to the White House.",
+      "source": "BusinessLine",
+      "url": "https://www.thehindubusinessline.com/news/world/trump-imposes-50-tariffs-on-canadian-goods-citing-disputes-over-autos-alcohol-and-cheese/article71247845.ece",
+      "publishedAt": "2026-07-21T02:07:51Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다에 대한 50% 관세를 부과"
+    },
+    {
+      "id": "42f1ec62557d291e",
+      "title": "금리 다시 오르자 상업용 부동산 ‘옥석 가리기’… 오피스·물류 대출금리 70bp 벌어졌다",
+      "summary": "알스퀘어는 한국은행 기준금리 인상으로 상업용 부동산 시장이 다시 대출금리 상승 국면에 진입했다고 분석했다. 오피스와 물류센터 간 대출금리 격차는 70bp까지 확대됐으며, 캡레이트와 대출금리 차이도 32bp로 좁혀져 우량 자산 중심의 투자 전략이 더욱 중요해질 것으로 전...\nThe post 금리 다시 오르자 상업용 부동산 ‘옥석 가리기’… 오피스·물류 대출금리 70bp 벌어졌다 appeared first on 벤처스퀘어.",
+      "source": "Venturesquare.net",
+      "url": "https://www.venturesquare.net/1099939/",
+      "publishedAt": "2026-07-21T02:06:14Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행 기준금리 인상으로 대출금리 상승"
+    },
+    {
+      "id": "42f1ec62557d291e",
+      "title": "금리 다시 오르자 상업용 부동산 ‘옥석 가리기’… 오피스·물류 대출금리 70bp 벌어졌다",
+      "summary": "알스퀘어는 한국은행 기준금리 인상으로 상업용 부동산 시장이 다시 대출금리 상승 국면에 진입했다고 분석했다. 오피스와 물류센터 간 대출금리 격차는 70bp까지 확대됐으며, 캡레이트와 대출금리 차이도 32bp로 좁혀져 우량 자산 중심의 투자 전략이 더욱 중요해질 것으로 전...\nThe post 금리 다시 오르자 상업용 부동산 ‘옥석 가리기’… 오피스·물류 대출금리 70bp 벌어졌다 appeared first on 벤처스퀘어.",
+      "source": "Venturesquare.net",
+      "url": "https://www.venturesquare.net/1099939/",
+      "publishedAt": "2026-07-21T02:06:14Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행 기준금리 인상으로 상업용 부동산 대출금리 상승"
+    },
+    {
+      "id": "d133c4bca63dea72",
+      "title": "Trump administration plans durable tariffs to replace temporary ones, targeting 60 economies over forced labor",
+      "summary": "The Trump administration plans permanent Section 301 tariffs on 60 economies over forced labor, replacing temporary measures after a Supreme\nThe post Trump administration plans durable tariffs to replace temporary ones, targeting 60 economies over forced labo…",
+      "source": "Crypto Briefing",
+      "url": "https://cryptobriefing.com/trump-durable-tariffs-replace-temporary-forced-labor/",
+      "publishedAt": "2026-07-21T01:45:28Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/EUR"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프 행정부의 영구적인 관세 계획"
+    },
+    {
+      "id": "7d9a3e48710a1b10",
+      "title": "CNBC Daily Open: Trump revives his tariff playbook with Canada",
+      "summary": "Hello, this is Hui Jie writing to you from Singapore. Welcome to another edition of CNBC's Daily Open.\nU.S. President Donald Trump's administration has been busy. Canada is being subjected to new tariffs, while military strikes continue for Iran.\nIn tech, Nvi…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/36a8a380eacecb80",
+      "publishedAt": "2026-07-21T01:24:02Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다에 새로운 관세를 부과"
+    },
+    {
+      "id": "d7f0335213960e75",
+      "title": "트럼프, 사상 첫 관세법 338조 발동···캐나다 일부 제품 50% 관세 폭탄",
+      "summary": "도널드 트럼프 미국 대통령(오른쪽)과 마크 카니 캐나다 총리가 19일(현지 시간) 미국 뉴저지에서 열린 월드컵 결승전에서 만나 악수하고 있다. AFP연합뉴스도널드 트럼프 미국 대통령이 1930년에 제정된 관세법 338조를 근거로 캐나다산 일부 제품에 50%의 관세를 부과하겠다고 밝혔다. 미국이 거의 사문화된 한 세기 전 법률 조항인 338조를 발동한 것은···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607211020001",
+      "publishedAt": "2026-07-21T01:20:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다산 일부 제품에 50%의 관세를 부과"
+    },
+    {
+      "id": "d7f0335213960e75",
+      "title": "트럼프, 사상 첫 관세법 338조 발동···캐나다 일부 제품 50% 관세 폭탄",
+      "summary": "도널드 트럼프 미국 대통령(오른쪽)과 마크 카니 캐나다 총리가 19일(현지 시간) 미국 뉴저지에서 열린 월드컵 결승전에서 만나 악수하고 있다. AFP연합뉴스도널드 트럼프 미국 대통령이 1930년에 제정된 관세법 338조를 근거로 캐나다산 일부 제품에 50%의 관세를 부과하겠다고 밝혔다. 미국이 거의 사문화된 한 세기 전 법률 조항인 338조를 발동한 것은···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607211020001",
+      "publishedAt": "2026-07-21T01:20:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다산 일부 제품에 50%의 관세를 부과"
+    },
+    {
+      "id": "396c2a981691281b",
+      "title": "CNBC Daily Open: Trump revives his tariff playbook with Canada",
+      "summary": "U.S. President Donald Trump has revived his signature solution to many of his perceived problems: tariffs.",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/07/21/cnbc-daily-open-trump-revives-his-tariff-playbook-with-canada.html",
+      "publishedAt": "2026-07-21T01:15:38Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프 대통령이 캐나다에 대한 관세 부과를 재개했다는 뉴스"
+    },
+    {
+      "id": "0eb44b747e1f9ba3",
+      "title": "[Ilya Somin] Trump Plans to Impose New Illegal Tariffs on Canada",
+      "summary": "The 50% tariffs on many Canadian imports are based on the long-defunct Section 338 of the notorious Smoot-Hawley tariff act.",
+      "source": "Reason",
+      "url": "https://reason.com/volokh/2026/07/20/trump-imposes-new-illegal-tariffs-on-canada/",
+      "publishedAt": "2026-07-21T01:03:08Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다에 대한 50% 관세를 부과할 계획"
+    },
+    {
+      "id": "e7c4ef997e29195d",
+      "title": "Trump orders new 50% tariff on many Canadian goods",
+      "summary": "US President Donald Trump has signed orders to impose new 50% tariffs on many Canadian goods.",
+      "source": "RTE",
+      "url": "https://www.rte.ie/news/world/2026/0721/1584317-us-canada-tariffs/",
+      "publishedAt": "2026-07-21T01:01:03Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다에 대한 50% 관세를 부과"
+    },
+    {
+      "id": "9a99a95a0e6cac95",
+      "title": "Trump orders new 50% tariff on many Canadian goods",
+      "summary": "US President Donald Trump signed orders to impose new 50% tariffs on many Canadian goods, claiming \"discriminatory treatment\" by Canada against American alcohol, automobile and dairy products.",
+      "source": "RTE",
+      "url": "https://www.rte.ie/news/world/2026/0721/1584317-trump-orders-new-50-tariff-on-many-canadian-goods/",
+      "publishedAt": "2026-07-21T01:01:03Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다에 대한 50% 관세를 부과"
+    },
+    {
+      "id": "04037673a3f756c9",
+      "title": "Trump orders new 50% tariff on many Canadian goods",
+      "summary": "US President Donald Trump signed orders Monday to impose new 50-percent tariffs on many Canadian goods, claiming \"discriminatory treatment\" by Ottawa against American alcohol, automobile and dairy products.\nThe tariffs take effect in 30 days and cover various…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/15b724db739dec50",
+      "publishedAt": "2026-07-21T00:54:41Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 캐나다에 대한 50% 관세를 부과"
+    },
+    {
+      "id": "5d3c6d3310a1a3fe",
+      "title": "오락가락 미국으로부터 실익 챙긴 이란··제재 완화 틈타 최대 9조원 원유 수출",
+      "summary": "한 시민이 19일(현지시간) 이란 수도 테헤란에 있는 아야톨라 알리 하메네이 전 이란 최고지도자의 모습이 그려진 벽화 앞을 지나고 있다. EPA연합뉴스지난 6월 미국과 이란의 종전 협상으로 대이란 제재가 일시 완화되는 사이 이란이 최대 9조원의 원유 수출 수익을 거둔 것으로 나타났다. 미국과의 전쟁으로 악화한 경제난을 일부 해소하는 동시에 향후 전쟁 수행에···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607210600121",
+      "publishedAt": "2026-07-20T21:00:12Z",
+      "country": "이란",
+      "category": "지정학",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/IRR",
+        "EUR/IRR"
+      ],
+      "confidence": 0.8,
+      "reason": "이란의 제재 완화로 인한 원유 수출 증가"
+    },
+    {
+      "id": "5d3c6d3310a1a3fe",
+      "title": "오락가락 미국으로부터 실익 챙긴 이란··제재 완화 틈타 최대 9조원 원유 수출",
+      "summary": "한 시민이 19일(현지시간) 이란 수도 테헤란에 있는 아야톨라 알리 하메네이 전 이란 최고지도자의 모습이 그려진 벽화 앞을 지나고 있다. EPA연합뉴스지난 6월 미국과 이란의 종전 협상으로 대이란 제재가 일시 완화되는 사이 이란이 최대 9조원의 원유 수출 수익을 거둔 것으로 나타났다. 미국과의 전쟁으로 악화한 경제난을 일부 해소하는 동시에 향후 전쟁 수행에···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607210600121",
+      "publishedAt": "2026-07-20T21:00:12Z",
+      "country": "이란",
+      "category": "지정학",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/IRR",
+        "EUR/IRR"
+      ],
+      "confidence": 0.8,
+      "reason": "이란의 미국과의 종전 협상으로 대이란 제재가 일시 완화되어 최대 9조원의 원유 수출 수익을 거둠"
+    },
+    {
+      "id": "f96727238522e2cd",
+      "title": "[크립토하나] FOMC 앞둔 한 주…비트코인, 경제지표·중동 리스크 '예의주시'",
+      "summary": "[지디넷코리아]매주 월요일 오전, 이번 주 디지털자산 시장을 미리 읽어드립니다. 국내외 주요 거시경제 일정을 하나씩 짚고, 각 이벤트가 투자심리와 디지털자산 시장에 미칠 영향을 분석합니다. [편집자주]이번주는 미국 연방준비제도(연준)의 연방공개시장위원회(FOMC) 정례회의(28~29일·현지시간)를 앞둔 만큼 디지털자산 시장의 긴장감이 높아질 전망입니다.케빈 워시 연준 의장이 최근 의회 증언과 공개 발언에서 통화정책 방향에 대한 구체적인 발언을 자제하며 “데이터…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260720103521",
+      "publishedAt": "2026-07-20T01:42:18Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 연방준비제도(FOMC) 정례회의가 예정되어 있어 금리 정책에 대한 기대가 높아짐"
+    },
+    {
+      "id": "f96727238522e2cd",
+      "title": "[크립토하나] FOMC 앞둔 한 주…비트코인, 경제지표·중동 리스크 '예의주시'",
+      "summary": "[지디넷코리아]매주 월요일 오전, 이번 주 디지털자산 시장을 미리 읽어드립니다. 국내외 주요 거시경제 일정을 하나씩 짚고, 각 이벤트가 투자심리와 디지털자산 시장에 미칠 영향을 분석합니다. [편집자주]이번주는 미국 연방준비제도(연준)의 연방공개시장위원회(FOMC) 정례회의(28~29일·현지시간)를 앞둔 만큼 디지털자산 시장의 긴장감이 높아질 전망입니다.케빈 워시 연준 의장이 최근 의회 증언과 공개 발언에서 통화정책 방향에 대한 구체적인 발언을 자제하며 “데이터…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260720103521",
+      "publishedAt": "2026-07-20T01:42:18Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 연방준비제도(FOMC) 정례회의가 예정되어 있어 금리 정책에 대한 기대가 높아짐"
+    },
+    {
+      "id": "2715d12c1329e7ee",
+      "title": "물가 둔화가 전쟁 리스크를 누르며 금값 하방을 지켰다",
+      "summary": "[지디넷코리아]7월 3주차 금시장은 한마디로 “전쟁 리스크와 물가 둔화가 충돌한 한 주”였다. 미국과 이란의 충돌은 심화됐고, 호르무즈 해협과 중동 에너지 공급망 불안은 유가를 끌어올렸다. 시장은 이를 다시 인플레이션 재상승과 연준의 금리 인상 가능성으로 해석했고, 금값은 한때 큰 폭으로 밀렸다.로이터는 중동 긴장 고조와 유가 상승, 미국 국채금리 상승이 금값을 2주 이상 저점으로 끌어내렸다고 보도했다. 현물 금은 7월 16일 온스당 3,984.64달러까지 하…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260720085424",
+      "publishedAt": "2026-07-19T23:59:04Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국과 이란의 충돌 및 물가 둔화로 인한 금리 인상 가능성"
+    },
+    {
+      "id": "2715d12c1329e7ee",
+      "title": "물가 둔화가 전쟁 리스크를 누르며 금값 하방을 지켰다",
+      "summary": "[지디넷코리아]7월 3주차 금시장은 한마디로 “전쟁 리스크와 물가 둔화가 충돌한 한 주”였다. 미국과 이란의 충돌은 심화됐고, 호르무즈 해협과 중동 에너지 공급망 불안은 유가를 끌어올렸다. 시장은 이를 다시 인플레이션 재상승과 연준의 금리 인상 가능성으로 해석했고, 금값은 한때 큰 폭으로 밀렸다.로이터는 중동 긴장 고조와 유가 상승, 미국 국채금리 상승이 금값을 2주 이상 저점으로 끌어내렸다고 보도했다. 현물 금은 7월 16일 온스당 3,984.64달러까지 하…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260720085424",
+      "publishedAt": "2026-07-19T23:59:04Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국과 이란의 충돌 및 물가 둔화로 인한 금리 인상 가능성"
+    },
+    {
+      "id": "4ea40162ea2a5e18",
+      "title": "“완전 패배수” “실패” 소리 나오는데···트럼프는 왜 중간선거 앞두고 전쟁을 재개했나",
+      "summary": "도널드 트럼프 미국 대통령. 로이터연합뉴스도널드 트럼프 미국 행정부의 국정 수행 중간 평가인 중간 선거를 100여일 앞두고 미국과 이란 간 무력 충돌이 격화하면서 트럼프 대통령의 의중에 관심이 쏠리고 있다. 전문가들은 트럼프 대통령의 전쟁 재개가 “완전한 패배수”라고 지적한다.“공화당의 중간 선거 성적에 도움이 되는 전쟁 시나리오는 사실상 존재하지 않는다.···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607200600091",
+      "publishedAt": "2026-07-19T21:00:09Z",
+      "country": "미국",
+      "category": "지정학",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD"
+      ],
+      "confidence": 0.8,
+      "reason": "미국과 이란 간 무력 충돌이 격화"
+    },
+    {
+      "id": "4ea40162ea2a5e18",
+      "title": "“완전 패배수” “실패” 소리 나오는데···트럼프는 왜 중간선거 앞두고 전쟁을 재개했나",
+      "summary": "도널드 트럼프 미국 대통령. 로이터연합뉴스도널드 트럼프 미국 행정부의 국정 수행 중간 평가인 중간 선거를 100여일 앞두고 미국과 이란 간 무력 충돌이 격화하면서 트럼프 대통령의 의중에 관심이 쏠리고 있다. 전문가들은 트럼프 대통령의 전쟁 재개가 “완전한 패배수”라고 지적한다.“공화당의 중간 선거 성적에 도움이 되는 전쟁 시나리오는 사실상 존재하지 않는다.···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607200600091",
+      "publishedAt": "2026-07-19T21:00:09Z",
+      "country": "미국",
+      "category": "지정학",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD"
+      ],
+      "confidence": 0.8,
+      "reason": "미국과 이란 간 무력 충돌이 격화"
+    },
+    {
+      "id": "208b0e946c4d44f8",
+      "title": "트럼프, 캐나다 산불 연기 미국 덮치자 ‘관세 부과’ 위협",
+      "summary": "전문가들 “기후변화 영향, 한 나라만의 책임 아니다”지난 9일(현지시간) 캐나다 브리티시컬럼비아주 보스턴바에서 산불이 확산하고 있다. AP연합뉴스캐나다에서 강력한 산불이 연일 이어지고 있다. 산불 연기가 미국으로 확산하자 도널드 트럼프 미국 대통령은 산불을 통제하지 못했다며 캐나다에 대한 관세를 인상하겠다고 경고했다. 최근 기후변화에 따라 산불이 더욱 잦아···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607191742001",
+      "publishedAt": "2026-07-19T08:42:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 대통령이 캐나다에 대한 관세 인상을 위협"
+    },
+    {
+      "id": "208b0e946c4d44f8",
+      "title": "트럼프, 캐나다 산불 연기 미국 덮치자 ‘관세 부과’ 위협",
+      "summary": "전문가들 “기후변화 영향, 한 나라만의 책임 아니다”지난 9일(현지시간) 캐나다 브리티시컬럼비아주 보스턴바에서 산불이 확산하고 있다. AP연합뉴스캐나다에서 강력한 산불이 연일 이어지고 있다. 산불 연기가 미국으로 확산하자 도널드 트럼프 미국 대통령은 산불을 통제하지 못했다며 캐나다에 대한 관세를 인상하겠다고 경고했다. 최근 기후변화에 따라 산불이 더욱 잦아···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607191742001",
+      "publishedAt": "2026-07-19T08:42:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 대통령이 캐나다에 대한 관세 인상을 위협"
+    },
+    {
+      "id": "326393c6b007256c",
+      "title": "한은, 금리 인상…‘긴축’ 선회",
+      "summary": "기준금리 ‘2.5 → 2.75%’“경기 반등 속 물가 불안 지속”8월 인상에도 “모든 가능성”미국과 금리차 ‘1%P’로 줄어여덟번 연속 ‘동결’ 끝낸 신현송 한국은행 금융통화위원회가 16일 기준금리를 연 2.50%에서 연 2.75%로 인상했다. 3년6개월 만의 긴축 전환이다. 신현송 한국은행 총재가 서울 중구 한국은행에서 통화정책 방향을 설명하고 있다. 문···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607162146005",
+      "publishedAt": "2026-07-16T12:46:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행이 기준금리를 인상하여 긴축 전환함"
+    },
+    {
+      "id": "326393c6b007256c",
+      "title": "한은, 금리 인상…‘긴축’ 선회",
+      "summary": "기준금리 ‘2.5 → 2.75%’“경기 반등 속 물가 불안 지속”8월 인상에도 “모든 가능성”미국과 금리차 ‘1%P’로 줄어여덟번 연속 ‘동결’ 끝낸 신현송 한국은행 금융통화위원회가 16일 기준금리를 연 2.50%에서 연 2.75%로 인상했다. 3년6개월 만의 긴축 전환이다. 신현송 한국은행 총재가 서울 중구 한국은행에서 통화정책 방향을 설명하고 있다. 문···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607162146005",
+      "publishedAt": "2026-07-16T12:46:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행이 기준금리를 인상하여 긴축 전환함"
+    },
+    {
+      "id": "774931477953133f",
+      "title": "‘2.75%’는 예상된 결과…‘언제 얼마나 더 금리 올릴까’ 시장 촉각",
+      "summary": "한은 “물가 상승률 목표는 2%” 기준금리 추가 인상 의지 확고 성장률 전망치도 인상에 영향 “내년까지 3.5%” “3%가 상방” 인상 폭 놓고는 전망 엇갈려 중동전쟁과 미·일 금리 ‘변수’신현송 한국은행 총재가 16일 기준금리 추가 인상 의지를 강하게 밝히면서 시장의 관심은 언제, 얼마나 더 올릴지로 쏠리고 있다. 연달아 다음달에 또 올리고, 물가···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607162137005",
+      "publishedAt": "2026-07-16T12:37:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행의 기준금리 추가 인상 의지"
+    },
+    {
+      "id": "774931477953133f",
+      "title": "‘2.75%’는 예상된 결과…‘언제 얼마나 더 금리 올릴까’ 시장 촉각",
+      "summary": "한은 “물가 상승률 목표는 2%” 기준금리 추가 인상 의지 확고 성장률 전망치도 인상에 영향 “내년까지 3.5%” “3%가 상방” 인상 폭 놓고는 전망 엇갈려 중동전쟁과 미·일 금리 ‘변수’신현송 한국은행 총재가 16일 기준금리 추가 인상 의지를 강하게 밝히면서 시장의 관심은 언제, 얼마나 더 올릴지로 쏠리고 있다. 연달아 다음달에 또 올리고, 물가···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607162137005",
+      "publishedAt": "2026-07-16T12:37:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행 총재가 기준금리 추가 인상 의지를 밝혔다."
+    },
+    {
+      "id": "f54e607a170a87d5",
+      "title": "코스피 6% 넘게 급락…이틀도 못 간 ‘7000선’",
+      "summary": "반도체 피크아웃 우려 커진 데다금리 인상 겹치며 매도 심리 자극원·달러 환율 1480원대 소폭 하락코스피 지수가 16일 6% 넘게 급락하며 하루 만에 다시 ‘7000선’을 내줬다. 반도체 업황을 둘러싼 우려가 국내 증시를 ‘롤러코스피’로 만드는 모양새다. 여기에 한국은행의 금리 인상까지 겹치며 투자심리가 위축된 것으로 풀이된다. 원·달러 환율은 소폭 하락했···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607162136005",
+      "publishedAt": "2026-07-16T12:36:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한국은행의 금리 인상이 코스피 급락과 관련"
+    },
+    {
+      "id": "f54e607a170a87d5",
+      "title": "코스피 6% 넘게 급락…이틀도 못 간 ‘7000선’",
+      "summary": "반도체 피크아웃 우려 커진 데다금리 인상 겹치며 매도 심리 자극원·달러 환율 1480원대 소폭 하락코스피 지수가 16일 6% 넘게 급락하며 하루 만에 다시 ‘7000선’을 내줬다. 반도체 업황을 둘러싼 우려가 국내 증시를 ‘롤러코스피’로 만드는 모양새다. 여기에 한국은행의 금리 인상까지 겹치며 투자심리가 위축된 것으로 풀이된다. 원·달러 환율은 소폭 하락했···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607162136005",
+      "publishedAt": "2026-07-16T12:36:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한국은행의 금리 인상이 코스피 급락에 영향을 줬다."
+    },
+    {
+      "id": "529383a001728854",
+      "title": "신현송 “물가 확신 들때까지 대응”···‘언제 얼마나 더 올릴까’ 시장 촉각",
+      "summary": "한은 “물가 상승률 목표는 2%”기준금리 추가인상 의지 확고 성장률 전망치 상향도 인상에 영향“내년까지 3.5%” vs. “3%가 상방”중동전쟁과 미·일 금리 ‘변수신현송 한국은행 총재가 16일 오전 서울 중구 한국은행에서 열린 금융통화위원회 본회의에 참석하고 있다. 문재원 기자신현송 한국은행 총재가 16일 기준금리 추가 인상 의지를 강하게 밝히면서 시장의···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607161924001",
+      "publishedAt": "2026-07-16T10:24:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행 총재가 기준금리 추가 인상 의지를 밝혔다."
+    },
+    {
+      "id": "529383a001728854",
+      "title": "신현송 “물가 확신 들때까지 대응”···‘언제 얼마나 더 올릴까’ 시장 촉각",
+      "summary": "한은 “물가 상승률 목표는 2%”기준금리 추가인상 의지 확고 성장률 전망치 상향도 인상에 영향“내년까지 3.5%” vs. “3%가 상방”중동전쟁과 미·일 금리 ‘변수신현송 한국은행 총재가 16일 오전 서울 중구 한국은행에서 열린 금융통화위원회 본회의에 참석하고 있다. 문재원 기자신현송 한국은행 총재가 16일 기준금리 추가 인상 의지를 강하게 밝히면서 시장의···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607161924001",
+      "publishedAt": "2026-07-16T10:24:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행 총재가 기준금리 추가 인상 의지를 밝혔다."
+    },
+    {
+      "id": "55f0234dea28c237",
+      "title": "한은 기준금리 인상···미국과의 금리차도 3년 반만에 1%p로 줄어",
+      "summary": "신현송 한국은행 총재가 16일 서울 중구 한국은행에서 열린 금융통화위원회 통화정책방향 기자간담회에서 발언하고 있다. 문재원 기자한국은행 금융통화위원회가 16일 기준금리를 연 2.5%에서 2.75%로 0.25%포인트 인상했다. 2023년 1월 이후 3년 6개월 만의 기준금리 인상이다. 금통위는 “기준금리 인상 기조를 이어간다”며 연내 추가 인상도 시사했다.금···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607161649001",
+      "publishedAt": "2026-07-16T07:49:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행 기준금리 인상으로 미·韓 금리차가 줄어들었다."
+    },
+    {
+      "id": "55f0234dea28c237",
+      "title": "한은 기준금리 인상···미국과의 금리차도 3년 반만에 1%p로 줄어",
+      "summary": "신현송 한국은행 총재가 16일 서울 중구 한국은행에서 열린 금융통화위원회 통화정책방향 기자간담회에서 발언하고 있다. 문재원 기자한국은행 금융통화위원회가 16일 기준금리를 연 2.5%에서 2.75%로 0.25%포인트 인상했다. 2023년 1월 이후 3년 6개월 만의 기준금리 인상이다. 금통위는 “기준금리 인상 기조를 이어간다”며 연내 추가 인상도 시사했다.금···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607161649001",
+      "publishedAt": "2026-07-16T07:49:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행 기준금리 인상으로 미·韓 금리차가 줄어들었다."
+    },
+    {
+      "id": "5246aef9fb9129b8",
+      "title": "‘엎친데 덮친 격’ 코스피 6% 급락…반도체 휘청이는데 금리인상까지",
+      "summary": "16일 서울 중구 하나은행 딜링룸 현황판에 코스피 등이 표시되고 있다. 연합뉴스코스피 지수가 16일 6% 넘게 급락하며 하루 만에 다시 ‘7000선’을 내줬다. 반도체 업황을 둘러싼 우려가 국내 증시를 ‘롤러코스피’로 만드는 모양새다. 여기에 한국은행의 금리 인상까지 겹치며 투자심리가 위축된 것으로 풀이된다. 원·달러 환율은 소폭 하락했다.코스피는 이날 전···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607161635011",
+      "publishedAt": "2026-07-16T07:35:01Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한국은행의 금리 인상 뉴스"
+    },
+    {
+      "id": "5246aef9fb9129b8",
+      "title": "‘엎친데 덮친 격’ 코스피 6% 급락…반도체 휘청이는데 금리인상까지",
+      "summary": "16일 서울 중구 하나은행 딜링룸 현황판에 코스피 등이 표시되고 있다. 연합뉴스코스피 지수가 16일 6% 넘게 급락하며 하루 만에 다시 ‘7000선’을 내줬다. 반도체 업황을 둘러싼 우려가 국내 증시를 ‘롤러코스피’로 만드는 모양새다. 여기에 한국은행의 금리 인상까지 겹치며 투자심리가 위축된 것으로 풀이된다. 원·달러 환율은 소폭 하락했다.코스피는 이날 전···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607161635011",
+      "publishedAt": "2026-07-16T07:35:01Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한국은행의 금리 인상 뉴스"
+    },
+    {
+      "id": "20390cc614110992",
+      "title": "신현송 한은 총재 \"수요 측 인플레 간과 안돼…2Q GDI·7월 물가, 인상 속도 변수\"",
+      "summary": "[지디넷코리아]한국은행이 3년 6개월 만에 기준금리를 인상하며 통화정책 '긴축'에 신호탄을 쐈다.16일 서울 중구 한은에서 열린 금융통화위원회(금통위)에서는 금통위원 전원 만장일치로 기준금리를 연 2.50%에서 0.25%p 인상한 연 2.75%로 결정했다. 금리 인상은 2023년 1월 연 3.25%에서 3.50%로 0.25%p 올린 이후 3년 6개월 만이다.완화적 통화정책 기조에서 긴축적 기조로의 전환은 이미 예고됐었다. 신현송 한은 총재는 취임 이후부터 물가…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260716121525",
+      "publishedAt": "2026-07-16T04:12:21Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행이 기준금리를 인상했다."
+    },
+    {
+      "id": "20390cc614110992",
+      "title": "신현송 한은 총재 \"수요 측 인플레 간과 안돼…2Q GDI·7월 물가, 인상 속도 변수\"",
+      "summary": "[지디넷코리아]한국은행이 3년 6개월 만에 기준금리를 인상하며 통화정책 '긴축'에 신호탄을 쐈다.16일 서울 중구 한은에서 열린 금융통화위원회(금통위)에서는 금통위원 전원 만장일치로 기준금리를 연 2.50%에서 0.25%p 인상한 연 2.75%로 결정했다. 금리 인상은 2023년 1월 연 3.25%에서 3.50%로 0.25%p 올린 이후 3년 6개월 만이다.완화적 통화정책 기조에서 긴축적 기조로의 전환은 이미 예고됐었다. 신현송 한은 총재는 취임 이후부터 물가…",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260716121525",
+      "publishedAt": "2026-07-16T04:12:21Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국은행 기준금리 인상"
+    }
+  ]
+}

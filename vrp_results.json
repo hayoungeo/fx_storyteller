@@ -1,0 +1,80 @@
+{
+  "method": {
+    "estimator": "linear regression with Newey-West HAC covariance",
+    "interpretation": "논문 GMM의 간소화 구현",
+    "requested_maxlags": 252,
+    "volatility_source": [
+      "sv_proxy_annualized_daily_sigma"
+    ],
+    "metric_name": "sv_volatility_gap_proxy",
+    "warning": "실제 옵션 내재변동성이 아닌 stochvol 추정치 기반 프록시"
+  },
+  "sample": {
+    "rows": 123,
+    "start": "2026-01-12",
+    "end": "2026-07-01"
+  },
+  "descriptive": [
+    {
+      "maturity": "1m",
+      "strike": "ATM",
+      "n": 123,
+      "mean_vrp": -0.004618515255056722,
+      "mean_lvrp": -0.02516629491044977,
+      "hac_std_error": 0.004770601138288987,
+      "hac_p_value": 0.3329843502865042
+    }
+  ],
+  "time_variability_rv_on_iv": [
+    {
+      "status": "ok",
+      "n": 123,
+      "maxlags": 122,
+      "r_squared": 0.0031611382426106616,
+      "coefficients": {
+        "constant": {
+          "estimate": 0.09785564263858196,
+          "std_error": 0.025410532674317945,
+          "z_stat": 3.850987458341762,
+          "p_value": 0.00011764252406044891
+        },
+        "iv": {
+          "estimate": 0.13341322913277678,
+          "std_error": 0.20535284228083714,
+          "z_stat": 0.6496780256409749,
+          "p_value": 0.5159002210097542
+        }
+      },
+      "maturity": "1m",
+      "strike": "ATM",
+      "beta_equals_one_test": {
+        "null_hypothesis": "iv coefficient = 1",
+        "z_stat": -4.219989172012986,
+        "p_value": 2.4431405268609907e-05,
+        "rejected_at_5pct": true
+      }
+    }
+  ],
+  "traditional_risk_lvrp": {
+    "status": "skipped",
+    "missing_columns": [
+      "rks",
+      "vks",
+      "d_cs"
+    ]
+  },
+  "jump_risk_10delta_lvrp": {
+    "status": "skipped",
+    "missing_columns": [
+      "rr_10",
+      "bf_10"
+    ]
+  },
+  "jump_risk_25delta_lvrp": {
+    "status": "skipped",
+    "missing_columns": [
+      "rr_25",
+      "bf_25"
+    ]
+  }
+}

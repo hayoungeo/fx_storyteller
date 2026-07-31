@@ -1,0 +1,120 @@
+{
+  "computed_at": "2026-08-01T02:22:12.179060",
+  "rate_diffs": {
+    "USD/KRW": {
+      "latest_diff_pp": null,
+      "note": "데이터 부족"
+    },
+    "JPY/KRW": {
+      "latest_diff_pp": null,
+      "note": "데이터 부족"
+    },
+    "EUR/KRW": {
+      "latest_diff_pp": null,
+      "note": "데이터 부족"
+    }
+  },
+  "fx_technical": {
+    "USD/KRW": {
+      "note": "데이터 부족"
+    },
+    "JPY/KRW": {
+      "note": "데이터 부족"
+    },
+    "EUR/KRW": {
+      "note": "데이터 부족"
+    }
+  },
+  "other_indicators": {
+    "미국_국채10년물": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "미국_CPI": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "미국_GDP성장률": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "일본_CPI": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "일본_GDP성장률": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "유럽_CPI": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "유럽_GDP성장률": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "한국_CPI": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "한국_무역수지": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "한국_GDP성장률": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "VIX": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "미국국채10년물_야후": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "유가_WTI": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "외국인_코스피_순매수": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    },
+    "구글트렌드_환율관심도": {
+      "latest": null,
+      "prev": null,
+      "change": null,
+      "trend": "데이터없음"
+    }
+  }
+}

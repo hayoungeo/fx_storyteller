@@ -1,0 +1,12 @@
+.env
+.cache/
+__pycache__/
+*.pyc
+.Rhistory
+web/node_modules/
+web/.next/
+web/.env.local
+*.log
+.pnpm-store/
+user_assets.json
+personalized_summary.json

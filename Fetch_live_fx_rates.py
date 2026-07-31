@@ -1,0 +1,173 @@
+# -*- coding: utf-8 -*-
+#"""
+#실시간 환율 수집 (USD/KRW, JPY/KRW, EUR/KRW) -> JSON 저장
+#------------------------------------------------------------
+#한국수출입은행 Open API로 당일 고시환율을 받아와서
+#live_fx_rates.json에 저장하고, user_assets.json의 각 자산에
+#현재 환율(current_rate)을 채워 넣는다.
+
+#지금까지 만든 파이프라인이 전부 JSON 파일 기반이라, 이 스크립트도
+#SQLite 없이 JSON만 사용하도록 맞췄다.
+
+#사전 준비:
+#    pip install requests python-dotenv
+#    이 파일과 같은 폴더에 .env 파일을 만들고 아래 한 줄을 적어둘 것
+#       EXIM_API_KEY=발급받은_키
+#       (.env는 제출용 코드에 포함하지 말 것 -> .env.example만 포함)
+
+#주의:
+#    - 주말/공휴일에는 API가 자동으로 가장 최근 영업일 환율을 돌려준다.
+#    - JPY는 100엔 단위로 고시되므로(cur_unit: "JPY(100)") 100으로 나눠서
+#      1엔 기준 환율로 변환한다.
+#"""
+
+import os
+import json
+from datetime import datetime, timedelta
+from pathlib import Path
+
+import requests
+from dotenv import load_dotenv
+
+from pipeline_utils import BASE_DIR, atomic_write_json, run_cli, safe_error
+
+load_dotenv()  # 같은 폴더의 .env 파일을 읽어서 os.environ에 값을 채워줌
+
+EXIM_API_KEY = os.environ.get("EXIM_API_KEY")
+EXIM_URL = "https://oapi.koreaexim.go.kr/site/program/financial/exchangeJSON"
+
+ASSETS_PATH = BASE_DIR / "user_assets.json"
+OUTPUT_PATH = BASE_DIR / "live_fx_rates.json"
+
+# 수출입은행 API의 cur_unit 표기 -> 우리가 쓰는 통화쌍 이름 매핑
+CUR_UNIT_MAP = {
+    "USD": "USD/KRW",
+    "JPY(100)": "JPY/KRW",  # 100엔 단위 고시 -> 나중에 /100 처리
+    "EUR": "EUR/KRW",
+}
+
+
+def fetch_exim_rates() -> list[dict]:
+    """
+    환율 API 호출
+    주말/공휴일이면 최대 7일 전까지 거슬러 올라가
+    가장 최근 영업일 환율 조회
+    """
+
+    date = datetime.now()
+    for _ in range(7):
+        searchdate = date.strftime("%Y%m%d")
+        params = {
+            "authkey": EXIM_API_KEY,
+            "searchdate": searchdate,
+            "data": "AP01",
+        }
+        resp = requests.get(
+            EXIM_URL,
+            params=params,
+            timeout=5
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        # 환율 데이터가 있으면 반환
+        if data:
+            print(f"환율 조회 날짜: {searchdate}")
+            return data
+
+        # 없으면 하루 전 조회
+        date -= timedelta(days=1)
+    raise Exception("최근 7일 동안 환율 데이터를 찾지 못했습니다.")
+
+
+
+def parse_target_rates(raw_items: list[dict]) -> dict:
+    """
+    원본 응답에서 USD/JPY/EUR만 골라 통화쌍 기준 환율 dict로 변환
+    반환 예: {"USD/KRW": 1392.5, "JPY/KRW": 9.31, "EUR/KRW": 1510.2}
+    """
+    rates = {}
+    for item in raw_items:
+        cur_unit = item.get("cur_unit", "")
+        if cur_unit not in CUR_UNIT_MAP:
+            continue
+
+        pair = CUR_UNIT_MAP[cur_unit]
+        rate_str = item.get("deal_bas_r", "").replace(",", "")
+        if not rate_str:
+            continue
+
+        rate = float(rate_str)
+        if cur_unit == "JPY(100)":
+            rate = rate / 100  # 100엔 -> 1엔 기준으로 환산
+
+        rates[pair] = round(rate, 4)
+
+    return rates
+
+
+def get_live_fx_rates() -> dict:
+    """실패 시 예외를 던지므로, 호출부에서 try/except로 폴백 처리할 것"""
+    raw = fetch_exim_rates()
+    rates = parse_target_rates(raw)
+
+    missing = set(CUR_UNIT_MAP.values()) - set(rates.keys())
+    if missing:
+        print(f"[경고] 다음 통화쌍은 API 응답에서 찾지 못했습니다: {missing}")
+
+    return rates
+
+
+def save_live_rates(rates: dict) -> None:
+    payload = {
+        "rates": rates,
+        "fetched_at": datetime.now().isoformat(),
+        "source": "한국수출입은행 Open API",
+    }
+    atomic_write_json(OUTPUT_PATH, payload)
+    print(f"저장 완료 -> {OUTPUT_PATH.resolve()}")
+
+
+def update_asset_profile_with_rates(rates: dict) -> None:
+    """user_assets.json의 각 자산에 current_rate 필드를 채워 넣는다"""
+    if not ASSETS_PATH.exists():
+        print(f"[안내] {ASSETS_PATH}가 없어서 자산 프로필 업데이트는 건너뜁니다.")
+        return
+
+    with ASSETS_PATH.open("r", encoding="utf-8") as f:
+        profile = json.load(f)
+
+    updated_count = 0
+    for asset in profile.get("assets", []):
+        pair = asset.get("currency_pair")
+        if pair in rates:
+            asset["current_rate"] = rates[pair]
+            updated_count += 1
+
+    atomic_write_json(ASSETS_PATH, profile)
+
+    print(f"user_assets.json의 자산 {updated_count}건에 current_rate 반영 완료")
+
+
+def main():
+    if not EXIM_API_KEY:
+        raise RuntimeError(
+            "EXIM_API_KEY가 설정되어 있지 않습니다. .env 파일에 키를 추가하세요."
+        )
+
+    try:
+        rates = get_live_fx_rates()
+    except Exception as e:
+        raise RuntimeError(
+            f"환율 API 호출 실패: {safe_error(e, [EXIM_API_KEY])}"
+        ) from e
+
+    print("실시간 환율:")
+    for pair, rate in rates.items():
+        print(f"  {pair}: {rate:,.2f}")
+
+    save_live_rates(rates)
+    update_asset_profile_with_rates(rates)
+
+
+if __name__ == "__main__":
+    run_cli(main)

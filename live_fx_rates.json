@@ -1,0 +1,9 @@
+{
+  "rates": {
+    "EUR/KRW": 1661.16,
+    "JPY/KRW": 9.0213,
+    "USD/KRW": 1441.1
+  },
+  "fetched_at": "2026-07-31T18:36:25.412010",
+  "source": "한국수출입은행 Open API"
+}

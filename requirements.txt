@@ -1,0 +1,10 @@
+numpy
+pandas
+python-dotenv
+requests
+streamlit
+yfinance
+
+# 아래 두 패키지는 보조 지표 수집용이며 실패해도 핵심 파이프라인은 동작합니다.
+pykrx
+pytrends
