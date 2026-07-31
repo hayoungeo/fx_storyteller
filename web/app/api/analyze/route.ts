@@ -80,24 +80,35 @@ function buildMetrics(volatility: VolatilityRow): Metric[] {
   ];
 }
 
+function buildRatePresentation(pair: CurrencyPair, volatility: VolatilityRow) {
+  const factor = pair === "JPY/KRW" ? 100 : 1;
+  const foreignUnit = pair === "JPY/KRW" ? "100엔" : pair === "USD/KRW" ? "1달러" : "1유로";
+  const spot = volatility.spot_rate * factor;
+  const move = volatility.estimated_monthly_move_rate * factor;
+  const format = (value: number) => value.toLocaleString("ko-KR", { maximumFractionDigits: 2 });
+  return {
+    currentRateText: `${foreignUnit}당 약 ${format(spot)}원`,
+    monthlyRangeText: `${foreignUnit}당 약 ${format(Math.max(0, spot - move))}원에서 ${format(spot + move)}원`,
+    meaning: `${foreignUnit}를 사는 데 필요한 원화 금액이 이 범위만큼 달라질 수 있다는 뜻`,
+  };
+}
+
 function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[]) {
-  const spot = volatility.spot_rate;
-  const move = volatility.estimated_monthly_move_rate;
-  const low = Math.max(0, spot - move).toLocaleString("ko-KR", { maximumFractionDigits: 2 });
-  const high = (spot + move).toLocaleString("ko-KR", { maximumFractionDigits: 2 });
-  const spotText = spot.toLocaleString("ko-KR", { maximumFractionDigits: 2 });
+  const rate = buildRatePresentation(volatility.currency_pair, volatility);
   const newsText = evidence.length
     ? `최근 관련 뉴스 ${evidence.length}건도 함께 살펴봤습니다.`
     : "직접 연결되는 최신 뉴스가 적어 환율 움직임을 중심으로 살펴봤습니다.";
-  const summary = `${subject}과 관련된 현재 환율은 ${spotText}원입니다. 최근 움직임을 바탕으로 계산하면 앞으로 한 달 동안 약 ${low}원에서 ${high}원 사이로 움직일 수 있는 정도의 변동성이 관측됩니다. 이는 오르거나 내릴 방향을 맞힌 예측이 아니라, 평소보다 가격이 얼마나 흔들릴 수 있는지를 보여주는 참고 범위입니다. ${newsText} 이 값은 실제 옵션시장의 전망이 아니라 과거 환율로 계산한 추정치이므로 예산을 정할 때 참고용으로만 사용해 주세요.`;
+  const summary = `${subject}과 관련된 현재 환율은 ${rate.currentRateText}입니다. 최근 움직임을 기준으로 계산한 한 달 통계 범위는 ${rate.monthlyRangeText}입니다. 이는 ${rate.meaning}이며, 오르거나 내릴 방향을 맞힌 예측은 아닙니다. ${newsText} 이 값은 실제 옵션시장의 전망이 아니라 과거 환율로 계산한 참고용 추정치이므로 예산을 정할 때 참고용으로만 사용해 주세요.`;
   return { summary, action: "필요한 외화를 한 번에 바꾸기보다 시기를 2~3번으로 나누고, 예상 원화 예산에도 여유를 두세요." };
 }
 
 async function generateWithGroq(subject: string, pair: CurrencyPair, volatility: VolatilityRow, evidence: Evidence[], fallback: { summary: string; action: string }) {
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) return { ...fallback, mode: "data-fallback" as const };
+  const ratePresentation = buildRatePresentation(pair, volatility);
   const prompt = {
     subject, currencyPair: pair,
+    userFriendlyRate: ratePresentation,
     volatility: {
       referenceDate: volatility.reference_date,
       spotRateKrw: volatility.spot_rate,
@@ -131,7 +142,8 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
 summary 작성 규칙:
 - 존댓말로 5문장 안팎을 쓰고, 한 문장은 짧게 작성하세요.
 - 첫 문장에는 사용자의 자산이나 목적과 어떤 환율이 연결되는지 말하세요.
-- 현재 환율과 한 달 예상 움직임을 원 단위로 말한 뒤, 쉬운 말로 의미를 풀어 주세요.
+- userFriendlyRate에 제공된 현재 환율과 한 달 범위를 그대로 사용하고, 쉬운 말로 의미를 풀어 주세요.
+- 통화 단위를 절대 뒤집지 마세요. 특히 JPY/KRW는 반드시 "100엔당 약 몇 원"으로 설명하세요.
 - "변동성", "연환산", "백분위", "SV 프록시", "내재변동성" 같은 용어를 설명 없이 사용하지 마세요.
 - 변동성은 방향 예측이 아니라 흔들림의 크기라는 점을 분명히 하세요.
 - 뉴스는 제목을 나열하지 말고 사용자 계획에 미칠 수 있는 영향을 한 문장으로 연결하세요.
@@ -140,6 +152,8 @@ summary 작성 규칙:
 
 action 작성 규칙:
 - 사용자가 오늘 바로 실천할 수 있는 위험 관리 행동을 한 문장으로 쓰세요.
+- "철저히 준비하세요", "시장 상황을 확인하세요"처럼 막연하게 끝내지 마세요.
+- 환전·송금 시기를 2~3번으로 나누거나 원화 예산에 여유를 두는 구체적인 방법을 포함하세요.
 - 매수·매도·즉시 환전을 단정적으로 권하지 마세요.`,
           },
           {
