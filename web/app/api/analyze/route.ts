@@ -81,9 +81,16 @@ function buildMetrics(volatility: VolatilityRow): Metric[] {
 }
 
 function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[]) {
-  const evidenceLead = evidence.length ? `관련 뉴스 ${evidence.length}건을 함께 보면, ` : "직접 연결되는 최신 뉴스는 제한적이지만, ";
-  const summary = `${subject}에 연결된 ${volatility.currency_pair} 환율은 현재 ${volatility.regime} 변동 구간입니다. ${evidenceLead}한 달 기준 움직임은 약 ±${volatility.estimated_monthly_move_rate.toLocaleString("ko-KR")}원으로 환산됩니다. 1년 기준으로 환산한 움직임 크기는 ${volatility.annualized_volatility_pct.toFixed(2)}%이며, ${volatility.percentile_explanation} 이 수치는 실제 옵션 가격이 아니라 과거 환율 움직임으로 추정한 값으로, 상승과 하락 방향을 뜻하지 않습니다.`;
-  return { summary, action: "예정된 환전·송금·결제 시점을 나누고, 통계적 변동 폭만큼 원화 예산에 여유를 두어 확인해 보세요." };
+  const spot = volatility.spot_rate;
+  const move = volatility.estimated_monthly_move_rate;
+  const low = Math.max(0, spot - move).toLocaleString("ko-KR", { maximumFractionDigits: 2 });
+  const high = (spot + move).toLocaleString("ko-KR", { maximumFractionDigits: 2 });
+  const spotText = spot.toLocaleString("ko-KR", { maximumFractionDigits: 2 });
+  const newsText = evidence.length
+    ? `최근 관련 뉴스 ${evidence.length}건도 함께 살펴봤습니다.`
+    : "직접 연결되는 최신 뉴스가 적어 환율 움직임을 중심으로 살펴봤습니다.";
+  const summary = `${subject}과 관련된 현재 환율은 ${spotText}원입니다. 최근 움직임을 바탕으로 계산하면 앞으로 한 달 동안 약 ${low}원에서 ${high}원 사이로 움직일 수 있는 정도의 변동성이 관측됩니다. 이는 오르거나 내릴 방향을 맞힌 예측이 아니라, 평소보다 가격이 얼마나 흔들릴 수 있는지를 보여주는 참고 범위입니다. ${newsText} 이 값은 실제 옵션시장의 전망이 아니라 과거 환율로 계산한 추정치이므로 예산을 정할 때 참고용으로만 사용해 주세요.`;
+  return { summary, action: "필요한 외화를 한 번에 바꾸기보다 시기를 2~3번으로 나누고, 예상 원화 예산에도 여유를 두세요." };
 }
 
 async function generateWithGroq(subject: string, pair: CurrencyPair, volatility: VolatilityRow, evidence: Evidence[], fallback: { summary: string; action: string }) {
@@ -93,9 +100,14 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
     subject, currencyPair: pair,
     volatility: {
       referenceDate: volatility.reference_date,
+      spotRateKrw: volatility.spot_rate,
       annualizedPct: volatility.annualized_volatility_pct,
       monthlyPct: volatility.monthly_volatility_pct,
       estimatedMonthlyMoveKrw: volatility.estimated_monthly_move_rate,
+      estimatedMonthlyRangeKrw: {
+        low: Math.max(0, volatility.spot_rate - volatility.estimated_monthly_move_rate),
+        high: volatility.spot_rate + volatility.estimated_monthly_move_rate,
+      },
       historicalPercentile: volatility.historical_percentile,
       isProxy: volatility.is_proxy,
     },
@@ -111,8 +123,29 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
         max_tokens: 500,
         response_format: { type: "json_object" },
         messages: [
-          { role: "system", content: "당신은 근거 중심 환율 금융 어시스턴트입니다. 제공 데이터만 사용하고 변동성을 환율 방향처럼 설명하지 마세요. 매수·매도·즉시 환전을 권하지 마세요. 출력 스키마는 오직 {\"summary\": string, \"action\": string}이며 다른 키를 절대 출력하지 마세요. summary는 쉬운 한국어 4~5문장이고 실제 옵션 내재변동성이 아닌 SV 프록시와 통계적 범위의 한계를 반드시 밝힙니다. action은 위험 관리 행동 한 문장입니다." },
-          { role: "user", content: `아래 근거 데이터를 분석하세요. 입력 JSON을 그대로 반복하지 마세요. 반드시 summary와 action 두 키만 가진 JSON 객체를 출력하세요.\n\n근거 데이터:\n${JSON.stringify(prompt)}` },
+          {
+            role: "system",
+            content: `당신은 금융을 처음 접하는 사람에게 환율 정보를 설명하는 어시스턴트입니다.
+제공된 근거만 사용하고, 반드시 {"summary": string, "action": string} 형태의 JSON 객체만 출력하세요.
+
+summary 작성 규칙:
+- 존댓말로 5문장 안팎을 쓰고, 한 문장은 짧게 작성하세요.
+- 첫 문장에는 사용자의 자산이나 목적과 어떤 환율이 연결되는지 말하세요.
+- 현재 환율과 한 달 예상 움직임을 원 단위로 말한 뒤, 쉬운 말로 의미를 풀어 주세요.
+- "변동성", "연환산", "백분위", "SV 프록시", "내재변동성" 같은 용어를 설명 없이 사용하지 마세요.
+- 변동성은 방향 예측이 아니라 흔들림의 크기라는 점을 분명히 하세요.
+- 뉴스는 제목을 나열하지 말고 사용자 계획에 미칠 수 있는 영향을 한 문장으로 연결하세요.
+- 이 수치는 옵션시장의 전망이 아니라 과거 환율 움직임으로 계산한 참고용 추정치라고 마지막에 알리세요.
+- 공포를 조장하거나 상승·하락을 단정하지 마세요.
+
+action 작성 규칙:
+- 사용자가 오늘 바로 실천할 수 있는 위험 관리 행동을 한 문장으로 쓰세요.
+- 매수·매도·즉시 환전을 단정적으로 권하지 마세요.`,
+          },
+          {
+            role: "user",
+            content: `아래 데이터를 일반 사용자가 한 번에 이해할 수 있는 생활 언어로 설명하세요. 숫자를 나열하지 말고 "그래서 내 계획에 어떤 의미인지"를 중심으로 작성하세요. 반드시 summary와 action 두 키만 출력하세요.\n\n근거 데이터:\n${JSON.stringify(prompt)}`,
+          },
         ],
       }),
       signal: AbortSignal.timeout(18_000),
