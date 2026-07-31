@@ -106,9 +106,11 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) return { ...fallback, mode: "data-fallback" as const };
   const ratePresentation = buildRatePresentation(pair, volatility);
+  const requiredOpening = `${subject}과 관련된 현재 환율은 ${ratePresentation.currentRateText}입니다. 최근 움직임을 기준으로 계산한 한 달 통계 범위는 ${ratePresentation.monthlyRangeText}입니다.`;
   const prompt = {
     subject, currencyPair: pair,
     userFriendlyRate: ratePresentation,
+    requiredSummaryOpening: requiredOpening,
     volatility: {
       referenceDate: volatility.reference_date,
       spotRateKrw: volatility.spot_rate,
@@ -158,7 +160,7 @@ action 작성 규칙:
           },
           {
             role: "user",
-            content: `아래 데이터를 일반 사용자가 한 번에 이해할 수 있는 생활 언어로 설명하세요. 숫자를 나열하지 말고 "그래서 내 계획에 어떤 의미인지"를 중심으로 작성하세요. 반드시 summary와 action 두 키만 출력하세요.\n\n근거 데이터:\n${JSON.stringify(prompt)}`,
+            content: `아래 데이터를 일반 사용자가 한 번에 이해할 수 있는 생활 언어로 설명하세요. summary는 requiredSummaryOpening 문장을 글자와 숫자를 바꾸지 말고 그대로 사용해 시작하세요. 그 뒤에는 숫자를 추가로 나열하지 말고 "그래서 내 계획에 어떤 의미인지"를 설명하세요. 반드시 summary와 action 두 키만 출력하세요.\n\n근거 데이터:\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
@@ -169,6 +171,7 @@ action 작성 규칙:
     const raw = body?.choices?.[0]?.message?.content;
     const parsed = JSON.parse(raw);
     if (typeof parsed.summary !== "string" || typeof parsed.action !== "string") return { ...fallback, mode: "data-fallback" as const };
+    if (!parsed.summary.startsWith(requiredOpening)) return { ...fallback, mode: "data-fallback" as const };
     return { summary: parsed.summary.slice(0, 1200), action: parsed.action.replace(/^행동 제안:\s*/, "").slice(0, 300), mode: "ai" as const };
   } catch {
     return { ...fallback, mode: "data-fallback" as const };
