@@ -172,6 +172,7 @@ function buildNewsContext(pair: CurrencyPair, news: NewsRow[]) {
     return {
       status: "none",
       lead: "현재 입력한 목적과 직접 관련된 최신 뉴스는 찾지 못했습니다. 아래 내용은 환율과 경제지표를 기준으로 설명합니다.",
+      outputPrefix: "현재 입력한 목적과 직접 관련된 최신 뉴스는 찾지 못했습니다. 아래 내용은 환율과 경제지표를 기준으로 설명합니다.",
     };
   }
   const country = countryByPair[pair];
@@ -193,14 +194,33 @@ function buildNewsContext(pair: CurrencyPair, news: NewsRow[]) {
     return {
       status: "limited",
       lead: `입력한 목적과 직접 연결되는 최신 뉴스는 제한적입니다. 참고 가능한 뉴스의 주요 내용은 ${themeText}입니다.`,
+      outputPrefix: "입력 내용과 직접 연결되는 최신 뉴스는 제한적입니다.",
     };
   }
-  return { status: "direct", lead: `관련 뉴스의 주요 내용은 ${themeText}입니다.` };
+  return { status: "direct", lead: `관련 뉴스의 주요 내용은 ${themeText}입니다.`, outputPrefix: "" };
 }
 
-function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[], mode: "asset" | "goal") {
+function assetSpecificExplanation(userContext: Record<string, unknown>) {
+  const assetType = String(userContext.assetType || "외화 자산");
+  const amount = typeof userContext.amountKrw === "number"
+    ? `입력한 원화 평가금액 ${Number(userContext.amountKrw).toLocaleString("ko-KR")}원은 `
+    : "이 자산의 원화 평가금액은 ";
+  if (assetType === "해외 주식" || assetType === "해외 ETF") {
+    return `${amount}주가 자체의 움직임과 환율의 영향을 함께 받습니다. 여기서는 주가를 예측하지 않고, 외화로 표시된 평가금액을 원화로 바꿔 볼 때 생기는 환율 영향만 설명합니다.`;
+  }
+  if (assetType === "외화 예금") {
+    return `${amount}예금 이자와 별개로 환율의 영향을 받습니다. 예금 금리는 해당 통화 국가의 금리 환경과 연결되고, 원화 환산 평가금액은 환율에 따라 달라질 수 있습니다.`;
+  }
+  if (assetType === "외화 채권") {
+    return `${amount}채권 가격과 이자 변화뿐 아니라 환율의 영향도 받습니다. 여기서는 채권 가격을 예측하지 않고 원화 환산 평가금액에 미치는 환율 영향만 설명합니다.`;
+  }
+  return `${amount}외화 자체의 가치 변화와 원화 환산 환율의 영향을 받을 수 있습니다.`;
+}
+
+function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[], mode: "asset" | "goal", userContext: Record<string, unknown>) {
   const newsContext = buildNewsContext(volatility.currency_pair, getNewsDetails(evidence));
-  const summary = `${newsContext.lead} ${buildVolatilitySummary(subject, volatility, mode)}`;
+  const assetExplanation = mode === "asset" ? ` ${assetSpecificExplanation(userContext)}` : "";
+  const summary = `${newsContext.lead}${assetExplanation} ${buildVolatilitySummary(subject, volatility, mode)}`;
   const action = mode === "asset"
     ? "보유한 외화 자산의 원화 환산 평가금액이 환율 변화에 얼마나 노출되는지 정기적으로 확인하세요."
     : "필요한 외화를 한 번에 바꾸기보다 시기를 2~3번으로 나누고, 예상 원화 예산에도 여유를 두세요.";
@@ -254,8 +274,9 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
   const selectedNews = getNewsDetails(evidence);
   const newsContext = buildNewsContext(pair, selectedNews);
   const isAssetMode = userContext.mode === "자산";
+  const assetGuidance = isAssetMode ? assetSpecificExplanation(userContext) : "";
   const analysisRole = isAssetMode
-    ? `이 요청은 보유 자산 분석입니다. 사용자가 여행·유학·출장 등의 계획을 입력한 것이 아닙니다. 자산 이름에 국가명이 있어도 여행이나 지출 목적을 추측하지 말고, 해당 외화 자산의 원화 환산 가치와 환율 노출만 설명하세요.`
+    ? `이 요청은 보유 자산 분석입니다. 사용자가 여행·유학·출장 등의 계획을 입력한 것이 아닙니다. 자산 이름에 국가명이 있어도 여행이나 지출 목적을 추측하지 마세요. 자산별 해석 기준은 다음과 같습니다: ${assetGuidance}`
     : `이 요청은 사용 목적 분석입니다. 보유 자산을 입력한 것이 아니므로 자산 보유나 원화 환산 가치를 추측하지 말고, 목적에 필요한 외화를 마련할 때의 원화 비용과 불확실성만 설명하세요.`;
   const prompt = {
     userAssetSituation: { subject, ...userContext },
@@ -331,7 +352,9 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
 
 일반 규칙:
 - 반드시 주어진 뉴스 내용에 근거해서만 설명하세요. 뉴스에 없는 내용을 지어내지 마세요.
-- 뉴스 안내 문장은 서버가 별도로 붙이므로 출력에서 뉴스를 다시 요약하거나 뉴스 유무를 반복하지 마세요. newsStatus가 none이면 뉴스에 근거한 설명을 만들지 마세요.
+- newsStatus가 direct 또는 limited이면 첫 1~2문장에서 여러 뉴스의 실제 핵심 사실을 하나의 흐름으로 종합하세요. 단순히 "금리 동결"처럼 주제명만 적지 말고, 제공된 summary와 reason에 있는 결정·수치·시장 반응 중 중요한 내용을 쉬운 말로 설명하세요.
+- 뉴스를 기사별로 나열하거나 같은 사건을 여러 번 반복하지 마세요. newsStatus가 limited이면 직접 관련성이 제한적이라는 점을 분명히 하고, none이면 뉴스에 근거한 설명을 만들지 마세요.
+- 뉴스 요약 뒤에는 해당 뉴스와 환율 흔들림이 입력한 자산 종류 또는 목적에 어떤 의미인지 구체적으로 연결하세요.
 - macroContext는 뉴스 내용을 직접 뒷받침할 때만 배경 근거로 사용하고, 값이 없는 지표는 언급하지 마세요.
 - 투자 조언(사라, 팔아라)을 하지 말고, 사실과 그 의미만 담백하게 설명하세요.
 - "~일 수 있어요", "~에는 큰 변화가 없어요" 처럼 단정적이지 않은 톤을 쓰세요.
@@ -339,7 +362,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
           },
           {
             role: "user",
-            content: `아래 입력만 사용해 설명하세요. userAssetSituation.mode를 최우선으로 따르고 자산과 목적을 서로 바꾸어 해석하지 마세요. 자산 모드에서는 여행·유학·출장·해외직구 계획을 만들어내지 마세요. 목적 모드에서는 사용자가 외화 자산을 보유한다고 추측하지 마세요. 뉴스 안내는 서버가 추가하므로 뉴스 내용을 다시 요약하지 마세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요. 같은 사실이나 행동을 표현만 바꾸어 두 번 쓰지 마세요.\n\n${JSON.stringify(prompt)}`,
+            content: `아래 입력만 사용해 설명하세요. userAssetSituation.mode를 최우선으로 따르고 자산과 목적을 서로 바꾸어 해석하지 마세요. 자산 모드에서는 여행·유학·출장·해외직구 계획을 만들어내지 말고 assetType과 amountKrw를 반영해 자산별로 다르게 설명하세요. 해외 주식·ETF는 주가 자체의 변화와 환율 영향을 구분하고, 외화 예금은 이자율과 환율 영향을 구분하며, 외화 채권은 채권 가격·이자와 환율 영향을 구분하세요. 목적 모드에서는 사용자가 외화 자산을 보유한다고 추측하지 마세요. newsStatus가 direct 또는 limited이면 제공된 뉴스의 실제 내용을 첫 1~2문장으로 종합하고, none이면 뉴스 내용을 만들지 마세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요. 같은 사실이나 행동을 표현만 바꾸어 두 번 쓰지 마세요.\n\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
@@ -385,7 +408,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
       || (userContext.mode === "목적" && /(자산|가 될 수 있는 원화|환산 기준일인|달러 1|유로 1|원화의 가치가 변동성이)/.test(summary))
       || (userContext.mode === "자산" && /(여행|유학|출장|해외직구).{0,12}(계획|준비|예정|필요)/.test(summary));
     if (qualityFailed) return { ...fallback, mode: "data-fallback" as const };
-    summary = removeRepeatedSentences(`${newsContext.lead} ${summary}`.trim(), generatedAction);
+    summary = removeRepeatedSentences(`${newsContext.outputPrefix} ${summary}`.trim(), generatedAction);
     const unexpectedActionNumber = /\d/.test(generatedAction.replace(/2\s*[~～-]\s*3/g, ""));
     const action = generatedAction && !unexpectedActionNumber ? generatedAction : fallback.action;
     return { summary: summary || fallback.summary, action, mode: "ai" as const };
@@ -436,7 +459,7 @@ export async function POST(request: Request) {
     const volatility = (analysisData.volatility as Record<string, VolatilityRow>)[pair];
     if (!volatility) return NextResponse.json({ error: "해당 통화의 변동성 데이터가 아직 준비되지 않았습니다." }, { status: 503 });
     const evidence = selectEvidence(pair, categories, goalText);
-    const fallback = fallbackCopy(subject, volatility, evidence, input.mode);
+    const fallback = fallbackCopy(subject, volatility, evidence, input.mode, userContext);
     const generated = await generateWithGroq(subject, userContext, pair, volatility, evidence, fallback);
     const result: AnalysisResponse = {
       subject: { label: subject, currencyPair: pair, mode: input.mode },
