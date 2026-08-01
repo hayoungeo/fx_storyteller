@@ -79,18 +79,24 @@ function selectMacroContext(pair: CurrencyPair) {
 
 function selectEvidence(pair: CurrencyPair, categories: string[], goalText = ""): Evidence[] {
   const country = countryByPair[pair];
+  const pairAliases: Record<CurrencyPair, string[]> = {
+    "USD/KRW": ["USD/KRW"],
+    "JPY/KRW": ["JPY/KRW", "USD/JPY"],
+    "EUR/KRW": ["EUR/KRW", "EUR/USD", "USD/EUR"],
+  };
   const tokens = goalText.split(/\s+/).filter((token) => token.length >= 2);
   return (analysisData.news as NewsRow[])
     .map((news) => {
+      const directlyRelated = news.currencyPairs.some((item) => pairAliases[pair].includes(item)) || news.country === country;
       let score = Number(news.confidence) || 0;
-      if (news.currencyPairs.includes(pair)) score += 2;
+      if (news.currencyPairs.some((item) => pairAliases[pair].includes(item))) score += 2;
       if (news.country === country || news.country === "한국") score += 1;
       if (categories.includes(news.category)) score += 0.7;
       const text = `${news.title} ${news.summary}`;
       if (tokens.some((token) => text.includes(token))) score += 0.25;
-      return { news, score };
+      return { news, score, directlyRelated };
     })
-    .filter(({ news, score }) => score > 1.35 && news.url.startsWith("https://"))
+    .filter(({ news, score, directlyRelated }) => directlyRelated && score > 1.35 && news.url.startsWith("https://"))
     .sort((a, b) => b.score - a.score || b.news.publishedAt.localeCompare(a.news.publishedAt))
     .slice(0, 4)
     .map(({ news }) => ({
@@ -224,7 +230,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
           },
           {
             role: "user",
-            content: `아래 입력만 사용해 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요.\n\n${JSON.stringify(prompt)}`,
+            content: `아래 입력만 사용해 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 사용자가 외화 자산을 보유한다고 가정하지 말고, 여행·유학·출장 등에 필요한 원화 환산 비용의 불확실성만 설명하세요.\n\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
