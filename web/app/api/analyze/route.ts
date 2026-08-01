@@ -198,15 +198,53 @@ function buildNewsContext(pair: CurrencyPair, news: NewsRow[]) {
   return { status: "direct", lead: `관련 뉴스의 주요 내용은 ${themeText}입니다.` };
 }
 
-function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[]) {
+function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[], mode: "asset" | "goal") {
   const newsContext = buildNewsContext(volatility.currency_pair, getNewsDetails(evidence));
-  const summary = `${newsContext.lead} ${buildVolatilitySummary(subject, volatility)}`;
-  return { summary, action: "필요한 외화를 한 번에 바꾸기보다 시기를 2~3번으로 나누고, 예상 원화 예산에도 여유를 두세요." };
+  const summary = `${newsContext.lead} ${buildVolatilitySummary(subject, volatility, mode)}`;
+  const action = mode === "asset"
+    ? "보유한 외화 자산의 원화 환산 평가금액이 환율 변화에 얼마나 노출되는지 정기적으로 확인하세요."
+    : "필요한 외화를 한 번에 바꾸기보다 시기를 2~3번으로 나누고, 예상 원화 예산에도 여유를 두세요.";
+  return { summary, action };
 }
 
-function buildVolatilitySummary(subject: string, volatility: VolatilityRow) {
+function buildVolatilitySummary(subject: string, volatility: VolatilityRow, mode: "asset" | "goal") {
   const rate = buildRatePresentation(volatility.currency_pair, volatility);
-  return `${subject}과 관련된 현재 환율은 ${rate.currentRateText}이며, 최근 움직임을 기준으로 한 한 달 통계 범위는 ${rate.monthlyRangeText}입니다. ${volatility.reference_date} 기준 환율의 흔들림은 한 달에 약 ${volatility.monthly_volatility_pct.toFixed(2)}%이고, 1년 기준으로 환산한 움직임 크기는 ${volatility.annualized_volatility_pct.toFixed(2)}%로 과거 관측일 100일 중 약 ${volatility.historical_percentile.toFixed(0)}일보다 큰 수준입니다. 이는 ${rate.meaning}일 뿐 상승·하락 방향을 뜻하지 않으며, 실제 옵션시장의 전망이 아니라 과거 환율 움직임으로 추정한 값이므로 원화 범위도 확정값이 아닌 통계적 참고치입니다.`;
+  const meaning = mode === "asset"
+    ? "이는 환율이 이 범위만큼 흔들리면서 보유 외화 자산의 원화 환산 평가금액에도 영향을 줄 수 있다는 뜻"
+    : `이는 ${rate.meaning}`;
+  return `${subject}과 관련된 현재 환율은 ${rate.currentRateText}이며, 최근 움직임을 기준으로 한 한 달 통계 범위는 ${rate.monthlyRangeText}입니다. ${volatility.reference_date} 기준 환율의 흔들림은 한 달에 약 ${volatility.monthly_volatility_pct.toFixed(2)}%이고, 1년 기준으로 환산한 움직임 크기는 ${volatility.annualized_volatility_pct.toFixed(2)}%로 과거 관측일 100일 중 약 ${volatility.historical_percentile.toFixed(0)}일보다 큰 수준입니다. ${meaning}일 뿐 상승·하락 방향을 뜻하지 않으며, 실제 옵션시장의 전망이 아니라 과거 환율 움직임으로 추정한 값이므로 원화 범위도 확정값이 아닌 통계적 참고치입니다.`;
+}
+
+function normalizeSentence(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/행동\s*제안\s*:/g, "")
+    .replace(/[^0-9a-z가-힣]/g, "");
+}
+
+function sentenceSimilarity(left: string, right: string) {
+  const a = normalizeSentence(left);
+  const b = normalizeSentence(right);
+  if (!a || !b) return 0;
+  if (a === b) return 1;
+  if (Math.min(a.length, b.length) >= 18 && (a.includes(b) || b.includes(a))) return 0.95;
+  const aChunks = new Set(Array.from({ length: Math.max(0, a.length - 2) }, (_, index) => a.slice(index, index + 3)));
+  const bChunks = new Set(Array.from({ length: Math.max(0, b.length - 2) }, (_, index) => b.slice(index, index + 3)));
+  if (!aChunks.size || !bChunks.size) return 0;
+  let shared = 0;
+  for (const chunk of aChunks) if (bChunks.has(chunk)) shared += 1;
+  return shared / Math.min(aChunks.size, bChunks.size);
+}
+
+function removeRepeatedSentences(value: string, action = "") {
+  const sentences = value.split(/(?<=[.!?])\s+/).map((sentence) => sentence.trim()).filter(Boolean);
+  const kept: string[] = [];
+  for (const sentence of sentences) {
+    const repeatsAction = action && sentenceSimilarity(sentence, action) >= 0.78;
+    const repeatsEarlier = kept.some((earlier) => sentenceSimilarity(sentence, earlier) >= 0.88);
+    if (!repeatsAction && !repeatsEarlier) kept.push(sentence);
+  }
+  return kept.join(" ").trim();
 }
 
 async function generateWithGroq(subject: string, userContext: Record<string, unknown>, pair: CurrencyPair, volatility: VolatilityRow, evidence: Evidence[], fallback: { summary: string; action: string }) {
@@ -215,6 +253,10 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
   const ratePresentation = buildRatePresentation(pair, volatility);
   const selectedNews = getNewsDetails(evidence);
   const newsContext = buildNewsContext(pair, selectedNews);
+  const isAssetMode = userContext.mode === "자산";
+  const analysisRole = isAssetMode
+    ? `이 요청은 보유 자산 분석입니다. 사용자가 여행·유학·출장 등의 계획을 입력한 것이 아닙니다. 자산 이름에 국가명이 있어도 여행이나 지출 목적을 추측하지 말고, 해당 외화 자산의 원화 환산 가치와 환율 노출만 설명하세요.`
+    : `이 요청은 사용 목적 분석입니다. 보유 자산을 입력한 것이 아니므로 자산 보유나 원화 환산 가치를 추측하지 말고, 목적에 필요한 외화를 마련할 때의 원화 비용과 불확실성만 설명하세요.`;
   const prompt = {
     userAssetSituation: { subject, ...userContext },
     currencyPair: pair,
@@ -247,9 +289,9 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
         messages: [
           {
             role: "system",
-            content: `당신은 사용자의 자산 상황을 고려해 환율 뉴스를 쉽게 설명해주는
-금융 어시스턴트입니다. 아래 뉴스들과 사용자 자산 정보를 보고, 이 뉴스가
-사용자의 자산에 어떤 의미인지 자연스러운 한국어 3~5문장으로 설명하세요.
+            content: `당신은 사용자가 입력한 자산 또는 목적을 구분하여 환율 뉴스를 쉽게 설명해주는
+금융 어시스턴트입니다. ${analysisRole}
+아래 뉴스와 입력 정보를 보고 자연스러운 한국어 3~5문장으로 설명하세요.
 
 반드시 지켜야 할 방향성 규칙 (틀리기 쉬우니 특히 주의):
 1. "원화 약세(환율 상승, 예: 1,400원 -> 1,450원)"가 되면, 달러/엔화/유로 등
@@ -297,7 +339,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
           },
           {
             role: "user",
-            content: `아래 입력만 사용해 설명하세요. 뉴스 안내는 서버가 추가하므로 뉴스 내용을 다시 요약하지 마세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요.\n\n${JSON.stringify(prompt)}`,
+            content: `아래 입력만 사용해 설명하세요. userAssetSituation.mode를 최우선으로 따르고 자산과 목적을 서로 바꾸어 해석하지 마세요. 자산 모드에서는 여행·유학·출장·해외직구 계획을 만들어내지 마세요. 목적 모드에서는 사용자가 외화 자산을 보유한다고 추측하지 마세요. 뉴스 안내는 서버가 추가하므로 뉴스 내용을 다시 요약하지 마세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요. 같은 사실이나 행동을 표현만 바꾸어 두 번 쓰지 마세요.\n\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
@@ -336,12 +378,14 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
         .replace(`현재 ${yenSpot}원`, `현재 100엔당 약 ${yenSpot}원`);
     }
     summary = summary.replace(/^newsContext[.]lead:\s*/i, "").trim();
+    summary = removeRepeatedSentences(summary, generatedAction);
     const qualityFailed = summary.includes("비용는")
       || (summary.match(/원에서/g) || []).length > 1
       || (summary.match(/직접 연결되는 최신 뉴스는 제한적/g) || []).length > 0
-      || (userContext.mode === "목적" && /(자산|가 될 수 있는 원화|환산 기준일인|달러 1|유로 1|원화의 가치가 변동성이)/.test(summary));
+      || (userContext.mode === "목적" && /(자산|가 될 수 있는 원화|환산 기준일인|달러 1|유로 1|원화의 가치가 변동성이)/.test(summary))
+      || (userContext.mode === "자산" && /(여행|유학|출장|해외직구).{0,12}(계획|준비|예정|필요)/.test(summary));
     if (qualityFailed) return { ...fallback, mode: "data-fallback" as const };
-    summary = `${newsContext.lead} ${summary}`.trim();
+    summary = removeRepeatedSentences(`${newsContext.lead} ${summary}`.trim(), generatedAction);
     const unexpectedActionNumber = /\d/.test(generatedAction.replace(/2\s*[~～-]\s*3/g, ""));
     const action = generatedAction && !unexpectedActionNumber ? generatedAction : fallback.action;
     return { summary: summary || fallback.summary, action, mode: "ai" as const };
@@ -392,7 +436,7 @@ export async function POST(request: Request) {
     const volatility = (analysisData.volatility as Record<string, VolatilityRow>)[pair];
     if (!volatility) return NextResponse.json({ error: "해당 통화의 변동성 데이터가 아직 준비되지 않았습니다." }, { status: 503 });
     const evidence = selectEvidence(pair, categories, goalText);
-    const fallback = fallbackCopy(subject, volatility, evidence);
+    const fallback = fallbackCopy(subject, volatility, evidence, input.mode);
     const generated = await generateWithGroq(subject, userContext, pair, volatility, evidence, fallback);
     const result: AnalysisResponse = {
       subject: { label: subject, currencyPair: pair, mode: input.mode },
