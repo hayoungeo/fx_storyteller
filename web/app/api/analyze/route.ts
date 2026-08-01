@@ -48,6 +48,11 @@ const countryByPair: Record<CurrencyPair, string> = { "USD/KRW": "미국", "JPY/
 const categoryBySensitivity: Record<string, string> = { fx: "환율", interest_rate: "금리", trade: "무역", geopolitics: "지정학" };
 const intentLabel: Record<string, string> = { travel: "여행", study: "유학", business: "출장", shopping: "해외직구", investment: "투자" };
 const assetTypeLabel: Record<string, string> = { foreign_deposit: "외화 예금", overseas_stock: "해외 주식", overseas_etf: "해외 ETF", bond: "외화 채권", other: "외화 자산" };
+const requiredCurrencyByCountry = {
+  US: { code: "USD", label: "달러" },
+  JP: { code: "JPY", label: "엔화" },
+  EU: { code: "EUR", label: "유로" },
+} as const;
 
 function selectMacroContext(pair: CurrencyPair) {
   const macro = analysisData.macro as unknown as Record<string, any>;
@@ -256,7 +261,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
           },
           {
             role: "user",
-            content: `아래 입력만 사용해 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 말고, 여행·유학·출장 등에 필요한 "원화 환산 비용"의 불확실성만 설명하세요.\n\n${JSON.stringify(prompt)}`,
+            content: `아래 입력만 사용해 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요.\n\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
@@ -268,7 +273,11 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
     if (typeof raw !== "string" || !raw.trim()) return { ...fallback, mode: "data-fallback" as const };
     const cleaned = raw.trim().replace(/^['"]|['"]$/g, "");
     const actionIndex = cleaned.lastIndexOf("행동 제안:");
-    const summary = (actionIndex >= 0 ? cleaned.slice(0, actionIndex) : cleaned).trim().slice(0, 1200);
+    let summary = (actionIndex >= 0 ? cleaned.slice(0, actionIndex) : cleaned).trim().slice(0, 1200);
+    const requiredCurrencyLabel = userContext.requiredCurrencyLabel;
+    if (userContext.mode === "목적" && typeof requiredCurrencyLabel === "string") {
+      summary = summary.replace(/원화가 필요합니다[.]?/g, `${requiredCurrencyLabel}가 필요합니다.`);
+    }
     const generatedAction = actionIndex >= 0 ? cleaned.slice(actionIndex + "행동 제안:".length).trim().slice(0, 300) : "";
     return { summary: summary || fallback.summary, action: generatedAction || fallback.action, mode: "ai" as const };
   } catch {
@@ -302,11 +311,14 @@ export async function POST(request: Request) {
       subject = `${countryByPair[pair]} ${intentLabel[input.goal.intent] || "외화 계획"}`;
       categories = input.goal.intent === "investment" ? ["환율", "금리"] : ["환율", "금리", "지정학"];
       goalText = input.goal.text;
+      const requiredCurrency = requiredCurrencyByCountry[input.goal.country];
       userContext = {
         mode: "목적",
         purpose: input.goal.text,
         country: input.goal.country,
         intent: intentLabel[input.goal.intent] || input.goal.intent,
+        requiredCurrency: requiredCurrency.code,
+        requiredCurrencyLabel: requiredCurrency.label,
         targetDate: input.goal.targetDate,
         plannedAmount: input.goal.plannedAmount,
         plannedCurrency: input.goal.plannedCurrency,
