@@ -49,6 +49,8 @@ def main() -> None:
         macro = json.loads(macro_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         macro = {}
+    if isinstance(macro, dict):
+        macro.pop("print_log", None)
 
     volatility = build_all_volatility_contexts()
     news = load_news()
@@ -58,7 +60,16 @@ def main() -> None:
         for item in volatility.values()
         if item.get("reference_date")
     ]
-    data_as_of = max([*dates, *reference_dates], default="")
+    macro_dates = [
+        str(macro.get("weekly_fx_features", {}).get("latest_week", "")),
+        str(macro.get("japan_policy_rate", {}).get("latest_date", "")),
+    ]
+    macro_dates.extend(
+        str(item.get("latest_date", ""))
+        for item in macro.get("other_indicators", {}).values()
+        if isinstance(item, dict) and item.get("latest_date")
+    )
+    data_as_of = max([*dates, *reference_dates, *macro_dates], default="")
 
     payload = {
         "metadata": {

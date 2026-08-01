@@ -11,3 +11,4 @@ web/tsconfig.tsbuildinfo
 .pnpm-store/
 user_assets.json
 personalized_summary.json
+weekly_fx_features.csv

@@ -18,6 +18,7 @@ PYTHON_STAGES = {
     "download_fx": "download_fx_prices.py",
     "weights": "compute_impact_weights_sv.py",
     "collect_macro": "collect_macro_data.py",
+    "weekly_fx": "fetch_weekly_fx_features.py",
     "process_macro": "compute_macro_indicators.py",
     "prepare_vrp": "prepare_vrp_data.py",
     "analyze_vrp": "analyze_vrp.py",
@@ -28,13 +29,13 @@ PYTHON_STAGES = {
 MODE_STAGES = {
     "news": ["collect_news", "extract_news"],
     "volatility": ["download_fx", "estimate_sv", "weights", "prepare_vrp", "analyze_vrp"],
-    "macro": ["collect_macro", "process_macro"],
+    "macro": ["collect_macro", "weekly_fx", "process_macro"],
     "vrp": ["prepare_vrp", "analyze_vrp"],
     "personalized": ["personalized"],
     "all": [
         "collect_news", "extract_news",
         "download_fx", "estimate_sv", "weights",
-        "collect_macro", "process_macro",
+        "collect_macro", "weekly_fx", "process_macro",
         "prepare_vrp", "analyze_vrp",
         "personalized",
     ],

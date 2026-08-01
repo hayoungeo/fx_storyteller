@@ -39,6 +39,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 import requests
+import pandas as pd
 import yfinance as yf
 from dotenv import load_dotenv
 
@@ -124,14 +125,15 @@ def fred_search_series(keyword: str, limit: int = 10) -> list[dict]:
 FRED_SERIES = {
     "미국_기준금리": "FEDFUNDS",        # 확인됨: 미 연준 실효 기준금리(월간)
     "미국_국채10년물": "DGS10",          # 확인됨: 10년물 국채 수익률(일간) - yfinance(^TNX)와 대조 가능
-    "미국_CPI": "CPALTT01USM657N",       # TODO 확인: OECD MEI 기반 미국 CPI 전년동월비(%)
+    "미국_CPI": "CPIAUCSL",              # 미국 소비자물가지수(계절조정, 지수)
     "미국_GDP성장률": "NAEXKP01USQ657S",  # TODO 확인: OECD MEI 기반 미국 실질GDP 성장률(분기)
     "일본_기준금리": "INTDSRJPM193N",    # TODO 확인: 일본 할인율. BOJ 정책금리(단기금리목표)와 다를 수 있음
-    "일본_CPI": "CPALTT01JPM657N",       # TODO 확인
+    "일본_CPI": "JPNPCPIPCPPPT",          # 일본 CPI 변화율(IMF/FRED, 연간)
     "일본_GDP성장률": "NAEXKP01JPQ657S", # TODO 확인
     "유럽_기준금리": "ECBDFR",           # TODO 확인: ECB 예금금리(Deposit Facility Rate)
-    "유럽_CPI": "CPALTT01EZM657N",       # TODO 확인: 유로존 CPI 전년동월비(%)
-    "유럽_GDP성장률": "NAEXKP01EZQ657S", # TODO 확인
+    "유럽_CPI": "CP0000EU272020M086NEST", # EU 소비자물가지수(지수)
+    "유럽_GDP성장률": "CLVMNACSCAB1GQEU272020", # EU 실질 GDP 연쇄물량(수준)
+    "한국_GDP성장률": "NGDPRSAXDCKRQ",     # 한국 실질 GDP 연쇄물량(수준)
 }
 
 
@@ -185,7 +187,6 @@ ECOS_TARGETS = {
     "한국_기준금리": {"stat_code": "722Y001", "item_code1": "0101000", "period": "D"},
     "한국_CPI": {"stat_code": "901Y009", "item_code1": "0", "period": "M"},
     "한국_무역수지": {"stat_code": "301Y013", "item_code1": "*AA0", "period": "M"},  # TODO 확인: item_code 구조
-    "한국_GDP성장률": {"stat_code": "200Y102", "item_code1": "1400", "period": "Q"},  # TODO 확인: item_code 구조
 }
 
 
@@ -226,6 +227,21 @@ MARKET_TICKERS = {
 }
 
 
+def _extract_close_series(df: pd.DataFrame) -> pd.Series:
+    """yfinance 단일/멀티인덱스 결과에서 Close 시리즈를 추출한다."""
+    if df.empty:
+        raise ValueError("빈 데이터프레임")
+    if isinstance(df.columns, pd.MultiIndex):
+        close_frame = df.xs("Close", axis=1, level=0)
+        if isinstance(close_frame, pd.DataFrame) and not close_frame.empty:
+            return close_frame.iloc[:, 0]
+    else:
+        close = df.get("Close")
+        if close is not None:
+            return close
+    raise ValueError("Close 열을 찾을 수 없습니다")
+
+
 def collect_market_indicators() -> dict:
     start = START_DATE.strftime("%Y-%m-%d")
     end = (END_DATE + timedelta(days=1)).strftime("%Y-%m-%d")
@@ -236,9 +252,7 @@ def collect_market_indicators() -> dict:
             if df.empty:
                 result[name] = []
                 continue
-            close = df["Close"]
-            if hasattr(close, "iloc") and close.ndim == 2:
-                close = close.iloc[:, 0]
+            close = _extract_close_series(df)
             close.index = close.index.strftime("%Y-%m-%d")
             result[name] = [{"date": d, "value": round(float(v), 4)} for d, v in close.items()]
             print(f"[yfinance] {name} ({ticker}) - {len(result[name])}건 확보")
@@ -246,6 +260,25 @@ def collect_market_indicators() -> dict:
             print(f"[yfinance] {name} ({ticker}) 실패: {safe_error(e)}")
             result[name] = []
     return result
+
+
+def collect_index_series(label: str, tickers: list[str]) -> list[dict]:
+    """Yahoo Finance에서 국내 지수 또는 대용 티커를 순서대로 시도한다."""
+    start = START_DATE.strftime("%Y-%m-%d")
+    end = (END_DATE + timedelta(days=1)).strftime("%Y-%m-%d")
+    for ticker in tickers:
+        try:
+            df = yf.download(ticker, start=start, end=end, progress=False, auto_adjust=False)
+            if df.empty:
+                continue
+            close = _extract_close_series(df)
+            close.index = close.index.strftime("%Y-%m-%d")
+            rows = [{"date": date, "value": round(float(value), 4)} for date, value in close.items()]
+            print(f"[yfinance] {label} ({ticker}) - {len(rows)}건 확보")
+            return rows
+        except Exception as exc:
+            print(f"[yfinance] {label} ({ticker}) 실패: {safe_error(exc)}")
+    return []
 
 
 # ============================================================
@@ -327,6 +360,9 @@ def main():
         "fred": collect_fred_indicators(),
         "ecos": collect_ecos_indicators(),
         "market": collect_market_indicators(),
+        "kospi_index": collect_index_series("코스피 지수", ["^KS11", "069500.KS"]),
+        # 공개 Yahoo 데이터에 KRX100 현물 지수가 없을 때 ETF가 대용값으로 사용됨.
+        "krx100_index": collect_index_series("KRX100 대용 ETF", ["122630.KS", "069500.KS"]),
         "foreign_netflow_kospi": collect_foreign_netflow(),
         "google_trends": collect_google_trends(),
     }
@@ -335,7 +371,8 @@ def main():
         len(series)
         for source in (macro_data["fred"], macro_data["ecos"], macro_data["market"])
         for series in source.values()
-    ) + len(macro_data["foreign_netflow_kospi"]) + len(macro_data["google_trends"])
+    ) + len(macro_data["kospi_index"]) + len(macro_data["krx100_index"]) \
+      + len(macro_data["foreign_netflow_kospi"]) + len(macro_data["google_trends"])
     if collected_count == 0:
         raise RuntimeError("모든 거시 지표 수집이 실패해 기존 macro_data.json을 보존합니다.")
 
@@ -351,4 +388,3 @@ if __name__ == "__main__":
     # fred_search_series("CPALTT01EZM657N")
 
     run_cli(main)
-

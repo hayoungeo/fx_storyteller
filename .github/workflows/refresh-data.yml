@@ -44,6 +44,7 @@ jobs:
       - name: Refresh macro data
         run: |
           python collect_macro_data.py
+          python fetch_weekly_fx_features.py
           python compute_macro_indicators.py
       - name: Export safe web dataset
         run: python web/scripts/export_web_data.py

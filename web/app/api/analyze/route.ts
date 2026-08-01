@@ -49,6 +49,34 @@ const categoryBySensitivity: Record<string, string> = { fx: "환율", interest_r
 const intentLabel: Record<string, string> = { travel: "여행", study: "유학", business: "출장", shopping: "해외직구", investment: "투자" };
 const assetTypeLabel: Record<string, string> = { foreign_deposit: "외화 예금", overseas_stock: "해외 주식", overseas_etf: "해외 ETF", bond: "외화 채권", other: "외화 자산" };
 
+function selectMacroContext(pair: CurrencyPair) {
+  const macro = analysisData.macro as unknown as Record<string, any>;
+  const weekly = macro.weekly_fx_features || {};
+  const weeklyKeys: Record<CurrencyPair, string[]> = {
+    "USD/KRW": ["usd_krw", "us_policy_rate", "kr_policy_rate", "us_cpi_yoy", "kr_cpi_yoy", "us_kr_policy_spread", "us_kr_cpi_spread"],
+    "JPY/KRW": ["jpy_krw", "jp_policy_rate", "kr_policy_rate", "jp_cpi_yoy", "kr_cpi_yoy", "us_jp_policy_spread", "us_jp_cpi_spread"],
+    "EUR/KRW": ["eur_krw", "ea_policy_rate", "kr_policy_rate", "ea_cpi_yoy", "kr_cpi_yoy", "us_ea_policy_spread", "us_ea_cpi_spread"],
+  };
+  const indicatorKeys: Record<CurrencyPair, string[]> = {
+    "USD/KRW": ["미국_국채10년물", "미국_CPI", "VIX", "미국국채10년물_야후", "유가_WTI", "한국_CPI"],
+    "JPY/KRW": ["일본_CPI", "VIX", "유가_WTI", "한국_CPI"],
+    "EUR/KRW": ["유럽_CPI", "VIX", "유가_WTI", "한국_CPI"],
+  };
+  return {
+    computedAt: macro.computed_at,
+    rateDifference: macro.rate_diffs?.[pair],
+    fxTechnical: macro.fx_technical?.[pair],
+    weeklyLatest: weekly.latest_week,
+    weeklyFeatures: Object.fromEntries(weeklyKeys[pair].filter((key) => weekly[key]).map((key) => [key, weekly[key]])),
+    japanPolicyRate: pair === "JPY/KRW" ? macro.japan_policy_rate : undefined,
+    otherIndicators: Object.fromEntries(
+      indicatorKeys[pair]
+        .filter((key) => macro.other_indicators?.[key]?.latest !== null && macro.other_indicators?.[key]?.latest !== undefined)
+        .map((key) => [key, macro.other_indicators[key]]),
+    ),
+  };
+}
+
 function selectEvidence(pair: CurrencyPair, categories: string[], goalText = ""): Evidence[] {
   const country = countryByPair[pair];
   const tokens = goalText.split(/\s+/).filter((token) => token.length >= 2);
@@ -133,6 +161,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
       isStale: volatility.is_stale,
       allowedActionGuidance: volatility.action_guidance,
     },
+    macroContext: selectMacroContext(pair),
     news: selectedNews,
   };
   try {
@@ -188,13 +217,14 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
 
 일반 규칙:
 - 반드시 주어진 뉴스 내용에 근거해서만 설명하세요. 뉴스에 없는 내용을 지어내지 마세요.
+- macroContext는 뉴스 내용을 직접 뒷받침할 때만 배경 근거로 사용하고, 값이 없는 지표는 언급하지 마세요.
 - 투자 조언(사라, 팔아라)을 하지 말고, 사실과 그 의미만 담백하게 설명하세요.
 - "~일 수 있어요", "~에는 큰 변화가 없어요" 처럼 단정적이지 않은 톤을 쓰세요.
 - 출력은 설명 문장만 출력하고, 다른 부연설명이나 따옴표는 붙이지 마세요.`,
           },
           {
             role: "user",
-            content: `아래 입력만 사용해 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요.\n\n${JSON.stringify(prompt)}`,
+            content: `아래 입력만 사용해 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요.\n\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
