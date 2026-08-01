@@ -203,7 +203,9 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
     const raw = body?.choices?.[0]?.message?.content;
     const parsed = JSON.parse(raw);
     if (typeof parsed.summary !== "string" || typeof parsed.action !== "string") return { ...fallback, mode: "data-fallback" as const };
-    const sentenceCount = parsed.summary.split(/[.!?]+/).filter((sentence: string) => sentence.trim()).length;
+    const sentenceCount = parsed.summary
+      .split(/[!?]+|(?<!\d)\.(?!\d)/)
+      .filter((sentence: string) => sentence.trim()).length;
     const requiredValues = [
       requiredRateSentence,
       volatility.reference_date,
