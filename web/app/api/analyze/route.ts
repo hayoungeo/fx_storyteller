@@ -338,7 +338,8 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
     summary = summary.replace(/^newsContext[.]lead:\s*/i, "").trim();
     const qualityFailed = summary.includes("비용는")
       || (summary.match(/원에서/g) || []).length > 1
-      || (summary.match(/직접 연결되는 최신 뉴스는 제한적/g) || []).length > 0;
+      || (summary.match(/직접 연결되는 최신 뉴스는 제한적/g) || []).length > 0
+      || (userContext.mode === "목적" && /(자산|가 될 수 있는 원화|환산 기준일인|달러 1|유로 1|원화의 가치가 변동성이)/.test(summary));
     if (qualityFailed) return { ...fallback, mode: "data-fallback" as const };
     summary = `${newsContext.lead} ${summary}`.trim();
     const unexpectedActionNumber = /\d/.test(generatedAction.replace(/2\s*[~～-]\s*3/g, ""));
