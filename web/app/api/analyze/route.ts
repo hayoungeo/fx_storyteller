@@ -87,12 +87,19 @@ function selectEvidence(pair: CurrencyPair, categories: string[], goalText = "")
   const tokens = goalText.split(/\s+/).filter((token) => token.length >= 2);
   return (analysisData.news as NewsRow[])
     .map((news) => {
-      const directlyRelated = news.currencyPairs.some((item) => pairAliases[pair].includes(item)) || news.country === country;
+      const text = `${news.title} ${news.summary}`;
+      const countryKeywords: Record<CurrencyPair, RegExp> = {
+        "USD/KRW": /미국|달러|United States|\bUSD\b|Fed/i,
+        "JPY/KRW": /일본|엔화|Japan|\byen\b|\bJPY\b|BOJ/i,
+        "EUR/KRW": /유럽|유로|Europe|Eurozone|\bEUR\b|ECB/i,
+      };
+      const hasPair = news.currencyPairs.includes(pair);
+      const hasAliasWithContext = news.currencyPairs.some((item) => pairAliases[pair].includes(item)) && countryKeywords[pair].test(text);
+      const directlyRelated = hasPair || news.country === country || hasAliasWithContext;
       let score = Number(news.confidence) || 0;
       if (news.currencyPairs.some((item) => pairAliases[pair].includes(item))) score += 2;
       if (news.country === country || news.country === "한국") score += 1;
       if (categories.includes(news.category)) score += 0.7;
-      const text = `${news.title} ${news.summary}`;
       if (tokens.some((token) => text.includes(token))) score += 0.25;
       return { news, score, directlyRelated };
     })
@@ -106,12 +113,31 @@ function selectEvidence(pair: CurrencyPair, categories: string[], goalText = "")
 }
 
 function buildMetrics(volatility: VolatilityRow): Metric[] {
-  return [
+  const macro = selectMacroContext(volatility.currency_pair);
+  const metrics: Metric[] = [
     { label: "현재 환율", value: `${volatility.spot_rate.toLocaleString("ko-KR")}원`, note: `${volatility.currency_pair} · ${volatility.reference_date} 기준` },
     { label: "1년 환산 움직임", value: `${volatility.annualized_volatility_pct.toFixed(2)}%`, note: `${volatility.source}` },
     { label: "한 달 통계적 범위", value: `약 ±${volatility.estimated_monthly_move_rate.toLocaleString("ko-KR")}원`, note: `월 변동성 ${volatility.monthly_volatility_pct.toFixed(2)}% 환산` },
     { label: "과거 수준 비교", value: `상위 ${(100 - volatility.historical_percentile).toFixed(0)}%`, note: `과거 관측일 중 ${volatility.historical_percentile.toFixed(0)}%보다 큰 움직임` },
   ];
+  const rateDiff = macro.rateDifference as Record<string, unknown> | undefined;
+  if (typeof rateDiff?.["금리차_pp"] === "number") {
+    metrics.push({
+      label: "한국-상대국 금리차",
+      value: `${Number(rateDiff["금리차_pp"]).toFixed(2)}%p`,
+      note: `${String(rateDiff["해석"] || "금리 수준 비교")} · ${macro.weeklyLatest || "최근"} 기준`,
+    });
+  }
+  const weeklyPairKey: Record<CurrencyPair, string> = { "USD/KRW": "usd_krw", "JPY/KRW": "jpy_krw", "EUR/KRW": "eur_krw" };
+  const weeklyRate = (macro.weeklyFeatures as Record<string, Record<string, unknown>>)?.[weeklyPairKey[volatility.currency_pair]];
+  if (weeklyRate?.trend) {
+    metrics.push({
+      label: "주간 환율 흐름",
+      value: String(weeklyRate.trend),
+      note: `BIS 주간 데이터 · ${macro.weeklyLatest || "최근"} 기준`,
+    });
+  }
+  return metrics;
 }
 
 function buildRatePresentation(pair: CurrencyPair, volatility: VolatilityRow) {
@@ -230,7 +256,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
           },
           {
             role: "user",
-            content: `아래 입력만 사용해 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 사용자가 외화 자산을 보유한다고 가정하지 말고, 여행·유학·출장 등에 필요한 원화 환산 비용의 불확실성만 설명하세요.\n\n${JSON.stringify(prompt)}`,
+            content: `아래 입력만 사용해 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 말고, 여행·유학·출장 등에 필요한 "원화 환산 비용"의 불확실성만 설명하세요.\n\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
