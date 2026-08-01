@@ -122,6 +122,10 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
   if (!apiKey) return { ...fallback, mode: "data-fallback" as const };
   const ratePresentation = buildRatePresentation(pair, volatility);
   const requiredRateSentence = `${subject}과 관련된 현재 환율은 ${ratePresentation.currentRateText}이며, 최근 움직임을 기준으로 한 한 달 통계 범위는 ${ratePresentation.monthlyRangeText}입니다.`;
+  const selectedNews = evidence.map(({ id, title, country, category, reason }) => {
+    const detail = (analysisData.news as NewsRow[]).find((item) => item.id === id && item.title === title);
+    return { title, summary: detail?.summary || "", country, category, reason };
+  });
   const prompt = {
     subject, currencyPair: pair,
     userFriendlyRate: ratePresentation,
@@ -144,7 +148,7 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
       fxTechnical: analysisData.macro.fx_technical,
       otherIndicators: analysisData.macro.other_indicators,
     }),
-    news: evidence.map(({ title, country, category, reason }) => ({ title, country, category, reason })),
+    news: selectedNews,
   };
   try {
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
@@ -199,7 +203,17 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
     const raw = body?.choices?.[0]?.message?.content;
     const parsed = JSON.parse(raw);
     if (typeof parsed.summary !== "string" || typeof parsed.action !== "string") return { ...fallback, mode: "data-fallback" as const };
-    if (!parsed.summary.includes(requiredRateSentence)) return { ...fallback, mode: "data-fallback" as const };
+    const sentenceCount = parsed.summary.split(/[.!?]+/).filter((sentence: string) => sentence.trim()).length;
+    const requiredValues = [
+      requiredRateSentence,
+      volatility.reference_date,
+      volatility.annualized_volatility_pct.toFixed(2),
+      volatility.monthly_volatility_pct.toFixed(2),
+      volatility.historical_percentile.toFixed(0),
+    ];
+    if (sentenceCount < 4 || sentenceCount > 6 || requiredValues.some((value) => !parsed.summary.includes(value))) {
+      return { ...fallback, mode: "data-fallback" as const };
+    }
     const generatedAction = parsed.action.replace(/^행동 제안:\s*/, "").slice(0, 300);
     const action = /나누|2\s*[~～-]\s*3/.test(generatedAction) ? generatedAction : fallback.action;
     return { summary: parsed.summary.slice(0, 1200), action, mode: "ai" as const };
