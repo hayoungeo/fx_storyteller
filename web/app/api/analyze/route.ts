@@ -192,10 +192,10 @@ function buildNewsContext(pair: CurrencyPair, news: NewsRow[]) {
   if (!hasDirectNews) {
     return {
       status: "limited",
-      lead: `입력한 목적과 직접 연결되는 최신 뉴스는 제한적입니다. 참고 가능한 뉴스에서는 ${themeText}가 다뤄졌습니다.`,
+      lead: `입력한 목적과 직접 연결되는 최신 뉴스는 제한적입니다. 참고 가능한 뉴스의 주요 내용은 ${themeText}입니다.`,
     };
   }
-  return { status: "direct", lead: `관련 뉴스에서는 ${themeText}가 주요 내용으로 확인됩니다.` };
+  return { status: "direct", lead: `관련 뉴스의 주요 내용은 ${themeText}입니다.` };
 }
 
 function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[]) {
@@ -329,13 +329,21 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
         .replace(/원화 환산 가치를/g, "원화 환산 비용을")
         .replace(/원화 환산 가치/g, "원화 환산 비용");
     }
+    if (pair === "JPY/KRW") {
+      const yenSpot = (volatility.spot_rate * 100).toLocaleString("ko-KR", { maximumFractionDigits: 2 });
+      summary = summary
+        .replace(`현재 약 ${yenSpot}원`, `현재 100엔당 약 ${yenSpot}원`)
+        .replace(`현재 ${yenSpot}원`, `현재 100엔당 약 ${yenSpot}원`);
+    }
     summary = summary.replace(/^newsContext[.]lead:\s*/i, "").trim();
     const qualityFailed = summary.includes("비용는")
       || (summary.match(/원에서/g) || []).length > 1
       || (summary.match(/직접 연결되는 최신 뉴스는 제한적/g) || []).length > 0;
     if (qualityFailed) return { ...fallback, mode: "data-fallback" as const };
     summary = `${newsContext.lead} ${summary}`.trim();
-    return { summary: summary || fallback.summary, action: generatedAction || fallback.action, mode: "ai" as const };
+    const unexpectedActionNumber = /\d/.test(generatedAction.replace(/2\s*[~～-]\s*3/g, ""));
+    const action = generatedAction && !unexpectedActionNumber ? generatedAction : fallback.action;
+    return { summary: summary || fallback.summary, action, mode: "ai" as const };
   } catch {
     return { ...fallback, mode: "data-fallback" as const };
   }
