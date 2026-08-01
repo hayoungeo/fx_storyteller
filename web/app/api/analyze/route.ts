@@ -293,6 +293,14 @@ function removeRepeatedSentences(value: string, action = "") {
   return kept.join(" ").trim();
 }
 
+function moveNewsExplanationFirst(value: string) {
+  const sentences = value.split(/(?<=[.!?])\s+/).map((sentence) => sentence.trim()).filter(Boolean);
+  const newsPattern = /(뉴스에 따르면|연방준비제도|\bFed\b|연준|원[·・]?달러|한국은행|한은|기준금리.{0,12}(동결|인상|인하)|관세|엔화.{0,12}(약세|강세|하락|상승))/i;
+  const newsSentences = sentences.filter((sentence) => newsPattern.test(sentence));
+  const otherSentences = sentences.filter((sentence) => !newsPattern.test(sentence));
+  return { text: [...newsSentences, ...otherSentences].join(" ").trim(), hasNewsExplanation: newsSentences.length > 0 };
+}
+
 async function generateWithGroq(subject: string, userContext: Record<string, unknown>, pair: CurrencyPair, volatility: VolatilityRow, evidence: Evidence[], fallback: { summary: string; action: string }) {
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) return { ...fallback, mode: "data-fallback" as const };
@@ -433,7 +441,9 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
       || (userContext.mode === "목적" && /(자산|가 될 수 있는 원화|환산 기준일인|달러 1|유로 1|원화의 가치가 변동성이)/.test(summary))
       || (userContext.mode === "자산" && /(여행|유학|출장|해외직구).{0,12}(계획|준비|예정|필요)/.test(summary));
     if (qualityFailed) return { ...fallback, mode: "data-fallback" as const };
-    summary = removeRepeatedSentences(`${newsContext.outputPrefix} ${summary}`.trim(), generatedAction);
+    const orderedSummary = moveNewsExplanationFirst(summary);
+    const newsPrefix = newsContext.status === "direct" && orderedSummary.hasNewsExplanation ? "" : newsContext.outputPrefix;
+    summary = removeRepeatedSentences(`${newsPrefix} ${orderedSummary.text}`.trim(), generatedAction);
     const unexpectedActionNumber = /\d/.test(generatedAction.replace(/2\s*[~～-]\s*3/g, ""));
     const action = generatedAction && !unexpectedActionNumber ? generatedAction : fallback.action;
     return { summary: summary || fallback.summary, action, mode: "ai" as const };
