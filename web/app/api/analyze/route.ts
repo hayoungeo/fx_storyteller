@@ -119,10 +119,11 @@ function selectEvidence(pair: CurrencyPair, categories: string[], goalText = "")
 
 function buildMetrics(volatility: VolatilityRow): Metric[] {
   const macro = selectMacroContext(volatility.currency_pair);
+  const isYen = volatility.currency_pair === "JPY/KRW";
   const metrics: Metric[] = [
-    { label: "현재 환율", value: `${volatility.spot_rate.toLocaleString("ko-KR")}원`, note: `${volatility.currency_pair} · ${volatility.reference_date} 기준` },
+    { label: "현재 환율", value: `${(volatility.spot_rate * (isYen ? 100 : 1)).toLocaleString("ko-KR", { maximumFractionDigits: 2 })}원`, note: `${isYen ? "100엔" : volatility.currency_pair.split("/")[0]} 기준 · ${volatility.reference_date}` },
     { label: "1년 환산 움직임", value: `${volatility.annualized_volatility_pct.toFixed(2)}%`, note: `${volatility.source}` },
-    { label: "한 달 통계적 범위", value: `약 ±${volatility.estimated_monthly_move_rate.toLocaleString("ko-KR")}원`, note: `월 변동성 ${volatility.monthly_volatility_pct.toFixed(2)}% 환산` },
+    { label: "한 달 통계적 범위", value: `약 ±${(volatility.estimated_monthly_move_rate * (isYen ? 100 : 1)).toLocaleString("ko-KR", { maximumFractionDigits: 2 })}원`, note: `${isYen ? "100엔" : "1단위 외화"} 기준 · 월 변동성 ${volatility.monthly_volatility_pct.toFixed(2)}%` },
     { label: "과거 수준 비교", value: `상위 ${(100 - volatility.historical_percentile).toFixed(0)}%`, note: `과거 관측일 중 ${volatility.historical_percentile.toFixed(0)}%보다 큰 움직임` },
   ];
   const rateDiff = macro.rateDifference as Record<string, unknown> | undefined;
@@ -160,11 +161,39 @@ function buildRatePresentation(pair: CurrencyPair, volatility: VolatilityRow) {
   };
 }
 
+function getNewsDetails(evidence: Evidence[]): NewsRow[] {
+  return evidence
+    .map(({ id, title }) => (analysisData.news as NewsRow[]).find((item) => item.id === id && item.title === title))
+    .filter((item): item is NewsRow => Boolean(item));
+}
+
+function buildNewsContext(pair: CurrencyPair, news: NewsRow[]) {
+  if (!news.length) {
+    return {
+      status: "none",
+      lead: "현재 입력한 목적과 직접 관련된 최신 뉴스는 찾지 못했습니다. 아래 내용은 환율과 경제지표를 기준으로 설명합니다.",
+    };
+  }
+  const country = countryByPair[pair];
+  const hasDirectNews = news.some((item) => item.country === country || item.currencyPairs.includes(pair));
+  const themes: string[] = [];
+  for (const item of news) {
+    if (/yen falls|엔화.{0,8}(하락|약세)/i.test(`${item.title} ${item.summary}`)) themes.push("엔화 약세");
+    if (item.reason && !themes.includes(item.reason)) themes.push(item.reason);
+  }
+  const themeText = themes.slice(0, 3).join("·") || "환율 관련 움직임";
+  if (!hasDirectNews) {
+    return {
+      status: "limited",
+      lead: `입력한 목적과 직접 연결되는 최신 뉴스는 제한적입니다. 참고 가능한 뉴스에서는 ${themeText} 내용이 확인됩니다.`,
+    };
+  }
+  return { status: "direct", lead: `관련 뉴스에서는 ${themeText} 내용이 확인됩니다.` };
+}
+
 function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[]) {
-  const newsText = evidence.length
-    ? `최근 관련 뉴스 ${evidence.length}건도 함께 살펴봤습니다.`
-    : "직접 연결되는 최신 뉴스가 적어 환율 움직임을 중심으로 살펴봤습니다.";
-  const summary = `${newsText} ${buildVolatilitySummary(subject, volatility)}`;
+  const newsContext = buildNewsContext(volatility.currency_pair, getNewsDetails(evidence));
+  const summary = `${newsContext.lead} ${buildVolatilitySummary(subject, volatility)}`;
   return { summary, action: "필요한 외화를 한 번에 바꾸기보다 시기를 2~3번으로 나누고, 예상 원화 예산에도 여유를 두세요." };
 }
 
@@ -177,10 +206,8 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) return { ...fallback, mode: "data-fallback" as const };
   const ratePresentation = buildRatePresentation(pair, volatility);
-  const selectedNews = evidence.map(({ id, title, country, category, reason }) => {
-    const detail = (analysisData.news as NewsRow[]).find((item) => item.id === id && item.title === title);
-    return { title, summary: detail?.summary || "", country, category, reason };
-  });
+  const selectedNews = getNewsDetails(evidence);
+  const newsContext = buildNewsContext(pair, selectedNews);
   const prompt = {
     userAssetSituation: { subject, ...userContext },
     currencyPair: pair,
@@ -199,7 +226,8 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
       allowedActionGuidance: volatility.action_guidance,
     },
     macroContext: selectMacroContext(pair),
-    news: selectedNews,
+    newsContext,
+    news: selectedNews.map(({ title, summary, country, category, reason }) => ({ title, summary, country, category, reason })),
   };
   try {
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
@@ -254,6 +282,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
 
 일반 규칙:
 - 반드시 주어진 뉴스 내용에 근거해서만 설명하세요. 뉴스에 없는 내용을 지어내지 마세요.
+- 첫 부분은 newsContext.lead를 글자 그대로 사용하세요. status가 none이면 관련 뉴스가 있다고 말하지 말고, limited이면 직접 관련 뉴스가 제한적이라는 사실을 숨기지 마세요.
 - macroContext는 뉴스 내용을 직접 뒷받침할 때만 배경 근거로 사용하고, 값이 없는 지표는 언급하지 마세요.
 - 투자 조언(사라, 팔아라)을 하지 말고, 사실과 그 의미만 담백하게 설명하세요.
 - "~일 수 있어요", "~에는 큰 변화가 없어요" 처럼 단정적이지 않은 톤을 쓰세요.
@@ -261,7 +290,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
           },
           {
             role: "user",
-            content: `아래 입력만 사용해 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요.\n\n${JSON.stringify(prompt)}`,
+            content: `아래 입력만 사용해 설명하세요. 반드시 newsContext.lead로 시작하고 같은 뉴스 내용을 다시 반복하지 마세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요.\n\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
@@ -274,11 +303,22 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
     const cleaned = raw.trim().replace(/^['"]|['"]$/g, "");
     const actionIndex = cleaned.lastIndexOf("행동 제안:");
     let summary = (actionIndex >= 0 ? cleaned.slice(0, actionIndex) : cleaned).trim().slice(0, 1200);
+    let generatedAction = actionIndex >= 0 ? cleaned.slice(actionIndex + "행동 제안:".length).trim().slice(0, 300) : "";
+    if (!generatedAction) {
+      const sentences = summary.split(/(?<=[.!?])\s+/).filter(Boolean);
+      const lastSentence = sentences.at(-1) || "";
+      if (/(환율|환전|송금|결제|예산|시점).*(확인|여유|나누|분산|적절|좋|권장)/.test(lastSentence)) {
+        generatedAction = lastSentence.replace(/[.!?]+$/, "").trim();
+        summary = sentences.slice(0, -1).join(" ").trim();
+      }
+    }
     const requiredCurrencyLabel = userContext.requiredCurrencyLabel;
     if (userContext.mode === "목적" && typeof requiredCurrencyLabel === "string") {
       summary = summary.replace(/원화가 필요합니다[.]?/g, `${requiredCurrencyLabel}가 필요합니다.`);
+      summary = summary.replace(new RegExp(`${requiredCurrencyLabel}\\s*자산`, "g"), requiredCurrencyLabel);
+      summary = summary.replace(/외화 자산/g, requiredCurrencyLabel).replace(/원화 환산 가치/g, "원화 환산 비용");
     }
-    const generatedAction = actionIndex >= 0 ? cleaned.slice(actionIndex + "행동 제안:".length).trim().slice(0, 300) : "";
+    if (!summary.startsWith(newsContext.lead)) summary = `${newsContext.lead} ${summary}`.trim();
     return { summary: summary || fallback.summary, action: generatedAction || fallback.action, mode: "ai" as const };
   } catch {
     return { ...fallback, mode: "data-fallback" as const };
