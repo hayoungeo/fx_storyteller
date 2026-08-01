@@ -89,6 +89,7 @@ function buildRatePresentation(pair: CurrencyPair, volatility: VolatilityRow) {
   const format = (value: number) => value.toLocaleString("ko-KR", { maximumFractionDigits: 2 });
   return {
     currentRateText: `${foreignUnit}당 약 ${format(spot)}원`,
+    monthlyMoveText: `${foreignUnit}당 약 ±${format(move)}원`,
     monthlyRangeText: `${foreignUnit}당 약 ${format(Math.max(0, spot - move))}원에서 ${format(spot + move)}원`,
     meaning: `${foreignUnitObject} 사는 데 필요한 원화 금액이 이 범위만큼 달라질 수 있다는 뜻`,
   };
@@ -124,6 +125,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
       currentRate: ratePresentation.currentRateText,
       annualizedVolatilityPct: volatility.annualized_volatility_pct,
       monthlyVolatilityPct: volatility.monthly_volatility_pct,
+      monthlyStatisticalMove: ratePresentation.monthlyMoveText,
       monthlyStatisticalRange: ratePresentation.monthlyRangeText,
       historicalPercentile: volatility.historical_percentile,
       historicalLevelExplanation: volatility.percentile_explanation,
@@ -192,7 +194,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
           },
           {
             role: "user",
-            content: `아래 입력만 사용해 설명하세요. 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요.\n\n${JSON.stringify(prompt)}`,
+            content: `아래 입력만 사용해 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요.\n\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
