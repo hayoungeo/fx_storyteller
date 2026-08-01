@@ -109,27 +109,31 @@ function compactAvailableData(value: unknown): unknown {
 }
 
 function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[]) {
-  const rate = buildRatePresentation(volatility.currency_pair, volatility);
   const newsText = evidence.length
     ? `최근 관련 뉴스 ${evidence.length}건도 함께 살펴봤습니다.`
     : "직접 연결되는 최신 뉴스가 적어 환율 움직임을 중심으로 살펴봤습니다.";
-  const summary = `${newsText} ${subject}과 관련된 현재 환율은 ${rate.currentRateText}입니다. ${volatility.reference_date} 기준 환율의 흔들림은 한 달에 약 ${volatility.monthly_volatility_pct.toFixed(2)}%로, 원화로 보면 ${rate.monthlyRangeText}에 해당합니다. 1년 기준으로 환산한 움직임 크기는 ${volatility.annualized_volatility_pct.toFixed(2)}%이며, 과거 관측일 100일 중 약 ${volatility.historical_percentile.toFixed(0)}일보다 움직임이 큰 수준입니다. 이는 ${rate.meaning}일 뿐, 이번 뉴스와 지표만으로는 환율 방향을 단정하기 어렵습니다. 이 수치는 실제 옵션시장의 전망이 아니라 과거 환율 움직임으로 추정한 값이며, 원화 범위도 확정값이 아닌 통계적 참고치입니다.`;
+  const summary = `${newsText} ${buildVolatilitySummary(subject, volatility)}`;
   return { summary, action: "필요한 외화를 한 번에 바꾸기보다 시기를 2~3번으로 나누고, 예상 원화 예산에도 여유를 두세요." };
 }
 
-async function generateWithGroq(subject: string, pair: CurrencyPair, volatility: VolatilityRow, evidence: Evidence[], fallback: { summary: string; action: string }) {
+function buildVolatilitySummary(subject: string, volatility: VolatilityRow) {
+  const rate = buildRatePresentation(volatility.currency_pair, volatility);
+  return `${subject}과 관련된 현재 환율은 ${rate.currentRateText}이며, 최근 움직임을 기준으로 한 한 달 통계 범위는 ${rate.monthlyRangeText}입니다. ${volatility.reference_date} 기준 환율의 흔들림은 한 달에 약 ${volatility.monthly_volatility_pct.toFixed(2)}%이고, 1년 기준으로 환산한 움직임 크기는 ${volatility.annualized_volatility_pct.toFixed(2)}%로 과거 관측일 100일 중 약 ${volatility.historical_percentile.toFixed(0)}일보다 큰 수준입니다. 이는 ${rate.meaning}일 뿐 상승·하락 방향을 뜻하지 않으며, 실제 옵션시장의 전망이 아니라 과거 환율 움직임으로 추정한 값이므로 원화 범위도 확정값이 아닌 통계적 참고치입니다.`;
+}
+
+async function generateWithGroq(subject: string, userPurpose: string, pair: CurrencyPair, volatility: VolatilityRow, evidence: Evidence[], fallback: { summary: string; action: string }) {
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) return { ...fallback, mode: "data-fallback" as const };
   const ratePresentation = buildRatePresentation(pair, volatility);
-  const requiredRateSentence = `${subject}과 관련된 현재 환율은 ${ratePresentation.currentRateText}이며, 최근 움직임을 기준으로 한 한 달 통계 범위는 ${ratePresentation.monthlyRangeText}입니다.`;
+  const serverAddedVolatility = buildVolatilitySummary(subject, volatility);
   const selectedNews = evidence.map(({ id, title, country, category, reason }) => {
     const detail = (analysisData.news as NewsRow[]).find((item) => item.id === id && item.title === title);
     return { title, summary: detail?.summary || "", country, category, reason };
   });
   const prompt = {
-    subject, currencyPair: pair,
+    subject, userPurpose, currencyPair: pair,
     userFriendlyRate: ratePresentation,
-    requiredRateSentence,
+    serverAddedVolatility,
     volatility: {
       referenceDate: volatility.reference_date,
       spotRateKrw: volatility.spot_rate,
@@ -175,9 +179,9 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
 6. 투자나 즉시 환전을 추천하지 말고 중립적으로 설명하세요.
 7. 금융 용어는 쉬운 한국어로 풀어 쓰세요. VIX, CPI, GDP 등은 쓸 수 있지만 일반인이 이해하기 어려운 말은 뜻을 함께 설명하세요.
 8. 거시 지표는 뉴스의 배경 정보로만 사용하세요. 값을 나열하거나 지표만으로 새로운 원인과 예측을 만들지 말고, 데이터가 없으면 언급하지 마세요.
-9. 변동성 정보에서는 1년 기준으로 환산한 움직임 크기(%), 과거 100일 중 몇 일보다 큰지, 한 달 기준 움직임(%), 현재 환율 기준 원화 범위를 구체적인 숫자로 한 번씩 언급하세요.
-10. 변동성은 방향이 아니라 흔들림의 크기입니다. 실제 옵션 내재변동성이 아닌 과거 환율 움직임으로 추정한 값이며, 원화 범위는 확정 범위가 아닌 통계적 환산값이라고 짧게 밝히세요.
-11. 변동성 기준일을 언급하고, 오래된 정보라는 경고가 있으면 현재 수치처럼 표현하지 마세요.
+9. 변동성 수치와 설명은 서버가 serverAddedVolatility 문장으로 뒤에 정확히 붙입니다. newsAnalysis에서는 이 숫자를 반복하거나 바꾸지 마세요.
+10. 변동성은 방향이 아니라 흔들림의 크기이며, 이를 근거로 상승이나 하락을 예측하지 마세요.
+11. 오래된 정보라는 경고가 있으면 현재 수치처럼 표현하지 마세요.
 12. 여행·유학·출장·해외직구 목적에서는 원화 환산 금액의 불확실성이 커지거나 작아질 수 있다는 의미까지만 설명하세요.
 13. 숫자를 보고서처럼 나열하지 말고 먼저 쉬운 말로 의미를 설명한 다음 핵심 수치를 제시하세요.
 14. "연율화", "백분위", "%p", "SV"를 단독으로 쓰지 말고 각각 쉬운 뜻으로 풀어 쓰세요.
@@ -185,14 +189,14 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
 16. 행동 제안은 환율 확인, 예산 여유 확보, 환전·송금 시점 분산처럼 위험을 관리하는 구체적인 행동만 제시하세요. 즉시 환전이나 투자를 권하지 마세요.
 
 출력 형식
-- 반드시 {"summary": string, "action": string} 두 키만 가진 JSON 객체를 출력하세요.
-- summary는 제목이나 번호 없이 이어지는 자연스러운 문단 4~6문장으로 작성하세요.
+- 반드시 {"newsAnalysis": string, "action": string} 두 키만 가진 JSON 객체를 출력하세요.
+- newsAnalysis는 제목이나 번호 없이 2~3문장으로 작성하세요. 여러 뉴스의 공통 흐름, 환율에 직접 미칠 가능성, 사용자 목적에 미칠 영향을 순서대로 담으세요.
 - action은 반드시 "행동 제안:"으로 시작하는 한 문장으로 작성하세요. 화면에서는 summary 뒤에 표시되며, 둘을 합쳐 총 5~7문장이 됩니다.
 - 같은 내용을 반복하지 말고, "~할 수 있습니다", "~가능성이 있습니다"처럼 단정하지 않은 표현을 사용하세요.`,
           },
           {
             role: "user",
-            content: `아래 데이터를 일반 사용자가 한 번에 이해할 수 있는 생활 언어로 설명하세요. 뉴스 흐름을 먼저 설명하고, requiredRateSentence는 글자와 숫자를 바꾸지 말고 summary 안에 한 번만 넣으세요. macroIndicators가 비어 있거나 값이 없으면 거시 지표를 언급하지 마세요.\n\n근거 데이터:\n${JSON.stringify(prompt)}`,
+            content: `아래 데이터를 일반 사용자가 한 번에 이해할 수 있는 생활 언어로 설명하세요. 뉴스 제목을 하나씩 나열하지 말고 하나의 흐름으로 종합하세요. macroIndicators가 비어 있거나 값이 없으면 거시 지표를 언급하지 마세요. serverAddedVolatility는 서버가 그대로 붙이므로 newsAnalysis에서 반복하지 마세요.\n\n근거 데이터:\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
@@ -202,23 +206,13 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
     const body = await response.json();
     const raw = body?.choices?.[0]?.message?.content;
     const parsed = JSON.parse(raw);
-    if (typeof parsed.summary !== "string" || typeof parsed.action !== "string") return { ...fallback, mode: "data-fallback" as const };
-    const sentenceCount = parsed.summary
-      .split(/[!?]+|(?<!\d)\.(?!\d)/)
-      .filter((sentence: string) => sentence.trim()).length;
-    const requiredValues = [
-      requiredRateSentence,
-      volatility.reference_date,
-      volatility.annualized_volatility_pct.toFixed(2),
-      volatility.monthly_volatility_pct.toFixed(2),
-      volatility.historical_percentile.toFixed(0),
-    ];
-    if (sentenceCount < 4 || sentenceCount > 6 || requiredValues.some((value) => !parsed.summary.includes(value))) {
+    if (typeof parsed.newsAnalysis !== "string" || !parsed.newsAnalysis.trim() || typeof parsed.action !== "string") {
       return { ...fallback, mode: "data-fallback" as const };
     }
     const generatedAction = parsed.action.replace(/^행동 제안:\s*/, "").slice(0, 300);
     const action = /나누|2\s*[~～-]\s*3/.test(generatedAction) ? generatedAction : fallback.action;
-    return { summary: parsed.summary.slice(0, 1200), action, mode: "ai" as const };
+    const newsAnalysis = parsed.newsAnalysis.trim().slice(0, 800);
+    return { summary: `${newsAnalysis} ${serverAddedVolatility}`, action, mode: "ai" as const };
   } catch {
     return { ...fallback, mode: "data-fallback" as const };
   }
@@ -247,7 +241,7 @@ export async function POST(request: Request) {
     if (!volatility) return NextResponse.json({ error: "해당 통화의 변동성 데이터가 아직 준비되지 않았습니다." }, { status: 503 });
     const evidence = selectEvidence(pair, categories, goalText);
     const fallback = fallbackCopy(subject, volatility, evidence);
-    const generated = await generateWithGroq(subject, pair, volatility, evidence, fallback);
+    const generated = await generateWithGroq(subject, goalText || subject, pair, volatility, evidence, fallback);
     const result: AnalysisResponse = {
       subject: { label: subject, currencyPair: pair, mode: input.mode },
       summary: generated.summary,
