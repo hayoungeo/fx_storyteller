@@ -192,7 +192,9 @@ function buildNewsContext(pair: CurrencyPair, news: NewsRow[]) {
       const fact = detailedFed
         ? "미 연준이 기준금리를 3.50~3.75%로 동결했지만, 위원 3명이 다른 의견을 내 정책 판단이 한쪽으로 모이지 않았습니다"
         : "미 연준이 기준금리를 동결했습니다";
-      if (!facts.some((existing) => existing.includes("미 연준"))) facts.push(fact);
+      const existingFedIndex = facts.findIndex((existing) => existing.includes("미 연준"));
+      if (existingFedIndex < 0) facts.push(fact);
+      else if (detailedFed) facts[existingFedIndex] = fact;
     }
     if (/원[·・]?달러.{0,20}(하락|떨어|아래|최저)/i.test(text)) {
       candidates.push("원·달러 환율 하락");
