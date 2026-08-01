@@ -93,12 +93,27 @@ function buildRatePresentation(pair: CurrencyPair, volatility: VolatilityRow) {
   };
 }
 
+function compactAvailableData(value: unknown): unknown {
+  if (value === null || value === undefined || value === "" || value === "데이터 부족" || value === "데이터없음") return undefined;
+  if (Array.isArray(value)) {
+    const items = value.map(compactAvailableData).filter((item) => item !== undefined);
+    return items.length ? items : undefined;
+  }
+  if (typeof value === "object") {
+    const entries = Object.entries(value as Record<string, unknown>)
+      .map(([key, item]) => [key, compactAvailableData(item)] as const)
+      .filter(([, item]) => item !== undefined);
+    return entries.length ? Object.fromEntries(entries) : undefined;
+  }
+  return value;
+}
+
 function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[]) {
   const rate = buildRatePresentation(volatility.currency_pair, volatility);
   const newsText = evidence.length
     ? `최근 관련 뉴스 ${evidence.length}건도 함께 살펴봤습니다.`
     : "직접 연결되는 최신 뉴스가 적어 환율 움직임을 중심으로 살펴봤습니다.";
-  const summary = `${subject}과 관련된 현재 환율은 ${rate.currentRateText}입니다. 최근 움직임을 기준으로 계산한 한 달 통계 범위는 ${rate.monthlyRangeText}입니다. 이는 ${rate.meaning}이며, 오르거나 내릴 방향을 맞힌 예측은 아닙니다. ${newsText} 이 값은 실제 옵션시장의 전망이 아니라 과거 환율로 계산한 참고용 추정치이므로 예산을 정할 때 참고용으로만 사용해 주세요.`;
+  const summary = `${newsText} ${subject}과 관련된 현재 환율은 ${rate.currentRateText}입니다. ${volatility.reference_date} 기준 환율의 흔들림은 한 달에 약 ${volatility.monthly_volatility_pct.toFixed(2)}%로, 원화로 보면 ${rate.monthlyRangeText}에 해당합니다. 1년 기준으로 환산한 움직임 크기는 ${volatility.annualized_volatility_pct.toFixed(2)}%이며, 과거 관측일 100일 중 약 ${volatility.historical_percentile.toFixed(0)}일보다 움직임이 큰 수준입니다. 이는 ${rate.meaning}일 뿐, 이번 뉴스와 지표만으로는 환율 방향을 단정하기 어렵습니다. 이 수치는 실제 옵션시장의 전망이 아니라 과거 환율 움직임으로 추정한 값이며, 원화 범위도 확정값이 아닌 통계적 참고치입니다.`;
   return { summary, action: "필요한 외화를 한 번에 바꾸기보다 시기를 2~3번으로 나누고, 예상 원화 예산에도 여유를 두세요." };
 }
 
@@ -106,11 +121,11 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) return { ...fallback, mode: "data-fallback" as const };
   const ratePresentation = buildRatePresentation(pair, volatility);
-  const requiredOpening = `${subject}과 관련된 현재 환율은 ${ratePresentation.currentRateText}입니다. 최근 움직임을 기준으로 계산한 한 달 통계 범위는 ${ratePresentation.monthlyRangeText}입니다.`;
+  const requiredRateSentence = `${subject}과 관련된 현재 환율은 ${ratePresentation.currentRateText}이며, 최근 움직임을 기준으로 한 한 달 통계 범위는 ${ratePresentation.monthlyRangeText}입니다.`;
   const prompt = {
     subject, currencyPair: pair,
     userFriendlyRate: ratePresentation,
-    requiredSummaryOpening: requiredOpening,
+    requiredRateSentence,
     volatility: {
       referenceDate: volatility.reference_date,
       spotRateKrw: volatility.spot_rate,
@@ -124,6 +139,11 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
       historicalPercentile: volatility.historical_percentile,
       isProxy: volatility.is_proxy,
     },
+    macroIndicators: compactAvailableData({
+      rateDiffs: analysisData.macro.rate_diffs,
+      fxTechnical: analysisData.macro.fx_technical,
+      otherIndicators: analysisData.macro.other_indicators,
+    }),
     news: evidence.map(({ title, country, category, reason }) => ({ title, country, category, reason })),
   };
   try {
@@ -133,34 +153,42 @@ async function generateWithGroq(subject: string, pair: CurrencyPair, volatility:
       body: JSON.stringify({
         model: process.env.GROQ_MODEL || "llama-3.1-8b-instant",
         temperature: 0.25,
-        max_tokens: 500,
+        max_tokens: 700,
         response_format: { type: "json_object" },
         messages: [
           {
             role: "system",
-            content: `당신은 금융을 처음 접하는 사람에게 환율 정보를 설명하는 어시스턴트입니다.
-제공된 근거만 사용하고, 반드시 {"summary": string, "action": string} 형태의 JSON 객체만 출력하세요.
+            content: `당신은 환율 뉴스를 사용자의 목적에 맞게 쉽게 설명하는 금융 어시스턴트입니다.
 
-summary 작성 규칙:
-- 존댓말로 5문장 안팎을 쓰고, 한 문장은 짧게 작성하세요.
-- 첫 문장에는 사용자의 자산이나 목적과 어떤 환율이 연결되는지 말하세요.
-- userFriendlyRate에 제공된 현재 환율과 한 달 범위를 그대로 사용하고, 쉬운 말로 의미를 풀어 주세요.
-- 통화 단위를 절대 뒤집지 마세요. 특히 JPY/KRW는 반드시 "100엔당 약 몇 원"으로 설명하세요.
-- "변동성", "연환산", "백분위", "SV 프록시", "내재변동성" 같은 용어를 설명 없이 사용하지 마세요.
-- 변동성은 방향 예측이 아니라 흔들림의 크기라는 점을 분명히 하세요.
-- 뉴스는 제목을 나열하지 말고 사용자 계획에 미칠 수 있는 영향을 한 문장으로 연결하세요.
-- 이 수치는 옵션시장의 전망이 아니라 과거 환율 움직임으로 계산한 참고용 추정치라고 마지막에 알리세요.
-- 공포를 조장하거나 상승·하락을 단정하지 마세요.
+사용자는 해외여행, 유학, 투자, 출장, 해외직구 등의 목적을 가지고 있습니다. 제공된 뉴스, 거시 지표, 환율 변동성 수치를 종합하여 이 목적에 어떤 영향을 줄 수 있는지 자연스럽게 설명하세요.
 
-action 작성 규칙:
-- 사용자가 오늘 바로 실천할 수 있는 위험 관리 행동을 한 문장으로 쓰세요.
-- "철저히 준비하세요", "시장 상황을 확인하세요"처럼 막연하게 끝내지 마세요.
-- 환전·송금 시기를 2~3번으로 나누거나 원화 예산에 여유를 두는 구체적인 방법을 포함하세요.
-- 매수·매도·즉시 환전을 단정적으로 권하지 마세요.`,
+규칙
+1. 뉴스를 하나씩 요약하지 말고, 여러 뉴스를 하나의 흐름으로 종합해서 설명하세요.
+2. 설명 순서는 뉴스의 핵심 내용, 환율 또는 해당 국가 경제에 미칠 가능성, 사용자의 목적에 미칠 영향, 참고하면 좋을 점 순서로 작성하세요.
+3. 반드시 제공된 뉴스, 거시 지표, 변동성 수치만을 근거로 설명하세요. 자료에 없는 사실이나 경제 시나리오를 만들지 말고, 대학 입학·취업·생활비·등록금 등은 뉴스에 직접 언급된 경우에만 설명하세요.
+4. 환율 방향은 뉴스 또는 거시 지표에 근거가 있을 때만 설명하세요. 판단하기 어렵다면 "이번 뉴스와 지표만으로는 환율 방향을 단정하기 어렵습니다."라고 쓰세요.
+5. 관세→물가→금리→환율처럼 자료에 없는 여러 단계의 인과관계를 만들지 말고 환율과 직접 관련된 영향만 설명하세요.
+6. 투자나 즉시 환전을 추천하지 말고 중립적으로 설명하세요.
+7. 금융 용어는 쉬운 한국어로 풀어 쓰세요. VIX, CPI, GDP 등은 쓸 수 있지만 일반인이 이해하기 어려운 말은 뜻을 함께 설명하세요.
+8. 거시 지표는 뉴스의 배경 정보로만 사용하세요. 값을 나열하거나 지표만으로 새로운 원인과 예측을 만들지 말고, 데이터가 없으면 언급하지 마세요.
+9. 변동성 정보에서는 1년 기준으로 환산한 움직임 크기(%), 과거 100일 중 몇 일보다 큰지, 한 달 기준 움직임(%), 현재 환율 기준 원화 범위를 구체적인 숫자로 한 번씩 언급하세요.
+10. 변동성은 방향이 아니라 흔들림의 크기입니다. 실제 옵션 내재변동성이 아닌 과거 환율 움직임으로 추정한 값이며, 원화 범위는 확정 범위가 아닌 통계적 환산값이라고 짧게 밝히세요.
+11. 변동성 기준일을 언급하고, 오래된 정보라는 경고가 있으면 현재 수치처럼 표현하지 마세요.
+12. 여행·유학·출장·해외직구 목적에서는 원화 환산 금액의 불확실성이 커지거나 작아질 수 있다는 의미까지만 설명하세요.
+13. 숫자를 보고서처럼 나열하지 말고 먼저 쉬운 말로 의미를 설명한 다음 핵심 수치를 제시하세요.
+14. "연율화", "백분위", "%p", "SV"를 단독으로 쓰지 말고 각각 쉬운 뜻으로 풀어 쓰세요.
+15. 통화 단위를 뒤집지 마세요. 특히 JPY/KRW는 반드시 100엔당 원화 금액으로 설명하고, userFriendlyRate의 원화 구간을 그대로 사용하세요.
+16. 행동 제안은 환율 확인, 예산 여유 확보, 환전·송금 시점 분산처럼 위험을 관리하는 구체적인 행동만 제시하세요. 즉시 환전이나 투자를 권하지 마세요.
+
+출력 형식
+- 반드시 {"summary": string, "action": string} 두 키만 가진 JSON 객체를 출력하세요.
+- summary는 제목이나 번호 없이 이어지는 자연스러운 문단 4~6문장으로 작성하세요.
+- action은 반드시 "행동 제안:"으로 시작하는 한 문장으로 작성하세요. 화면에서는 summary 뒤에 표시되며, 둘을 합쳐 총 5~7문장이 됩니다.
+- 같은 내용을 반복하지 말고, "~할 수 있습니다", "~가능성이 있습니다"처럼 단정하지 않은 표현을 사용하세요.`,
           },
           {
             role: "user",
-            content: `아래 데이터를 일반 사용자가 한 번에 이해할 수 있는 생활 언어로 설명하세요. summary는 requiredSummaryOpening 문장을 글자와 숫자를 바꾸지 말고 그대로 사용해 시작하세요. 그 뒤에는 숫자를 추가로 나열하지 말고 "그래서 내 계획에 어떤 의미인지"를 설명하세요. 반드시 summary와 action 두 키만 출력하세요.\n\n근거 데이터:\n${JSON.stringify(prompt)}`,
+            content: `아래 데이터를 일반 사용자가 한 번에 이해할 수 있는 생활 언어로 설명하세요. 뉴스 흐름을 먼저 설명하고, requiredRateSentence는 글자와 숫자를 바꾸지 말고 summary 안에 한 번만 넣으세요. macroIndicators가 비어 있거나 값이 없으면 거시 지표를 언급하지 마세요.\n\n근거 데이터:\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
@@ -171,7 +199,7 @@ action 작성 규칙:
     const raw = body?.choices?.[0]?.message?.content;
     const parsed = JSON.parse(raw);
     if (typeof parsed.summary !== "string" || typeof parsed.action !== "string") return { ...fallback, mode: "data-fallback" as const };
-    if (!parsed.summary.startsWith(requiredOpening)) return { ...fallback, mode: "data-fallback" as const };
+    if (!parsed.summary.includes(requiredRateSentence)) return { ...fallback, mode: "data-fallback" as const };
     const generatedAction = parsed.action.replace(/^행동 제안:\s*/, "").slice(0, 300);
     const action = /나누|2\s*[~～-]\s*3/.test(generatedAction) ? generatedAction : fallback.action;
     return { summary: parsed.summary.slice(0, 1200), action, mode: "ai" as const };
