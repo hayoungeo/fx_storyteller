@@ -178,26 +178,50 @@ function buildNewsContext(pair: CurrencyPair, news: NewsRow[]) {
   const country = countryByPair[pair];
   const hasDirectNews = news.some((item) => item.country === country || item.currencyPairs.includes(pair));
   const themes: string[] = [];
+  const facts: string[] = [];
   for (const item of news) {
     const text = `${item.title} ${item.summary} ${item.reason}`;
     const candidates: string[] = [];
-    if (/yen falls|엔화.{0,8}(하락|약세)/i.test(text)) candidates.push("엔화 약세");
-    if (/(Fed|연준|연방준비제도).{0,30}(동결|유지)|금리.{0,12}(동결|유지)/i.test(text)) candidates.push("미국 연준의 기준금리 동결");
-    if (/원[·・]?달러.{0,20}(하락|떨어|아래|최저)/i.test(text)) candidates.push("원·달러 환율 하락");
-    if (/(한국은행|한은).{0,20}금리.{0,12}인상/i.test(text)) candidates.push("한국은행의 기준금리 인상");
-    if (/관세/i.test(text)) candidates.push("미국의 제약품 관세 부과");
+    if (/yen falls|엔화.{0,8}(하락|약세)/i.test(text)) {
+      candidates.push("엔화 약세");
+      if (!facts.some((fact) => fact.includes("엔화"))) facts.push("엔화가 약세를 보였다는 내용이 전해졌습니다");
+    }
+    if (/(Fed|연준|연방준비제도).{0,30}(동결|유지)|금리.{0,12}(동결|유지)/i.test(text)) {
+      candidates.push("미국 연준의 기준금리 동결");
+      const detailedFed = /3[.]50.{0,10}3[.]75/.test(text) && /(three dissents|3명이|세 명|3대|9대 3)/i.test(text);
+      const fact = detailedFed
+        ? "미 연준이 기준금리를 3.50~3.75%로 동결했지만, 위원 3명이 다른 의견을 내 정책 판단이 한쪽으로 모이지 않았습니다"
+        : "미 연준이 기준금리를 동결했습니다";
+      if (!facts.some((existing) => existing.includes("미 연준"))) facts.push(fact);
+    }
+    if (/원[·・]?달러.{0,20}(하락|떨어|아래|최저)/i.test(text)) {
+      candidates.push("원·달러 환율 하락");
+      if (!facts.some((fact) => fact.includes("원·달러"))) facts.push("원·달러 환율이 하락했다는 소식도 함께 나왔습니다");
+    }
+    if (/(한국은행|한은).{0,20}금리.{0,12}인상/i.test(text)) {
+      candidates.push("한국은행의 기준금리 인상");
+      if (!facts.some((fact) => fact.includes("한국은행"))) facts.push("한국은행의 기준금리 인상 관련 발언이 보도됐습니다");
+    }
+    if (/관세/i.test(text)) {
+      candidates.push("미국의 관세 부과");
+      if (!facts.some((fact) => fact.includes("관세"))) facts.push("미국 관세 정책이 기업 비용에 미치는 영향을 다룬 뉴스가 있었습니다");
+    }
     if (!candidates.length && item.reason) candidates.push(item.reason.replace(/[.。]+$/, ""));
     for (const candidate of candidates) if (!themes.includes(candidate)) themes.push(candidate);
   }
   const themeText = themes.slice(0, 3).join("·") || "환율 관련 움직임";
+  const factText = facts.length
+    ? facts.slice(0, 2).map((fact, index) => `${index ? "또한 " : "관련 뉴스에서는 "}${fact}.`).join(" ")
+    : `관련 뉴스의 주요 내용은 ${themeText}입니다.`;
   if (!hasDirectNews) {
+    const limitedLead = `입력 내용과 직접 연결되는 최신 뉴스는 제한적입니다. ${factText}`;
     return {
       status: "limited",
-      lead: `입력한 목적과 직접 연결되는 최신 뉴스는 제한적입니다. 참고 가능한 뉴스의 주요 내용은 ${themeText}입니다.`,
-      outputPrefix: "입력 내용과 직접 연결되는 최신 뉴스는 제한적입니다.",
+      lead: limitedLead,
+      outputPrefix: limitedLead,
     };
   }
-  return { status: "direct", lead: `관련 뉴스의 주요 내용은 ${themeText}입니다.`, outputPrefix: "" };
+  return { status: "direct", lead: factText, outputPrefix: factText };
 }
 
 function assetSpecificExplanation(userContext: Record<string, unknown>) {
@@ -352,9 +376,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
 
 일반 규칙:
 - 반드시 주어진 뉴스 내용에 근거해서만 설명하세요. 뉴스에 없는 내용을 지어내지 마세요.
-- newsStatus가 direct 또는 limited이면 첫 1~2문장에서 여러 뉴스의 실제 핵심 사실을 하나의 흐름으로 종합하세요. 단순히 "금리 동결"처럼 주제명만 적지 말고, 제공된 summary와 reason에 있는 결정·수치·시장 반응 중 중요한 내용을 쉬운 말로 설명하세요.
-- 뉴스를 기사별로 나열하거나 같은 사건을 여러 번 반복하지 마세요. newsStatus가 limited이면 직접 관련성이 제한적이라는 점을 분명히 하고, none이면 뉴스에 근거한 설명을 만들지 마세요.
-- 뉴스 요약 뒤에는 해당 뉴스와 환율 흔들림이 입력한 자산 종류 또는 목적에 어떤 의미인지 구체적으로 연결하세요.
+- 뉴스의 핵심 사실과 관련성 안내는 서버가 출력 앞에 별도로 붙입니다. 출력에서는 뉴스를 다시 요약하거나 같은 사건을 반복하지 말고, 해당 뉴스와 환율 흔들림이 입력한 자산 종류 또는 목적에 어떤 의미인지 곧바로 연결하세요. newsStatus가 none이면 뉴스에 근거한 설명을 만들지 마세요.
 - macroContext는 뉴스 내용을 직접 뒷받침할 때만 배경 근거로 사용하고, 값이 없는 지표는 언급하지 마세요.
 - 투자 조언(사라, 팔아라)을 하지 말고, 사실과 그 의미만 담백하게 설명하세요.
 - "~일 수 있어요", "~에는 큰 변화가 없어요" 처럼 단정적이지 않은 톤을 쓰세요.
@@ -362,7 +384,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
           },
           {
             role: "user",
-            content: `아래 입력만 사용해 설명하세요. userAssetSituation.mode를 최우선으로 따르고 자산과 목적을 서로 바꾸어 해석하지 마세요. 자산 모드에서는 여행·유학·출장·해외직구 계획을 만들어내지 말고 assetType과 amountKrw를 반영해 자산별로 다르게 설명하세요. 해외 주식·ETF는 주가 자체의 변화와 환율 영향을 구분하고, 외화 예금은 이자율과 환율 영향을 구분하며, 외화 채권은 채권 가격·이자와 환율 영향을 구분하세요. 목적 모드에서는 사용자가 외화 자산을 보유한다고 추측하지 마세요. newsStatus가 direct 또는 limited이면 제공된 뉴스의 실제 내용을 첫 1~2문장으로 종합하고, none이면 뉴스 내용을 만들지 마세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요. 같은 사실이나 행동을 표현만 바꾸어 두 번 쓰지 마세요.\n\n${JSON.stringify(prompt)}`,
+            content: `아래 입력만 사용해 설명하세요. userAssetSituation.mode를 최우선으로 따르고 자산과 목적을 서로 바꾸어 해석하지 마세요. 자산 모드에서는 여행·유학·출장·해외직구 계획을 만들어내지 말고 assetType과 amountKrw를 반영해 자산별로 다르게 설명하세요. 해외 주식·ETF는 주가 자체의 변화와 환율 영향을 구분하고, 외화 예금은 이자율과 환율 영향을 구분하며, 외화 채권은 채권 가격·이자와 환율 영향을 구분하세요. 목적 모드에서는 사용자가 외화 자산을 보유한다고 추측하지 마세요. 뉴스의 구체적인 핵심 사실은 서버가 앞에 붙이므로 출력에서 뉴스를 다시 요약하지 말고 그 의미부터 설명하세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요. 같은 사실이나 행동을 표현만 바꾸어 두 번 쓰지 마세요.\n\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
@@ -405,6 +427,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
     const qualityFailed = summary.includes("비용는")
       || (summary.match(/원에서/g) || []).length > 1
       || (summary.match(/직접 연결되는 최신 뉴스는 제한적/g) || []).length > 0
+      || /이유는.{0,50}위해서/.test(summary)
       || (userContext.mode === "목적" && /(자산|가 될 수 있는 원화|환산 기준일인|달러 1|유로 1|원화의 가치가 변동성이)/.test(summary))
       || (userContext.mode === "자산" && /(여행|유학|출장|해외직구).{0,12}(계획|준비|예정|필요)/.test(summary));
     if (qualityFailed) return { ...fallback, mode: "data-fallback" as const };
