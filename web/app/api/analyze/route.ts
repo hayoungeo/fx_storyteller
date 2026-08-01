@@ -178,17 +178,24 @@ function buildNewsContext(pair: CurrencyPair, news: NewsRow[]) {
   const hasDirectNews = news.some((item) => item.country === country || item.currencyPairs.includes(pair));
   const themes: string[] = [];
   for (const item of news) {
-    if (/yen falls|엔화.{0,8}(하락|약세)/i.test(`${item.title} ${item.summary}`)) themes.push("엔화 약세");
-    if (item.reason && !themes.includes(item.reason)) themes.push(item.reason);
+    const text = `${item.title} ${item.summary} ${item.reason}`;
+    const candidates: string[] = [];
+    if (/yen falls|엔화.{0,8}(하락|약세)/i.test(text)) candidates.push("엔화 약세");
+    if (/(Fed|연준|연방준비제도).{0,30}(동결|유지)|금리.{0,12}(동결|유지)/i.test(text)) candidates.push("미국 연준의 기준금리 동결");
+    if (/원[·・]?달러.{0,20}(하락|떨어|아래|최저)/i.test(text)) candidates.push("원·달러 환율 하락");
+    if (/(한국은행|한은).{0,20}금리.{0,12}인상/i.test(text)) candidates.push("한국은행의 기준금리 인상");
+    if (/관세/i.test(text)) candidates.push("미국의 제약품 관세 부과");
+    if (!candidates.length && item.reason) candidates.push(item.reason.replace(/[.。]+$/, ""));
+    for (const candidate of candidates) if (!themes.includes(candidate)) themes.push(candidate);
   }
   const themeText = themes.slice(0, 3).join("·") || "환율 관련 움직임";
   if (!hasDirectNews) {
     return {
       status: "limited",
-      lead: `입력한 목적과 직접 연결되는 최신 뉴스는 제한적입니다. 참고 가능한 뉴스에서는 ${themeText} 내용이 확인됩니다.`,
+      lead: `입력한 목적과 직접 연결되는 최신 뉴스는 제한적입니다. 참고 가능한 뉴스에서는 ${themeText}가 다뤄졌습니다.`,
     };
   }
-  return { status: "direct", lead: `관련 뉴스에서는 ${themeText} 내용이 확인됩니다.` };
+  return { status: "direct", lead: `관련 뉴스에서는 ${themeText}가 주요 내용으로 확인됩니다.` };
 }
 
 function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[]) {
@@ -226,7 +233,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
       allowedActionGuidance: volatility.action_guidance,
     },
     macroContext: selectMacroContext(pair),
-    newsContext,
+    newsStatus: newsContext.status,
     news: selectedNews.map(({ title, summary, country, category, reason }) => ({ title, summary, country, category, reason })),
   };
   try {
@@ -282,7 +289,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
 
 일반 규칙:
 - 반드시 주어진 뉴스 내용에 근거해서만 설명하세요. 뉴스에 없는 내용을 지어내지 마세요.
-- 첫 부분은 newsContext.lead를 글자 그대로 사용하세요. status가 none이면 관련 뉴스가 있다고 말하지 말고, limited이면 직접 관련 뉴스가 제한적이라는 사실을 숨기지 마세요.
+- 뉴스 안내 문장은 서버가 별도로 붙이므로 출력에서 뉴스를 다시 요약하거나 뉴스 유무를 반복하지 마세요. newsStatus가 none이면 뉴스에 근거한 설명을 만들지 마세요.
 - macroContext는 뉴스 내용을 직접 뒷받침할 때만 배경 근거로 사용하고, 값이 없는 지표는 언급하지 마세요.
 - 투자 조언(사라, 팔아라)을 하지 말고, 사실과 그 의미만 담백하게 설명하세요.
 - "~일 수 있어요", "~에는 큰 변화가 없어요" 처럼 단정적이지 않은 톤을 쓰세요.
@@ -290,7 +297,7 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
           },
           {
             role: "user",
-            content: `아래 입력만 사용해 설명하세요. 반드시 newsContext.lead로 시작하고 같은 뉴스 내용을 다시 반복하지 마세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요.\n\n${JSON.stringify(prompt)}`,
+            content: `아래 입력만 사용해 설명하세요. 뉴스 안내는 서버가 추가하므로 뉴스 내용을 다시 요약하지 마세요. 규칙 설명에 나온 1,400원, 1,450원, ±45원은 형식 예시일 뿐이므로 출력에 사용하지 마세요. 모든 숫자는 아래 입력값만 사용하고, 엔화는 userFriendlyRate에 적힌 것처럼 100엔당 원화 금액으로 표현하세요. macroContext는 뉴스와 직접 관련된 지표만 골라 자연스럽게 사용하세요. userAssetSituation.mode가 "목적"이면 "자산", "원화 환산 가치"라는 표현을 사용하지 마세요. requiredCurrencyLabel이 사용자가 실제로 준비해야 하는 외화이며, 원화는 그 외화를 사기 위한 예산과 환산 기준일 뿐입니다. 따라서 일본 여행에는 엔화, 미국 여행에는 달러, 유럽 여행에는 유로가 필요하다고 설명하세요.\n\n${JSON.stringify(prompt)}`,
           },
         ],
       }),
@@ -316,9 +323,18 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
     if (userContext.mode === "목적" && typeof requiredCurrencyLabel === "string") {
       summary = summary.replace(/원화가 필요합니다[.]?/g, `${requiredCurrencyLabel}가 필요합니다.`);
       summary = summary.replace(new RegExp(`${requiredCurrencyLabel}\\s*자산`, "g"), requiredCurrencyLabel);
-      summary = summary.replace(/외화 자산/g, requiredCurrencyLabel).replace(/원화 환산 가치/g, "원화 환산 비용");
+      summary = summary.replace(/외화 자산/g, requiredCurrencyLabel)
+        .replace(/원화 환산 가치는/g, "원화 환산 비용은")
+        .replace(/원화 환산 가치가/g, "원화 환산 비용이")
+        .replace(/원화 환산 가치를/g, "원화 환산 비용을")
+        .replace(/원화 환산 가치/g, "원화 환산 비용");
     }
-    if (!summary.startsWith(newsContext.lead)) summary = `${newsContext.lead} ${summary}`.trim();
+    summary = summary.replace(/^newsContext[.]lead:\s*/i, "").trim();
+    const qualityFailed = summary.includes("비용는")
+      || (summary.match(/원에서/g) || []).length > 1
+      || (summary.match(/직접 연결되는 최신 뉴스는 제한적/g) || []).length > 0;
+    if (qualityFailed) return { ...fallback, mode: "data-fallback" as const };
+    summary = `${newsContext.lead} ${summary}`.trim();
     return { summary: summary || fallback.summary, action: generatedAction || fallback.action, mode: "ai" as const };
   } catch {
     return { ...fallback, mode: "data-fallback" as const };
