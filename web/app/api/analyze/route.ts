@@ -83,20 +83,17 @@ function buildMetrics(volatility: VolatilityRow): Metric[] {
 function buildRatePresentation(pair: CurrencyPair, volatility: VolatilityRow) {
   const factor = pair === "JPY/KRW" ? 100 : 1;
   const foreignUnit = pair === "JPY/KRW" ? "100엔" : pair === "USD/KRW" ? "1달러" : "1유로";
+  const foreignUnitObject = pair === "JPY/KRW" ? "100엔을" : pair === "USD/KRW" ? "1달러를" : "1유로를";
   const spot = volatility.spot_rate * factor;
   const move = volatility.estimated_monthly_move_rate * factor;
   const format = (value: number) => value.toLocaleString("ko-KR", { maximumFractionDigits: 2 });
   return {
     currentRateText: `${foreignUnit}당 약 ${format(spot)}원`,
     monthlyRangeText: `${foreignUnit}당 약 ${format(Math.max(0, spot - move))}원에서 ${format(spot + move)}원`,
-    meaning: `${foreignUnit}를 사는 데 필요한 원화 금액이 이 범위만큼 달라질 수 있다는 뜻`,
+    meaning: `${foreignUnitObject} 사는 데 필요한 원화 금액이 이 범위만큼 달라질 수 있다는 뜻`,
   };
 }
 
-function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[]) {
-  const newsText = evidence.length
-    ? `최근 관련 뉴스 ${evidence.length}건도 함께 살펴봤습니다.`
-    
 function fallbackCopy(subject: string, volatility: VolatilityRow, evidence: Evidence[]) {
   const newsText = evidence.length
     ? `최근 관련 뉴스 ${evidence.length}건도 함께 살펴봤습니다.`
@@ -110,7 +107,7 @@ function buildVolatilitySummary(subject: string, volatility: VolatilityRow) {
   return `${subject}과 관련된 현재 환율은 ${rate.currentRateText}이며, 최근 움직임을 기준으로 한 한 달 통계 범위는 ${rate.monthlyRangeText}입니다. ${volatility.reference_date} 기준 환율의 흔들림은 한 달에 약 ${volatility.monthly_volatility_pct.toFixed(2)}%이고, 1년 기준으로 환산한 움직임 크기는 ${volatility.annualized_volatility_pct.toFixed(2)}%로 과거 관측일 100일 중 약 ${volatility.historical_percentile.toFixed(0)}일보다 큰 수준입니다. 이는 ${rate.meaning}일 뿐 상승·하락 방향을 뜻하지 않으며, 실제 옵션시장의 전망이 아니라 과거 환율 움직임으로 추정한 값이므로 원화 범위도 확정값이 아닌 통계적 참고치입니다.`;
 }
 
-async function generateWithGroq(subject: string, userPurpose: Record<string, unknown>, pair: CurrencyPair, volatility: VolatilityRow, evidence: Evidence[], fallback: { summary: string; action: string }) {
+async function generateWithGroq(subject: string, userContext: Record<string, unknown>, pair: CurrencyPair, volatility: VolatilityRow, evidence: Evidence[], fallback: { summary: string; action: string }) {
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) return { ...fallback, mode: "data-fallback" as const };
   const ratePresentation = buildRatePresentation(pair, volatility);
@@ -144,7 +141,6 @@ async function generateWithGroq(subject: string, userPurpose: Record<string, unk
         model: process.env.GROQ_MODEL || "llama-3.1-8b-instant",
         temperature: 0.25,
         max_tokens: 700,
-
         messages: [
           {
             role: "system",
@@ -211,7 +207,6 @@ async function generateWithGroq(subject: string, userPurpose: Record<string, unk
     const summary = (actionIndex >= 0 ? cleaned.slice(0, actionIndex) : cleaned).trim().slice(0, 1200);
     const generatedAction = actionIndex >= 0 ? cleaned.slice(actionIndex + "행동 제안:".length).trim().slice(0, 300) : "";
     return { summary: summary || fallback.summary, action: generatedAction || fallback.action, mode: "ai" as const };
-    
   } catch {
     return { ...fallback, mode: "data-fallback" as const };
   }
