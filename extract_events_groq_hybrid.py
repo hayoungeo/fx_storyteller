@@ -245,6 +245,30 @@ def load_jsonl(path: Path) -> list[dict]:
     return items
 
 
+CLASSIFICATION_FIELDS = (
+    "is_relevant",
+    "category",
+    "country",
+    "direction",
+    "currency_pairs",
+    "confidence",
+    "reason",
+)
+
+
+def reusable_classification(article: dict, previous: dict | None) -> dict | None:
+    """내용이 같은 기존 기사는 LLM을 다시 호출하지 않고 분류 결과를 재사용한다."""
+    if not previous:
+        return None
+    if previous.get("title") != article.get("title") or previous.get("url") != article.get("url"):
+        return None
+    if "Groq 호출 실패" in str(previous.get("reason", "")):
+        return None
+    if any(field not in previous for field in CLASSIFICATION_FIELDS):
+        return None
+    return {field: previous[field] for field in CLASSIFICATION_FIELDS}
+
+
 def process_all() -> None:
     api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
@@ -257,10 +281,25 @@ def process_all() -> None:
     articles = load_jsonl(INPUT_PATH)
     print(f"총 {len(articles)}건 로드 완료")
 
+    existing_by_id: dict[str, dict] = {}
+    if OUTPUT_PATH.exists():
+        existing_by_id = {
+            str(item.get("id")): item
+            for item in load_jsonl(OUTPUT_PATH)
+            if item.get("id")
+        }
+
     # --- 1단계: 규칙 기반 필터 (무료) ---
     candidates = []
     results = []
+    reused_count = 0
     for article in articles:
+        reused = reusable_classification(article, existing_by_id.get(str(article.get("id"))))
+        if reused is not None:
+            results.append({**article, **reused})
+            reused_count += 1
+            continue
+
         is_relevant, category, hits = rule_based_prefilter(article)
         if is_relevant:
             candidates.append((article, category))
@@ -276,8 +315,9 @@ def process_all() -> None:
                 "reason": "1차 규칙 필터에서 제외 (이벤트 키워드 매칭 부족)",
             })
 
-    print(f"1단계(규칙) 통과: {len(candidates)}건 / 전체 {len(articles)}건 "
-          f"-> 이 {len(candidates)}건만 Groq 호출")
+    print(f"기존 분류 재사용: {reused_count}건")
+    print(f"새 기사 중 1단계(규칙) 통과: {len(candidates)}건 "
+          f"-> 새 기사 {len(candidates)}건만 Groq 호출")
 
     # --- 2단계: Groq 무료 API로 정교화 ---
     relevant_count = 0
@@ -299,8 +339,10 @@ def process_all() -> None:
         )
 
     atomic_write_jsonl(OUTPUT_PATH, results)
-    print(f"\n완료: 전체 {len(articles)}건 중 Groq 호출 {len(candidates)}건, "
-          f"최종 관련 기사 {relevant_count}건 (Groq 실패 {failed_count}건)")
+    total_relevant = sum(1 for item in results if item.get("is_relevant"))
+    print(f"\n완료: 전체 {len(articles)}건 중 기존 분류 {reused_count}건 재사용, "
+          f"Groq 신규 호출 {len(candidates)}건, 최종 관련 기사 {total_relevant}건 "
+          f"(신규 Groq 실패 {failed_count}건)")
     print(f"저장 -> {OUTPUT_PATH.resolve()}")
 
 
