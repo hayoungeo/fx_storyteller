@@ -2,6 +2,10 @@ name: Refresh analysis data
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/refresh-data.yml"
   schedule:
     # 매일 한국시간 오전 6시 20분(UTC 전날 21시 20분)에 실행
     - cron: "20 21 * * *"
