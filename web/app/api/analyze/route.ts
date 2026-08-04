@@ -434,18 +434,27 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
     }
     summary = summary.replace(/^newsContext[.]lead:\s*/i, "").trim();
     summary = removeRepeatedSentences(summary, generatedAction);
+    const purposeIntent = String(userContext.intent || "");
+    const conflictingPurpose = userContext.mode === "목적" && (
+      (purposeIntent === "유학" && /(여행|출장|해외직구)/.test(summary))
+      || (purposeIntent === "출장" && /(여행|유학|해외직구)/.test(summary))
+      || (purposeIntent === "해외직구" && /(여행|유학|출장)/.test(summary))
+      || (purposeIntent === "여행" && /(유학|출장|해외직구)/.test(summary))
+    );
     const qualityFailed = summary.includes("비용는")
       || (summary.match(/원에서/g) || []).length > 1
       || (summary.match(/직접 연결되는 최신 뉴스는 제한적/g) || []).length > 0
       || /이유는.{0,50}위해서/.test(summary)
       || (userContext.mode === "목적" && /(자산|가 될 수 있는 원화|환산 기준일인|달러 1|유로 1|원화의 가치가 변동성이)/.test(summary))
-      || (userContext.mode === "자산" && /(여행|유학|출장|해외직구).{0,12}(계획|준비|예정|필요)/.test(summary));
+      || (userContext.mode === "자산" && /(여행|유학|출장|해외직구).{0,12}(계획|준비|예정|필요)/.test(summary))
+      || conflictingPurpose;
     if (qualityFailed) return { ...fallback, mode: "data-fallback" as const };
     const orderedSummary = moveNewsExplanationFirst(summary);
     const newsPrefix = newsContext.status === "direct" && orderedSummary.hasNewsExplanation ? "" : newsContext.outputPrefix;
     summary = removeRepeatedSentences(`${newsPrefix} ${orderedSummary.text}`.trim(), generatedAction);
     const unexpectedActionNumber = /\d/.test(generatedAction.replace(/2\s*[~～-]\s*3/g, ""));
-    const action = generatedAction && !unexpectedActionNumber ? generatedAction : fallback.action;
+    const malformedAction = !generatedAction || /^이는\s/.test(generatedAction) || generatedAction.length < 18;
+    const action = generatedAction && !unexpectedActionNumber && !malformedAction ? generatedAction : fallback.action;
     return { summary: summary || fallback.summary, action, mode: "ai" as const };
   } catch {
     return { ...fallback, mode: "data-fallback" as const };
