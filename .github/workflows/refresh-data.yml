@@ -3,7 +3,12 @@ name: Refresh analysis data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "20 21 * * 1-5"
+    # 매일 한국시간 오전 6시 20분(UTC 전날 21시 20분)에 실행
+    - cron: "20 21 * * *"
+
+concurrency:
+  group: refresh-analysis-data
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -11,6 +16,7 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     env:
       NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -30,11 +36,32 @@ jobs:
             any::stochvol
             any::jsonlite
       - run: pip install -r requirements.txt
-      - name: Collect and classify news
+      - name: Check configured API keys
+        id: api-keys
+        shell: bash
         run: |
-          python collect_news_newsapi.py
-          python extract_events_groq_hybrid.py
+          missing=()
+          for name in NEWSAPI_KEY GROQ_API_KEY FRED_API_KEY ECOS_API_KEY EXIM_API_KEY; do
+            if [ -z "${!name}" ]; then missing+=("$name"); fi
+          done
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::warning::등록되지 않은 Actions secret: ${missing[*]}"
+          fi
+          if [ -n "$NEWSAPI_KEY" ] && [ -n "$GROQ_API_KEY" ]; then
+            echo "news_ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "news_ready=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Collect news
+        if: steps.api-keys.outputs.news_ready == 'true'
+        continue-on-error: true
+        run: python collect_news_newsapi.py
+      - name: Classify news
+        if: steps.api-keys.outputs.news_ready == 'true'
+        continue-on-error: true
+        run: python extract_events_groq_hybrid.py
       - name: Refresh volatility and weights
+        continue-on-error: true
         run: |
           python download_fx_prices.py
           Rscript estimate_sv_volatility.R
@@ -42,12 +69,31 @@ jobs:
           python prepare_vrp_data.py
           python analyze_vrp.py
       - name: Refresh macro data
+        continue-on-error: true
         run: |
           python collect_macro_data.py
           python fetch_weekly_fx_features.py
           python compute_macro_indicators.py
       - name: Export safe web dataset
+        if: always()
         run: python web/scripts/export_web_data.py
+      - name: Verify exported web dataset
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("web/data/generated/analysis-data.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+          required = {"USD/KRW", "JPY/KRW", "EUR/KRW"}
+          available = set(data.get("volatility", {}))
+          if not required.issubset(available):
+              raise SystemExit(f"웹 데이터에 필요한 통화쌍이 없습니다: {sorted(required - available)}")
+          if not data.get("metadata", {}).get("dataAsOf"):
+              raise SystemExit("웹 데이터 기준일이 비어 있습니다.")
+          print("검증 완료:", data["metadata"]["dataAsOf"])
+          PY
       - name: Commit verified web data
         run: |
           git config user.name "exchange-signal-bot"

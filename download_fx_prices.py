@@ -32,7 +32,7 @@ TICKERS = {
 
 
 def load_news_dates() -> tuple[str, str]:
-    """processed_news.jsonl에서 뉴스 발행 기간을 읽어와 필요한 다운로드 범위를 정한다"""
+    """뉴스 이력은 시작 범위에만 쓰고, 종료일은 항상 실행 당일로 정한다."""
     dates = []
     with NEWS_PATH.open("r", encoding="utf-8") as f:
         for line in f:
@@ -51,7 +51,8 @@ def load_news_dates() -> tuple[str, str]:
     # 뉴스 기간보다 넉넉하게(최소 6개월) 앞당겨서 받는다.
     start = min(dates)
     start_dt = datetime.strptime(start, "%Y-%m-%d") - timedelta(days=180)
-    end_dt = datetime.strptime(max(dates), "%Y-%m-%d") + timedelta(days=1)
+    # 뉴스 갱신이 일시적으로 실패해도 환율 시계열은 오늘까지 갱신되어야 한다.
+    end_dt = datetime.today() + timedelta(days=1)
     return start_dt.strftime("%Y-%m-%d"), end_dt.strftime("%Y-%m-%d")
 
 

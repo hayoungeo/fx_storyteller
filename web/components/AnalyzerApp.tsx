@@ -31,7 +31,7 @@ function Header({ dataAsOf, onHome }: { dataAsOf?: string; onHome: () => void })
       <div className="header-meta">
         <span className="status-dot" aria-hidden="true" />
         <span>DATA AS OF</span>
-        <strong>{dataAsOf || "2026-08-01"}</strong>
+        <strong>{dataAsOf || "DAILY UPDATE"}</strong>
       </div>
     </header>
   );
