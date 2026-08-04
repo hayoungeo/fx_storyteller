@@ -445,6 +445,8 @@ async function generateWithGroq(subject: string, userContext: Record<string, unk
       || (summary.match(/원에서/g) || []).length > 1
       || (summary.match(/직접 연결되는 최신 뉴스는 제한적/g) || []).length > 0
       || /이유는.{0,50}위해서/.test(summary)
+      || !/한 달.{0,100}\d+(?:\.\d+)?%/.test(summary)
+      || !/(1년|연율).{0,100}\d+(?:\.\d+)?%/.test(summary)
       || (userContext.mode === "목적" && /(자산|가 될 수 있는 원화|환산 기준일인|달러 1|유로 1|원화의 가치가 변동성이)/.test(summary))
       || (userContext.mode === "자산" && /(여행|유학|출장|해외직구).{0,12}(계획|준비|예정|필요)/.test(summary))
       || conflictingPurpose;
