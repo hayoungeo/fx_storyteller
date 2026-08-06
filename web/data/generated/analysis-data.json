@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-05T06:50:59.313360+00:00",
-    "dataAsOf": "2026-08-05",
+    "generatedAt": "2026-08-06T07:34:40.386033+00:00",
+    "dataAsOf": "2026-08-06",
     "supportedPairs": [
       "USD/KRW",
       "JPY/KRW",
@@ -22,7 +22,7 @@
       "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
       "spot_rate": 1441.1,
       "estimated_monthly_move_rate": 45.35,
-      "data_age_days": 6,
+      "data_age_days": 7,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -43,7 +43,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 9.0213,
       "estimated_monthly_move_rate": 0.24,
-      "data_age_days": 6,
+      "data_age_days": 7,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -61,7 +61,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 1661.16,
       "estimated_monthly_move_rate": 40.25,
-      "data_age_days": 6,
+      "data_age_days": 7,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-08-05T06:50:59.163339",
+    "computed_at": "2026-08-06T07:34:40.229203",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 2.75,
@@ -93,42 +93,42 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1423.68,
-        "ma5": 1430.152,
-        "ma20": 1468.826,
+        "latest_close": 1427.79,
+        "ma5": 1428.204,
+        "ma20": 1465.286,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1428.4,
-        "resistance_r1": 1435.95,
-        "support_s1": 1420.95,
-        "position_vs_pivot": "피벗 하단(약세권)"
+        "pivot": 1426.303,
+        "resistance_r1": 1432.457,
+        "support_s1": 1422.277,
+        "position_vs_pivot": "피벗 상단(강세권)"
       },
       "JPY/KRW": {
-        "latest_close": 9.014,
-        "ma5": 8.978,
-        "ma20": 9.07,
+        "latest_close": 9.026,
+        "ma5": 9.025,
+        "ma20": 9.061,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 9.06,
-        "resistance_r1": 9.108,
-        "support_s1": 9.02,
+        "pivot": 9.044,
+        "resistance_r1": 9.078,
+        "support_s1": 9.023,
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "EUR/KRW": {
-        "latest_close": 1643.3,
-        "ma5": 1647.928,
-        "ma20": 1677.84,
+        "latest_close": 1647.3,
+        "ma5": 1647.604,
+        "ma20": 1674.537,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1643.123,
-        "resistance_r1": 1651.227,
-        "support_s1": 1635.257,
+        "pivot": 1644.887,
+        "resistance_r1": 1651.693,
+        "support_s1": 1640.363,
         "position_vs_pivot": "피벗 상단(강세권)"
       }
     },
     "other_indicators": {
       "미국_국채10년물": {
-        "latest": 4.7,
-        "latest_date": "2026-08-03",
-        "prev": 4.75,
-        "change": -0.05,
+        "latest": 4.63,
+        "latest_date": "2026-08-04",
+        "prev": 4.7,
+        "change": -0.07,
         "trend": "하락"
       },
       "미국_CPI": {
@@ -194,39 +194,39 @@
         "trend": "데이터없음"
       },
       "VIX": {
-        "latest": 16.5,
-        "latest_date": "2026-08-04",
-        "prev": 15.86,
-        "change": 0.64,
+        "latest": 15.83,
+        "latest_date": "2026-08-06",
+        "prev": 15.81,
+        "change": 0.02,
         "trend": "상승"
       },
       "미국국채10년물_야후": {
-        "latest": 4.627,
-        "latest_date": "2026-08-04",
-        "prev": 4.686,
-        "change": -0.059,
+        "latest": 4.617,
+        "latest_date": "2026-08-05",
+        "prev": 4.627,
+        "change": -0.01,
         "trend": "하락"
       },
       "유가_WTI": {
-        "latest": 75.41,
-        "latest_date": "2026-08-05",
-        "prev": 75.77,
-        "change": -0.36,
+        "latest": 75.16,
+        "latest_date": "2026-08-06",
+        "prev": 75.22,
+        "change": -0.06,
         "trend": "하락"
       },
       "코스피_지수": {
-        "latest": 6598.25,
-        "latest_date": "2026-08-05",
-        "prev": 6358.9502,
-        "change": 239.2998,
-        "trend": "상승"
+        "latest": 6296.3799,
+        "latest_date": "2026-08-06",
+        "prev": 6598.2598,
+        "change": -301.8799,
+        "trend": "하락"
       },
       "KRX100_대용_ETF": {
-        "latest": 102755.0,
-        "latest_date": "2026-08-05",
-        "prev": 95335.0,
-        "change": 7420.0,
-        "trend": "상승"
+        "latest": 92200.0,
+        "latest_date": "2026-08-06",
+        "prev": 102755.0,
+        "change": -10555.0,
+        "trend": "하락"
       },
       "외국인_코스피_순매수": {
         "latest": null,
@@ -370,67 +370,282 @@
   },
   "news": [
     {
-      "id": "ffe0adf8434155f7",
-      "title": "Trump warns Iran talks are ‘last chance’ to end war — oil prices rise as Tehran denies negotiations",
-      "summary": "President Donald Trump has warned that the latest round of negotiations with Iran are the \"last chance\" to bring an end to the five-month conflict.",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/04/us-iran-war-trump-hormuz.html",
-      "publishedAt": "2026-08-04T06:34:09Z",
+      "id": "c4044f47cdac3b9e",
+      "title": "RBI proposes to rationalise interest rate framework to boost transparency, consumer protection",
+      "summary": "For better transparency, RBI directed banks to switch to external benchmarks like repo for loans from the earlier Marginal Cost of Funds framework in 2019",
+      "source": "BusinessLine",
+      "url": "https://www.thehindubusinessline.com/money-and-banking/rbi-proposes-to-rationalise-interest-rate-framework-to-boost-transparency-consumer-protection/article71308387.ece",
+      "publishedAt": "2026-08-05T07:07:41Z",
+      "country": "기타",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.8,
+      "reason": "인도 중앙은행의 금리 관련 제도 개선"
+    },
+    {
+      "id": "4f3b1ca8dfc022fe",
+      "title": "Trump’s tariffs were supposed to boost American manufacturing, but the new levies are actually pushing some companies back to China",
+      "summary": "“The story that it is bringing back manufacturing is really not the story,” economist Mary Lovely warned. “Manufacturing is not coming back.”",
+      "source": "Yahoo Entertainment",
+      "url": "https://finance.yahoo.com/economy/policy/articles/trump-tariffs-were-supposed-boost-070100573.html",
+      "publishedAt": "2026-08-05T07:01:00Z",
       "country": "미국",
-      "category": "지정학",
+      "category": "무역",
       "direction": "악재",
       "currencyPairs": [
-        "USD/IRR",
+        "USD/CNY",
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "이란과의 전쟁 가능성과 관련된 트럼프의 경고"
+      "reason": "트럼프의 관세가 미국 제조业을 부양한다는 목표였지만, 일부 기업이 중국으로 돌아가고 있어 무역 분쟁에 영향을 줄 수 있음"
     },
     {
-      "id": "9fcd45abada96cf3",
-      "title": "India pharma sector to miss 2030 sales target amid tariff and shipping woes, trade body says",
-      "summary": "The sector is now expected to ⁠reach $80 billion to $90 billion by 2030, well below an industry target of $130 billion set in April last year",
-      "source": "BusinessLine",
-      "url": "https://www.thehindubusinessline.com/companies/india-pharma-sector-to-miss-2030-sales-target-amid-tariff-and-shipping-woes-trade-body-says/article71304081.ece",
-      "publishedAt": "2026-08-04T06:28:49Z",
-      "country": "인도",
+      "id": "44009ab726028520",
+      "title": "Trump’s tariffs were supposed to boost American manufacturing, but the new levies are actually pushing some companies back to China",
+      "summary": "“The story that it is bringing back manufacturing is really not the story,” economist Mary Lovely warned. “Manufacturing is not coming back.”",
+      "source": "Fortune",
+      "url": "https://fortune.com/2026/08/05/trump-tariffs-american-manufacturing-reshoring-china-imports/",
+      "publishedAt": "2026-08-05T07:01:00Z",
+      "country": "미국",
       "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CNY",
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프의 관세가 미국 제조业을 부양한다는 목표였지만, 일부 기업이 중국으로 돌아가고 있어 무역 분쟁에 영향을 줄 수 있음"
+    },
+    {
+      "id": "576138b998232116",
+      "title": "‘시련의 계절’ 철강업계에 해 뜰 날 올까…AI와 전기로에 미래 달렸다",
+      "summary": "포스코·현대제철 올해 2분기 영업이익↓중국산 범용 제품·관세 폭탄 등 다중고국내외 AI 데이터센터 건설 바람은 호재전기로로 생산한 친환경 제품 승부수경기 평택항에 철강 제품들이 쌓여있는 모습. 권도현 기자국내 철강업계가 시련의 계절을 보내고 있다. 저렴한 중국산 범용 제품 범람과 미국·유럽연합(EU)의 관세 폭탄, 원재료 상승 등 각종 악재에 시달리며 올해···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608051554011",
+      "publishedAt": "2026-08-05T06:54:01Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/KRW",
+        "CNY/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국과 유럽연합의 관세 폭탄이 언급됨"
+    },
+    {
+      "id": "ffeb017e7025f1d7",
+      "title": "Global banks expect Turkish rate cut later this year",
+      "summary": "International banks have published updated inflation and interest-rate forecasts for Türkiye following the release of July inflation data, with BBVA Research expecting the policy rate to decline to 36 percent by year-end if conditions allow, while Citi mainta…",
+      "source": "Hurriyet Daily News",
+      "url": "https://www.hurriyetdailynews.com/global-banks-expect-turkish-rate-cut-later-this-year-225234",
+      "publishedAt": "2026-08-05T06:47:00Z",
+      "country": "터키",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "TRY/USD"
+      ],
+      "confidence": 0.8,
+      "reason": "터키의 금리 인하 전망"
+    },
+    {
+      "id": "3b123f3ddf465a8b",
+      "title": "Fortune Brands Innovations Q2 Earnings Call Highlights",
+      "summary": "Key Points\n- Second-quarter results benefited significantly from tariff refunds: Sales fell 4% to $1.2 billion, while operating income rose 18.4% to $236 million and EPS reached $1.35. The company recorded a $122 million gross tariff refund, including a $0.52…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/7cbd52e930488ffd",
+      "publishedAt": "2026-08-05T06:32:24Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "호재",
+      "currencyPairs": [],
+      "confidence": 0.8,
+      "reason": "관세 환급이 회사 실적에 긍정적 영향을 미쳤음"
+    },
+    {
+      "id": "4ca9b14520de2523",
+      "title": "Changes in EBLR & MCLR framework, interest rate charging mechanism and how reset dates are decided- RBI proposal",
+      "summary": "RBI MPC policy: The Reserve Bank of India plans to simplify loan interest rate rules for all regulated entities. This initiative aims to harmonize guidelines and address operational aspects of current lending rate benchmarks. The proposed changes will standar…",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/wealth/save/rbi-policy-mpc-repo-rate-decision-changes-in-eblr-mclr-framework-interest-rate-charging-mechanism-and-how-reset-dates-are-decided-rbi-proposal/articleshow/132895237.cms",
+      "publishedAt": "2026-08-05T06:04:34Z",
+      "country": "인도",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.8,
+      "reason": "인도 중앙은행의 금리 정책 변경"
+    },
+    {
+      "id": "7761d702b8c469de",
+      "title": "RBI MPC Meeting 2026: Crude oil volatility remains key inflation risk",
+      "summary": "RBI MPC Meeting 2026 Crude Oil Price Impact on Inflation: The central bank warns volatile crude oil prices pose inflation risks. Geopolitical tensions cloud the near-term outlook for price stability. The central bank kept its repo rate unchanged at 5.25 perce…",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/news/economy/indicators/rbi-mpc-crude-oil-prices-inflation-impact-2026-rbi-governor-sanjay-malhotra-comments-crude-oil-fuel-inflation-prices-india/articleshow/132893307.cms",
+      "publishedAt": "2026-08-05T05:30:37Z",
+      "country": "인도",
+      "category": "지정학",
       "direction": "악재",
       "currencyPairs": [
         "USD/INR"
       ],
       "confidence": 0.8,
-      "reason": "미국 관세 불확실성과 중동 해상 수송 중단으로 인도 제약 산업의 수출이 부진하여 2030년 매출 목표를 달성하지 못할 것이라고 예상"
+      "reason": "지정학적 긴장이 원유 가격 불안정성과 인플레이션에 영향을 줄 수 있음"
     },
     {
-      "id": "4ce5de78c9829599",
-      "title": "MPC can judiciously use its tolerance band to look past temporary, supply-driven inflation spikes",
-      "summary": "Rate hikes are more likely to be reactive than proactive, becoming a real possibility only if core inflation sustains above 4.5% in a broad-based manner.&nbsp;",
-      "source": "Livemint",
-      "url": "https://www.livemint.com/opinion/columns/rbi-mpc-august-2026-rate-hike-outlook-inflation-oil-prices-11785817937029.html",
-      "publishedAt": "2026-08-04T06:22:23Z",
-      "country": "기타",
+      "id": "f5617819f84c7a57",
+      "title": "RBI's rate, GDP and inflation verdict also comes with a stark warning",
+      "summary": "2026 RBI MPC Meeting: The Reserve Bank of India maintained its repo rate at 5.25 percent on Wednesday. This decision marks the fourth consecutive meeting without a change in the key interest rate. The central bank cited sticky inflation and geopolitical risks…",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/news/economy/rbis-rate-gdp-inflation-verdict-comes-with-a-stark-warning-mpc-meeting-rbi-repo-rate-rbi-measures-on-war-gdp-inflation-rbi-warning-on-war-measures-amid-iran-us/articleshow/132889324.cms",
+      "publishedAt": "2026-08-05T05:23:34Z",
+      "country": "인도",
       "category": "금리",
-      "direction": "호재",
-      "currencyPairs": [],
-      "confidence": 0.7,
-      "reason": "금리 인상이 잠재적으로 반응적일 수 있다는 언급"
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.9,
+      "reason": "인도 중앙은행의 금리 유지 결정"
     },
     {
-      "id": "6eba123e8d294d41",
-      "title": "Interest rate to remain high amid inflationary pressures — United Capital",
-      "summary": "By Peter Egwuatu United Capital Plc, has indicated that interest rate in Nigeria is expected to remain high at the backdrop of inflationary pressures in the second half of 2026 H2’26. Speaking at its investor relations roundtable, held in Lagos, with the them…",
-      "source": "Vanguard",
-      "url": "https://www.vanguardngr.com/2026/08/interest-rate-to-remain-high-amid-inflationary-pressures-united-capital/",
-      "publishedAt": "2026-08-04T06:20:20Z",
-      "country": "기타",
-      "category": "금리",
+      "id": "9855f004cef60ec9",
+      "title": "Trump’s Latest Tariffs Hit With New Lawsuit by 25 States",
+      "summary": "A group of 25 states filed a lawsuit challenging President Donald Trump’s new global tariffs that went into effect last month, adding to similar complaints by small businesses who claim the levies are illegal. New York, California, Illinois and other …",
+      "source": "Insurance Journal",
+      "url": "https://www.insurancejournal.com/news/national/2026/08/05/880263.htm",
+      "publishedAt": "2026-08-05T05:08:28Z",
+      "country": "미국",
+      "category": "무역",
       "direction": "악재",
       "currencyPairs": [
-        "NGN/USD"
+        "USD/KRW",
+        "USD/JPY",
+        "USD/EUR"
+      ],
+      "confidence": 0.9,
+      "reason": "트럼프 대통령의 새로운 관세가 25개 주에 의해 법적 도전을 받고 있어 무역 분쟁이 확대될 가능성이 있어 환율에 악영향을 줄 수 있다."
+    },
+    {
+      "id": "c0faf28b83a14311",
+      "title": "Alan Eustace: Donald Trump is right for once. The EU is soft on slave labour",
+      "summary": "Surely we are past the point of cutting sweatshops some slack?",
+      "source": "The Irish Times",
+      "url": "https://www.irishtimes.com/opinion/2026/08/05/alan-eustace-donald-trump-is-right-for-once-the-eu-is-soft-on-slave-labour/",
+      "publishedAt": "2026-08-05T05:00:01Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "EUR/USD"
       ],
       "confidence": 0.8,
-      "reason": "나이지리아의 높은 인플레이션 압력으로 인해 금리 상승이 예상됨"
+      "reason": "미국이 EU에 대한 관세를 부과"
+    },
+    {
+      "id": "598128f3776446b2",
+      "title": "트럼프 행정부, ‘해방의 날’ 관세 위법 판결 후 143조원 환급",
+      "summary": "도널드 트럼프 미국 대통령이 지난해 4월 백악관에서 각 국가에 부과할 상호관세에 대해 설명하고 있다. 로이터연합뉴스도널드 트럼프 미국 행정부가 연방대법원의 상호관세 위법 판결 이후 약 1000억달러(약 143조원) 규모의 관세를 환급한 것으로 나타났다. 전체 징수액의 약 60%다.미 관세국경보호청(CBP)은 미국 국제무역법원에 제출한 자료에서 이같이 밝혔다···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608051338001",
+      "publishedAt": "2026-08-05T04:38:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 행정부의 관세 환급이 무역 환경에 긍정적인 영향을 줄 수 있음"
+    },
+    {
+      "id": "cc4d20b45b3b6e3c",
+      "title": "RBI MPC Meeting 2026: Sanjay Malhotra & team keeps repo rate at 5.25% as global risks linger with Iran war flare-up",
+      "summary": "RBI Monetary Policy Meeting 2026: The Reserve Bank of India's Monetary Policy Committee maintained the benchmark repo rate at 5.25 percent. Policymakers are carefully observing geopolitical uncertainties and rising inflationary pressures. Domestic economic gr…",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/news/economy/policy/rbi-monetary-policy-meeting-2026-sanjay-malhotra-major-announcements-repo-rate-updates-key-takeaways-key-decisions-status-quo-5-25-as-global-risks-iran-war-flare-up/articleshow/132888864.cms",
+      "publishedAt": "2026-08-05T04:33:37Z",
+      "country": "인도",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.9,
+      "reason": "인도 중앙은행의 금리 결정"
+    },
+    {
+      "id": "994ebf178f325287",
+      "title": "트럼프표 금속 관세 확대되나···철강·알루미늄 등 14개 품목 추가 검토",
+      "summary": "도널드 트럼프 미국 대통령이 4일(현지시간) 에어포스원을 타고 로스앤젤레스 국제공항에 도착한 모습. AP연합뉴스트럼프 행정부가 철강·알루미늄·구리 관련 제품에 부과하는 국가안보 관세(무역확장법 232조)의 적용 대상을 확대하는 방안을 검토하고 있다.로이터통신은 4일(현지시간) 미 상무부가 철강·알루미늄·구리 파생 제품 14개 품목을 추가 관세 대상에 포함하···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608050907001",
+      "publishedAt": "2026-08-05T00:07:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 철강·알루미늄 등에 대한 국가안보 관세를 확대하는 방안을 검토"
+    },
+    {
+      "id": "01978e115715abf7",
+      "title": "“미국이 엔화 방어 나선 까닭은 우정 아닌 트럼프 지키기”",
+      "summary": "일 언론 “미 국채 금리 상승 유발 가능성에 중간선거 영향 차단 포석”40년 만에 최저 수준으로 떨어진 엔화 가치를 떠받치기 위해 미국이 나선 것을 두고 중간선거를 앞둔 도널드 트럼프 미국 대통령이 자국 경제에 미칠 악영향을 우려했기 때문이라는 분석이 나왔다.니혼게이자이(닛케이)·마이니치신문 등 일본 언론과 미국 월스트리트저널(WSJ)은 4일 미국이 일본과···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608042055025",
+      "publishedAt": "2026-08-04T11:55:02Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/JPY"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 엔화 방어에 나서면서 미 국채 금리 상승 가능성과 중간선거 영향에 대한 우려"
+    },
+    {
+      "id": "bb4e27b175c92f88",
+      "title": "한·방글라데시 CEPA 원칙적 타결…1억7000만 거대 시장 문 열렸다",
+      "summary": "서남아시아 국가와 맺은 두 번째 CEPA라면·조미김·과자류 등 K푸드 관세 철폐철강·중장비 관세도 없어져 “인프라 협력”여한구 산업통상부 통상교섭본부장과 칸다케르 압둘 무크타디르 방글라데시 상무부 장관이 4일(현지시간) 방글라데시 다카에서 면담하고 있다. 산업부 제공한국과 방글라데시가 4일(현지시간) 포괄적경제동반자협정(CEPA) 원칙적 타결에 합의했다. ···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608041738001",
+      "publishedAt": "2026-08-04T08:38:00Z",
+      "country": "한국",
+      "category": "무역",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW",
+        "BDT/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "한국과 방글라데시 간 CEPA 원칙적 타결로 무역 협력이 강화될 것으로 예상"
+    },
+    {
+      "id": "9678cf3acb6422dc",
+      "title": "미·일의 엔저 방어…원·달러 환율 1300원대 다시 볼까",
+      "summary": "전문가들 “하반기 환율 1300원 진입 시도 이어질듯”4일 서울 중구 하나은행 본점 딜링룸 전광판에 코스피, 코스닥지수가 표시돼있다. 연합뉴스미국과 일본이 엔화 약세를 막기 위한 ‘공조 개입’을 공식화 이후 원·달러 환율이 한달여만에 100원 넘게 급락했다. 올해 하반기 일시적으로 1300원대도 나타날 것이라는 관측도 나온다. 엔화 강세에 따른 엔 캐리 트···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608041652001",
+      "publishedAt": "2026-08-04T07:52:00Z",
+      "country": "미국",
+      "category": "환율",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.9,
+      "reason": "미·일의 엔저 방어로 인한 원·달러 환율 급락"
     },
     {
       "id": "52b2dc69c541f018",
@@ -449,197 +664,6 @@
       "reason": "미국이 일본 엔화 가치를 떠받치기 위해 나서면서 환율에 영향을 줄 수 있다."
     },
     {
-      "id": "92682599e17e5e7c",
-      "title": "RBI’s new FD rules from October: 5 changes small finance bank depositors must know",
-      "summary": "RBI’s new fixed deposit rules for small finance banks will apply from October. The guidelines introduce advance-rate disclosures, uniform pricing, bulk-deposit rules and greater transparency.",
-      "source": "Livemint",
-      "url": "https://www.livemint.com/money/personal-finance/rbis-new-fd-rules-from-october-5-changes-small-finance-bank-depositors-must-know-11785817700917.html",
-      "publishedAt": "2026-08-04T05:56:59Z",
-      "country": "인도",
-      "category": "금리",
-      "direction": "중립",
-      "currencyPairs": [
-        "USD/INR"
-      ],
-      "confidence": 0.8,
-      "reason": "인도 중앙은행의 새로운 정기 예금 규칙"
-    },
-    {
-      "id": "9280aab82291255c",
-      "title": "India pharma sector to miss 2030 sales target amid tariff and shipping woes, trade body says",
-      "summary": "India's pharmaceutical industry is expected to reach$80-90 billion by 2030, well below its earlier$130 billion target, as U.S. tariff uncertainty and Middle East shipping disruptions hurt exports, Pharmaceuticals Export Promotion Council of India Chairman Nam…",
-      "source": "The Times of India",
-      "url": "https://economictimes.indiatimes.com/industry/healthcare/biotech/pharmaceuticals/india-pharma-sector-to-miss-2030-sales-target-amid-tariff-and-shipping-woes-trade-body-says/articleshow/132847469.cms",
-      "publishedAt": "2026-08-04T05:34:52Z",
-      "country": "인도",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/INR"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 관세 불확실성과 중동 선적 중단으로 인한 수출 감소"
-    },
-    {
-      "id": "406639002f26bc3e",
-      "title": "25 US states sue to block Trump tariffs",
-      "summary": "Twenty-five US states, nearly all led by Democrats, sued US President Donald Trump's administration yesterday over wide-ranging tariffs.",
-      "source": "RTE",
-      "url": "https://www.rte.ie/news/world/2026/0804/1586332-us-tariffs/",
-      "publishedAt": "2026-08-04T04:36:59Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/KRW",
-        "USD/JPY",
-        "USD/EUR"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 25개 주가 트럼프의 관세 조치에 대해 소송을 제기"
-    },
-    {
-      "id": "dacf7fdb0bd0a2a2",
-      "title": "25 US states sue to block Trump tariffs",
-      "summary": "25 US states, nearly all led by Democrats, sued US President Donald Trump's administration yesterday over wide-ranging tariffs, arguing that the president had exceeded his authority in imposing the new levies on dozens of countries.",
-      "source": "RTE",
-      "url": "https://www.rte.ie/news/world/2026/0804/1586332-states-sue-tariffs/",
-      "publishedAt": "2026-08-04T04:36:59Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/KRW",
-        "USD/JPY",
-        "USD/EUR"
-      ],
-      "confidence": 0.8,
-      "reason": "미국이 여러 국가에 대한 관세를 부과하여 무역 분쟁을 일으킬 수 있다."
-    },
-    {
-      "id": "85e917decc511e2f",
-      "title": "Donald Trump’s Tariff Re-Do in Southeast Asia",
-      "summary": "The capricious treatment of partners and allies threatens to do long-term damage to Washington's standing in the region.",
-      "source": "The Diplomat",
-      "url": "https://thediplomat.com/2026/08/donald-trumps-tariff-re-do-in-southeast-asia/",
-      "publishedAt": "2026-08-04T03:06:00Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/KRW",
-        "USD/JPY",
-        "USD/SGD"
-      ],
-      "confidence": 0.8,
-      "reason": "미국이 동남아시아에 대한 관세를 부과"
-    },
-    {
-      "id": "fa4cc127eca18c2c",
-      "title": "US: 25 Democratic States sue Trump against forced-labour tariffs on 60 countries",
-      "summary": "The 25 states moved the US Court of International Trade on Monday against the Trump administration for again implementing tariffs on several countries, contending that it will raise costs for consumers and businesses nationwide.",
-      "source": "BusinessLine",
-      "url": "https://www.thehindubusinessline.com/news/world/us-25-democratic-states-sue-trump-against-forced-labour-tariffs-on-60-countries/article71303706.ece",
-      "publishedAt": "2026-08-04T01:21:31Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/KRW",
-        "USD/JPY",
-        "USD/EUR"
-      ],
-      "confidence": 0.8,
-      "reason": "미국이 60개국에 대한 관세 부과로 무역 분쟁이 확대될 수 있어 환율에 악영향을 줄 수 있음"
-    },
-    {
-      "id": "1993f045c8cc1337",
-      "title": "25 States Sue Trump Over Section 301 Duties",
-      "summary": "The plaintiffs are taking on the Trump administration over its efforts to rebuild the crumbling foundation of its trade strategy through new and divisive tariffs.",
-      "source": "WWD",
-      "url": "http://wwd.com/sourcing-journal/trade/25-states-sue-trump-section-301-duties-tariffs-california-arizona-1239092410/",
-      "publishedAt": "2026-08-04T00:58:43Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/KRW",
-        "USD/JPY",
-        "USD/EUR"
-      ],
-      "confidence": 0.8,
-      "reason": "25개 주가 트럼프 행정부의 관세 정책에 대해 소송을 제기"
-    },
-    {
-      "id": "1170289e95476626",
-      "title": "Twenty-five States, Led by Oregon, File Lawsuit Challenging Trump's Section 301 Tariffs",
-      "summary": "NA Today, twenty-five largely Democratic-controlled state governments filed a lawsuit challenging Donald Trump's massive new Section 301 tariffs. The complaint,…",
-      "source": "Reason",
-      "url": "https://reason.com/volokh/2026/08/03/twenty-five-states-led-by-oregon-file-lawsuit-challenging-trumps-section-301-tariffs/",
-      "publishedAt": "2026-08-04T00:49:38Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/KRW",
-        "USD/JPY",
-        "USD/EUR"
-      ],
-      "confidence": 0.8,
-      "reason": "트럼프의 301조 관세에 대한 소송"
-    },
-    {
-      "id": "5d44d3f94098fa15",
-      "title": "Group of 25 Democratic US states sue to challenge Trump's latest tariffs affecting India & 59 other nations",
-      "summary": "Twenty-five states have filed a lawsuit against the Trump administration's latest tariffs.  They argue the president's actions exceed his legal authority to tax imports.  Previous tariffs imposed by Trump have faced similar legal challenges.  The administrati…",
-      "source": "The Times of India",
-      "url": "https://economictimes.indiatimes.com/news/international/global-trends/group-of-25-democratic-us-states-sue-to-challenge-trumps-latest-tariffs-affecting-india-59-other-nations/articleshow/132843438.cms",
-      "publishedAt": "2026-08-04T00:42:57Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/INR",
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "트럼프 행정부의 관세 조치에 대한 25개 주의 소송"
-    },
-    {
-      "id": "b0c034633fac3e00",
-      "title": "“일본, 엔화 방어에 이틀 동안 125조원 투입”···일일 시장 개입 규모 역대 최대",
-      "summary": "일본이 미국과의 엔화 매수 공동 개입을 공식 발표한 3일 도쿄의 환율 전광판 앞을 한 남성이 지나가고 있다. 도쿄|로이터연합뉴스일본 당국이 지난달 30일과 31일 이틀 연속 엔화 방어를 위해 총 13조7800억엔(868억달러·약 126조원) 상당의 시장 개입에 나선 것으로 추정된다.블룸버그 통신은 3일(현지시간) 일본은행(BOJ) 계좌 분석을 토대로 이같이···",
-      "source": "Khan.co.kr",
-      "url": "https://www.khan.co.kr/article/202608040940001",
-      "publishedAt": "2026-08-04T00:40:00Z",
-      "country": "일본",
-      "category": "환율",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/JPY"
-      ],
-      "confidence": 0.9,
-      "reason": "일본이 엔화 방어를 위해 대규모 시장 개입을 실시"
-    },
-    {
-      "id": "e20a697836069a86",
-      "title": "US: 25 states sue over Trump's new tariffs",
-      "summary": "The coalition of largely Democratic-led states is challenging the Trump administration's argument that tariffs will address imports produced by alleged \"forced labor\" abroad. The White House insists the move is legal.",
-      "source": "DW (English)",
-      "url": "https://www.dw.com/en/us-25-states-sue-over-trumps-new-tariffs/a-78224794",
-      "publishedAt": "2026-08-04T00:28:00Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/KRW",
-        "USD/JPY",
-        "USD/EUR"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 25개 주가 트럼프의 새로운 관세에 대해 소송을 제기"
-    },
-    {
       "id": "e9688b6524cac78a",
       "title": "PCE는 금값을 살렸지만, FOMC는 상단을 막았다",
       "summary": "[지디넷코리아]7월 5주차 금시장의 핵심은 PCE(Personal Consumption Expenditure) 둔화와 FOMC (Federal Open Market Committee)불확실성의 충돌이었다. 미국 6월 PCE가 시장 우려보다 완화적으로 나오면서 금값은 7월 31일 반등했다. 물가 재가속 우려가 낮아지자 시장은 연준의 추가 금리 인상 가능성을 일부 낮춰 반영했고, 이는 달러와 미국 국채금리 상승 압력을 완화하며 금값 하단을 지지했다.그러나 7월 F…",
@@ -654,22 +678,6 @@
       ],
       "confidence": 0.8,
       "reason": "미국 PCE 둔화와 FOMC 불확실성으로 인한 금리 인상 가능성 낮아짐"
-    },
-    {
-      "id": "80b2dee15424f605",
-      "title": "일, ‘역대급 엔저’에 미국과 공동 엔화 매수 개입…동일본대지진 이후 15년만",
-      "summary": "일본이 미국과의 엔화 매수 공동 개입을 공식 발표한 3일 도쿄의 환율 전광판 앞을 한 남성이 지나가고 있다. 도쿄|로이터연합뉴스일본 엔화 가치가 40년 만에 최저 수준으로 떨어진 가운데 미국과 일본이 공동으로 엔화 매수 개입을 단행했다.카탸아마 사쓰기 일본 재무상은 미·일 양국이 지난달 31일 공동으로 엔화 매수에 개입했다는 내용의 담화문을 3일 발표했다고···",
-      "source": "Khan.co.kr",
-      "url": "https://www.khan.co.kr/article/202608031417001",
-      "publishedAt": "2026-08-03T05:17:00Z",
-      "country": "일본",
-      "category": "환율",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/JPY"
-      ],
-      "confidence": 0.9,
-      "reason": "일본과 미국의 공동 엔화 매수 개입"
     },
     {
       "id": "79d59f70cb6f9fc0",
@@ -702,7 +710,7 @@
         "JPY/USD"
       ],
       "confidence": 0.9,
-      "reason": "일본은행이 기준금리를 현행 1.0%로 유지했다."
+      "reason": "일본은행이 기준금리를 1.0%로 동결"
     },
     {
       "id": "decdbddb8c4cd285",
@@ -750,7 +758,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 기준금리 동결과 한국은행의 금리 결정에 대한 영향"
+      "reason": "미국 연방준비제도(Fed)가 기준금리를 동결했지만 케빈 워시 연준 의장의 모호한 발언으로 미국 통화정책의 불확실성이 커졌다는 평가"
     },
     {
       "id": "b5c4443121c3cc4d",
@@ -785,7 +793,7 @@
         "USD/JPY"
       ],
       "confidence": 0.9,
-      "reason": "미 연방준행이 금리 유지 결정"
+      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
     },
     {
       "id": "94d836aaf6cac973",
@@ -819,7 +827,7 @@
         "EUR/USD"
       ],
       "confidence": 0.8,
-      "reason": "미 연방준행이 인플레이션에 대한 대응이 충분하지 않아 국채 수익률이 19년 만에 최고치에 달함"
+      "reason": "미 연준의 금리 인상 속도에 대한 우려가 금리 상승과 연계"
     },
     {
       "id": "85b687c68c41bc46",
@@ -833,10 +841,10 @@
       "direction": "악재",
       "currencyPairs": [
         "USD/UAH",
-        "EUR/USD"
+        "USD/IRR"
       ],
       "confidence": 0.8,
-      "reason": "우크라이나와 이란 간의 충돌이 확대될 수 있어 글로벌 경제 불안정성에 악영향을 줄 수 있음"
+      "reason": "우크라이나와 이란 간의 충돌"
     },
     {
       "id": "750adb41f350b3d9",
@@ -886,7 +894,7 @@
         "EUR/USD"
       ],
       "confidence": 0.9,
-      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
+      "reason": "미 연준의 금리 유지 결정"
     },
     {
       "id": "ef2fe1cfd123b3f6",
@@ -934,10 +942,11 @@
       "category": "금리",
       "direction": "중립",
       "currencyPairs": [
-        "USD/KRW"
+        "USD/KRW",
+        "EUR/USD"
       ],
       "confidence": 0.9,
-      "reason": "미국 연방준비제도(Fed)가 금리 유지 결정"
+      "reason": "미 연준의 금리 유지 결정"
     },
     {
       "id": "54d9d5be443506a4",
@@ -966,7 +975,7 @@
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
-        "NGN/USD"
+        "USD/NGN"
       ],
       "confidence": 0.8,
       "reason": "미국이 나이지리아 수출품에 12.5% 관세를 부과"
@@ -978,14 +987,14 @@
       "source": "Digitimes",
       "url": "https://www.digitimes.com/news/a20260730PD205/taiwan-supply-chain-government-vehicle-moea.html",
       "publishedAt": "2026-07-30T04:05:40Z",
-      "country": "대만",
+      "country": "기타",
       "category": "무역",
       "direction": "중립",
       "currencyPairs": [
         "TWD/USD"
       ],
       "confidence": 0.8,
-      "reason": "대만의 차량 수입 관세 인하 연기"
+      "reason": "대만의 차량 관세 인하 연기"
     },
     {
       "id": "2fa8388f2518ddd6",
@@ -1034,7 +1043,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 연방준비제도 의장이 인플레이션 목표를 강조"
+      "reason": "미국 연방준비제도 의장이 인플레이션 목표를 강조하면서 금리 정책에 대한 힌트를 주고 있어"
     },
     {
       "id": "d142846bc15e5573",
@@ -1051,23 +1060,7 @@
         "EUR/USD"
       ],
       "confidence": 0.9,
-      "reason": "미국 연준이 금리를 5회 연속 동결했다는 뉴스"
-    },
-    {
-      "id": "732fb134a681dd4c",
-      "title": "한은 “반도체 호조가 주가 하방 압력 제한할 것”",
-      "summary": "금리 인상 기조 지속 의지…정부 부동산 대책에 리스크 완화 언급도한국은행이 29일 “반도체 기업의 대규모 영업이익 전망 등 양호한 펀더멘털(기초체력)은 국내 주가의 하방 압력을 제한할 수 있을 것으로 기대된다”고 밝혔다.한은은 이날 국회 재정경제기획위원회에 제출한 업무보고 자료에서 “최근 코스피는 인공지능(AI) 투자 둔화 우려와 대규모 외국인 순매도 등으···",
-      "source": "Khan.co.kr",
-      "url": "https://www.khan.co.kr/article/202607292214005",
-      "publishedAt": "2026-07-29T13:14:00Z",
-      "country": "한국",
-      "category": "금리",
-      "direction": "중립",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "한국은행이 금리 인상 기조를 지속할 의지를 밝혔다."
+      "reason": "미국 연방준비제도(연준)가 금리를 5회 연속 동결했다."
     },
     {
       "id": "8a508f0379af1e5c",
@@ -1126,12 +1119,12 @@
       "publishedAt": "2026-07-28T11:51:02Z",
       "country": "한국",
       "category": "금리",
-      "direction": "악재",
+      "direction": "중립",
       "currencyPairs": [
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "한국은행의 기준금리 인상으로 주택담보대출의 변동형 금리 비중이 증가"
+      "reason": "한국은행의 기준금리 인상 기조로 주택담보대출에서 변동형 금리의 비중이 증가"
     },
     {
       "id": "b6efb67a98b9c00a",
@@ -1147,7 +1140,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "한국은행의 기준금리 인상으로 변동형 주담대 비중이 12년 만에 최고치를 기록"
+      "reason": "한국은행의 기준금리 인상 기조로 주택담보대출 금리 인상"
     },
     {
       "id": "df7bfbd43e310bdd",
@@ -1212,7 +1205,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "트럼프 대통령이 관세 정책을 강조하며 미시간주 유권자들에게 경제 호재를 어필"
+      "reason": "트럼프 대통령이 관세 정책을 앞세워 제조업 부흥을 강조"
     },
     {
       "id": "eea727e1139c863c",
@@ -1261,7 +1254,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 연방준비제도(FOMC) 기준금리 결정"
+      "reason": "미국 연방준비제도(연준)가 기준금리 결정을 할 예정"
     },
     {
       "id": "9c3c8e24d3e502bb",
@@ -1310,7 +1303,7 @@
         "USD/CNY"
       ],
       "confidence": 0.8,
-      "reason": "미국 금리 인상 기대가 금값을 눌러 내린다."
+      "reason": "미국 금리 인상 기대가 금값을 눌러 내림"
     },
     {
       "id": "4bb69de82da5780f",
