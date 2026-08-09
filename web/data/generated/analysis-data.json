@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-08T22:58:52.358487+00:00",
-    "dataAsOf": "2026-08-07",
+    "generatedAt": "2026-08-09T23:06:15.101995+00:00",
+    "dataAsOf": "2026-08-09",
     "supportedPairs": [
       "USD/KRW",
       "JPY/KRW",
@@ -22,7 +22,7 @@
       "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
       "spot_rate": 1441.1,
       "estimated_monthly_move_rate": 45.35,
-      "data_age_days": 9,
+      "data_age_days": 10,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -43,7 +43,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 9.0213,
       "estimated_monthly_move_rate": 0.24,
-      "data_age_days": 9,
+      "data_age_days": 10,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -61,7 +61,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 1661.16,
       "estimated_monthly_move_rate": 40.25,
-      "data_age_days": 9,
+      "data_age_days": 10,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-08-08T22:58:52.226616",
+    "computed_at": "2026-08-09T23:06:14.939761",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 2.75,
@@ -93,19 +93,19 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1407.45,
-        "ma5": 1424.248,
-        "ma20": 1460.031,
+        "latest_close": 1409.7,
+        "ma5": 1422.018,
+        "ma20": 1456.335,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1421.647,
-        "resistance_r1": 1428.823,
-        "support_s1": 1413.983,
+        "pivot": 1417.603,
+        "resistance_r1": 1428.847,
+        "support_s1": 1411.057,
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "JPY/KRW": {
-        "latest_close": 8.898,
-        "ma5": 9.029,
-        "ma20": 9.042,
+        "latest_close": 8.979,
+        "ma5": 9.045,
+        "ma20": 9.046,
         "ma_signal": "단기 하락추세(5일선<20일선)",
         "pivot": 9.013,
         "resistance_r1": 9.055,
@@ -113,9 +113,9 @@
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "EUR/KRW": {
-        "latest_close": 1626.1,
-        "ma5": 1644.43,
-        "ma20": 1669.573,
+        "latest_close": 1638.82,
+        "ma5": 1646.974,
+        "ma20": 1670.209,
         "ma_signal": "단기 하락추세(5일선<20일선)",
         "pivot": 1641.347,
         "resistance_r1": 1649.453,
@@ -208,10 +208,10 @@
         "trend": "하락"
       },
       "유가_WTI": {
-        "latest": 78.18,
-        "latest_date": "2026-08-07",
-        "prev": 77.29,
-        "change": 0.89,
+        "latest": 78.79,
+        "latest_date": "2026-08-09",
+        "prev": 78.18,
+        "change": 0.61,
         "trend": "상승"
       },
       "코스피_지수": {
@@ -235,10 +235,10 @@
         "trend": "데이터없음"
       },
       "구글트렌드_환율관심도": {
-        "latest": 31.5,
-        "latest_date": "2026-08-02",
-        "prev": 38.5,
-        "change": -7.0,
+        "latest": 24.5,
+        "latest_date": "2026-08-09",
+        "prev": 32.0,
+        "change": -7.5,
         "trend": "하락"
       }
     },
@@ -371,214 +371,177 @@
   },
   "news": [
     {
-      "id": "afaccad107419971",
-      "title": "US intel warns Russia may target NATO ally to fragment alliance",
-      "summary": "Potential Russian aggression could strain NATO unity, testing collective defense commitments and impacting geopolitical stability and markets.\nThe post US intel warns Russia may target NATO ally to fragment alliance appeared first on Crypto Briefing.",
-      "source": "Crypto Briefing",
-      "url": "https://cryptobriefing.com/us-intel-warns-russia-may-target-nato-ally-to-fragment-alliance/",
-      "publishedAt": "2026-08-07T22:44:47Z",
-      "country": "기타",
-      "category": "지정학",
-      "direction": "악재",
-      "currencyPairs": [
-        "EUR/USD",
-        "USD/RUB"
-      ],
-      "confidence": 0.8,
-      "reason": "러시아의 잠재적인 공격이 NATO 동맹국을 대상으로 할 수 있어 지정학적 리스크가 높아짐"
-    },
-    {
-      "id": "8831e49529db6760",
-      "title": "Trump Tariff Refunds Just Topped $100 Billion, and These Companies Are Receiving Some of the Largest Checks",
-      "summary": "Trump Tariff Refunds Just Topped $100 Billion, and These Companies Are Receiving Some of the Largest Checks\nAlthough outsize returns in the Dow Jones Industrial Average (DJINDICES: ^DJI), S&P 500 (SNPINDEX: ^GSPC), and Nasdaq Composite (NASDAQINDEX: ^IXIC) ha…",
-      "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/6dc3cd4834c35959",
-      "publishedAt": "2026-08-07T22:44:07Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "트럼프 관세 환급액이 1000억 달러를 넘어섰다는 뉴스"
-    },
-    {
-      "id": "b0078b5840cf8826",
-      "title": "Trump tries again to fire Fed governor Lisa Cook after narrow Supreme Court decision, renewing battle over central bank independence",
-      "summary": "“No matter what President Trump tries to do next, this much is clear under the facts and Supreme Court precedent — there is no valid cause for removing Governor Cook.\"",
-      "source": "Fortune",
-      "url": "https://fortune.com/2026/08/07/trump-fed-governor-lisa-cook-supreme-court-decision-central-bank-independence/",
-      "publishedAt": "2026-08-07T22:40:23Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "중립",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "미 연방준비제도(Fed) 총재 임기 관련 뉴스"
-    },
-    {
-      "id": "3c26f1aec5727e93",
-      "title": "Trump renews push to fire Fed Governor Lisa Cook - NPR",
-      "summary": "Trump renews push to fire Fed Governor Lisa CookNPR Trump Restarts Battle to Fire Sitting Fed Governor Lisa CookThe New York Times Trump administration moves ahead with efforts to fire Federal Reserve governor Lisa Cookwane.com Trump renews effort to fire Fed…",
+      "id": "61ed3921de8225f6",
+      "title": "Trump is about to get 'unchecked authority' to impose tariffs of up to 100% on top trading partners - Fortune",
+      "summary": "Trump is about to get 'unchecked authority' to impose tariffs of up to 100% on top trading partnersFortune US Senate passes Russia sanctions championed by Graham; US House nextReuters Donald Trump shoots from Senate shoulders to punish Russia, by making India…",
       "source": "Slashdot.org",
-      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=184894362",
-      "publishedAt": "2026-08-07T22:33:52Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "중립",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 연방준비제도(Fed) 총재 임명과 관련한 뉴스"
-    },
-    {
-      "id": "f5c8285a5f741d38",
-      "title": "Canada Races For Deal Before Trump’s 50% Tariff Inflames Feud",
-      "summary": "Canadian negotiators are trying to secure a deal with the US before 50% tariffs on a wide range of goods threatened by President Donald Trump kick in on Aug. 19, while warning of an ugly new phase of the trade dispute if the levies are imposed.",
-      "source": "Financial Post",
-      "url": "https://financialpost.com/pmn/business-pmn/canada-races-for-deal-before-trumps-50-tariff-inflames-feud",
-      "publishedAt": "2026-08-07T22:20:40Z",
+      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=184901114",
+      "publishedAt": "2026-08-08T21:12:56Z",
       "country": "미국",
       "category": "무역",
       "direction": "악재",
-      "currencyPairs": [
-        "USD/CAD"
-      ],
-      "confidence": 0.9,
-      "reason": "미국이 캐나다에 50% 관세를 부과할 수 있다는 뉴스"
-    },
-    {
-      "id": "5c8cb7632e198742",
-      "title": "Trump is trying to fire Lisa Cook again. He still wants to stack the Fed with allies",
-      "summary": "Two months after he was blocked by the Supreme Court, President Donald Trump has resumed his effort to oust Federal Reserve governor Lisa Cook as part of an effort to stack the central bank’s board with more allies.",
-      "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/37caa8ebf078979a",
-      "publishedAt": "2026-08-07T21:57:11Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "중립",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 연방준비제도(Fed) 인사에 대한 뉴스"
-    },
-    {
-      "id": "c3ae7c90ee66ca65",
-      "title": "Fed survey shows improved US job market outlook, slight dip in inflation expectations",
-      "summary": "Improved job market outlook and stable long-term inflation expectations may bolster consumer confidence, influencing economic growth trends.\nThe post Fed survey shows improved US job market outlook, slight dip in inflation expectations appeared first on Crypt…",
-      "source": "Crypto Briefing",
-      "url": "https://cryptobriefing.com/fed-survey-shows-improved-us-job-market-outlook-slight-dip-in-inflation/",
-      "publishedAt": "2026-08-07T21:53:30Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 연방준비제도(Fed)의 조사에서 미국의 고용 시장 전망이 개선되고 인플레이션 기대가 안정화함에 따라 금리 정책에 영향을 줄 수 있음"
-    },
-    {
-      "id": "a4513cdb6e49cc50",
-      "title": "Weak Jobs Report Fuels Rate Hike Skeptics | Bloomberg Businessweek Daily 8/7/2026",
-      "summary": "A weaker-than-expected jobs report has stock rebounding on speculation the Fed may not have to hike rates soon. Bloomberg's ...",
-      "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/7d0402721f1aa923",
-      "publishedAt": "2026-08-07T21:47:32Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 연방준비제도(Fed)의 금리 인상 가능성 감소"
-    },
-    {
-      "id": "1a990923345c6b2a",
-      "title": "Odds the Fed will hike in September tumble following big July jobs miss",
-      "summary": "The U.S. economy surprisingly shed jobs in July, and it's leading investors to think that an interest rate hike by the Federal ...",
-      "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/cd4ddcefa3ccfa4e",
-      "publishedAt": "2026-08-07T21:47:08Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.9,
-      "reason": "미국에서 금리 인상 가능성이 낮아지는 뉴스"
-    },
-    {
-      "id": "a27d8d6068cb3967",
-      "title": "Dollar drops, stocks climb as weak US jobs data eases rate fears",
-      "summary": "NEW YORK: The dollar fell sharply Friday (Aug 7) after the US economy shed thousands of jobs in July, an economic blow that lowered the risk of an interest rate hike by the Federal Reserve th",
-      "source": "CNA",
-      "url": "https://www.channelnewsasia.com/world/us-stocks-wall-street-market-jobs-data-6307011",
-      "publishedAt": "2026-08-07T21:31:15Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.9,
-      "reason": "미국 실업 데이터가 약세로 나타나 미 연준의 금리 인상 가능성이 낮아져 달러화 가치가 하락"
-    },
-    {
-      "id": "2ab98510c5fec6ea",
-      "title": "U.S. Stocks Rise as Rate-Hike Odds Fall on Weak Jobs Report",
-      "summary": "U.S. stocks rose Friday after July payroll data came in far weaker than expected, giving the Federal Reserve reason to hold off on raising interest rates next month.",
-      "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/d830814d2e3b543b",
-      "publishedAt": "2026-08-07T21:27:41Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.9,
-      "reason": "미국 금리 인상 가능성 하락"
-    },
-    {
-      "id": "99752a1bf07990a2",
-      "title": "News of the day: Interfor’s move to U.S., job gains, AMD buying Taalas, interest rate expectations, short-term investing and more",
-      "summary": "It’s Friday, August 7. Here are the top stories we’re following today.",
-      "source": "Financial Post",
-      "url": "https://financialpost.com/uncategorized/news-of-the-day-interfors-move-to-u-s-job-gains-amd-buying-taalas-interest-rate-expectations-short-term-investing-and-more",
-      "publishedAt": "2026-08-07T21:27:38Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "중립",
       "currencyPairs": [
         "USD/KRW",
-        "USD/CAD"
+        "USD/JPY",
+        "USD/EUR"
       ],
-      "confidence": 0.7,
-      "reason": "금리 기대 관련 뉴스"
+      "confidence": 0.8,
+      "reason": "트럼프 대통령이 주요 무역 파트너국에 최대 100%의 관세를 부과할 수 있는 권한을 얻을 것으로 보임"
     },
     {
-      "id": "d742f37b74bfa37b",
-      "title": "Trump renews effort to fire Fed's Cook, continuing attacks on central bank - Reuters",
-      "summary": "Trump renews effort to fire Fed's Cook, continuing attacks on central bankReuters Trump Restarts Battle to Fire Sitting Fed Governor Lisa CookThe New York Times Trump renews effort to fire Fed Governor Lisa CookHonolulu Star-Advertiser Trump won’t let the Sup…",
-      "source": "Slashdot.org",
-      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=184893882",
-      "publishedAt": "2026-08-07T21:13:02Z",
+      "id": "d82574176a52b601",
+      "title": "Trump launched big new solar tariffs. Here’s what it means",
+      "summary": "Next Upcoming\nRural America & The Clean Energy Transition at Climate Week NYC\nBy Canary Media\nA far-reaching new tariff on solar imports promises to both raise the cost of installing the clean energy source and strengthen efforts to reshore solar manufacturin…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/ff60968510455afe",
+      "publishedAt": "2026-08-08T18:08:32Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/CNY"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 태양광 수입에 대한 새로운 관세를 부과"
+    },
+    {
+      "id": "07fd0d0ee145cc38",
+      "title": "With broad bipartisan support, Congress is about to give Trump ‘unchecked authority’ to impose new tariffs of up to 100% on top trading partners",
+      "summary": "Courts have blocked President Donald Trump’s earlier attempts to use existing laws for his trade war, but Congress is advancing a new law that would provide broad discretion to impose steep tariffs.\nIn an 86-to-11 vote, the Senate passed the Lindsey O. Graham…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/fed8478e9d2e3321",
+      "publishedAt": "2026-08-08T18:08:14Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/EUR"
+      ],
+      "confidence": 0.9,
+      "reason": "미국 의회가 트럼프 대통령에게 새로운 관세를 부과할 수 있는 권한을 부여할 예정"
+    },
+    {
+      "id": "262c9ec25ee102cc",
+      "title": "Next big push in ETF industry? Why these risk assets are gaining traction as interest rate uncertainty persists",
+      "summary": "Collateralized loan obligations may become the next big push in the exchange-traded fund industry.\nVettaFi's Todd Rosenbluth suggests there's investor demand for the alternative assets due to ongoing interest rate uncertainty.\n\"[CLOs have] been popular within…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/16c037b2c6d5d306",
+      "publishedAt": "2026-08-08T17:38:12Z",
       "country": "미국",
       "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.7,
+      "reason": "금리 불확실성으로 인한 대체 자산 수요 증가"
+    },
+    {
+      "id": "3046a999bb526692",
+      "title": "Federal Reserve may hold interest rates steady after weak jobs report",
+      "summary": "The Fed's potential rate hold could boost risk assets, impacting markets by lowering the opportunity cost of non-yielding investments.\nThe post Federal Reserve may hold interest rates steady after weak jobs report appeared first on Crypto Briefing.",
+      "source": "Crypto Briefing",
+      "url": "https://cryptobriefing.com/fed-hold-rates-weak-jobs-report/",
+      "publishedAt": "2026-08-08T17:34:18Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD"
+      ],
+      "confidence": 0.9,
+      "reason": "미 연방준비제도(Fed)가 약한 고용 보고서 이후 금리 인상을 보류할 수 있어"
+    },
+    {
+      "id": "a5017d1262518015",
+      "title": "Fed may hold rates steady after weak July jobs report, cooling inflation",
+      "summary": "The Fed's potential rate hold could stabilize markets, but future inflation data and economic shifts may alter monetary policy expectations.\nThe post Fed may hold rates steady after weak July jobs report, cooling inflation appeared first on Crypto Briefing.",
+      "source": "Crypto Briefing",
+      "url": "https://cryptobriefing.com/fed-may-hold-rates-steady-after-weak-july-jobs-report-cooling-inflation/",
+      "publishedAt": "2026-08-08T17:32:20Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW",
+        "EUR/USD"
+      ],
+      "confidence": 0.9,
+      "reason": "미 연준이 금리 인상을 유보할 수 있어 시장 안정에 긍정적"
+    },
+    {
+      "id": "f18e488c358729bd",
+      "title": "With broad bipartisan support, Congress is about to give Trump ‘unchecked authority’ to impose new tariffs of up to 100% on top trading partners",
+      "summary": "\"We should not have to choose between putting a check on Putin's aggression and putting a check on this president's tariffs regime.\"",
+      "source": "Yahoo Entertainment",
+      "url": "https://www.yahoo.com/news/politics/articles/broad-bipartisan-support-congress-trump-172327694.html",
+      "publishedAt": "2026-08-08T17:23:27Z",
+      "country": "미국",
+      "category": "무역",
       "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/EUR"
+      ],
+      "confidence": 0.9,
+      "reason": "트럼프 대통령에게 새로운 관세를 부과할 수 있는 권한을 부여하는 법안이 통과될 예정"
+    },
+    {
+      "id": "eb24f3d94692983b",
+      "title": "With broad bipartisan support, Congress is about to give Trump ‘unchecked authority’ to impose new tariffs of up to 100% on top trading partners",
+      "summary": "\"We should not have to choose between putting a check on Putin's aggression and putting a check on this president's tariffs regime.\"",
+      "source": "Fortune",
+      "url": "https://fortune.com/2026/08/08/trump-tariffs-100-percent-russia-sanctions-bill-congress-import-taxes/",
+      "publishedAt": "2026-08-08T17:23:27Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/EUR"
+      ],
+      "confidence": 0.9,
+      "reason": "미국 의회가 트럼프 대통령에게 최대 100%의 관세를 주요 무역 파트너국에 부과할 수 있는 권한을 부여할 예정"
+    },
+    {
+      "id": "3c63124d25117f96",
+      "title": "Serbia and Ukraine pledge closer economic ties, eye free trade deal",
+      "summary": "Serbia says it will help rebuild Ukrainian cities and provide aid as the two countries deepen cooperation.",
+      "source": "Al Jazeera English",
+      "url": "https://www.aljazeera.com/news/2026/8/8/serbia-and-ukraine-pledge-closer-economic-ties-eye-free-trade-deal",
+      "publishedAt": "2026-08-08T17:05:17Z",
+      "country": "기타",
+      "category": "무역",
+      "direction": "호재",
+      "currencyPairs": [
+        "EUR/RSD",
+        "UAH/RSD"
+      ],
+      "confidence": 0.8,
+      "reason": "세르비아와 우크라이나의 자유 무역 협정 체결 예정"
+    },
+    {
+      "id": "8a38451bbf12f43e",
+      "title": "고용 악화가 호재로…뉴욕증시 상승, S&P500 사상 최고",
+      "summary": "미국 뉴욕증권거래소(NYSE)에서 개장 직후 전광판에 주식시장 정보가 표시되고 있다. 로이터연합뉴스미국 고용지표가 악화하면서 기준금리 인하 기대가 커진 영향으로 7일(현지시간) 뉴욕증시 3대 지수가 일제히 상승 마감했다.이날 뉴욕증시에서 다우존스30 산업평균지수는 전장보다 151.83포인트(0.28%) 오른 5만4036.93에 거래를 마쳤다.스탠더드앤드푸어···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608080806001",
+      "publishedAt": "2026-08-07T23:06:00Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
       "currencyPairs": [
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "트럼프 대통령이 미 연준의 쿡 총재를 해임하려는 시도를 재개"
+      "reason": "미국 고용 악화로 기준금리 인하 기대가 커져 뉴욕증시가 상승했다."
     },
     {
       "id": "52623764f0158dc7",
@@ -594,90 +557,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 대통령이 폴리실리콘 수입 규제를 공식화하여 무역 확장법 232조를 다시 꺼내들었다."
-    },
-    {
-      "id": "7919c8597c3a946f",
-      "title": "Canada prepared to halt booze bans, meet other U.S. demands in exchange for tariff relief: sources",
-      "summary": "Trade team told Americans Trump's newest tariffs would kill will for talks if implementedThe Canadian government is preparing to meet some U.S. demands — including ending bans on American alcohol sales — in exchange for tariff relief as trade talks heat up ah…",
-      "source": "Freerepublic.com",
-      "url": "https://freerepublic.com/focus/f-news/4390999/posts",
-      "publishedAt": "2026-08-07T20:07:31Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/CAD"
-      ],
-      "confidence": 0.8,
-      "reason": "캐나다와 미국 간의 무역 협상에서 관세 완화가 논의되고 있어"
-    },
-    {
-      "id": "19f7455ba78c0dec",
-      "title": "US Senate passes sweeping Russia sanctions bill, House vote next",
-      "summary": "The US Senate passed a bipartisan Russia and Iran sanctions bill authorising tariffs on major Russian energy buyers. The measure now heads to the House.",
-      "source": "BusinessLine",
-      "url": "https://www.thehindubusinessline.com/news/world/us-senate-passes-sweeping-russia-sanctions-bill-house-vote-next/article71319317.ece",
-      "publishedAt": "2026-08-07T20:06:57Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/RUB"
-      ],
-      "confidence": 0.8,
-      "reason": "러시아와 이란에 대한 제재 법안이 통과되어 러시아 에너지 수입국에 관세를 부과"
-    },
-    {
-      "id": "64b459caa791b734",
-      "title": "Russia sanctions bill honoring Lindsey Graham breezes through Senate, heads to House",
-      "summary": "A measure to impose new sanctions on Russian oil purchasers easily cleared the Senate and heads to the House.",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/07/russia-sanctions-bill-lindsey-graham-senate.html",
-      "publishedAt": "2026-08-07T19:21:22Z",
-      "country": "러시아",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "RUB/USD",
-        "RUB/EUR"
-      ],
-      "confidence": 0.8,
-      "reason": "러시아에 대한 새로운 제재로 에너지 수출에 영향을 줄 수 있음"
-    },
-    {
-      "id": "edded321d85ed15e",
-      "title": "Billions in Trump tariff refunds go to Apple, Amazon and Nike after Supreme Court ruling—but what happened to the promised $2,000 checks for Americans?",
-      "summary": "Major companies are receiving billions in tariff refunds after a Supreme Court ruling. Apple, Amazon, and Nike are among the largest beneficiaries of these repayments. Consumers who paid higher prices due to tariffs are unlikely to receive any money back. Som…",
-      "source": "The Times of India",
-      "url": "https://economictimes.indiatimes.com/news/international/global-trends/billions-in-trump-tariff-refunds-go-to-apple-amazon-and-nike-after-supreme-court-rulingbut-what-happened-to-the-promised-2000-checks/articleshow/133040748.cms",
-      "publishedAt": "2026-08-07T19:01:17Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "트럼프 관세 환급으로 애플, 아마존, 나이키 등 기업에 수십억 달러가 환급"
-    },
-    {
-      "id": "aa34fcc21513b2cb",
-      "title": "Senate approves sweeping Russia sanctions bill with 86-12 vote",
-      "summary": "The Senate's decisive vote signals a robust US stance on global energy dynamics and geopolitical alliances, impacting Russia and Iran's strategies.\nThe post Senate approves sweeping Russia sanctions bill with 86-12 vote appeared first on Crypto Briefing.",
-      "source": "Crypto Briefing",
-      "url": "https://cryptobriefing.com/senate-approves-russia-sanctions-bill-graham-act/",
-      "publishedAt": "2026-08-07T18:50:54Z",
-      "country": "미국",
-      "category": "지정학",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/RUB",
-        "USD/INR",
-        "USD/CNY"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 상원이 러시아에 대한 제재 법안을 통과시킴"
+      "reason": "미국이 폴리실리콘 수입 규제를 공식화하여 무역 확장법 232조를 다시 꺼내들었다."
     },
     {
       "id": "3065ec9caa53ee0c",
@@ -693,7 +573,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 대통령이 폴리실리콘 파생상품에 15% 관세를 부과"
+      "reason": "미국이 폴리실리콘 파생상품에 15% 관세를 부과"
     },
     {
       "id": "2e976b0ee87ac600",
@@ -706,10 +586,9 @@
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
-        "USD/CNY",
-        "USD/KRW"
+        "USD/CNY"
       ],
-      "confidence": 0.8,
+      "confidence": 0.9,
       "reason": "미국이 중국산 폴리실리콘에 관세를 부과할 계획"
     },
     {
@@ -777,7 +656,7 @@
         "USD/JPY"
       ],
       "confidence": 0.8,
-      "reason": "미국이 철강·알루미늄 등에 대한 국가안보 관세를 확대하는 방안을 검토"
+      "reason": "미국이 철강·알루미늄 등에 대한 국가안보 관세 적용 대상을 확대하는 방안을 검토"
     },
     {
       "id": "01978e115715abf7",
@@ -810,7 +689,7 @@
         "BDT/KRW"
       ],
       "confidence": 0.9,
-      "reason": "한국과 방글라데시 간 CEPA 원칙적 타결"
+      "reason": "한국과 방글라데시 간 CEPA 원칙적 타결로 무역 협력이 강화될 것으로 예상"
     },
     {
       "id": "e9688b6524cac78a",
@@ -907,7 +786,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 연방준비제도(Fed)가 기준금리를 동결했지만 케빈 워시 연준 의장의 모호한 발언으로 미국 통화정책의 불확실성이 커졌다는 평가"
+      "reason": "미국 기준금리 동결과 케빈 워시 의장의 모호한 발언"
     },
     {
       "id": "b5c4443121c3cc4d",
@@ -976,7 +855,7 @@
         "EUR/USD"
       ],
       "confidence": 0.8,
-      "reason": "미 연준의 금리 인상 속도에 대한 우려가 금리 상승과 관련이 있음"
+      "reason": "미 연방준비제도(Fed) 의장의 인플레이션 통제 약속에도 불구하고 금리 인상 속도가 느려지자 국채 수익률이 19년 만에 최고치에 도달"
     },
     {
       "id": "85b687c68c41bc46",
@@ -990,7 +869,7 @@
       "direction": "악재",
       "currencyPairs": [
         "USD/UAH",
-        "USD/IRR"
+        "EUR/USD"
       ],
       "confidence": 0.8,
       "reason": "우크라이나와 이란 간의 충돌이 확대될 수 있어 글로벌 경제 불안정성에 악영향을 줄 수 있음"
@@ -1057,8 +936,8 @@
       "direction": "악재",
       "currencyPairs": [
         "USD/KRW",
-        "USD/JPY",
-        "USD/EUR"
+        "EUR/USD",
+        "GBP/USD"
       ],
       "confidence": 0.8,
       "reason": "미국 중앙은행의 금리 유지로 글로벌 주식시장이 하락"
@@ -1093,7 +972,7 @@
       "currencyPairs": [
         "USD/KRW"
       ],
-      "confidence": 0.8,
+      "confidence": 0.9,
       "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
     },
     {
@@ -1119,13 +998,13 @@
       "source": "Vanguard",
       "url": "https://www.vanguardngr.com/2026/07/nigerias-export-under-threat-over-us-12-5-tariff-serec-warns/",
       "publishedAt": "2026-07-30T06:09:52Z",
-      "country": "기타",
+      "country": "미국",
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
-        "NGN/USD"
+        "USD/NGN"
       ],
-      "confidence": 0.8,
+      "confidence": 0.9,
       "reason": "미국이 나이지리아 수출품에 12.5% 관세를 부과"
     },
     {
@@ -1139,7 +1018,7 @@
       "category": "무역",
       "direction": "중립",
       "currencyPairs": [
-        "TWD/USD"
+        "USD/TWD"
       ],
       "confidence": 0.8,
       "reason": "대만의 차량 관세 인하 연기"
@@ -1171,7 +1050,8 @@
       "category": "금리",
       "direction": "중립",
       "currencyPairs": [
-        "USD/KRW"
+        "USD/KRW",
+        "EUR/USD"
       ],
       "confidence": 0.9,
       "reason": "미국 연방준비제도(Fed) 기준금리 동결"
@@ -1204,10 +1084,27 @@
       "direction": "중립",
       "currencyPairs": [
         "USD/KRW",
-        "EUR/USD"
+        "USD/JPY",
+        "USD/EUR"
       ],
       "confidence": 0.9,
-      "reason": "미국 연준이 금리를 5회 연속 동결했다는 뉴스"
+      "reason": "미국 연준이 금리를 5회 연속 동결했다."
+    },
+    {
+      "id": "732fb134a681dd4c",
+      "title": "한은 “반도체 호조가 주가 하방 압력 제한할 것”",
+      "summary": "금리 인상 기조 지속 의지…정부 부동산 대책에 리스크 완화 언급도한국은행이 29일 “반도체 기업의 대규모 영업이익 전망 등 양호한 펀더멘털(기초체력)은 국내 주가의 하방 압력을 제한할 수 있을 것으로 기대된다”고 밝혔다.한은은 이날 국회 재정경제기획위원회에 제출한 업무보고 자료에서 “최근 코스피는 인공지능(AI) 투자 둔화 우려와 대규모 외국인 순매도 등으···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202607292214005",
+      "publishedAt": "2026-07-29T13:14:00Z",
+      "country": "한국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한국은행이 금리 인상 기조를 지속할 의지를 밝혔다."
     },
     {
       "id": "8a508f0379af1e5c",
@@ -1271,7 +1168,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "한국은행의 기준금리 인상으로 주택담보대출에서 변동형 금리의 비중이 증가"
+      "reason": "한국은행의 기준금리 인상 기조로 주택담보대출의 변동형 금리 비중이 증가"
     },
     {
       "id": "b6efb67a98b9c00a",
@@ -1287,7 +1184,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "한국은행의 기준금리 인상 기조로 변동형 주담대 비중이 12년여 만에 최고치를 기록"
+      "reason": "한국은행의 기준금리 인상 기조로 변동형 주담대 비중이 12년 4개월만에 최고치를 기록"
     },
     {
       "id": "df7bfbd43e310bdd",
@@ -1352,7 +1249,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "트럼프 대통령이 관세 정책을 강조하며 제조업 부흥을 언급"
+      "reason": "트럼프 대통령이 관세 정책을 앞세워 제조업 부흥을 강조"
     },
     {
       "id": "eea727e1139c863c",
@@ -1368,7 +1265,7 @@
         "USD/CNY"
       ],
       "confidence": 0.8,
-      "reason": "중국과 미국의 무역 분쟁 및 관세 부과"
+      "reason": "중국과 미국의 무역 분쟁과 관련된 관세 부과"
     },
     {
       "id": "8459d8968620c45d",
@@ -1401,7 +1298,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 연방준비제도(연준)가 기준금리를 결정할 예정"
+      "reason": "미국 연방준비제도(연준)가 기준금리 결정을 할 예정"
     },
     {
       "id": "9c3c8e24d3e502bb",
