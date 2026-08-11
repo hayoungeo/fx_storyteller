@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-10T23:23:56.781277+00:00",
-    "dataAsOf": "2026-08-10",
+    "generatedAt": "2026-08-11T23:31:37.185063+00:00",
+    "dataAsOf": "2026-08-11",
     "supportedPairs": [
       "USD/KRW",
       "JPY/KRW",
@@ -22,7 +22,7 @@
       "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
       "spot_rate": 1441.1,
       "estimated_monthly_move_rate": 45.35,
-      "data_age_days": 11,
+      "data_age_days": 12,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -43,7 +43,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 9.0213,
       "estimated_monthly_move_rate": 0.24,
-      "data_age_days": 11,
+      "data_age_days": 12,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -61,7 +61,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 1661.16,
       "estimated_monthly_move_rate": 40.25,
-      "data_age_days": 11,
+      "data_age_days": 12,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-08-10T23:23:56.621916",
+    "computed_at": "2026-08-11T23:31:37.020739",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 2.75,
@@ -93,43 +93,43 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1407.0,
-        "ma5": 1421.478,
-        "ma20": 1456.2,
+        "latest_close": 1417.31,
+        "ma5": 1419.24,
+        "ma20": 1452.181,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1417.603,
-        "resistance_r1": 1428.847,
-        "support_s1": 1411.057,
-        "position_vs_pivot": "피벗 하단(약세권)"
+        "pivot": 1411.15,
+        "resistance_r1": 1415.38,
+        "support_s1": 1402.77,
+        "position_vs_pivot": "피벗 상단(강세권)"
       },
       "JPY/KRW": {
-        "latest_close": 8.912,
-        "ma5": 9.006,
-        "ma20": 9.029,
+        "latest_close": 8.905,
+        "ma5": 8.974,
+        "ma20": 9.013,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 8.962,
-        "resistance_r1": 9.006,
-        "support_s1": 8.936,
+        "pivot": 8.926,
+        "resistance_r1": 8.944,
+        "support_s1": 8.895,
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "EUR/KRW": {
-        "latest_close": 1618.62,
-        "ma5": 1637.996,
-        "ma20": 1667.686,
+        "latest_close": 1635.36,
+        "ma5": 1636.396,
+        "ma20": 1664.261,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1635.347,
-        "resistance_r1": 1644.153,
-        "support_s1": 1630.013,
-        "position_vs_pivot": "피벗 하단(약세권)"
+        "pivot": 1625.51,
+        "resistance_r1": 1632.4,
+        "support_s1": 1611.73,
+        "position_vs_pivot": "피벗 상단(강세권)"
       }
     },
     "other_indicators": {
       "미국_국채10년물": {
-        "latest": 4.65,
-        "latest_date": "2026-08-07",
-        "prev": 4.69,
-        "change": -0.04,
-        "trend": "하락"
+        "latest": 4.72,
+        "latest_date": "2026-08-10",
+        "prev": 4.65,
+        "change": 0.07,
+        "trend": "상승"
       },
       "미국_CPI": {
         "latest": 332.568,
@@ -194,38 +194,38 @@
         "trend": "데이터없음"
       },
       "VIX": {
-        "latest": 15.46,
-        "latest_date": "2026-08-10",
-        "prev": 14.9,
-        "change": 0.56,
-        "trend": "상승"
+        "latest": 15.28,
+        "latest_date": "2026-08-11",
+        "prev": 15.46,
+        "change": -0.18,
+        "trend": "하락"
       },
       "미국국채10년물_야후": {
-        "latest": 4.699,
-        "latest_date": "2026-08-10",
-        "prev": 4.66,
-        "change": 0.039,
-        "trend": "상승"
+        "latest": 4.684,
+        "latest_date": "2026-08-11",
+        "prev": 4.699,
+        "change": -0.015,
+        "trend": "하락"
       },
       "유가_WTI": {
-        "latest": 82.05,
-        "latest_date": "2026-08-10",
-        "prev": 78.18,
-        "change": 3.87,
+        "latest": 83.48,
+        "latest_date": "2026-08-11",
+        "prev": 82.13,
+        "change": 1.35,
         "trend": "상승"
       },
       "코스피_지수": {
-        "latest": 6258.77,
-        "latest_date": "2026-08-07",
-        "prev": 6296.3799,
-        "change": -37.6099,
-        "trend": "하락"
+        "latest": 6299.6602,
+        "latest_date": "2026-08-10",
+        "prev": 6258.77,
+        "change": 40.8902,
+        "trend": "상승"
       },
       "KRX100_대용_ETF": {
-        "latest": 90770.0,
-        "latest_date": "2026-08-10",
-        "prev": 90690.0,
-        "change": 80.0,
+        "latest": 92580.0,
+        "latest_date": "2026-08-11",
+        "prev": 90770.0,
+        "change": 1810.0,
         "trend": "상승"
       },
       "외국인_코스피_순매수": {
@@ -235,10 +235,11 @@
         "trend": "데이터없음"
       },
       "구글트렌드_환율관심도": {
-        "latest": null,
-        "prev": null,
-        "change": null,
-        "trend": "데이터없음"
+        "latest": 31.0,
+        "latest_date": "2026-08-09",
+        "prev": 33.0,
+        "change": -2.0,
+        "trend": "하락"
       }
     },
     "weekly_fx_features": {
@@ -370,6 +371,203 @@
   },
   "news": [
     {
+      "id": "31b136036cdc13db",
+      "title": "네이버 웹툰엔터테인먼트, 2분기 매출 5079억원⋯전년 대비 2.8% 감소(종합)",
+      "summary": "고환율에 콘텐츠&middot;IP비즈니스 매출 감소⋯&quot;네이버와 1억 달러 규모 IP 펀드 조성&quot; 네이버 웹툰엔터테인먼트는 2026년 2분기 매출이 전년 대비 2.8% 감소한 3억3847만 달러(약 5097억원&middot;분기 평균 환율 1500.74원 기준)를 기록했다고 11일 밝혔다. 10일(현지시간) 네이버웹툰의 미국 본사 웹툰엔터테인먼트는 동일 환율(constant currency) 기준으로는 2분기 매출이 전년 대비 5.2% 증가했다…",
+      "source": "Inews24.com",
+      "url": "http://www.inews24.com/view/1993702",
+      "publishedAt": "2026-08-10T22:34:00Z",
+      "country": "한국",
+      "category": "환율",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "고환율로 인한 매출 감소"
+    },
+    {
+      "id": "dc242c475ab3a370",
+      "title": "US House Launches Push For Sweeping Russia, Iran Sanctions Bill After Senate Landslide",
+      "summary": "The US House of Representatives moved to advance a sweeping Russia and Iran sanctions package on August 10, just days after the Senate approved it by an overwhelming 86-11 vote, opening the next phase of a congressional push to squeeze Moscow’s war economy an…",
+      "source": "Radio Free Europe/ Radio Liberty",
+      "url": "https://www.rferl.org/a/33826098.html",
+      "publishedAt": "2026-08-10T22:23:41Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "RUB/USD",
+        "IRR/USD"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 러시아와 이란에 대한 제재 법안을 추진하고 있어 무역에 영향을 줄 수 있음"
+    },
+    {
+      "id": "d6d4a887ecf96bb2",
+      "title": "Commentary: The real reason behind Trump’s yen intervention",
+      "summary": "The United States is bolstering the Japanese yen, as it did with the Argentine peso. The reasons are not solely economic, says Cornell University's Eswar Prasad.",
+      "source": "CNA",
+      "url": "https://www.channelnewsasia.com/commentary/trump-yen-intervention-japan-us-real-reason-6309461",
+      "publishedAt": "2026-08-10T21:59:00Z",
+      "country": "미국",
+      "category": "환율",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/JPY"
+      ],
+      "confidence": 0.9,
+      "reason": "트럼프의 엔 개입"
+    },
+    {
+      "id": "c2f60cd045b976a7",
+      "title": "웹툰엔터, 2분기 매출 5000억원...적자폭 확대",
+      "summary": "[지디넷코리아]웹툰엔터테인먼트가 환율 영향으로 올해 2분기 매출이 전년 동기 대비 2.8% 감소한 5079억원을 기록했다. 다만 환율 변동 등의 영향을 제외한 동일 환율 기준으로는 한국 사업의 고성장과 유료 콘텐츠·광고·IP 사업의 고른 성장에 힘입어 매출이 5.2% 늘었다. 일본과 북미 등 글로벌 시장의 성장 기반을 강화하기 위한 마케팅 투자를 확대하면서 영업손실은 234억원으로 적자 폭이 커졌다.웹툰엔터테인먼트는 10일(현지시간) 2026년 2분기 매출이 …",
+      "source": "Zdnet.co.kr",
+      "url": "https://zdnet.co.kr/view/?no=20260811063628",
+      "publishedAt": "2026-08-10T21:55:13Z",
+      "country": "한국",
+      "category": "환율",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "웹툰엔터테인먼트의 2분기 매출이 환율 영향으로 감소했다는 언급"
+    },
+    {
+      "id": "06ccb954b6e5f022",
+      "title": "Bitcoin traders assess macroeconomic factors for future outlook",
+      "summary": "Bitcoin's integration into traditional finance highlights its evolving role as a macro-sensitive asset, influenced by economic indicators.\nThe post Bitcoin traders assess macroeconomic factors for future outlook appeared first on Crypto Briefing.",
+      "source": "Crypto Briefing",
+      "url": "https://cryptobriefing.com/bitcoin-traders-macro-factors-outlook/",
+      "publishedAt": "2026-08-10T21:01:11Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/EUR"
+      ],
+      "confidence": 0.7,
+      "reason": "미 연방준행이 언급되어 금리 정책과 관련된 것으로 판단"
+    },
+    {
+      "id": "6802fe94a8064339",
+      "title": "Nearly 70% of Canadians Support Banning American Booze: Survey",
+      "summary": "According to a new survey, a majority of Canadians support the ban on American booze enacted by several provinces",
+      "source": "Robb Report",
+      "url": "http://robbreport.com/food-drink/spirits/new-survey-canadians-support-ban-on-american-booze-1238546939/",
+      "publishedAt": "2026-08-10T21:00:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.8,
+      "reason": "캐나다와 미국 간의 위스키 관세 무역 전쟁"
+    },
+    {
+      "id": "04d793858a725e7f",
+      "title": "Trump says he spoke recently to Fed Chairman Warsh, denies regular calls",
+      "summary": "The president said he had recently been in touch with the Fed chairman, but denied regular contact amid concerns about central bank independence.",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/08/10/trump-spoke-to-fed-chair-kevin-warsh-denies-regular-calls.html",
+      "publishedAt": "2026-08-10T20:46:52Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프 대통령과 연방준비제도 의장과의 통화"
+    },
+    {
+      "id": "0e6d7ce499d84ae7",
+      "title": "Trump notes 'renaissance' in US manufacturing",
+      "summary": "United States President Donald Trump insisted on Monday that the country is living through a \"manufacturing renaissance\" thanks to his tariff policies.Speaking to the press at the Oval Office, Trump s...",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/7a50a7fde01c2c11",
+      "publishedAt": "2026-08-10T20:08:10Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프 대통령의 관세 정책이 미국 제조업에 긍정적인 영향을 미친 것으로 언급"
+    },
+    {
+      "id": "d28f93d2d5b7fe71",
+      "title": "Trump’s $200 billion tariff hit swells budget deficit to $2.1 trillion for 2026, CBO confirms",
+      "summary": "The federal government’s tariff windfall is evaporating faster than expected, and the Congressional Budget Office says it’s blowing a $200 billion hole in this year’s budget.\nCBO now projects the fiscal 2026 deficit will hit $2.1 trillion, according to the no…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/fd2b0d98c8e6a91e",
+      "publishedAt": "2026-08-10T19:52:10Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 관세 정책으로 인한 예산 적자 증가"
+    },
+    {
+      "id": "1e1329fe7ac237de",
+      "title": "Trump’s $200 billion tariff hit swells budget deficit to $2.1 trillion for 2026, CBO confirms",
+      "summary": "A major tool for deficit reduction — Trump's IEEPA tariff regime — is unconstitutional.",
+      "source": "Fortune",
+      "url": "https://fortune.com/2026/08/10/how-big-deficit-national-debt-tariffs-cbo/",
+      "publishedAt": "2026-08-10T19:13:52Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY",
+        "USD/EUR"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프의 2000억 달러 관세가 예상보다 빠르게 감소하면서 예산 적자가 증가"
+    },
+    {
+      "id": "6f68070a1c970729",
+      "title": "바벨 전략이 살 길이다",
+      "summary": "내일 소폭 둔화 전망의 \"지난 물가\" CPI와 이틀 후 향후 \"1~2개월 안에 물가에 반영\"되는 소폭 반등 전망의 PPI를 앞두고, 미국 증시에 상장된 유가와 미 국채 인버스 베팅은 늘었습니다. 이란은 미국이 절대로 받아들일 수 없는 조건을 제안했습니다. 베네수엘라의 마두로 성공에 트럼프가 오판한 이란 전쟁으로 인해 최소 H4L(Higher For Longer)에 무게가 실렸습니다. 만약, 이란 사태가 악화된다면 올해 중 연준(Fed)의 금리 인상은 더 이상 …",
+      "source": "Tistory.com",
+      "url": "https://ryueyes11.tistory.com/512172",
+      "publishedAt": "2026-08-10T18:53:20Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "중립",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 연준의 금리 인상 전망과 관련된 뉴스"
+    },
+    {
+      "id": "a97f3b7c6bc0c7ac",
+      "title": "Surprise! The Aussie Carbon Tax is Back",
+      "summary": "The review may consider carbon adjustment tariffs on imports from nations like the United States.\nThe post Surprise! The Aussie Carbon Tax is Back appeared first on Watts Up With That?.",
+      "source": "Wattsupwiththat.com",
+      "url": "https://wattsupwiththat.com/2026/08/10/surprise-the-aussie-carbon-tax-is-back/",
+      "publishedAt": "2026-08-10T17:00:00Z",
+      "country": "호주",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "AUD/USD"
+      ],
+      "confidence": 0.8,
+      "reason": "호주가 미국으로부터의 수입에 대한 탄소 조정 관세를 검토할 수 있어 무역에 영향을 줄 수 있음"
+    },
+    {
       "id": "49fb809ac1b88e2a",
       "title": "금값 7% 폭등…시장은 전쟁보다 금리를 봤다",
       "summary": "[지디넷코리아]“중동 긴장 완화·미국채 공급 안도·고용 쇼크가 동시에 달러와 국채금리를 끌어내렸다.”8월 1주차 금값 급등은 전쟁 공포가 만든 안전자산 랠리가 아니었다. 중동 긴장 완화는 유가를 낮춰 인플레이션 우려를 완화했고, 미국채 공급 부담은 예상 범위에 머물며 장기금리 급등을 막았다. 여기에 미국 7월 고용지표 부진이 더해지며 연준의 금리 인상 명분이 약해졌다. 결국 금값은 전쟁이 아니라, 금리와 달러가 동시에 내려가는 환경에 반응했다. 이번 주 금시장…",
@@ -383,156 +581,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 연준의 금리 인상 명분이 약해지면서 금값이 급등했다."
-    },
-    {
-      "id": "e6f7a301ee95b148",
-      "title": "Japan’s 4 largest life insurers report record $96B in unrealized losses",
-      "summary": "Japan's insurers face liquidity risks from unrealized bond losses, challenging BOJ's rate policy and potentially impacting financial stability.\nThe post Japan’s 4 largest life insurers report record $96B in unrealized losses appeared first on Crypto Briefing.",
-      "source": "Crypto Briefing",
-      "url": "https://cryptobriefing.com/japan-life-insurers-record-unrealized-losses/",
-      "publishedAt": "2026-08-09T22:57:08Z",
-      "country": "일본",
-      "category": "금리",
-      "direction": "악재",
-      "currencyPairs": [
-        "JPY/KRW",
-        "JPY/USD"
-      ],
-      "confidence": 0.8,
-      "reason": "일본 정부 채권 수익률 상승으로 인한 보험사 부채 증가"
-    },
-    {
-      "id": "6df68331e7530645",
-      "title": "Federal Reserve Chair Kevin Warsh’s talks with Trump raise independence concerns",
-      "summary": "Frequent presidential interactions with the Fed chair risk undermining the central bank's independence, potentially affecting economic stability.\nThe post Federal Reserve Chair Kevin Warsh’s talks with Trump raise independence concerns appeared first on Crypt…",
-      "source": "Crypto Briefing",
-      "url": "https://cryptobriefing.com/fed-chair-warsh-trump-independence-concerns/",
-      "publishedAt": "2026-08-09T22:44:11Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/KRW",
-        "EUR/USD"
-      ],
-      "confidence": 0.8,
-      "reason": "미 연준의 독립성이 잠재적으로 위협받을 수 있어 금리 정책에 영향을 줄 수 있음"
-    },
-    {
-      "id": "cdaa525ce29147c0",
-      "title": "Stock futures flat as investors await inflation data and weigh Iran uncertainty",
-      "summary": "Market stability hinges on inflation data and geopolitical tensions, with potential Fed rate hikes impacting economic growth and investor sentiment.\nThe post Stock futures flat as investors await inflation data and weigh Iran uncertainty appeared first on Cry…",
-      "source": "Crypto Briefing",
-      "url": "https://cryptobriefing.com/stock-futures-flat-inflation-data-iran/",
-      "publishedAt": "2026-08-09T22:26:05Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "중립",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 연방준비제도(Fed) 금리 인상 가능성이 언급"
-    },
-    {
-      "id": "a1b8f91bd0e09619",
-      "title": "Tariff Legislation Honoring Lindsey Graham Is Abjectly Irresponsible",
-      "summary": "Imagine the correct Republican outcry if the Democrats honored one of their own with unilateral taxing power on the  richest Americans?",
-      "source": "Forbes",
-      "url": "https://www.forbes.com/sites/johntamny/2026/08/09/tariff-legislation-honoring-lindsey-graham-is-abjectly-irresponsible/",
-      "publishedAt": "2026-08-09T21:00:00Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "무역 관련 세금 조치에 대한 입법 논의"
-    },
-    {
-      "id": "31585db3783b5201",
-      "title": "Sitapura SEZ exports rebound after US tariff shock",
-      "summary": "Sitapura SEZ exports hit Rs 2,712 crore in Apr–Jun, rebounding after US tariff hit; Mahindra World City posts Rs 1,001 crore, both eyeing FY peaks.",
-      "source": "The Times of India",
-      "url": "https://timesofindia.indiatimes.com/city/jaipur/sitapura-sez-exports-rebound-after-us-tariff-shock/articleshow/133074669.cms",
-      "publishedAt": "2026-08-09T19:17:41Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/INR"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 관세 충격 이후 Sitapura SEZ 수출이 회복"
-    },
-    {
-      "id": "f38a4c8795316443",
-      "title": "Why this Trump oil tariff is Zzz",
-      "summary": "A US Senate bill imposing tariffs on Russian oil buyers faces hurdles. India's energy supplies remain secure due to diversified import strategies. New Delhi has increased diplomatic efforts to secure alternative oil and gas sources. Traditional West Asian sup…",
-      "source": "The Times of India",
-      "url": "https://economictimes.indiatimes.com/opinion/et-editorial/why-this-trump-oil-triff-is-zzz/articleshow/133073301.cms",
-      "publishedAt": "2026-08-09T18:05:48Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/RUB",
-        "USD/INR"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 상원이 러시아산 유류 구매자에 대한 100% 관세 부과 법안을 통과시킴"
-    },
-    {
-      "id": "03bc1e042d985617",
-      "title": "India's Menage a Trois: Graham Act puts New Delhi's strategic autonomy to test",
-      "summary": "The new US legislative proposal aims to introduce tariffs on nations acquiring Russian energy, challenging India to balance its energy demands with its partnership with the US. This bill grants the US President the power to implement such sanctions, necessita…",
-      "source": "The Times of India",
-      "url": "https://economictimes.indiatimes.com/opinion/et-commentary/indias-menage-a-trois-graham-act-puts-new-delhis-strategic-autonomy-to-test/articleshow/133073160.cms",
-      "publishedAt": "2026-08-09T18:04:55Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/INR",
-        "USD/RUB"
-      ],
-      "confidence": 0.8,
-      "reason": "미국이 러시아 에너지 수입국에 대한 관세 도입을 제안"
-    },
-    {
-      "id": "9f6402cc3379ec67",
-      "title": "13 claims we've fact-checked about impact of Trump's tariffs",
-      "summary": "The Trump administration has repeatedly changed its tariff policies, making it hard to keep track — but that's not stopped us.",
-      "source": "Snopes.com",
-      "url": "https://www.snopes.com/collections/trump-tariffs-impact-claims/",
-      "publishedAt": "2026-08-09T18:00:00Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "중립",
-      "currencyPairs": [
-        "USD/KRW",
-        "USD/JPY"
-      ],
-      "confidence": 0.8,
-      "reason": "트럼프의 관세 정책에 대한 사실 확인"
-    },
-    {
-      "id": "ae5b88578afcd532",
-      "title": "Reforms for higher growth: India must capitalise on international trade",
-      "summary": "India needs faster tariff cuts, deeper trade integration and stronger investment treaties to boost exports, attract FDI and sustain the high growth needed to become a developed economy",
-      "source": "Business Standard",
-      "url": "https://www.business-standard.com/opinion/editorial/reforms-for-higher-growth-india-must-capitalise-on-international-trade-126080900795_1.html",
-      "publishedAt": "2026-08-09T17:43:51Z",
-      "country": "인도",
-      "category": "무역",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/INR"
-      ],
-      "confidence": 0.8,
-      "reason": "인도는 국제 무역을 통해 성장률을 높이기 위해 관세 인하와 무역 통합을 강화해야 함"
+      "reason": "미국 고용지표 부진으로 연준의 금리 인상 명분이 약해져 금값이 상승했다."
     },
     {
       "id": "8a38451bbf12f43e",
@@ -593,10 +642,9 @@
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
-        "USD/CNY",
-        "USD/KRW"
+        "USD/CNY"
       ],
-      "confidence": 0.8,
+      "confidence": 0.9,
       "reason": "미국이 중국산 폴리실리콘에 관세를 부과할 계획"
     },
     {
@@ -680,7 +728,7 @@
         "USD/JPY"
       ],
       "confidence": 0.8,
-      "reason": "미국이 엔화 방어에 나서면서 미 국채 금리 상승 가능성과 중간선거 영향 차단에 대한 우려"
+      "reason": "미국이 엔화 방어에 나서면서 미 국채 금리 상승 가능성과 중간선거 영향에 대한 우려"
     },
     {
       "id": "bb4e27b175c92f88",
@@ -713,7 +761,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 PCE 둔화와 FOMC 불확실성으로 인한 금리 인상 가능성 하락"
+      "reason": "미국 PCE 둔화와 FOMC 불확실성으로 인한 금리 인상 가능성 낮아짐"
     },
     {
       "id": "79d59f70cb6f9fc0",
@@ -794,7 +842,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 연방준비제도(Fed)가 기준금리를 동결했지만 케빈 워시 연준 의장의 모호한 발언으로 미국 통화정책의 불확실성이 커졌다."
+      "reason": "미국 연방준비제도(Fed)가 기준금리를 동결했지만 케빈 워시 의장의 모호한 발언으로 미국 통화정책의 불확실성이 커졌다는 평가"
     },
     {
       "id": "b5c4443121c3cc4d",
@@ -811,7 +859,7 @@
         "USD/JPY"
       ],
       "confidence": 0.9,
-      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
+      "reason": "미 연방준행이 금리 유지 결정"
     },
     {
       "id": "708ef22140262920",
@@ -829,7 +877,7 @@
         "USD/JPY"
       ],
       "confidence": 0.9,
-      "reason": "미 연방준행이 금리 유지 결정"
+      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
     },
     {
       "id": "94d836aaf6cac973",
@@ -859,10 +907,11 @@
       "category": "금리",
       "direction": "악재",
       "currencyPairs": [
-        "USD/KRW"
+        "USD/KRW",
+        "EUR/USD"
       ],
       "confidence": 0.8,
-      "reason": "미 연방준행이 인플레이션 억제를 위한 금리 인상을 충분히 시행하지 못하고 있어 신뢰도 하락"
+      "reason": "미 연준의 금리 인상 속도에 대한 우려가 금리 상승과 관련이 있음"
     },
     {
       "id": "85b687c68c41bc46",
@@ -925,8 +974,7 @@
       "category": "금리",
       "direction": "중립",
       "currencyPairs": [
-        "USD/KRW",
-        "EUR/USD"
+        "USD/KRW"
       ],
       "confidence": 0.9,
       "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
@@ -943,8 +991,7 @@
       "direction": "악재",
       "currencyPairs": [
         "USD/KRW",
-        "USD/JPY",
-        "USD/EUR"
+        "EUR/USD"
       ],
       "confidence": 0.8,
       "reason": "미국 중앙은행의 금리 유지로 글로벌 주식시장이 하락"
@@ -977,8 +1024,7 @@
       "category": "금리",
       "direction": "중립",
       "currencyPairs": [
-        "USD/KRW",
-        "EUR/USD"
+        "USD/KRW"
       ],
       "confidence": 0.9,
       "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
@@ -1010,7 +1056,7 @@
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
-        "NGN/USD"
+        "USD/NGN"
       ],
       "confidence": 0.8,
       "reason": "미국이 나이지리아 수출품에 12.5% 관세를 부과"
@@ -1022,14 +1068,14 @@
       "source": "Digitimes",
       "url": "https://www.digitimes.com/news/a20260730PD205/taiwan-supply-chain-government-vehicle-moea.html",
       "publishedAt": "2026-07-30T04:05:40Z",
-      "country": "대만",
+      "country": "기타",
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
         "TWD/USD"
       ],
       "confidence": 0.8,
-      "reason": "대만의 차량 수입 관세 인하 연기"
+      "reason": "대만의 차량 관세 인하 연기"
     },
     {
       "id": "2fa8388f2518ddd6",
@@ -1058,7 +1104,8 @@
       "category": "금리",
       "direction": "중립",
       "currencyPairs": [
-        "USD/KRW"
+        "USD/KRW",
+        "EUR/USD"
       ],
       "confidence": 0.9,
       "reason": "미국 연방준비제도(Fed) 기준금리 동결"
@@ -1077,7 +1124,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 연방준비제도(Fed) 의장이 인플레이션 목표를 강조"
+      "reason": "미국 연방준비제도 의장이 인플레이션 목표를 강조"
     },
     {
       "id": "d142846bc15e5573",
@@ -1091,11 +1138,10 @@
       "direction": "중립",
       "currencyPairs": [
         "USD/KRW",
-        "USD/JPY",
         "EUR/USD"
       ],
       "confidence": 0.9,
-      "reason": "미국 연준이 금리를 5회 연속 동결했다는 뉴스"
+      "reason": "미국 연준이 금리를 5회 연속 동결했다."
     },
     {
       "id": "732fb134a681dd4c",
@@ -1127,7 +1173,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국이 무역 불균형을 빌미로 한국 반도체에 가격·물량 통제를 할 수 있다는 우려"
+      "reason": "미국이 무역 불균형을 빌미로 한국 반도체에 가격·물량 통제를 할 수 있어 환율에 악영향을 줄 수 있다."
     },
     {
       "id": "230576531ab82c8a",
@@ -1175,7 +1221,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "한국은행의 기준금리 인상으로 주택담보대출의 변동형 금리 비중이 증가"
+      "reason": "한국은행의 기준금리 인상으로 주택담보대출에서 변동형 금리의 비중이 증가"
     },
     {
       "id": "b6efb67a98b9c00a",
@@ -1191,7 +1237,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "한국은행의 기준금리 인상 기조로 주택담보대출의 변동형 금리 비중이 증가"
+      "reason": "한국은행의 기준금리 인상 기조로 변동형 주담대 비중이 12년여 만에 최고치를 기록"
     },
     {
       "id": "df7bfbd43e310bdd",
@@ -1256,7 +1302,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "트럼프 대통령이 관세 정책을 강조하며 제조업 부흥을 언급"
+      "reason": "트럼프 대통령이 관세 정책을 앞세워 제조업 부흥을 강조"
     },
     {
       "id": "eea727e1139c863c",
@@ -1265,14 +1311,14 @@
       "source": "Khan.co.kr",
       "url": "https://www.khan.co.kr/article/202607272057001",
       "publishedAt": "2026-07-27T11:57:00Z",
-      "country": "중국",
+      "country": "미국",
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
         "USD/CNY"
       ],
       "confidence": 0.8,
-      "reason": "중국과 미국의 무역 분쟁과 관련된 관세 부과"
+      "reason": "미국이 중국에 대한 강제노동 추가 관세 부과와 AI 기업에 대한 지식재산권 침해 조사 방침을 발표하여 무역 분쟁이 심화할 수 있다."
     },
     {
       "id": "8459d8968620c45d",
@@ -1289,7 +1335,7 @@
         "USD/EUR"
       ],
       "confidence": 0.8,
-      "reason": "미국이 한국과 EU를 포함한 60개 경제권에 강제노동 관련 제품에 대한 추가 관세를 부과"
+      "reason": "미국이 한국을 포함한 60개 경제권에 강제노동 관련 제품에 대한 추가 관세를 부과"
     },
     {
       "id": "228b4bb0d3753e94",
@@ -1305,7 +1351,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 연방준비제도(연준)가 기준금리를 결정할 예정"
+      "reason": "미국 연방준비제도(연준)가 기준금리 결정을 할 예정"
     },
     {
       "id": "9c3c8e24d3e502bb",
@@ -1354,7 +1400,7 @@
         "USD/CNY"
       ],
       "confidence": 0.8,
-      "reason": "미국 금리 인상 기대가 금값을 눌러 내린다."
+      "reason": "미국 금리 인상 기대가 금값을 낮추고 중국은 금을 매입"
     },
     {
       "id": "4bb69de82da5780f",
