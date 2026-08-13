@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-12T23:31:27.192944+00:00",
-    "dataAsOf": "2026-08-12",
+    "generatedAt": "2026-08-13T23:33:17.406400+00:00",
+    "dataAsOf": "2026-08-14",
     "supportedPairs": [
       "USD/KRW",
       "JPY/KRW",
@@ -22,7 +22,7 @@
       "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
       "spot_rate": 1441.1,
       "estimated_monthly_move_rate": 45.35,
-      "data_age_days": 13,
+      "data_age_days": 14,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -43,7 +43,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 9.0213,
       "estimated_monthly_move_rate": 0.24,
-      "data_age_days": 13,
+      "data_age_days": 14,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -61,7 +61,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 1661.16,
       "estimated_monthly_move_rate": 40.25,
-      "data_age_days": 13,
+      "data_age_days": 14,
       "is_stale": false,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-08-12T23:31:27.033182",
+    "computed_at": "2026-08-13T23:33:17.278673",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 2.75,
@@ -78,9 +78,9 @@
         "해석": "한국 금리가 더 낮음"
       },
       "JPY/KRW": {
-        "한국_기준금리": 2.5,
+        "한국_기준금리": 2.75,
         "일본_기준금리": 1.0,
-        "금리차_pp": 1.5,
+        "금리차_pp": 1.75,
         "해석": "한국 금리가 더 높음",
         "source": "BIS weekly features"
       },
@@ -93,41 +93,41 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1412.18,
-        "ma5": 1415.99,
-        "ma20": 1448.396,
+        "latest_close": 1416.46,
+        "ma5": 1415.05,
+        "ma20": 1444.909,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1414.88,
-        "resistance_r1": 1420.86,
-        "support_s1": 1411.33,
-        "position_vs_pivot": "피벗 하단(약세권)"
+        "pivot": 1413.74,
+        "resistance_r1": 1416.83,
+        "support_s1": 1409.09,
+        "position_vs_pivot": "피벗 상단(강세권)"
       },
       "JPY/KRW": {
-        "latest_close": 8.866,
-        "ma5": 8.936,
-        "ma20": 8.997,
+        "latest_close": 8.889,
+        "ma5": 8.91,
+        "ma20": 8.983,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 8.888,
-        "resistance_r1": 8.928,
-        "support_s1": 8.865,
-        "position_vs_pivot": "피벗 하단(약세권)"
+        "pivot": 8.878,
+        "resistance_r1": 8.903,
+        "support_s1": 8.842,
+        "position_vs_pivot": "피벗 상단(강세권)"
       },
       "EUR/KRW": {
-        "latest_close": 1628.62,
-        "ma5": 1632.686,
-        "ma20": 1660.792,
+        "latest_close": 1632.86,
+        "ma5": 1630.856,
+        "ma20": 1657.042,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1633.203,
-        "resistance_r1": 1639.757,
-        "support_s1": 1628.807,
-        "position_vs_pivot": "피벗 하단(약세권)"
+        "pivot": 1630.95,
+        "resistance_r1": 1633.75,
+        "support_s1": 1625.82,
+        "position_vs_pivot": "피벗 상단(강세권)"
       }
     },
     "other_indicators": {
       "미국_국채10년물": {
-        "latest": 4.7,
-        "latest_date": "2026-08-11",
-        "prev": 4.72,
+        "latest": 4.68,
+        "latest_date": "2026-08-12",
+        "prev": 4.7,
         "change": -0.02,
         "trend": "하락"
       },
@@ -194,38 +194,38 @@
         "trend": "데이터없음"
       },
       "VIX": {
-        "latest": 14.55,
-        "latest_date": "2026-08-12",
-        "prev": 15.28,
-        "change": -0.73,
-        "trend": "하락"
+        "latest": 14.63,
+        "latest_date": "2026-08-13",
+        "prev": 14.55,
+        "change": 0.08,
+        "trend": "상승"
       },
       "미국국채10년물_야후": {
-        "latest": 4.682,
-        "latest_date": "2026-08-12",
-        "prev": 4.684,
-        "change": -0.002,
+        "latest": 4.641,
+        "latest_date": "2026-08-13",
+        "prev": 4.682,
+        "change": -0.041,
         "trend": "하락"
       },
       "유가_WTI": {
-        "latest": 82.73,
-        "latest_date": "2026-08-12",
-        "prev": 83.2,
-        "change": -0.47,
+        "latest": 81.19,
+        "latest_date": "2026-08-13",
+        "prev": 83.27,
+        "change": -2.08,
         "trend": "하락"
       },
       "코스피_지수": {
-        "latest": 6345.5298,
-        "latest_date": "2026-08-11",
-        "prev": 6299.6602,
-        "change": 45.8696,
+        "latest": 6579.04,
+        "latest_date": "2026-08-12",
+        "prev": 6345.5298,
+        "change": 233.5102,
         "trend": "상승"
       },
       "KRX100_대용_ETF": {
-        "latest": 100300.0,
-        "latest_date": "2026-08-12",
-        "prev": 92580.0,
-        "change": 7720.0,
+        "latest": 107975.0,
+        "latest_date": "2026-08-13",
+        "prev": 100300.0,
+        "change": 7675.0,
         "trend": "상승"
       },
       "외국인_코스피_순매수": {
@@ -242,36 +242,36 @@
       }
     },
     "weekly_fx_features": {
-      "latest_week": "2026-08-07",
-      "row_count": 1423,
+      "latest_week": "2026-08-14",
+      "row_count": 1424,
       "usd_krw": {
-        "latest": 1427.112462,
-        "prev": 1443.613409,
-        "change": -16.500947,
+        "latest": 1412.166378,
+        "prev": 1415.951452,
+        "change": -3.785074,
         "trend": "하락"
       },
       "usd_jpy": {
-        "latest": 157.412071,
-        "prev": 160.235089,
-        "change": -2.823018,
-        "trend": "하락"
+        "latest": 159.202773,
+        "prev": 158.335501,
+        "change": 0.867272,
+        "trend": "상승"
       },
       "usd_eur": {
-        "latest": 0.868432,
-        "prev": 0.870701,
-        "change": -0.002269,
+        "latest": 0.866551,
+        "prev": 0.866927,
+        "change": -0.000376,
         "trend": "하락"
       },
       "jpy_krw": {
-        "latest": 9.066093,
-        "prev": 9.009346,
-        "change": 0.056747,
-        "trend": "상승"
+        "latest": 8.870237,
+        "prev": 8.942729,
+        "change": -0.072492,
+        "trend": "하락"
       },
       "eur_krw": {
-        "latest": 1643.320907,
-        "prev": 1657.989837,
-        "change": -14.66893,
+        "latest": 1629.640238,
+        "prev": 1633.299519,
+        "change": -3.659281,
         "trend": "하락"
       },
       "us_policy_rate": {
@@ -281,8 +281,8 @@
         "trend": "보합"
       },
       "kr_policy_rate": {
-        "latest": 2.5,
-        "prev": 2.5,
+        "latest": 2.75,
+        "prev": 2.75,
         "change": 0.0,
         "trend": "보합"
       },
@@ -323,8 +323,8 @@
         "trend": "보합"
       },
       "us_kr_policy_spread": {
-        "latest": 1.125,
-        "prev": 1.125,
+        "latest": 0.875,
+        "prev": 0.875,
         "change": 0.0,
         "trend": "보합"
       },
@@ -364,123 +364,268 @@
       "prev": 1.0,
       "change": 0.0,
       "trend": "보합",
-      "latest_date": "2026-08-07",
+      "latest_date": "2026-08-14",
       "source": "BIS weekly features"
     }
   },
   "news": [
     {
-      "id": "5a62b17e115200c5",
-      "title": "Stock market today: Live updates",
-      "summary": "Investors are bracing for an important inflation report that could determine the near-term direction for interest rates.",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/08/11/stock-market-today-live-updates.html",
-      "publishedAt": "2026-08-11T22:11:03Z",
+      "id": "fcac413394ee3a55",
+      "title": "'If you're not conservative, don't come here': The town making missiles for Trump",
+      "summary": "Trump's poll numbers appear to be down, but in this town, his support is as strong as ever.",
+      "source": "BBC News",
+      "url": "https://www.bbc.co.uk/news/articles/cn0n8nd6645o",
+      "publishedAt": "2026-08-12T23:26:21Z",
       "country": "미국",
-      "category": "금리",
-      "direction": "중립",
+      "category": "지정학",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.7,
+      "reason": "이란 전쟁으로 인한 가스 가격 상승"
+    },
+    {
+      "id": "6e986dbe2da2ab35",
+      "title": "Karoline Leavitt’s Most Memorable Moments as White House Press Secretary",
+      "summary": "During her time behind the White House podium, the departing Press Secretary has gained a reputation for her sharp retorts to reporters.",
+      "source": "Time",
+      "url": "https://time.com/article/2026/08/12/karoline-leavitt-white-house-press-secretary-memorable-moments/",
+      "publishedAt": "2026-08-12T23:00:53Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "호재",
       "currencyPairs": [
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 인플레이션 보고서가 금리 방향에 영향을 줄 수 있다."
+      "reason": "무역 관련 정책인 관세(tariff) 언급"
     },
     {
-      "id": "9b17facd94415112",
-      "title": "CUSMA breakdown could mean hundreds of thousands of jobs, trillions of dollars lost: report",
-      "summary": "A new report from the Canadian American Business Council found that a failure to renegotiate a North American trade deal would have widespread impacts on the Canadian economy, including the loss of 102,000 Canadian jobs and 214,000 American ones. On the flip …",
+      "id": "3a9f8079ddaed4bb",
+      "title": "US inflation rises 0.1% in July, easing pressure on Fed",
+      "summary": "US consumer inflation rose mildly, increasing 0.1% in July, in line with economists’ expectations.\nThe results, which put the annual rate at 3.4%, ease pressures on the Federal Reserve as it weighs an interest rate hike in September. The inflation data, along…",
       "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/e2ab9f43377ba0b5",
-      "publishedAt": "2026-08-11T21:13:12Z",
-      "country": "기타",
-      "category": "무역",
-      "direction": "악재",
+      "url": "https://biztoc.com/x/fa3ac6569ff14438",
+      "publishedAt": "2026-08-12T22:46:26Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
       "currencyPairs": [
-        "USD/CAD"
+        "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "북미 무역 협상 실패로 인한 경제적 영향"
+      "reason": "미국 소비자 물가 상승률이 예상과 일치하여 9월 금리 인상을 재고할 수 있는 압력이 줄어들었다."
     },
     {
-      "id": "79b73e07487db562",
-      "title": "CUSMA breakdown could mean hundreds of thousands of jobs, trillions of dollars lost: report",
-      "summary": "A new report from the Canadian American Business Council found that a failure to renegotiate a North American trade deal would have widespread impacts on the Canadian economy, including the loss of 102,000 Canadian jobs and 214,000 American ones. On the flip …",
-      "source": "CBC News",
-      "url": "https://www.cbc.ca/news/business/trade-renegotiation-impact-report-9.7303374",
-      "publishedAt": "2026-08-11T21:05:00Z",
+      "id": "4240779425aa0176",
+      "title": "Will Uncle Sam’s 100% tariff threat stop India’s Russian oil imports?",
+      "summary": "While a much-diluted Bill to this effect is scheduled to move to the House of Representatives soon, India – still importing over 2 million barrels a day from Russia – is betting Washington won't pull the trigger.",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/prime/energy/will-uncle-sams-100-tariff-threat-stop-indias-russian-oil-imports/primearticleshow/133181250.cms",
+      "publishedAt": "2026-08-12T22:30:00Z",
       "country": "미국",
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
-        "USD/CAD"
+        "USD/INR",
+        "USD/RUB"
       ],
       "confidence": 0.8,
-      "reason": "CUSMA 협상 실패로 인한 무역 분쟁"
+      "reason": "미국이 인도에 대한 러시아산 석유 수입에 대해 100% 관세를 부과할 수 있는 위협"
     },
     {
-      "id": "e4794bfdf8b3baa9",
-      "title": "Trump administration invokes birthright citizenship Supreme Court case in appeal to block wide tariff refunds",
-      "summary": "Government lawyers said a Court of International Trade judge overstepped his authority by ordering the U.S. Customs and Border Patrol to issue refunds to all companies that paid tariffs that were deemed illegal in February, even those that didn’t file a lawsu…",
-      "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/46fca3068ed9e306",
-      "publishedAt": "2026-08-11T20:27:30Z",
+      "id": "5f1ac70b414683ba",
+      "title": "Asian Stocks Poised to Gain on Benign US Inflation: Markets Wrap",
+      "summary": "Stocks in Asia were poised for gains Thursday after the latest US inflation report matched expectations, easing concerns about imminent Federal Reserve rate increases.",
+      "source": "Financial Post",
+      "url": "https://financialpost.com/pmn/business-pmn/asian-stocks-poised-to-gain-on-benign-us-inflation-markets-wrap",
+      "publishedAt": "2026-08-12T22:29:09Z",
       "country": "미국",
-      "category": "무역",
-      "direction": "악재",
+      "category": "금리",
+      "direction": "호재",
       "currencyPairs": [
         "USD/KRW",
         "USD/JPY"
       ],
       "confidence": 0.8,
-      "reason": "미국 정부가 불법적인 관세 환급을 차단하기 위해 항소"
+      "reason": "미국 인플레이션 보고서가 예상과 일치하여 금리 인상 우려가 완화됨"
     },
     {
-      "id": "7e0e56c889353e14",
-      "title": "Trump administration invokes birthright citizenship Supreme Court case in appeal to block wide tariff refunds",
-      "summary": "Lawyers argue the judge exceeded his authority by ordering refunds for companies that never sued, citing a Supreme Court limit on blanket injunctions.",
-      "source": "Fortune",
-      "url": "https://fortune.com/2026/08/11/trump-administration-invokes-birthright-citizenship-supreme-court-case-in-appeal-to-block-wide-tariff-refunds/",
-      "publishedAt": "2026-08-11T19:55:33Z",
+      "id": "9fb1406c64885a88",
+      "title": "뉴욕증시, 금리 동결 기대감에 AI 낙관론 재개…나스닥 0.5%↑",
+      "summary": "뉴욕증권거래소(NYSE). 로이터연합뉴스7월 소비자물가지수(CPI) 상승률 둔화 속에 12일(현지시간) 뉴욕증시 주요 지수가 보합권에서 혼조 마감했다.인공지능(AI) 인프라 관련주 호실적에 AI 붐에 대한 낙관론이 되살아나면서 AI 관련주들은 강세를 보였다.이날 뉴욕증시에서 다우존스30 산업평균지수는 전장보다 21.58포인트(-0.04%) 내린 5만3770···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608130719001",
+      "publishedAt": "2026-08-12T22:19:00Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "금리 동결 기대감에 뉴욕증시가 상승했다는 내용"
+    },
+    {
+      "id": "9e01f2869fc4e18f",
+      "title": "Breitbart Business Digest: July's Mild Inflation Report Should Keep the Fed on Hold",
+      "summary": "Fed Hawk Down Someone go check on the health of the Fed hawks. The wind has been taken from beneath their wings. The benign inflation report released Wednesday confirms earlier data suggesting there is no need for a rate hike\nThe post Breitbart Business Diges…",
+      "source": "Breitbart News",
+      "url": "https://www.breitbart.com/economy/2026/08/12/breitbart-business-digest-julys-mild-inflation-report-should-keep-the-fed-on-hold/",
+      "publishedAt": "2026-08-12T22:09:53Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 연방준비제도(Fed)의 금리 인상 필요성이 줄어들 것으로 예상"
+    },
+    {
+      "id": "3fd886e6fe8a1968",
+      "title": "Stock Market Today: Nasdaq Charges Higher On Inflation Report; Nvidia Partner CoreWeave Soars (Live Coverage)",
+      "summary": "Tech stocks led Wednesday's action with the Nasdaq holding the bulk of its early gains at the closing bell after an in-line inflation report eased fears of a Federal Reserve rate hike in September. Nvidia (NVDA) and Cisco Systems (CSCO) rose in the 30-member …",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/6f4b59a4b0ceb4c1",
+      "publishedAt": "2026-08-12T21:47:39Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미 연방준행이 금리 인상을 늦출 수 있다는 소식"
+    },
+    {
+      "id": "b3d139195411a080",
+      "title": "Trading Day: AI cheer, new highs near",
+      "summary": "Stocks end largely higher as traders pare rate hike bets after July CPI report\nBy Jamie McGeever\nORLANDO, Florida, Aug 12 (Reuters) - Upbeat tech earnings pushed the Nasdaq, S&P 500 and MSCI All Country indices to within a whisker of their all-time highs on W…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/cab4aae23a19bb89",
+      "publishedAt": "2026-08-12T21:45:16Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "7월 소비자물가(CPI) 보고서 이후 금리 인상 예상이 줄어들면서 주가가 상승"
+    },
+    {
+      "id": "f9d2905c9807924d",
+      "title": "Amid tariff fear, Swadeshi Jagaran Manch says shun US brands",
+      "summary": "India News: NEW DELHI: From beverages to social media, Swadeshi Jagaran Manch has sought to turn the latest US tariff threat into a wider \\\"swadeshi\\\" campaign, cal.",
+      "source": "The Times of India",
+      "url": "https://timesofindia.indiatimes.com/india/amid-tariff-fear-swadeshi-jagaran-manch-says-shun-us-brands/articleshow/133193189.cms",
+      "publishedAt": "2026-08-12T21:42:29Z",
       "country": "미국",
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 관세威脅으로 인한 무역 분쟁"
+    },
+    {
+      "id": "64dec67e65a8e65e",
+      "title": "Now, India eyes Southern African bloc trade deal",
+      "summary": "India Business News: NEW DELHI: After a series of successful bilateral trade agreements with developed countries, India Wednesday moved towards forging a major trade deal .",
+      "source": "The Times of India",
+      "url": "https://timesofindia.indiatimes.com/business/india-business/now-india-eyes-southern-african-bloc-trade-deal/articleshow/133192976.cms",
+      "publishedAt": "2026-08-12T21:34:29Z",
+      "country": "인도",
+      "category": "무역",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/INR"
+      ],
+      "confidence": 0.8,
+      "reason": "인도가 남아프리카 블록과 주요 무역 협정을 맺으려는 움직임"
+    },
+    {
+      "id": "f77883fb88f01d78",
+      "title": "US sent back $33.4 billion in tariff refunds in July, as total payouts surpass $100 billion",
+      "summary": "The US paid out $33.4 billion in tariff refunds in July as the pace of government checks continued at a steady clip. Total refunds now exceed $100 billion sent to businesses since the US Supreme Court struck down President Trump's blanket tariffs.\nThe amount …",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/01a19bfab6af1ba8",
+      "publishedAt": "2026-08-12T19:16:20Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "호재",
+      "currencyPairs": [
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "관세 환급과 관련된 소송"
+      "reason": "미국이 관세 환급액이 100억 달러를 넘어섬에 따라 무역 환경이 호전될 수 있다."
     },
     {
-      "id": "81c61e56fb67e525",
-      "title": "Federal Reserve’s Goolsbee identifies inflation as biggest problem facing US economy",
-      "summary": "Persistent inflation pressures may delay interest rate cuts, impacting economic growth and consumer spending in the long term.\nThe post Federal Reserve’s Goolsbee identifies inflation as biggest problem facing US economy appeared first on Crypto Briefing.",
-      "source": "Crypto Briefing",
-      "url": "https://cryptobriefing.com/fed-goolsbee-inflation-biggest-problem/",
-      "publishedAt": "2026-08-11T19:30:35Z",
+      "id": "c80ddcc5a67b030e",
+      "title": "Canada, U.S. not yet ready to make tariff deal, Canada unsatisfied with latest U.S. offer: sources",
+      "summary": "As the clock ticks toward U.S. President Donald Trump's latest tariff deadline, Canada and the U.S. aren't at a point where a tariff deal can be reached — and Canadian officials are not satisfied with the latest U.S. offer, according to two sources with knowl…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/8b2f6c4cb1cbcb4c",
+      "publishedAt": "2026-08-12T19:13:26Z",
       "country": "미국",
-      "category": "금리",
+      "category": "무역",
       "direction": "악재",
       "currencyPairs": [
-        "USD/KRW"
+        "USD/CAD"
       ],
       "confidence": 0.8,
-      "reason": "미국 연방준비제도(Federal Reserve)가 인플레이션을 가장 큰 경제 문제로 지적하면서 금리 인하가 연기될 수 있다."
+      "reason": "미국과 캐나다 간의 관세 협상이 타결되지 않아 무역 분쟁이 지속될 가능성이 있어 환율에 악영향을 줄 수 있다."
     },
     {
-      "id": "fd1a589454df80d5",
-      "title": "유상대 \"환율 안정·주가 변동성 확대…한은 금리인상서 중요 요소 아냐\"",
-      "summary": "[지디넷코리아]오는 20일 퇴임을 앞둔 유상대 한국은행 부총재는 당분간 금리 인상 기조가 이어질 것이라고 관측하면서, 금리 인상으로 인한 취약 차주 등과 격차 완화를 위해 재정 및 금융정책을 통한 선별적 대응이 필요하다고 시사했다.11일 서울 중구 한은에서 열린 기자간담회에서 유상대 부총재는 \"(부총재 취임) 태영건설 전담반 등 금융시장이 굉장히 변동성이 있었고 2024년 8월초에는 추가로 앤 캐리 트레이드, 얼마 지나지 않아 계엄이 있었다\"며 \"2025년에도…",
-      "source": "Zdnet.co.kr",
-      "url": "https://zdnet.co.kr/view/?no=20260811105851",
-      "publishedAt": "2026-08-11T06:49:31Z",
+      "id": "7a8453f613ad846b",
+      "title": "Canada, U.S. trade officials meeting again for talks ahead of looming tariff deadline",
+      "summary": "Canadian trade officials are meeting with U.S. Trade Representative Jamieson Greer in Washington once again, as both sides hustle to lock down a crucial trade deal ahead of U.S. President Donald Trump's pressing tariff deadline.",
+      "source": "CBC News",
+      "url": "https://www.cbc.ca/news/politics/trade-tariff-talks-canada-us-canada-dominic-leblanc-jamieson-greer-9.7305811",
+      "publishedAt": "2026-08-12T19:00:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.8,
+      "reason": "미국과 캐나다 간의 무역 협상이 타임리미트를 앞두고 진행 중"
+    },
+    {
+      "id": "e5a33feea074e6d6",
+      "title": "콘진원, 미국 ‘Ai4’·‘론치패드’ 참가…1,380억 원 규모 수출 상담 성과",
+      "summary": "문화체육관광부와 한국콘텐츠진흥원(원장 김윤지, 이하 콘진원)이 지난 8월 4일부터 7일까지 미국 라스베이거스와 로스앤젤레스에서 열린 ‘Ai4 2026’과 ‘2026 미국 론치패드(LAUNCHPAD USA 2026)’를 통해 국내 콘텐츠 스타트업의 북미 진출을 지원했다. 이번 일정에 참여한 국내 22개 스타트업은 총 515건의 비즈니스 상담과 10건의 업무협약(MOU)을 체결하며 9,742만 달러(한화 약 1,380억 원, 환율 1,417원 기준) 규모의 수출 …",
+      "source": "Besuccess.com",
+      "url": "https://besuccess.com/?p=185366",
+      "publishedAt": "2026-08-12T05:50:28Z",
       "country": "한국",
-      "category": "금리",
-      "direction": "중립",
+      "category": "무역",
+      "direction": "호재",
       "currencyPairs": [
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "한국은행 부총재가 금리 인상 기조가 이어질 것이라고 관측"
+      "reason": "수출 상담 성과와 수출 규모가 언급됨"
+    },
+    {
+      "id": "2dc48ea5adb66818",
+      "title": "흔들리는 시장 지표에 금·은 가격 ‘꿈틀’",
+      "summary": "안전자산 선호 부각…급락 후 반등미 고용지표 악화 금리 인상 ‘후퇴’각국 미 국채 대신 매입 증가 영향금과 은 가격이 고개를 들고 있다. 연초 사상 최고치를 찍은 뒤 6월까지 큰 폭으로 하락했지만 최근 미국의 고용지표 악화, 각국 중앙은행의 매입 흐름, 인공지능(AI) 투자의 불확실성 증가 등이 금은 가격 상승을 뒷받침하는 것으로 분석된다.11일 한국금거래···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608112036025",
+      "publishedAt": "2026-08-11T11:36:02Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 고용지표 악화로 금리 인상 후퇴 가능성이 언급됨"
     },
     {
       "id": "b9cf77404af81867",
@@ -495,8 +640,8 @@
       "currencyPairs": [
         "USD/KRW"
       ],
-      "confidence": 0.8,
-      "reason": "미국 정부의 폴리실리콘 232조 관세 부과 발표"
+      "confidence": 0.9,
+      "reason": "미국 정부의 폴리실리콘 232조 관세 부과"
     },
     {
       "id": "6f68070a1c970729",
@@ -528,7 +673,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 고용지표 부진으로 연준의 금리 인상 명분이 약해져 금값이 상승했다."
+      "reason": "미국 고용지표 부진으로 연준의 금리 인상 명분이 약해져 금값이 상승"
     },
     {
       "id": "8a38451bbf12f43e",
@@ -589,9 +734,10 @@
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
-        "USD/CNY"
+        "USD/CNY",
+        "USD/KRW"
       ],
-      "confidence": 0.9,
+      "confidence": 0.8,
       "reason": "미국이 중국산 폴리실리콘에 관세를 부과할 계획"
     },
     {
@@ -605,7 +751,8 @@
       "category": "금리",
       "direction": "악재",
       "currencyPairs": [
-        "USD/KRW"
+        "USD/KRW",
+        "EUR/USD"
       ],
       "confidence": 0.9,
       "reason": "미 연준 이사의 금리 인상 발언"
@@ -675,7 +822,7 @@
         "USD/JPY"
       ],
       "confidence": 0.8,
-      "reason": "미국이 엔화 방어에 나서면서 미 국채 금리 상승 가능성과 중간선거 영향 차단에 대한 우려"
+      "reason": "미국이 엔화 방어에 나서면서 미 국채 금리 상승 가능성과 중간선거 영향에 대한 우려"
     },
     {
       "id": "bb4e27b175c92f88",
@@ -741,7 +888,7 @@
         "JPY/USD"
       ],
       "confidence": 0.9,
-      "reason": "일본은행이 기준금리를 1.0%로 동결"
+      "reason": "일본은행이 기준금리를 현행 1.0%로 유지했다."
     },
     {
       "id": "decdbddb8c4cd285",
@@ -758,22 +905,6 @@
       ],
       "confidence": 0.9,
       "reason": "일본과 미국 통화 당국이 엔화 약세를 막기 위해 외환시장에 동시에 개입했다."
-    },
-    {
-      "id": "6c37ff126e8f60a5",
-      "title": "미 연준, 향후 금리 모호한 입장…8월 결정 앞둔 한국은행 ‘고민’",
-      "summary": "5번째 동결했지만 위원 3명 ‘반대’한은 “미 통화정책 불확실성 높아”내달 국내 소비자물가 지표가 관건미국 중앙은행인 연방준비제도(Fed·연준)가 29일(현지시간) 기준금리를 3.50~3.75%로 동결했지만 케빈 워시 연준 의장의 모호한 발언으로 미국 통화정책의 불확실성이 커졌다는 평가가 나온다. 오는 8월 두 번 연속 기준금리를 올릴지 결정해야 하는 한···",
-      "source": "Khan.co.kr",
-      "url": "https://www.khan.co.kr/article/202607302139005",
-      "publishedAt": "2026-07-30T12:39:00Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "중립",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "미 연준의 금리 동결과 케빈 워시 연준 의장의 모호한 발언"
     },
     {
       "id": "b5c4443121c3cc4d",
@@ -838,11 +969,10 @@
       "category": "금리",
       "direction": "악재",
       "currencyPairs": [
-        "USD/KRW",
-        "EUR/USD"
+        "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미 연방준비제도(Fed) 의장의 인플레이션 통제 약속에도 불구하고 금리 인상 속도가 느려지자 국채 수익률이 19년 만에 최고치에 도달"
+      "reason": "미 연방준행이 인플레이션 억제를 위한 금리 인상을 충분히 시행하지 못하고 있음을 시사"
     },
     {
       "id": "85b687c68c41bc46",
@@ -856,10 +986,10 @@
       "direction": "악재",
       "currencyPairs": [
         "USD/UAH",
-        "USD/IRR"
+        "EUR/USD"
       ],
       "confidence": 0.8,
-      "reason": "우크라이나와 이란 간의 충돌이 확대될 수 있어 글로벌 경제 불안정성에 악영향을 줄 수 있음"
+      "reason": "우크라이나와 이란 간의 충돌이 국제적 긴장과 경제 불안정으로 이어질 수 있음"
     },
     {
       "id": "750adb41f350b3d9",
@@ -905,7 +1035,8 @@
       "category": "금리",
       "direction": "중립",
       "currencyPairs": [
-        "USD/KRW"
+        "USD/KRW",
+        "EUR/USD"
       ],
       "confidence": 0.9,
       "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
@@ -959,7 +1090,7 @@
         "USD/KRW"
       ],
       "confidence": 0.9,
-      "reason": "미 연방준행이 금리 유지 결정"
+      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
     },
     {
       "id": "54d9d5be443506a4",
@@ -984,13 +1115,13 @@
       "source": "Vanguard",
       "url": "https://www.vanguardngr.com/2026/07/nigerias-export-under-threat-over-us-12-5-tariff-serec-warns/",
       "publishedAt": "2026-07-30T06:09:52Z",
-      "country": "기타",
+      "country": "미국",
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
         "USD/NGN"
       ],
-      "confidence": 0.8,
+      "confidence": 0.9,
       "reason": "미국이 나이지리아 수출품에 12.5% 관세를 부과"
     },
     {
@@ -1002,12 +1133,12 @@
       "publishedAt": "2026-07-30T04:05:40Z",
       "country": "기타",
       "category": "무역",
-      "direction": "중립",
+      "direction": "악재",
       "currencyPairs": [
         "TWD/USD"
       ],
       "confidence": 0.8,
-      "reason": "대만의 차량 관세 인하 연기"
+      "reason": "대만의 차량 수입 관세 인하 연기"
     },
     {
       "id": "2fa8388f2518ddd6",
@@ -1036,7 +1167,8 @@
       "category": "금리",
       "direction": "중립",
       "currencyPairs": [
-        "USD/KRW"
+        "USD/KRW",
+        "EUR/USD"
       ],
       "confidence": 0.9,
       "reason": "미국 연방준비제도(Fed) 기준금리 동결"
@@ -1072,7 +1204,7 @@
         "EUR/USD"
       ],
       "confidence": 0.9,
-      "reason": "미국 연준이 금리 동결을 결정함"
+      "reason": "미국 연방준비제도(연준)가 금리를 5회 연속 동결했다."
     },
     {
       "id": "732fb134a681dd4c",
@@ -1104,7 +1236,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국이 무역 불균형을 빌미로 한국 반도체에 가격·물량 통제를 할 수 있어 환율에 악영향을 줄 수 있다."
+      "reason": "미국이 무역 불균형을 빌미로 한국 반도체에 가격·물량 통제를 할 수 있다는 우려"
     },
     {
       "id": "230576531ab82c8a",
@@ -1131,7 +1263,7 @@
       "publishedAt": "2026-07-29T04:54:36Z",
       "country": "한국",
       "category": "금리",
-      "direction": "중립",
+      "direction": "악재",
       "currencyPairs": [
         "USD/KRW"
       ],
@@ -1168,7 +1300,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "한국은행의 기준금리 인상 기조로 변동형 주담대 비중이 12년 4개월만에 최고치를 기록"
+      "reason": "한국은행의 기준금리 인상 기조로 변동형 주택담보대출 비중이 12년 만에 최고치를 기록"
     },
     {
       "id": "df7bfbd43e310bdd",
@@ -1217,7 +1349,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "실적 개선 배경에 환율효과가 언급됨"
+      "reason": "환율효과로 인한 실적 개선"
     },
     {
       "id": "f85cacdfbe408a4f",
@@ -1233,7 +1365,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "트럼프 대통령이 관세 정책을 강조하며 제조업 부흥을 강조"
+      "reason": "트럼프 대통령이 관세 정책을 앞세워 제조업 부흥을 강조"
     },
     {
       "id": "eea727e1139c863c",
@@ -1242,14 +1374,14 @@
       "source": "Khan.co.kr",
       "url": "https://www.khan.co.kr/article/202607272057001",
       "publishedAt": "2026-07-27T11:57:00Z",
-      "country": "미국",
+      "country": "중국",
       "category": "무역",
       "direction": "악재",
       "currencyPairs": [
         "USD/CNY"
       ],
       "confidence": 0.8,
-      "reason": "미국이 중국에 대한 강제노동 추가 관세 부과와 AI 기업에 대한 지식재산권 침해 조사 방침을 발표하여 무역 분쟁이 심화할 수 있다."
+      "reason": "중국과 미국의 무역 분쟁과 관세 부과"
     },
     {
       "id": "8459d8968620c45d",
@@ -1266,7 +1398,7 @@
         "USD/EUR"
       ],
       "confidence": 0.8,
-      "reason": "미국이 한국과 EU를 포함한 60개 경제권에 강제노동 관련 제품에 대한 추가 관세를 부과"
+      "reason": "미국이 한국을 포함한 60개 경제권에 강제노동 관련 제품 수입금지 조치 미이행으로 추가 관세를 부과"
     },
     {
       "id": "228b4bb0d3753e94",
@@ -1282,7 +1414,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 연방준비제도(연준)가 기준금리 결정을 할 예정"
+      "reason": "미국 연방준비제도(연준)가 기준금리를 결정할 예정"
     },
     {
       "id": "9c3c8e24d3e502bb",
