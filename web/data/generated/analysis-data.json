@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-14T22:05:39.646957+00:00",
+    "generatedAt": "2026-08-15T22:01:56.702627+00:00",
     "dataAsOf": "2026-08-14",
     "supportedPairs": [
       "USD/KRW",
@@ -22,7 +22,7 @@
       "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
       "spot_rate": 1441.1,
       "estimated_monthly_move_rate": 45.35,
-      "data_age_days": 15,
+      "data_age_days": 16,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -43,7 +43,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 9.0213,
       "estimated_monthly_move_rate": 0.24,
-      "data_age_days": 15,
+      "data_age_days": 16,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -61,7 +61,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 1661.16,
       "estimated_monthly_move_rate": 40.25,
-      "data_age_days": 15,
+      "data_age_days": 16,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-08-14T22:05:39.502555",
+    "computed_at": "2026-08-15T22:01:56.541333",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 2.75,
@@ -93,13 +93,13 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1416.48,
-        "ma5": 1413.886,
-        "ma20": 1441.79,
+        "latest_close": 1412.0,
+        "ma5": 1414.96,
+        "ma20": 1438.039,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1417.34,
-        "resistance_r1": 1424.6,
-        "support_s1": 1409.2,
+        "pivot": 1414.787,
+        "resistance_r1": 1421.163,
+        "support_s1": 1410.473,
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "JPY/KRW": {
@@ -215,11 +215,11 @@
         "trend": "상승"
       },
       "코스피_지수": {
-        "latest": NaN,
+        "latest": 6977.9399,
         "latest_date": "2026-08-14",
         "prev": 6813.3398,
-        "change": NaN,
-        "trend": "보합"
+        "change": 164.6001,
+        "trend": "상승"
       },
       "KRX100_대용_ETF": {
         "latest": 113525.0,
@@ -235,10 +235,10 @@
         "trend": "데이터없음"
       },
       "구글트렌드_환율관심도": {
-        "latest": 31.0,
+        "latest": 30.5,
         "latest_date": "2026-08-09",
-        "prev": 33.0,
-        "change": -2.0,
+        "prev": 31.5,
+        "change": -1.0,
         "trend": "하락"
       }
     },
@@ -371,28 +371,12 @@
   },
   "news": [
     {
-      "id": "bcbb304a04669e07",
-      "title": "Commentary: For the oil market, the Strait of Hormuz isn’t closed",
-      "summary": "The Iran war has triggered what many say is the largest oil-supply shock in history but the market has defied expectations of high prices, says Bloomberg Opinion's Javier Blas.",
-      "source": "CNA",
-      "url": "https://www.channelnewsasia.com/commentary/strait-hormuz-not-closed-oil-prices-iran-war-6317166",
-      "publishedAt": "2026-08-13T21:59:00Z",
-      "country": "기타",
-      "category": "지정학",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.6,
-      "reason": "호르무즈 해협 관련 지정학적 리스크가 언급되지만 실제로 폐쇄되지 않았음"
-    },
-    {
-      "id": "ad06af27f7dc1740",
-      "title": "Fed Cuts Reserve Management Purchases (RMPs) to Zero, Starting August 14",
-      "summary": "Warsh makes another baby step — as suggested at his first FOMC meeting.\nBy Wolf Richter for WOLF STREET.\nThe Federal Reserve Bank of New York announced this afternoon that it would halt Reserve Management Purchases (RMPs) for the period of August 14 through S…",
+      "id": "d178cff7a607f62a",
+      "title": "US regulator approves bank charter for Trump-backed crypto company World Liberty Financial",
+      "summary": "S&P 500 rises for the week, helped by reduction in rate hike bets; oil caps gains\nBy Lawrence Delevingne and Pete Schroeder\nAug 14 (Reuters) - A national U.S. bank regulator on Friday conditionally approved a bank charter application linked to President Donal…",
       "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/b22efdbe0b4c2931",
-      "publishedAt": "2026-08-13T21:47:53Z",
+      "url": "https://biztoc.com/x/a9871bb48e702139",
+      "publishedAt": "2026-08-14T20:40:52Z",
       "country": "미국",
       "category": "금리",
       "direction": "호재",
@@ -400,15 +384,31 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미 연방준비제도(Fed)가 준비금 관리 매입을 중단한다는 발표"
+      "reason": "미국 금리 인상 예상 감소로 주가 상승"
     },
     {
-      "id": "40ff2c843a13a64e",
-      "title": "Trading Day: Hiking pressure eases",
-      "summary": "S&P ends at record high as rate hike bets fall on PPI data; Cisco caps Dow’s gains\nBy Jamie McGeever\nORLANDO, Florida, Aug 13 (Reuters) - Stocks and bond prices rose on Thursday, with the S&P 500 barreling to a fresh high, as investors cheered another relativ…",
+      "id": "8cdad24db2e9b7b9",
+      "title": "Feds tell provinces to get ready to put American booze back on the shelves: sources",
+      "summary": "The federal government has told the provinces to be ready as soon as possible to put American alcohol back on the shelves in case a tariff deal is reached before U.S. President Donald Trump's latest tariff deadline, according to sources. They also said the fe…",
+      "source": "CBC News",
+      "url": "https://www.cbc.ca/news/politics/canada-u-s-trade-talks-booze-bans-9.7307849",
+      "publishedAt": "2026-08-14T20:12:05Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/CAD"
+      ],
+      "confidence": 0.8,
+      "reason": "미국과 캐나다 간의 관세 협상이 진행 중이며, 합의가 이루어질 경우 미국 주류를 재판매할 준비를 하라는 정부 지침"
+    },
+    {
+      "id": "a4cac4efc4ac8b84",
+      "title": "Dollar Falls on Weak US Retail Sales and Consumer Sentiment Reports",
+      "summary": "fell -0.27% on Friday as weak US retail sales and consumer sentiment reports reduced the odds of a September Fed rate hike to 32% from 35% on Thursday. The dollar's decline was curbed by the 10-year T-note yield rising +5 bp despite the weak US economic repor…",
       "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/427dd47171b59943",
-      "publishedAt": "2026-08-13T21:31:58Z",
+      "url": "https://biztoc.com/x/e8ddf6477e672d4a",
+      "publishedAt": "2026-08-14T20:11:18Z",
       "country": "미국",
       "category": "금리",
       "direction": "호재",
@@ -416,127 +416,32 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 금리 인상 예상이 낮아지면서 주가와 채권 가격이 상승"
+      "reason": "미국 소비자 지출과 소비자 심리지수가 약세로 9월 금리 인상 가능성 하락"
     },
     {
-      "id": "88b86dac4a4e5f4e",
-      "title": "How Canada could respond to new U.S. tariffs; Why Carney’s Canada Strong Fund may be doomed to fail; and more",
-      "summary": "Catch up on the stories we’re following today.",
-      "source": "National Post",
-      "url": "https://nationalpost.com/editors/afternoon-front-page-39",
-      "publishedAt": "2026-08-13T21:25:25Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/CAD"
-      ],
-      "confidence": 0.8,
-      "reason": "미국이 캐나다에 새로운 관세를 부과할 수 있다는 뉴스"
-    },
-    {
-      "id": "22308a9e2d0abcf5",
-      "title": "Businesses feel the strain as the deadline for Trump's 50% Canadian tariff approaches",
-      "summary": "If President Trump's threatened 50% tariffs go through later this month, construction businesses that rely on materials imported from Canada are among those that will suffer.",
-      "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/2cb5d28da3e4b030",
-      "publishedAt": "2026-08-13T21:16:30Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/CAD"
-      ],
-      "confidence": 0.9,
-      "reason": "트럼프의 캐나다에 대한 50% 관세가 환율에 악영향을 줄 수 있음"
-    },
-    {
-      "id": "b9c318bb860966bd",
-      "title": "Businesses feel the strain as the deadline for Trump's 50% Canadian tariff approaches",
-      "summary": "If President Trump's threatened 50% tariffs go through later this month, construction businesses that rely on materials imported from Canada are among those that will suffer.",
-      "source": "NPR",
-      "url": "https://www.npr.org/2026/08/13/nx-s1-5927326-e1/businesses-feel-the-strain-as-the-deadline-for-trumps-50-canadian-tariff-approaches",
-      "publishedAt": "2026-08-13T21:08:14Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/CAD"
-      ],
-      "confidence": 0.9,
-      "reason": "미국이 캐나다에 대한 50% 관세를 부과할 가능성이 있어 환율에 악영향을 줄 수 있다."
-    },
-    {
-      "id": "4be709b6c269a6de",
-      "title": "Fitch affirms U.S. credit rating at AA+ with stable outlook",
-      "summary": "S&P ends at record high as rate hike bets fall on PPI data; Cisco caps Dow’s gains\nInvesting.com -- Fitch Ratings affirmed the United States’ long-term foreign and local currency issuer default ratings at AA+ with a stable outlook.\nThe rating agency cited the…",
-      "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/ec0a0b5831db1f65",
-      "publishedAt": "2026-08-13T21:01:04Z",
+      "id": "7b7678f0494fedf5",
+      "title": "Fed’s Goolsbee encouraged by inflation cooling but wants more proof before calling it done",
+      "summary": "Cautious optimism from the Fed suggests a careful approach to monetary policy, balancing inflation control with economic stability.\nThe post Fed’s Goolsbee encouraged by inflation cooling but wants more proof before calling it done appeared first on Crypto Br…",
+      "source": "Crypto Briefing",
+      "url": "https://cryptobriefing.com/goolsbee-encouraged-inflation-cooling-fed/",
+      "publishedAt": "2026-08-14T20:11:18Z",
       "country": "미국",
       "category": "금리",
       "direction": "호재",
       "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 신용 등급이 안정적인 것으로 평가"
-    },
-    {
-      "id": "835ceaac26502d62",
-      "title": "Colombian Suppliers Face Earthquake Impacts, Tariff Woes",
-      "summary": "Shaken by the news, many Colombian exhibitors appeared to be monitoring the situation, with concerns about family, friends and employees clearly top of mind.",
-      "source": "WWD",
-      "url": "http://wwd.com/sourcing-journal/trade/sourcing-at-magic-colombia-suppliers-earthquake-impacts-tariffs-1239124116/",
-      "publishedAt": "2026-08-13T20:56:07Z",
-      "country": "기타",
-      "category": "무역",
-      "direction": "악재",
-      "currencyPairs": [
-        "USD/COP"
-      ],
-      "confidence": 0.7,
-      "reason": "콜롬비아 수출업자들이 지진과 관세로 인해 어려움을 겪고 있어"
-    },
-    {
-      "id": "9c1d41470d740b46",
-      "title": "‘We Don’t Worry About Tariffs Anymore’: Irish Whiskey Distillery Most Concerned With US Inflation",
-      "summary": "An Irish whiskey distillery says its U.S. sales have jumped more than 36% after it lowered prices in response to tariff uncertainty and cautious consumer spending, but the company now sees inflation as a bigger challenge.\nClonakilty Distillery, based in West …",
-      "source": "Biztoc.com",
-      "url": "https://biztoc.com/x/17d6e4faf7f21c71",
-      "publishedAt": "2026-08-13T20:49:30Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "호재",
-      "currencyPairs": [
+        "USD/KRW",
         "EUR/USD"
       ],
       "confidence": 0.8,
-      "reason": "관세 불확실성에 대한 대응으로 가격을 낮춘 결과 판매량이 증가했다는 언급"
+      "reason": "미 연방준행이 인플레이션 완화에 긍정적이지만 금리 인상 여부는 미정"
     },
     {
-      "id": "e1f3a29a923ed4ac",
-      "title": "US equities close higher as softer PPI boosts market sentiment",
-      "summary": "Softer inflation data eases rate hike fears, boosting market optimism and potentially stabilizing economic growth amid persistent inflation.\nThe post US equities close higher as softer PPI boosts market sentiment appeared first on Crypto Briefing.",
-      "source": "Crypto Briefing",
-      "url": "https://cryptobriefing.com/us-equities-higher-softer-ppi-market-sentiment/",
-      "publishedAt": "2026-08-13T20:32:27Z",
-      "country": "미국",
-      "category": "금리",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/KRW"
-      ],
-      "confidence": 0.8,
-      "reason": "미국 물가 상승률이 예상보다 낮아 금리 인상 우려가 완화됨"
-    },
-    {
-      "id": "4af93b6883dfa11a",
-      "title": "Trump's Latest Proposed Tariffs Make It A Bad Time To Be 'Horny' In America",
-      "summary": "The White House is attempting to declare imported trumpets, tubas and trombones as “national security threats.”",
-      "source": "HuffPost",
-      "url": "https://www.huffpost.com/entry/tariffs-target-tubas-and-other-brass-instruments_n_6a7dfa05e4b0c90844000d19",
-      "publishedAt": "2026-08-13T19:26:16Z",
+      "id": "56d9c84e64005e97",
+      "title": "‘If your tariff was 0%, there’s no need to commit fraud’: The White House is sounding off on a $112 billion tariff-dodging scheme it made worse",
+      "summary": "President Donald Trump’s onslaught of tariffs was initially meant to grow government revenue. However, they may have inadvertently enabled a multi-billion dollar tax scheme for the U.S. economy: Companies have found tactics to evade the sky-high tariffs and a…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/b22777d131553baf",
+      "publishedAt": "2026-08-14T20:10:14Z",
       "country": "미국",
       "category": "무역",
       "direction": "악재",
@@ -546,15 +451,31 @@
         "USD/EUR"
       ],
       "confidence": 0.8,
-      "reason": "트럼프 행정부가 트럼펫, 튜바, 트롬본 등을 국가 안보 위협으로 선언하려는 것으로 무역에 영향을 줄 수 있음"
+      "reason": "트럼프 대통령의 관세 공격이 무역을 악화시키고 탈루를 유발"
     },
     {
-      "id": "bcbbde532cbb777f",
-      "title": "Nigeria targets China’s 1.4bn market with zero-tariff fish exports",
-      "summary": "Nigeria aims to boost its economy by leveraging a new aquatic products agreement, granting zero-tariff fish exports to China’s 1.4 billion-consumer market.\n\nRead More: https://punchng.com/nigeria-targets-chinas-1-4bn-market-with-zero-tariff-fish-exports/",
-      "source": "The Punch",
-      "url": "https://punchng.com/nigeria-targets-chinas-1-4bn-market-with-zero-tariff-fish-exports/",
-      "publishedAt": "2026-08-13T18:35:50Z",
+      "id": "82f145ba965f80be",
+      "title": "Trump’s 100% tariff on drones deepens US-China tech decoupling",
+      "summary": "The United States is imposing significant tariffs on imported drones and their parts.  Heavier drones and those with specific capabilities will face the highest rates.  These measures aim to decrease American dependence on foreign suppliers, particularly Chin…",
+      "source": "The Times of India",
+      "url": "https://economictimes.indiatimes.com/news/international/world-news/trumps-100-tariff-on-drones-deepens-us-china-tech-decoupling/articleshow/133251309.cms",
+      "publishedAt": "2026-08-14T19:47:26Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CNY"
+      ],
+      "confidence": 0.9,
+      "reason": "미국이 중국산 드론에 100% 관세를 부과"
+    },
+    {
+      "id": "f212a5162f3df583",
+      "title": "China zero-tariff policy boosts Nigeria’s exports, industrial growth — Ambassador",
+      "summary": "By Favour Ulebor, Abuja ABUJA — China’s Ambassador to Nigeria, Yu Dunhai, has said the country’s zero-tariff policy for African countries is already yielding significant benefits for Nigeria, with bilateral trade and Nigerian exports recording substantial gro…",
+      "source": "Vanguard",
+      "url": "https://www.vanguardngr.com/2026/08/china-zero-tariff-policy-boosts-nigerias-exports-industrial-growth-ambassador/",
+      "publishedAt": "2026-08-14T19:44:30Z",
       "country": "기타",
       "category": "무역",
       "direction": "호재",
@@ -563,47 +484,81 @@
         "NGN/USD"
       ],
       "confidence": 0.8,
-      "reason": "나이지리아와 중국의 무관세 수산물 수출 협정"
+      "reason": "중국이 아프리카 국가에 대한 무관세 정책으로 나이지리아의 수출과 산업 성장이 증가"
     },
     {
-      "id": "fccf7da49a237ee1",
-      "title": "Canada government source says US seeks trade deal before August 19 deadline",
-      "summary": "The urgency to finalize a trade deal highlights the potential for significant economic disruption and strained US-Canada relations if tariffs proceed.\nThe post Canada government source says US seeks trade deal before August 19 deadline appeared first on Crypt…",
-      "source": "Crypto Briefing",
-      "url": "https://cryptobriefing.com/us-canada-trade-deal-august-deadline/",
-      "publishedAt": "2026-08-13T17:49:43Z",
+      "id": "d65548b8a2dadf36",
+      "title": "‘If your tariff was 0%, there’s no need to commit fraud’: The White House is sounding off on a $112 billion tariff-dodging scheme it made worse",
+      "summary": "The Trump administration is cracking down on foreign importers of record behind the evasion—which China is at the center of.",
+      "source": "Fortune",
+      "url": "https://fortune.com/2026/08/14/white-house-tariff-dodgers-112-billion-dollar-problem-trump-made-worse/",
+      "publishedAt": "2026-08-14T19:33:21Z",
       "country": "미국",
       "category": "무역",
-      "direction": "호재",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/CNY"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 중국을 중심으로 한 관세 탈루 계획에 대한 조치를 취하고 있어"
+    },
+    {
+      "id": "3e42c257d833b642",
+      "title": "Red Cat Stock Jumps on Trump Drone Tariff News. Analysts Think It Has 70% More Upside Potential",
+      "summary": "shares rallied on Friday after President Donald Trump signed a proclamation invoking Section 232 to slap ad valorem tariffs of up to 100% on imported drones and critical components.\nThe sweeping order targets military-grade foreign unmanned systems while impo…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/fa444cd9f670b152",
+      "publishedAt": "2026-08-14T19:10:46Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프 대통령의 무인기 수입 관세 부과"
+    },
+    {
+      "id": "ad611b56709cd6a8",
+      "title": "Trump Sends Drone Stocks Soaring on Tariff News. This Is the Top-Performing Company Now",
+      "summary": "President Donald Trump’s proclamation imposing “aggressive” tariffs on foreign unmanned aircraft systems has sent defense and drone stocks soaring.\nThe order raises the duty on heavy military-grade drones by 100% and levies a 25% duty on smaller commercial mo…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/2b58af42ec886118",
+      "publishedAt": "2026-08-14T19:10:11Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/JPY"
+      ],
+      "confidence": 0.8,
+      "reason": "트럼프 대통령의 외국 무인 항공기 시스템에 대한 관세 부과"
+    },
+    {
+      "id": "ce3ec758e33b8564",
+      "title": "In the trade war showdown, it’s strong-hand Carney vs. weak-hand Trump",
+      "summary": "John Rapley is a contributing columnist for The Globe and Mail. He is an author and academic whose books include Why Empires Fall and Twilight of the Money Gods.\nIn his trade negotiations with the United States, Prime Minister Mark Carney should seize the opp…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/aa989b16109d9fed",
+      "publishedAt": "2026-08-14T18:54:52Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "중립",
       "currencyPairs": [
         "USD/CAD"
       ],
       "confidence": 0.8,
-      "reason": "미국과 캐나다 간 무역 협상이 진행 중이며, 협상 성공 여부에 따라 양국 경제에 영향을 줄 수 있음"
+      "reason": "미국과의 무역 협상"
     },
     {
-      "id": "cd3283515700a372",
-      "title": "Canada government source says US also keen on trade deal before Aug 19 deadline",
-      "summary": "OTTAWA, Aug 13 (Reuters) - A Canadian government source directly familiar with trade negotiations with the United States said on Thursday that talks were pro...",
-      "source": "Yahoo Entertainment",
-      "url": "https://finance.yahoo.com/news/canada-government-source-says-us-173525441.html",
-      "publishedAt": "2026-08-13T17:36:23Z",
-      "country": "미국",
-      "category": "무역",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/CAD"
-      ],
-      "confidence": 0.8,
-      "reason": "미국과 캐나다 간의 무역 협상이 진행 중"
-    },
-    {
-      "id": "5c090da42e5ac211",
-      "title": "S&P 500 Companies Claim First Payouts From $100 Billion Tariff Refund Wave",
-      "summary": "More than 40 S&P 500 companies reported $9.6 billion in tariff refunds in the past quarter or so, with about $2.1 billion in cash already received, The Wall Street Journal reported Thursday (Aug. 13). Some of the companies reporting the biggest refunds so far…",
-      "source": "pymnts.com",
-      "url": "https://www.pymnts.com/legal/2026/sp-500-companies-claim-first-payouts-from-100-billion-tariff-refund-wave/",
-      "publishedAt": "2026-08-13T17:27:06Z",
+      "id": "1655c28e14dd0cc4",
+      "title": "How to get a refund for Trump tariffs struck down by Supreme Court",
+      "summary": "Refunds for illegal U.S. tariffs are , and consumers could get a cut from companies that have vowed to share that financial relief with customers.\nThe U.S. Customs and Border Protection (CBP) agency can only issue tariff refunds to the so-called importer of r…",
+      "source": "Biztoc.com",
+      "url": "https://biztoc.com/x/69a8c3325f2c3892",
+      "publishedAt": "2026-08-14T18:54:19Z",
       "country": "미국",
       "category": "무역",
       "direction": "호재",
@@ -611,15 +566,31 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "무역 관세 환급 관련 뉴스"
+      "reason": "미국에서 불법적인 관세를 부과한 경우 환불이 가능해져 무역 환경이 호전될 수 있다."
     },
     {
-      "id": "90ac864b383fe1b7",
-      "title": "백악관, 중국 상품 ‘관세 회피용 환적 위험’ 국가에 한국 지목…경기 반도체 벨트 거론",
-      "summary": "미국 백악관 로고. AFP연합뉴스도널드 트럼프 미국 행정부가 전 세계 40여개국에서 중국산 제품의 관세 회피를 위한 불법 환적이 이뤄지고 있다며 단속 강화 방침을 밝혔다. 한국은 일본, 대만 등과 함께 중국산 제품의 불법 환적 위험이 있는 국가로 지목됐다.백악관 무역제조업정책국은 13일(현지시간) 공개한 ‘거대한 환적 사기’라는 제목의 보고서에서 “미국은 ···",
+      "id": "c4274008c5f3168f",
+      "title": "WSJ “애플, 나이키 등 관세 환급···13조 환급급 수령”",
+      "summary": "사람들이 지난 6월22일 중국 베이징에서 열린 중국국제공급망엑스포(CISCE)에서 애플의 협력 업체를 소개하는 부스 앞을 지나가고 있다. 로이터연합뉴스미국 주요 기업들이 예상보다 빠른 속도로 관세 환급금을 수령하고 있는 것으로 나타났다.12일(현지시간) 월스트리트저널(WSJ)에 따르면 S&P500 지수 편입 기업 중 40곳 이상이 총 96억달러(약 ···",
       "source": "Khan.co.kr",
-      "url": "https://www.khan.co.kr/article/202608132132001",
-      "publishedAt": "2026-08-13T12:32:00Z",
+      "url": "https://www.khan.co.kr/article/202608141517001",
+      "publishedAt": "2026-08-14T06:17:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 주요 기업들이 관세 환급금을 수령하고 있어 무역 환경에 긍정적 영향을 줄 수 있다."
+    },
+    {
+      "id": "791f9a7df99fdc90",
+      "title": "백악관 “중국, 미 관세 피해 40여개국 거쳐···한국도 우회 수출로”",
+      "summary": "노동자들이 2024년 9월30일 미국 뉴저지주 뉴욕의 뉴욕 뉴저지 항만청에서 선적 컨테이너를 옮기고 있다. 로이터연합뉴스미국 백악관이 중국이 고율 관세를 피하기 위해 한국을 비롯한 전 세계 40여개국을 거쳐 제품을 미국으로 수출하고 있다며 단속을 강화하겠다고 밝혔다.백악관 무역제조업정책국은 13일(현지시간) 공개한 ‘거대한 환적 사기’ 보고서에서 미국이 중···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608140748001",
+      "publishedAt": "2026-08-13T22:48:00Z",
       "country": "미국",
       "category": "무역",
       "direction": "악재",
@@ -628,7 +599,40 @@
         "USD/CNY"
       ],
       "confidence": 0.8,
-      "reason": "미국이 한국을 중국산 제품의 불법 환적 위험이 있는 국가로 지목"
+      "reason": "중국이 한국을 비롯한 40여개국을 거쳐 미국으로 우회 수출함으로써 미국의 관세 정책을 피하는 것으로 알려짐"
+    },
+    {
+      "id": "30cc7b4abca2d408",
+      "title": "트럼프, 수입 드론에 관세 100%···한국은 15%",
+      "summary": "도널드 트럼프 미국 대통령이 지난달 27일(현지시간) 전용기 에어포스원에서 기자들과 대화하고 있다. AP연합뉴스도널드 트럼프 미국 대통령이 수입 무인기(드론)과 부품에 관세를 부과하겠다고 밝혔다.백악관은 13일(현지시간) 트럼프 대통령이 드론과 그 부품 수입으로 인한 국가 안보 위협에 대응하고 미국 드론 산업 및 공급망을 강화하는 내용을 담은 포고문에 서명···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608140723001",
+      "publishedAt": "2026-08-13T22:23:00Z",
+      "country": "미국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW",
+        "USD/EUR"
+      ],
+      "confidence": 0.8,
+      "reason": "미국이 수입 드론에 관세를 부과하는 무역 정책"
+    },
+    {
+      "id": "90ac864b383fe1b7",
+      "title": "백악관, 중국 상품 ‘관세 회피용 환적 위험’ 국가에 한국 지목…경기 반도체 벨트 거론",
+      "summary": "미국 백악관 로고. AFP연합뉴스도널드 트럼프 미국 행정부가 전 세계 40여개국에서 중국산 제품의 관세 회피를 위한 불법 환적이 이뤄지고 있다며 단속 강화 방침을 밝혔다. 한국은 일본, 대만 등과 함께 중국산 제품의 불법 환적 위험이 있는 국가로 지목됐다.백악관 무역제조업정책국은 13일(현지시간) 공개한 ‘거대한 환적 사기’라는 제목의 보고서에서 “미국은 ···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608132132001",
+      "publishedAt": "2026-08-13T12:32:00Z",
+      "country": "한국",
+      "category": "무역",
+      "direction": "악재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "한국이 중국산 제품의 불법 환적 위험이 있는 국가로 지목"
     },
     {
       "id": "ef9c4c5f3c28cad9",
@@ -661,7 +665,7 @@
         "EUR/USD"
       ],
       "confidence": 0.8,
-      "reason": "유럽연합이 중국산 전기차에 관세 장벽을 세우자 중국 자동차 업체들이 유럽 공략 방식을 바꾸고 있다."
+      "reason": "유럽연합이 중국산 전기차에 관세 장벽을 세움"
     },
     {
       "id": "f3b7b9bfe07aad55",
@@ -696,6 +700,22 @@
       "reason": "금리 동결 기대감에 뉴욕증시 주요 지수가 상승"
     },
     {
+      "id": "2dc48ea5adb66818",
+      "title": "흔들리는 시장 지표에 금·은 가격 ‘꿈틀’",
+      "summary": "안전자산 선호 부각…급락 후 반등미 고용지표 악화 금리 인상 ‘후퇴’각국 미 국채 대신 매입 증가 영향금과 은 가격이 고개를 들고 있다. 연초 사상 최고치를 찍은 뒤 6월까지 큰 폭으로 하락했지만 최근 미국의 고용지표 악화, 각국 중앙은행의 매입 흐름, 인공지능(AI) 투자의 불확실성 증가 등이 금은 가격 상승을 뒷받침하는 것으로 분석된다.11일 한국금거래···",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202608112036025",
+      "publishedAt": "2026-08-11T11:36:02Z",
+      "country": "미국",
+      "category": "금리",
+      "direction": "호재",
+      "currencyPairs": [
+        "USD/KRW"
+      ],
+      "confidence": 0.8,
+      "reason": "미국 고용지표 악화로 금리 인상 후퇴 가능성이 언급됨"
+    },
+    {
       "id": "b9cf77404af81867",
       "title": "산업부, 美 폴리실리콘 232조 관세 민관합동 대책 점검",
       "summary": "[지디넷코리아]산업통상부는 지난 6일 미국 정부의 폴리실리콘 232조 관세 부과 발표에 대응해 11일 오후 대한상공회의소에서 박정성 통상차관보 주재로 관계 부처와 업계 대책회의를 개최한다.이날 회의에는 기후에너지환경부와 삼성전자·한화큐셀·OCI·SK실트론·한국반도체산업협회 등 유관 부처와 기업이 참석한다.미국 정부는 지난 6일 무역확장법 232조에 근거해 폴리실리콘과 파생제품을 대상으로 최저수입가격제를 도입하고 폴리실리콘 파생제품(잉곳·웨이퍼·셀 등)에 15%…",
@@ -709,7 +729,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 정부의 폴리실리콘 232조 관세 부과 발표"
+      "reason": "미국 정부의 폴리실리콘 232조 관세 부과"
     },
     {
       "id": "6f68070a1c970729",
@@ -741,7 +761,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 고용지표 부진으로 연준의 금리 인상 명분이 약해져 금값이 상승했다."
+      "reason": "미국 고용지표 부진으로 연준의 금리 인상 명분이 약해져 금값이 상승"
     },
     {
       "id": "8a38451bbf12f43e",
@@ -757,7 +777,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 고용지표 악화로 기준금리 인하 기대가 커져 뉴욕증시 상승"
+      "reason": "미국 고용 악화로 기준금리 인하 기대가 커져 뉴욕증시가 상승했다."
     },
     {
       "id": "52623764f0158dc7",
@@ -789,7 +809,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국이 폴리실리콘 파생상품에 15% 관세를 부과"
+      "reason": "미국 대통령이 폴리실리콘 파생상품에 15% 관세를 부과"
     },
     {
       "id": "2e976b0ee87ac600",
@@ -889,7 +909,7 @@
         "USD/JPY"
       ],
       "confidence": 0.8,
-      "reason": "미국이 엔화 방어에 나서면서 미 국채 금리 상승 가능성과 중간선거 영향에 대한 우려"
+      "reason": "미국이 엔화 방어에 나서면서 미 국채 금리 상승 가능성과 중간선거 영향 차단 포석"
     },
     {
       "id": "bb4e27b175c92f88",
@@ -917,12 +937,12 @@
       "publishedAt": "2026-08-03T05:25:08Z",
       "country": "미국",
       "category": "금리",
-      "direction": "중립",
+      "direction": "호재",
       "currencyPairs": [
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 PCE 둔화와 FOMC 불확실성으로 인한 금리 인상 가능성의 변화"
+      "reason": "미국 PCE 둔화와 FOMC 불확실성으로 인한 금리 인상 가능성 낮아짐"
     },
     {
       "id": "79d59f70cb6f9fc0",
@@ -941,39 +961,6 @@
       "reason": "미 연준 금리 결정이 코스피 시장에 영향을 줄 수 있다"
     },
     {
-      "id": "72792f0f4bd89f51",
-      "title": "일본은행, 기준금리 연 1.0% 동결···성장률 전망은 상향",
-      "summary": "일본 도쿄에 위치한 일본은행 본부. AFP연합뉴스일본 중앙은행인 일본은행이 기준금리를 현행 1.0% 정도로 유지했다. 시장의 예상대로 금리를 동결했지만, 앞으로 물가가 계속 오를 가능성은 여전히 경계했다.31일 니혼게이자이신문(닛케이)과 교도통신 등에 따르면 일본은행은 이날 금융정책결정회의를 열고 단기 정책금리를 현행 ‘1.0% 정도’로 동결하기로 결정했다···",
-      "source": "Khan.co.kr",
-      "url": "https://www.khan.co.kr/article/202607311413001",
-      "publishedAt": "2026-07-31T05:13:00Z",
-      "country": "일본",
-      "category": "금리",
-      "direction": "중립",
-      "currencyPairs": [
-        "JPY/KRW",
-        "JPY/USD"
-      ],
-      "confidence": 0.9,
-      "reason": "일본은행이 기준금리를 1.0%로 동결"
-    },
-    {
-      "id": "decdbddb8c4cd285",
-      "title": "엔화 방어에 미국도 움직였다…미 당국 ‘레이트 체크’ 실시",
-      "summary": "일본 도쿄에서 한 행인이 환율 표시판 앞을 지나가고 있다. EPA연합뉴스일본과 미국 통화 당국이 엔화 약세를 막기 위해 외환시장에 동시에 개입한 것으로 보인다고 니혼게이자이신문(닛케이)이 31일 보도했다. 미·일 당국이 함께 시장 움직임에 대응한 것은 이례적인 일로, 최근 약세를 이어가던 엔화 가치 방어에 나선 것으로 풀이된다.닛케이에 따르면 전날 뉴욕 외···",
-      "source": "Khan.co.kr",
-      "url": "https://www.khan.co.kr/article/202607311056001",
-      "publishedAt": "2026-07-31T01:56:00Z",
-      "country": "일본",
-      "category": "환율",
-      "direction": "호재",
-      "currencyPairs": [
-        "USD/JPY"
-      ],
-      "confidence": 0.9,
-      "reason": "일본과 미국 통화 당국이 엔화 약세를 막기 위해 외환시장에 동시에 개입했다."
-    },
-    {
       "id": "b5c4443121c3cc4d",
       "title": "U.S. Federal Reserve’s ‘hawkish hold’ leaves investors lacking clarity",
       "summary": "The Fed kept interest rates unchanged in a target range of 3.50% to 3.75%, but the vote drew three dissents from the 12-member panel.",
@@ -988,7 +975,7 @@
         "USD/JPY"
       ],
       "confidence": 0.9,
-      "reason": "미 연방준행이 금리 유지 결정"
+      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
     },
     {
       "id": "708ef22140262920",
@@ -1006,7 +993,7 @@
         "USD/JPY"
       ],
       "confidence": 0.9,
-      "reason": "미 연방준행이 금리 유지 결정"
+      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
     },
     {
       "id": "94d836aaf6cac973",
@@ -1036,11 +1023,10 @@
       "category": "금리",
       "direction": "악재",
       "currencyPairs": [
-        "USD/KRW",
-        "EUR/USD"
+        "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미 연준의 금리 인상 속도에 대한 우려가 금리 상승과 관련이 있음"
+      "reason": "미 연방준행이 인플레이션 억제를 위한 금리 인상을 충분히 시행하지 못하고 있어 신뢰도 하락"
     },
     {
       "id": "85b687c68c41bc46",
@@ -1057,7 +1043,7 @@
         "EUR/UAH"
       ],
       "confidence": 0.8,
-      "reason": "우크라이나와 이란 간의 충돌이 국제 관계에 악영향을 미칠 수 있음"
+      "reason": "우크라이나와 이란 간의 충돌이 확대될 수 있어 글로벌 경제 불안정성에 악영향을 줄 수 있음"
     },
     {
       "id": "750adb41f350b3d9",
@@ -1121,8 +1107,7 @@
       "direction": "악재",
       "currencyPairs": [
         "USD/KRW",
-        "USD/JPY",
-        "USD/EUR"
+        "EUR/USD"
       ],
       "confidence": 0.8,
       "reason": "미국 중앙은행의 금리 유지로 글로벌 주식시장이 하락"
@@ -1158,7 +1143,7 @@
         "USD/KRW"
       ],
       "confidence": 0.9,
-      "reason": "미 연방준비제도(Fed)가 금리 유지 결정"
+      "reason": "미 연방준행이 금리 유지 결정"
     },
     {
       "id": "54d9d5be443506a4",
@@ -1201,9 +1186,9 @@
       "publishedAt": "2026-07-30T04:05:40Z",
       "country": "기타",
       "category": "무역",
-      "direction": "악재",
+      "direction": "중립",
       "currencyPairs": [
-        "TWD/USD"
+        "USD/TWD"
       ],
       "confidence": 0.8,
       "reason": "대만의 차량 수입 관세 인하 연기"
@@ -1271,7 +1256,7 @@
         "EUR/USD"
       ],
       "confidence": 0.9,
-      "reason": "미국 연준이 금리를 5회 연속 동결했다는 뉴스"
+      "reason": "미국 연준이 금리 동결을 결정함"
     },
     {
       "id": "732fb134a681dd4c",
@@ -1351,7 +1336,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "한국은행의 기준금리 인상 기조로 고정금리 이율이 높아져 변동형 금리 대출이 증가"
+      "reason": "한국은행의 기준금리 인상 기조로 고정금리 이율이 높아져 변동형 금리 비중이 증가"
     },
     {
       "id": "b6efb67a98b9c00a",
@@ -1367,7 +1352,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "한국은행의 기준금리 인상 기조로 주택담보대출의 변동형 금리 비중이 증가"
+      "reason": "한국은행의 기준금리 인상으로 변동형 주택담보대출 비중이 증가"
     },
     {
       "id": "df7bfbd43e310bdd",
@@ -1416,7 +1401,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "환율효과로 인한 실적 개선"
+      "reason": "실적 개선 배경에 환율효과가 언급됨"
     },
     {
       "id": "f85cacdfbe408a4f",
@@ -1432,7 +1417,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "트럼프 대통령이 관세 정책과 규제 완화 성과를 앞세워 제조업 부흥을 강조"
+      "reason": "트럼프 대통령이 관세 정책을 앞세워 제조업 부흥을 강조"
     },
     {
       "id": "eea727e1139c863c",
@@ -1465,7 +1450,7 @@
         "USD/EUR"
       ],
       "confidence": 0.8,
-      "reason": "미국이 한국과 EU를 포함한 60개 경제권에 강제노동 관련 제품에 대한 추가 관세를 부과"
+      "reason": "미국이 한국을 포함한 60개 경제권에 강제노동 관련 제품 수입금지 조치 미이행으로 추가 관세를 부과"
     },
     {
       "id": "228b4bb0d3753e94",
@@ -1481,7 +1466,7 @@
         "USD/KRW"
       ],
       "confidence": 0.8,
-      "reason": "미국 연방준비제도(연준)가 기준금리를 결정할 예정"
+      "reason": "미국 연방준비제도(연준)가 기준금리 결정을 할 예정"
     },
     {
       "id": "9c3c8e24d3e502bb",
