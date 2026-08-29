@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-29T03:21:42.320051+00:00",
+    "generatedAt": "2026-08-29T23:34:32.790553+00:00",
     "dataAsOf": "2026-08-28",
     "supportedPairs": [
       "USD/KRW",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-08-29T03:21:42.123872",
+    "computed_at": "2026-08-29T23:34:32.634981",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 3.0,
@@ -93,13 +93,13 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1375.67,
-        "ma5": 1381.278,
-        "ma20": 1406.808,
+        "latest_close": 1371.5,
+        "ma5": 1379.538,
+        "ma20": 1403.837,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1381.683,
-        "resistance_r1": 1386.577,
-        "support_s1": 1378.597,
+        "pivot": 1377.19,
+        "resistance_r1": 1384.64,
+        "support_s1": 1373.0,
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "JPY/KRW": {
@@ -208,18 +208,18 @@
         "trend": "상승"
       },
       "유가_WTI": {
-        "latest": 83.44,
-        "latest_date": "2026-08-28",
-        "prev": 83.53,
-        "change": -0.09,
-        "trend": "하락"
-      },
-      "코스피_지수": {
         "latest": NaN,
         "latest_date": "2026-08-28",
-        "prev": 6912.3701,
+        "prev": 83.53,
         "change": NaN,
         "trend": "보합"
+      },
+      "코스피_지수": {
+        "latest": 6788.8799,
+        "latest_date": "2026-08-28",
+        "prev": 6912.3701,
+        "change": -123.4902,
+        "trend": "하락"
       },
       "KRX100_대용_ETF": {
         "latest": 106370.0,
@@ -235,10 +235,10 @@
         "trend": "데이터없음"
       },
       "구글트렌드_환율관심도": {
-        "latest": 42.5,
+        "latest": 37.5,
         "latest_date": "2026-08-23",
-        "prev": 35.5,
-        "change": 7.0,
+        "prev": 33.5,
+        "change": 4.0,
         "trend": "상승"
       }
     },
