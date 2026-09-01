@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-01T00:49:48.651382+00:00",
+    "generatedAt": "2026-09-01T23:31:27.140971+00:00",
     "dataAsOf": "2026-09-01",
     "supportedPairs": [
       "USD/KRW",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-09-01T00:49:48.502932",
+    "computed_at": "2026-09-01T23:31:27.001685",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 3.0,
@@ -93,42 +93,42 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1369.48,
-        "ma5": 1379.134,
-        "ma20": 1403.736,
+        "latest_close": 1366.62,
+        "ma5": 1377.832,
+        "ma20": 1401.023,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1377.19,
-        "resistance_r1": 1384.64,
-        "support_s1": 1373.0,
+        "pivot": 1373.843,
+        "resistance_r1": 1382.527,
+        "support_s1": 1368.427,
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "JPY/KRW": {
-        "latest_close": 8.554,
-        "ma5": 8.651,
-        "ma20": 8.835,
+        "latest_close": 8.555,
+        "ma5": 8.636,
+        "ma20": 8.812,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 8.639,
-        "resistance_r1": 8.696,
-        "support_s1": 8.608,
+        "pivot": 8.59,
+        "resistance_r1": 8.63,
+        "support_s1": 8.56,
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "EUR/KRW": {
-        "latest_close": 1591.3,
-        "ma5": 1606.714,
-        "ma20": 1623.666,
+        "latest_close": 1587.47,
+        "ma5": 1599.788,
+        "ma20": 1620.305,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1603.443,
-        "resistance_r1": 1612.117,
-        "support_s1": 1598.457,
-        "position_vs_pivot": "피벗 하단(약세권)"
+        "pivot": 1583.753,
+        "resistance_r1": 1587.537,
+        "support_s1": 1576.187,
+        "position_vs_pivot": "피벗 상단(강세권)"
       }
     },
     "other_indicators": {
       "미국_국채10년물": {
-        "latest": 4.73,
-        "latest_date": "2026-08-28",
-        "prev": 4.67,
-        "change": 0.06,
+        "latest": 4.75,
+        "latest_date": "2026-08-31",
+        "prev": 4.73,
+        "change": 0.02,
         "trend": "상승"
       },
       "미국_CPI": {
@@ -194,39 +194,39 @@
         "trend": "데이터없음"
       },
       "VIX": {
-        "latest": 14.92,
-        "latest_date": "2026-08-31",
-        "prev": 14.43,
-        "change": 0.49,
+        "latest": 16.34,
+        "latest_date": "2026-09-01",
+        "prev": 14.92,
+        "change": 1.42,
         "trend": "상승"
       },
       "미국국채10년물_야후": {
-        "latest": 4.758,
-        "latest_date": "2026-08-31",
-        "prev": 4.72,
+        "latest": 4.796,
+        "latest_date": "2026-09-01",
+        "prev": 4.758,
         "change": 0.038,
         "trend": "상승"
       },
       "유가_WTI": {
-        "latest": 86.67,
-        "latest_date": "2026-08-31",
-        "prev": 83.4,
-        "change": 3.27,
+        "latest": 90.78,
+        "latest_date": "2026-09-01",
+        "prev": 85.76,
+        "change": 5.02,
         "trend": "상승"
       },
       "코스피_지수": {
-        "latest": 6780.3301,
-        "latest_date": "2026-09-01",
-        "prev": 6788.8799,
-        "change": -8.5498,
+        "latest": 6820.02,
+        "latest_date": "2026-08-31",
+        "prev": 6912.3701,
+        "change": -92.3501,
         "trend": "하락"
       },
       "KRX100_대용_ETF": {
-        "latest": 105700.0,
+        "latest": 107725.0,
         "latest_date": "2026-09-01",
-        "prev": 106370.0,
-        "change": -670.0,
-        "trend": "하락"
+        "prev": 107080.0,
+        "change": 645.0,
+        "trend": "상승"
       },
       "외국인_코스피_순매수": {
         "latest": null,
@@ -235,10 +235,11 @@
         "trend": "데이터없음"
       },
       "구글트렌드_환율관심도": {
-        "latest": null,
-        "prev": null,
-        "change": null,
-        "trend": "데이터없음"
+        "latest": 31.0,
+        "latest_date": "2026-08-30",
+        "prev": 36.5,
+        "change": -5.5,
+        "trend": "하락"
       }
     },
     "weekly_fx_features": {
