@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-10T23:23:51.128505+00:00",
+    "generatedAt": "2026-09-11T23:29:23.007933+00:00",
     "dataAsOf": "2026-09-11",
     "supportedPairs": [
       "USD/KRW",
@@ -22,7 +22,7 @@
       "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
       "spot_rate": 1441.1,
       "estimated_monthly_move_rate": 45.35,
-      "data_age_days": 42,
+      "data_age_days": 43,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -43,7 +43,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 9.0213,
       "estimated_monthly_move_rate": 0.24,
-      "data_age_days": 42,
+      "data_age_days": 43,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -61,7 +61,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 1661.16,
       "estimated_monthly_move_rate": 40.25,
-      "data_age_days": 42,
+      "data_age_days": 43,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-09-10T23:23:50.942178",
+    "computed_at": "2026-09-11T23:29:22.882917",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 3.0,
@@ -93,49 +93,49 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1339.17,
-        "ma5": 1344.484,
-        "ma20": 1377.464,
+        "latest_close": 1341.05,
+        "ma5": 1341.612,
+        "ma20": 1373.674,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1338.113,
-        "resistance_r1": 1342.977,
-        "support_s1": 1334.347,
+        "pivot": 1340.313,
+        "resistance_r1": 1345.507,
+        "support_s1": 1333.977,
         "position_vs_pivot": "피벗 상단(강세권)"
       },
       "JPY/KRW": {
-        "latest_close": 8.718,
-        "ma5": 8.699,
-        "ma20": 8.711,
+        "latest_close": 8.71,
+        "ma5": 8.7,
+        "ma20": 8.702,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 8.718,
-        "resistance_r1": 8.747,
-        "support_s1": 8.697,
+        "pivot": 8.719,
+        "resistance_r1": 8.745,
+        "support_s1": 8.692,
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "EUR/KRW": {
-        "latest_close": 1557.39,
-        "ma5": 1562.236,
-        "ma20": 1596.966,
+        "latest_close": 1554.8,
+        "ma5": 1558.118,
+        "ma20": 1592.997,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1555.95,
-        "resistance_r1": 1559.71,
-        "support_s1": 1552.97,
-        "position_vs_pivot": "피벗 상단(강세권)"
+        "pivot": 1558.74,
+        "resistance_r1": 1563.96,
+        "support_s1": 1552.17,
+        "position_vs_pivot": "피벗 하단(약세권)"
       }
     },
     "other_indicators": {
       "미국_국채10년물": {
-        "latest": 4.83,
-        "latest_date": "2026-09-09",
-        "prev": 4.8,
-        "change": 0.03,
+        "latest": 4.95,
+        "latest_date": "2026-09-10",
+        "prev": 4.83,
+        "change": 0.12,
         "trend": "상승"
       },
       "미국_CPI": {
-        "latest": 332.813,
-        "latest_date": "2026-07-01",
-        "prev": 332.568,
-        "change": 0.245,
+        "latest": 334.131,
+        "latest_date": "2026-08-01",
+        "prev": 332.813,
+        "change": 1.318,
         "trend": "상승"
       },
       "미국_GDP성장률": {
@@ -194,38 +194,38 @@
         "trend": "데이터없음"
       },
       "VIX": {
-        "latest": 17.84,
-        "latest_date": "2026-09-10",
-        "prev": 16.46,
-        "change": 1.38,
-        "trend": "상승"
+        "latest": 15.84,
+        "latest_date": "2026-09-11",
+        "prev": 17.84,
+        "change": -2.0,
+        "trend": "하락"
       },
       "미국국채10년물_야후": {
-        "latest": 4.944,
-        "latest_date": "2026-09-10",
-        "prev": 4.837,
-        "change": 0.107,
+        "latest": 4.975,
+        "latest_date": "2026-09-11",
+        "prev": 4.944,
+        "change": 0.031,
         "trend": "상승"
       },
       "유가_WTI": {
-        "latest": 103.8,
-        "latest_date": "2026-09-10",
-        "prev": 96.05,
-        "change": 7.75,
-        "trend": "상승"
+        "latest": 99.99,
+        "latest_date": "2026-09-11",
+        "prev": 102.48,
+        "change": -2.49,
+        "trend": "하락"
       },
       "코스피_지수": {
-        "latest": 7051.6401,
-        "latest_date": "2026-09-09",
-        "prev": 6954.52,
-        "change": 97.1201,
-        "trend": "상승"
+        "latest": NaN,
+        "latest_date": "2026-09-11",
+        "prev": 7033.9199,
+        "change": NaN,
+        "trend": "보합"
       },
       "KRX100_대용_ETF": {
-        "latest": 115000.0,
-        "latest_date": "2026-09-10",
-        "prev": 115580.0,
-        "change": -580.0,
+        "latest": 109995.0,
+        "latest_date": "2026-09-11",
+        "prev": 115000.0,
+        "change": -5005.0,
         "trend": "하락"
       },
       "외국인_코스피_순매수": {
@@ -235,9 +235,9 @@
         "trend": "데이터없음"
       },
       "구글트렌드_환율관심도": {
-        "latest": 35.5,
+        "latest": 36.0,
         "latest_date": "2026-09-06",
-        "prev": 33.5,
+        "prev": 34.0,
         "change": 2.0,
         "trend": "상승"
       }
