@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-25T00:04:49.697343+00:00",
+    "generatedAt": "2026-09-26T00:07:04.294236+00:00",
     "dataAsOf": "2026-09-25",
     "supportedPairs": [
       "USD/KRW",
@@ -22,7 +22,7 @@
       "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
       "spot_rate": 1441.1,
       "estimated_monthly_move_rate": 45.35,
-      "data_age_days": 57,
+      "data_age_days": 58,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -43,7 +43,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 9.0213,
       "estimated_monthly_move_rate": 0.24,
-      "data_age_days": 57,
+      "data_age_days": 58,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -61,7 +61,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 1661.16,
       "estimated_monthly_move_rate": 40.25,
-      "data_age_days": 57,
+      "data_age_days": 58,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-09-25T00:04:49.524965",
+    "computed_at": "2026-09-26T00:07:04.132421",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 3.0,
@@ -93,9 +93,9 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1367.11,
-        "ma5": 1367.702,
-        "ma20": 1359.702,
+        "latest_close": 1355.28,
+        "ma5": 1365.336,
+        "ma20": 1359.11,
         "ma_signal": "단기 상승추세(5일선>20일선)",
         "pivot": 1367.59,
         "resistance_r1": 1371.55,
@@ -103,8 +103,8 @@
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "JPY/KRW": {
-        "latest_close": 8.592,
-        "ma5": 8.666,
+        "latest_close": 8.597,
+        "ma5": 8.667,
         "ma20": 8.687,
         "ma_signal": "단기 하락추세(5일선<20일선)",
         "pivot": 8.64,
@@ -113,9 +113,9 @@
         "position_vs_pivot": "피벗 하단(약세권)"
       },
       "EUR/KRW": {
-        "latest_close": 1555.0,
-        "ma5": 1564.61,
-        "ma20": 1568.907,
+        "latest_close": 1543.2,
+        "ma5": 1562.25,
+        "ma20": 1568.317,
         "ma_signal": "단기 하락추세(5일선<20일선)",
         "pivot": 1555.377,
         "resistance_r1": 1559.063,
@@ -125,10 +125,10 @@
     },
     "other_indicators": {
       "미국_국채10년물": {
-        "latest": 5.11,
-        "latest_date": "2026-09-23",
-        "prev": 4.96,
-        "change": 0.15,
+        "latest": 5.18,
+        "latest_date": "2026-09-24",
+        "prev": 5.11,
+        "change": 0.07,
         "trend": "상승"
       },
       "미국_CPI": {
@@ -194,31 +194,31 @@
         "trend": "데이터없음"
       },
       "VIX": {
-        "latest": 15.67,
-        "latest_date": "2026-09-24",
-        "prev": 15.18,
-        "change": 0.49,
-        "trend": "상승"
+        "latest": 14.87,
+        "latest_date": "2026-09-25",
+        "prev": 15.67,
+        "change": -0.8,
+        "trend": "하락"
       },
       "미국국채10년물_야후": {
-        "latest": 5.162,
-        "latest_date": "2026-09-24",
-        "prev": 5.114,
-        "change": 0.048,
+        "latest": 5.184,
+        "latest_date": "2026-09-25",
+        "prev": 5.162,
+        "change": 0.022,
         "trend": "상승"
       },
       "유가_WTI": {
-        "latest": 93.93,
-        "latest_date": "2026-09-24",
-        "prev": 92.16,
-        "change": 1.77,
-        "trend": "상승"
+        "latest": 92.44,
+        "latest_date": "2026-09-25",
+        "prev": 94.61,
+        "change": -2.17,
+        "trend": "하락"
       },
       "코스피_지수": {
         "latest": 7080.9199,
         "latest_date": "2026-09-23",
-        "prev": 7007.7202,
-        "change": 73.1997,
+        "prev": 7017.9102,
+        "change": 63.0097,
         "trend": "상승"
       },
       "KRX100_대용_ETF": {
@@ -235,9 +235,9 @@
         "trend": "데이터없음"
       },
       "구글트렌드_환율관심도": {
-        "latest": 32.5,
+        "latest": 28.5,
         "latest_date": "2026-09-20",
-        "prev": 35.0,
+        "prev": 31.0,
         "change": -2.5,
         "trend": "하락"
       }
