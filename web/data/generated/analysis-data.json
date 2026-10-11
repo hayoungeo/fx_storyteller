@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-10T01:07:46.763499+00:00",
-    "dataAsOf": "2026-10-09",
+    "generatedAt": "2026-10-11T00:25:03.258563+00:00",
+    "dataAsOf": "2026-10-11",
     "supportedPairs": [
       "USD/KRW",
       "JPY/KRW",
@@ -22,7 +22,7 @@
       "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
       "spot_rate": 1441.1,
       "estimated_monthly_move_rate": 45.35,
-      "data_age_days": 72,
+      "data_age_days": 73,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -43,7 +43,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 9.0213,
       "estimated_monthly_move_rate": 0.24,
-      "data_age_days": 72,
+      "data_age_days": 73,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -61,7 +61,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 1661.16,
       "estimated_monthly_move_rate": 40.25,
-      "data_age_days": 72,
+      "data_age_days": 73,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-10-10T01:07:46.609437",
+    "computed_at": "2026-10-11T00:25:03.103588",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 3.0,
@@ -93,14 +93,14 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1340.02,
-        "ma5": 1341.03,
-        "ma20": 1356.793,
+        "latest_close": 1340.9,
+        "ma5": 1341.292,
+        "ma20": 1356.754,
         "ma_signal": "단기 하락추세(5일선<20일선)",
-        "pivot": 1339.923,
-        "resistance_r1": 1344.457,
-        "support_s1": 1334.547,
-        "position_vs_pivot": "피벗 상단(강세권)"
+        "pivot": 1342.49,
+        "resistance_r1": 1346.4,
+        "support_s1": 1339.08,
+        "position_vs_pivot": "피벗 하단(약세권)"
       },
       "JPY/KRW": {
         "latest_close": 8.443,
@@ -208,10 +208,10 @@
         "trend": "상승"
       },
       "유가_WTI": {
-        "latest": 91.66,
+        "latest": 91.85,
         "latest_date": "2026-10-09",
         "prev": 91.49,
-        "change": 0.17,
+        "change": 0.36,
         "trend": "상승"
       },
       "코스피_지수": {
@@ -235,11 +235,11 @@
         "trend": "데이터없음"
       },
       "구글트렌드_환율관심도": {
-        "latest": 30.0,
-        "latest_date": "2026-10-04",
-        "prev": 28.0,
-        "change": 2.0,
-        "trend": "상승"
+        "latest": 13.0,
+        "latest_date": "2026-10-11",
+        "prev": 29.5,
+        "change": -16.5,
+        "trend": "하락"
       }
     },
     "weekly_fx_features": {
