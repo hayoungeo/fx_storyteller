@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-16T23:48:56.142908+00:00",
+    "generatedAt": "2026-10-17T23:20:51.853982+00:00",
     "dataAsOf": "2026-10-16",
     "supportedPairs": [
       "USD/KRW",
@@ -22,7 +22,7 @@
       "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
       "spot_rate": 1441.1,
       "estimated_monthly_move_rate": 45.35,
-      "data_age_days": 78,
+      "data_age_days": 79,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -43,7 +43,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 9.0213,
       "estimated_monthly_move_rate": 0.24,
-      "data_age_days": 78,
+      "data_age_days": 79,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -61,7 +61,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 1661.16,
       "estimated_monthly_move_rate": 40.25,
-      "data_age_days": 78,
+      "data_age_days": 79,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-10-16T23:48:55.981517",
+    "computed_at": "2026-10-17T23:20:51.642847",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 3.0,
@@ -93,9 +93,9 @@
     },
     "fx_technical": {
       "USD/KRW": {
-        "latest_close": 1334.2,
-        "ma5": 1337.788,
-        "ma20": 1348.69,
+        "latest_close": 1329.6,
+        "ma5": 1336.868,
+        "ma20": 1348.46,
         "ma_signal": "단기 하락추세(5일선<20일선)",
         "pivot": 1338.65,
         "resistance_r1": 1349.89,
@@ -208,18 +208,18 @@
         "trend": "상승"
       },
       "유가_WTI": {
-        "latest": 99.04,
+        "latest": 101.41,
         "latest_date": "2026-10-16",
         "prev": 97.97,
-        "change": 1.07,
+        "change": 3.44,
         "trend": "상승"
       },
       "코스피_지수": {
-        "latest": NaN,
+        "latest": 5668.0498,
         "latest_date": "2026-10-16",
         "prev": 5554.2202,
-        "change": NaN,
-        "trend": "보합"
+        "change": 113.8296,
+        "trend": "상승"
       },
       "KRX100_대용_ETF": {
         "latest": 70415.0,
@@ -235,11 +235,11 @@
         "trend": "데이터없음"
       },
       "구글트렌드_환율관심도": {
-        "latest": 31.0,
+        "latest": 29.0,
         "latest_date": "2026-10-11",
-        "prev": 29.5,
-        "change": 1.5,
-        "trend": "상승"
+        "prev": 30.0,
+        "change": -1.0,
+        "trend": "하락"
       }
     },
     "weekly_fx_features": {
