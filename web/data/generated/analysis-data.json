@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-07T01:07:07.716321+00:00",
-    "dataAsOf": "2026-11-06",
+    "generatedAt": "2026-11-08T00:54:37.213338+00:00",
+    "dataAsOf": "2026-11-08",
     "supportedPairs": [
       "USD/KRW",
       "JPY/KRW",
@@ -22,7 +22,7 @@
       "five_day_change_explanation": "5거래일 전보다 환율의 예상 움직임 폭이 커졌습니다.",
       "spot_rate": 1441.1,
       "estimated_monthly_move_rate": 45.35,
-      "data_age_days": 100,
+      "data_age_days": 101,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -43,7 +43,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 9.0213,
       "estimated_monthly_move_rate": 0.24,
-      "data_age_days": 100,
+      "data_age_days": 101,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -61,7 +61,7 @@
       "five_day_change_explanation": "5거래일 전과 비교해 환율의 예상 움직임 폭은 비슷한 수준입니다.",
       "spot_rate": 1661.16,
       "estimated_monthly_move_rate": 40.25,
-      "data_age_days": 100,
+      "data_age_days": 101,
       "is_stale": true,
       "is_proxy": true,
       "source": "stochvol SV 기반 프록시",
@@ -69,7 +69,7 @@
     }
   },
   "macro": {
-    "computed_at": "2026-11-07T01:07:07.590396",
+    "computed_at": "2026-11-08T00:54:37.065359",
     "rate_diffs": {
       "USD/KRW": {
         "한국_기준금리": 3.0,
@@ -208,18 +208,18 @@
         "trend": "상승"
       },
       "유가_WTI": {
-        "latest": 90.34,
+        "latest": 90.83,
         "latest_date": "2026-11-06",
         "prev": 90.52,
-        "change": -0.18,
-        "trend": "하락"
+        "change": 0.31,
+        "trend": "상승"
       },
       "코스피_지수": {
-        "latest": NaN,
+        "latest": 5059.6899,
         "latest_date": "2026-11-06",
         "prev": 5383.7998,
-        "change": NaN,
-        "trend": "보합"
+        "change": -324.1099,
+        "trend": "하락"
       },
       "KRX100_대용_ETF": {
         "latest": 54460.0,
@@ -235,11 +235,11 @@
         "trend": "데이터없음"
       },
       "구글트렌드_환율관심도": {
-        "latest": 28.5,
-        "latest_date": "2026-11-01",
-        "prev": 27.0,
-        "change": 1.5,
-        "trend": "상승"
+        "latest": 17.5,
+        "latest_date": "2026-11-08",
+        "prev": 27.5,
+        "change": -10.0,
+        "trend": "하락"
       }
     },
     "weekly_fx_features": {
